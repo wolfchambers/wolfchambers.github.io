@@ -1,0 +1,394 @@
+<head> 
+<title>CS 344: Course Policies</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="index.html">Course Home</a> | 
+<b>Course Policies</b> |
+<A HREF="programming/">Assignments</A> |  
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 344: Programming Languages <br> Spring 2012 </h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu 
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Monday 10-11am, Tuesday 10-11, and Wednesday 2-3
+
+</h3>
+
+</center>
+
+<UL>
+  <LI>
+      Overview
+      <UL>
+	<LI>
+	    <A href="#catalog">Catalog Description</A>
+	</LI>
+	<li>
+	    <a href="#prereqs">Prerequisites</a>
+	</li>
+      <BR>
+  </LI>
+
+  <LI> Course Materials and Resources
+      <UL>
+	<LI>
+	    <A href="#textbook">Textbook</A>
+	</LI>
+	<LI>
+	    <A href="#lecturenotes">Lecture Notes</A>
+	</LI>
+	<LI>
+	    <A href="#email">Email</A>
+	</LI>
+	<LI>
+	    <A href="#computercell">Computer and Cell Phone Policy</A>
+	</LI>
+      </UL>
+      <BR>
+  </LI>
+
+  <LI>
+      Grading
+      <UL>
+	<LI>
+	    <A href="#gradedwork">Graded Work</A> 
+	</LI>
+	<LI>
+	    <A href="#percentages">Percentages</A>
+	</LI>
+	<LI>
+	    <A href="#latehomework">Late Homework</A>
+	</LI>
+	<li>
+	    <a href="#regrades">Regrade Requests</a>
+	</li>
+	<LI>
+	    <A href="#academicintegrity">Academic Integrity</A>
+	</LI>
+      </UL>
+      <BR>
+  </LI>
+
+  <LI>
+      Additional Information
+      <UL>
+	
+	<LI>
+	    <A href="#disabilities">Students with Disabilities or Special Needs</A>
+	</LI>
+
+      </UL>
+      <BR>
+  </LI>
+      
+</UL>
+
+
+<hr>
+
+<H2>
+<A name="overview">Overview</A>
+</H2>
+
+<UL>
+  <LI>
+      <H3><A name="catalog">Course Description</A></H3>
+      
+      <blockquote> Overview of programming languages: procedural and functional languages. Exposure to functional languages. Analysis of solution strategies to variable binding and function calls. Problem solving paradigms and linguistic issues. 
+      </blockquote>
+
+  </LI>
+  <li> 
+      <H3><A name="prereqs">Prerequisites</A></H3>
+      <p> CSCI 290: Object Oriented Software Design
+      </p>
+  </li>
+
+
+</UL>
+
+<HR>
+
+<H2>
+<A name="resources">Course Materials and Resources</A>
+</H2>
+
+    <ul>
+
+  <LI>
+      <H3><A name="textbook">Textbook</A></h3>
+
+	<a href="http://www.cs.rochester.edu/~scott/pragmatics/">Programming Language Pragmatics</a>, by Michael L. Scott, Third edition
+
+    </LI>
+
+    <li>
+      <h3><a name="email">Email</a></h3>
+      <p> Email contact with the course instructor is a necessity in this class..  I will check email several times throughout the work day, and will also
+      check email once per evening to answer questions and resolve issues.  Email contact over the weekend may be more sporadic, although I will be sure to check at least once.
+      </p>
+    </li>
+
+    <LI><h3><A name="additionalmaterial">Additional Material</a></h3>
+    Additional articles or online references will be provided throughout the semeseter; please reference the schedule throughout the semester
+      for such additions.
+    </li>
+
+    <li> <h3><A name="computercell">Computer and Cell Phone Policy</a></h3>
+
+    <p> Computers will be an integral part of this course, both inside and
+      outside of class.  However, out of courtesy to both the instructor and
+      other students, please do not use the lab computers for non-class
+      related activity.  In particular, you do not need to be using a computer
+      unless an exercise or in class activity requiring them is in progress.
+      </p>
+
+    <p> You are unlikely to need cell phones during the course of lecture.  Please ensure that 
+your cell phone is set to vibrate or silent during lecture, and do not send text messages of any 
+kind.  </p>
+    </ul>
+
+<HR>
+
+<H2>
+<A name="grading">Grading</A>
+</H2>
+
+<ul>
+
+    <li> <h3><A name="gradedwork">Graded Work</A></H3>
+    <ul> 
+    
+      <li>Attendance and quizzes (10%)
+      
+      <p> A portion of your grade will be based on attendance at the 
+labs as well as pop quizzes in lecture.  These are entirely at the 
+instructors discretion.  If you expect to miss class due to illness, 
+weather, or any other reason, it is your responsibility to notify the 
+instructor before class begins.
+      
+      </li>
+      
+      <li> Written Homework (20%)
+
+	<p> There will be a series of written homeworks and essay 
+assignments in the class, which (in total) will compromise 20% of your 
+final score.  Essays will be over papers assigned in class.  Each will 
+be at most 300 words long, and should both summarize key points and 
+take an opinion on the article.  
+
+      </li>
+     
+      <li>Labs (30%)
+      
+	<p>There will be several labs on computer security.  Each will 
+be done on the DETER system, a remove cluster where our virtual 
+machines will be running.  Each lab will be self contained, and must 
+be done individually.  Stay tuned for more information on the DETER 
+system as well as on our assignments.
+
+      </li>
+
+	<li> Exams (40%)
+
+	<p> There will be two exams, a midterm and a cumulative final, 
+each worth 20% of your total grade.  The midterm will be the week 
+before spring break (unless we have any major schedule changes), and 
+the final is set to be Thursday, May 12, from 12-2pm.
+
+	</LI>
+
+    </ul> 
+
+    </li>
+
+    <LI> <H3><A name="percentages">Percentages</A></H3>
+
+      <P>
+      Letter grades will be based on each students overall
+      percentage of awarded points according to the following
+      formula.
+      </P>
+      
+      <DL>
+	<DD>
+	    Student percentage above 93% will result in a grade of
+	    A or better.
+	</DD>
+	<DD>
+	    Student percentage above 90% will result in a grade of
+	    A- or better.
+	</DD>
+	<DD>
+	    Student percentage above 87% will result in a grade of
+	    B+ or better.
+	</DD>
+	<DD>
+	    Student percentage above 83% will result in a grade of
+	    B or better.
+	</DD>
+	<DD>
+	    Student percentage above 80% will result in a grade of
+	    B- or better.
+	</DD>
+	<DD>
+	    Student percentage above 77% will result in a grade of
+	    C+ or better.
+	</DD>
+	<DD>
+	    Student percentage above 73% will result in a grade of
+	    C or better.
+	</DD>
+	<DD>
+	    Student percentage above 70% will result in a grade of
+	    C- or better.
+	</DD>
+	<DD>
+	    Student percentage above 60% will result in a grade of
+	    D or better.
+	</DD>
+	<DD>
+	    Student percentage below 60% will result in a grade of
+	    F.
+	</DD>
+      </DL>Any modification to this scale at the end of the year
+      will be <EM>in favor of the students</EM>. That is we may
+      later decide to award an A to a student who is slightly
+      below the above cutoff, but we certainly will not deny
+      an A from someone who is above the cutoff.
+  </LI>
+
+
+  <li> <h3><a name="latehomework">Late Homework</a></h3>
+
+	<p> Due to the fact that labs are through a new system (and 
+the fact that we all have busy lives), I'll grant a 3 day extension on 
+any homework or lab as long as you email me to request it BEFORE the 
+assignment is due.  The only exception will be homework or exercises 
+which I specify will need to be done by a certain class period, as 
+those will generally be used in our exercises for that day (and hence 
+need to be completed by the start of class in order for you to recieve 
+credit).
+
+	<p> Extensions for more than 3 days will require some form of 
+medical documentation or an excuse from a dean.
+
+  </li>
+
+  <li> <h3><a name="regrades">Regrade Requests</a></h3>
+
+	<p> I am happy to regrade any assignments, programs, quizzes or exam problems which you 
+think were unfair or incorrect.  Please bring me the original assignment, plus a written 
+explanation of your question or complaint, within <em>two weeks</em> of the time the paper in 
+question is graded and returned to you.
+
+  </li>
+
+  <li> <H3><A name="academicintegrity">Academic Integrity</A></H3>
+
+<p> In the context of this course, I encourage students to discuss general course material, which
+includes studying for exams, sharing notes if a student must miss class, and working on any practice
+problems which are assigned.  We will also have occasional programming assignments that will be 
+completed in pairs.  However, unless clearly stated otherwise in the assignment description, 
+any work which will be submitted for a grade must
+be completed by individuals.  In addition, the  <b> only </b> acceptable sources of information
+are the course textbook, the instructor, official university tutors, or other sources which are 
+explicitly mentioned in an assignment.  Students may <b>not</b> use other sources, including
+(but not limited to) websites other than the official course website or those explicitly listed
+in course materials, textbooks other than those officially listed below, or
+students (either past or present). </p>
+
+<p> Students who violate academic integrity policies will be reported to the 
+department.  First time offenses on homework will result in a minimum of a failing 
+grade on the assignment in question, with egregious or repeated offenses resulting in 
+failure in the course.  In addition, students may be referred to the College of Arts 
+and Sciences for further disciplinary action.
+
+    <p>The following is a statement of minimum standards for student academic integrity 
+at Saint Louis University; I expect full compliance with the policies described.</p>
+
+<p>The University is a community of learning, whose effectiveness requires an 
+environment of mutual trust and integrity, such as would be expected at a Jesuit, 
+Catholic institution. As members of this community, students, faculty, and staff 
+members share the responsibility to maintain this environment. Academic dishonesty 
+violates it. Although not all forms of academic dishonesty can be listed here, it can 
+be said in general that soliciting, receiving, or providing any unauthorized assistance 
+in the completion of any work submitted toward academic credit is dishonest. It not 
+only violates the mutual trust necessary between faculty and students, but also 
+undermines the validity of the University's evaluation of students and takes unfair 
+advantage of fellow students.</p>
+
+<p>Further, it is the responsibility of any student who observes such dishonest conduct 
+to call it to the attention of a faculty member or administrator.</p>
+
+<p>Examples of academic dishonesty would be copying from another student, copying from 
+a book or class notes during a closed-book exam, submitting materials authored by or 
+editorially revised by another person but presented as the student's own work, 
+copying a passage or text directly from a published source without appropriately citing 
+or recognizing that source, taking a test or doing an assignment or other academic work 
+for another student, tampering with another student's work, securing or supplying in 
+advance a copy of an examination without the knowledge or consent of the instructor, 
+and colluding with another student or students to engage in an act of academic 
+dishonesty.</p>
+
+<p>Where there is clear indication of such dishonesty, a faculty member or 
+administrator has the responsibility to apply appropriate sanctions. Investigations of 
+violations will be conducted in accord with standards and procedures of the school or 
+college through which the course or research is offered. Recommendations of sanctions 
+to be imposed will be made to the dean of the school or college in which the student is 
+enrolled. Possible sanctions for a violation of academic integrity include, but are not 
+limited to, disciplinary probation, suspension, and dismissal from the University. </p>
+
+  </li>
+
+</ul>
+
+<HR>
+
+<H2>
+<A name="misc">Miscellaneous</A>
+</H2>
+
+<UL>
+
+
+    <li> <h3><a name="disabilities">Students with Disabilities or Special 
+Needs</a></h3> In recognition that people learn in a variety of ways and that learning 
+is influenced by multiple factors (e.g., prior experience, study skills, learning 
+disability), resources to support student success are available on campus. Students who 
+think they might benefit from these resources can find out more about:
+<ul>
+<li>Course-level support (e.g., faculty member, departmental resources, etc.) by asking 
+your course instructor. 
+<li>University-level support (e.g., tutoring/writing services, 
+Disability Services) by visiting the Student Success Center (BSC 331) or by going to 
+www.slu.edu/success. 
+</ul>
+Students who believe that, due to a disability, they could benefit 
+from academic accommodations are encouraged to contact Disability Services at 
+314-977-8885 or to visit the Student Success Center. Confidentiality will be observed 
+in all inquiries. Course instructors support student accommodation requests when an 
+approved letter from Disability Services has been received and when students discuss 
+these accommodations with the instructor after receipt of the approved letter.
+    </li>
+
+
+
+
+
+  </LI>
+
+</UL>
+
+
+</body>
+</html>

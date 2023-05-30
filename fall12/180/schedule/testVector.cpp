@@ -1,0 +1,14 @@
+#include "Vector.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  Vector<char> myvec;
+  
+  myvec.push_back('a');
+  cout << myvec[0] << endl;
+  
+  myvec[0] = 'b';
+  cout << myvec[0] << endl;
+
+}

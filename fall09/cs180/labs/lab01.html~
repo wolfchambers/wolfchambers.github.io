@@ -1,0 +1,207 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="programming/">Programming</A> |
+<b>Labs</b> |
+<A HREF="schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+
+<p>
+<hr>
+
+
+<center>
+<h2>Lab Assignment 
+00
+
+</h2>
+</center>
+
+<table>
+  <tr>
+    <td>
+	<b>Topic:</b>
+    </td>
+    <td>
+	Copier Reduction
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Source Code:</b>
+    </td>
+    <td>
+	<tt>copier.cpp</tt>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Live Archive Ref#:</b>
+    </td>
+    <td>
+	<a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/problem.php?p=3393">3393</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>In-Class Day:</b>
+    </td>
+    <td>
+	<br>
+	Tuesday, 20 January 2009
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Submission Deadline:</b>
+    </td>
+    <td>
+	Friday, 23 January 2009, 11:59pm
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Techniques:</b>
+    </td>
+    <td>
+	<br>
+	Loops, Conditionals, Arithmetic, and perhaps a utility function
+    </td>
+  </tr>
+</table>
+
+<p>
+Please review the
+<a href="../#general">general information about lab assignments</a>.
+
+
+<hr>
+
+<h1>Copier Reduction</h1>
+
+
+<p>What do you do if you need to copy a 560x400mm image onto
+a standard sheet of US letter-size paper (which is about 216x280mm),
+while keeping the image as large as possible?  You can rotate the
+image 90 degrees (so that it is in &quot;landscape&quot; mode), then
+reduce it to 50% of its original size so that it is 200x280mm.  Then
+it will fit on the paper without overlapping any edges.  Your job is
+to solve this problem in general.</p>
+
+<p><b>Input:</b> The input consists of one or more test cases, each of
+which is a single line containing four positive integers <i>A</i>,
+<i>B</i>, <i>C</i>, and <i>D</i>, separated by a space, representing
+an <i>A</i>x<i>B</i>mm image and a <i>C</i>x<i>D</i>mm piece of paper.
+All inputs will be less than one thousand.  Following the test cases
+is a line containing four zeros that signals the end of the input.</p>
+
+<p><b>Output:</b> For each test case, if the image fits on the sheet
+of paper without changing its size (but rotating it if necessary),
+then the output is 100%.  If the image must be reduced in order to
+fit, the output is the largest <em>integer</em> percentage of its
+original size that will fit (rotating it if necessary). Output the
+percentage exactly as shown in the examples below.  You can assume
+that no image will need to be reduced to less than 1% of its original
+size, so the answer will always be an integer percentage between 1%
+and 100%, inclusive.</p> 
+
+<table border="1" cellpadding="10">
+<thead>     
+<tr>
+    <td><b>Example input:</b></td>
+    <td><b>Example output:</b></td>
+</tr>
+</thead>   
+<tbody>
+    <tr>
+        <td style="font-family: monospace;">
+        560 400 218 280<br>
+        10 25 88 10<br>
+        8 13 5 1<br>
+        9 13 10 6<br>
+        199 333 40 2<br>
+        75 90 218 280<br>
+        999 99 1 10<br>
+        0 0 0 0<br>
+       </td>
+       <td valign="top" style="font-family: monospace;">
+        50%<br>
+        100%<br>
+        12%<br>
+        66%<br>
+        1%<br>
+        100%<br>
+        1%<br>
+       </td>
+    </tr>
+</tbody>
+</table>
+
+
+<hr>
+
+<h1>Hints</h1>
+
+<p>
+This is a straightforward problem. You need an outer while loop
+because a single execution of the program must solve multiple trials
+(one per line).  For a specific trial, solve the problem for the
+original orientation and for the rotated orientation and output the
+better of the two.  You will need a conditional or two to determine
+the limiting dimensions.
+
+<p>
+If you want to save yourself a bit of trouble, write a utility
+function to compute the proper percentage for a <em>fixed</em>
+orientation.  Then you can call that function twice, inverting the
+parameters for the rotated case.
+
+
+<p>
+The most common mistakes resulted from ignoring details in the problem
+specifications. Most importantly
+<ul>
+  <li>
+      <p>
+      Do not make any assumptions about the height being greater than
+      or less than the width, for the paper or the picture.
+  </li>
+  <li>
+      <p>
+      Make sure to handle integer arithmetic properly.  For example,
+      if the highest possible floating-point scale factor is 70.98,
+      the output should be 70%, because it is possible to fit the 70%
+      image but not possible to fit the 71% image.
+
+  </li>
+  <li>
+      <p>
+      You are never to scale the picture to bigger than 100%.
+  </li>
+</ul>
+
+<p>
+For the record, during the actual competition, the first team in our
+region to complete this problem had it done 8 minutes into the day.
+
+
+  </body>
+</html>
+

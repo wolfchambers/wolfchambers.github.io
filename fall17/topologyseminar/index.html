@@ -1,0 +1,246 @@
+
+<html>
+
+<head> 
+<title>Fall 2017 Topology Seminar</title>
+</head>
+
+<body>
+
+<center>
+<h1>Fall 2017 Topology Seminar: <br> An Overview of Computational Topology</h1>
+
+</center>
+
+
+<hr> <blockquote>
+
+<p>Computational topology is an emerging area at the intersection of math and computer 
+science, growing from the increasing need for algorithmic computation that is rooted in 
+the tools and techniques of topology.  Specific topics we plan to cover include 
+topological data analysis and persistent homology, surface reconstruction, 3-manifold 
+algorithms, graphs on surface, and higher dimensional algorithmic and hardness results.  
+A familiarity with either topology or algorithms recommended, but the level is geared for 
+graduates students in either mathematics or computer science, and necessary background 
+will be introduced along the way. 
+</p>
+
+<p>The schedule below will be updated as the semester progresses, including slides or any useful associated reading.</p>
+
+<hr>
+
+<p>Tuesday, 9/5</p>
+<p>Speaker: David Letscher</p>
+
+<p>Title: Topological Data Analysis: History and Challenges</p>
+
+<p>Abstract: Topological Data Analysis (TDA) has it's roots in applied algebraic topology 
+and has grown into a set of tools that have been applied to a wide range of application 
+domains.  We will examine the history of TDA and, as it gets used more frequently to study 
+scientific data, the challenges for its use for statistical analysis and prediction.  We 
+will also discuss the connections of the methods with algebraic topology, low-dimensional 
+topology and algorithms.</p>
+
+<p>
+<a href="tda.pdf">Slides</a>
+</p>
+
+<hr>
+
+<p> Tuesday, 9/12</p>
+<p>Speaker: Erin Chambers</p>
+
+<p>Title: Tools from computational geometry</p> 
+
+
+<p>Abstract: Computational topology draws on many constructs from computational geometry, 
+a closely allied area whose focus is designing and implementing algorithms to solve 
+geometric problems.  In particular, for problems such as surface reconstruction or 
+topological data analysis, we often use the classic computational geometry construction of 
+a Voronoi diagrams (and its dual, the Delaunay triangulations).  In this lecture, we will 
+introduce these constructs and their uses. No prior algorithms or computational geometry 
+expertise is needed.
+
+
+<p>
+<a href="week2.pdf">Notes (from tablet)</a>
+</p>
+
+
+<hr>
+
+<p> Tuesday, 9/19</p>
+<p>Speaker: Erin Chambers</p>
+
+<p>Title: Reconstructing surfaces from point scans</p>
+
+
+<p>Abstract: 
+
+A fundamental problem when representing or analyzing object is the following: given a set of 
+points, generally produced by scanning some object (i.e. in applications such as motion 
+capture, facial recognition, medical imaging, etc.), reconstruct a triangulation on these 
+points which accurately represents the original object.  We will survey classical results 
+and algorithms from this area, focusing especially on the crust and powercrust algorithms, 
+which were some of the first to give provable guarantees on the quality of the 
+reconstruction, both from a topological and a geometric standpoint.
+
+<p> 
+<a href="SurfaceReconstructions.pdf">Slides</a> 
+</p> 
+
+<hr>
+
+<p>Tuesday, 9/26 and Tuesday, 10/3</p>
+<p>Speaker: David Letscher</p>
+
+<p>Title: An introduction to persistent homology</p>
+
+
+<p>Abstract:
+
+We provide a comprehensive introduction to persistent homology in two parts.  We will go through multiple definitions for 
+persistence and examine the original algorithm for its calculation.  Multiple representations for persistence 
+will also be examined.  No prior knowledge of homology is required.
+
+<p>Some relevant references:
+<ul>
+<li><a href="http://mrzv.org/publications/persistent-homology-theory-practice/ecm/">Persistent homology: theory and practice"<a>
+<li> <a href="https://users.cs.duke.edu/~edels/Papers/2008-B-02-PersistentHomology.pdf"> Persistent homology: a survey</a>
+<li> <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.117.1070&rep=rep1&type=pdf">Afra Zomorodian's thesis</a>
+</ul>
+
+<hr>
+
+<p>Tuesday, 10/10</p>
+<p>Speaker: Erin Chambers</p>
+
+<p>Title: Graphs on Surfaces</p>
+
+
+<p>Abstract:
+This week, we'll introduce and consider some of fundamental topological 
+questions for graphs on surfaces, such as finding the shortest 
+topologically nontrivial cycle or computing maximum flows and minimum 
+cuts in them.  Such problems are not only natural ones to consider from 
+a topological graph theory perspective, but also many applications in 
+combinatorial optimization, graphics, and graph drawing.  Algorithms for 
+these problems are often considerably more tractable than for general 
+graphs, and build on a large body of work from planar graphs.
+
+This talk will build on prior discussion of homology and homotopy, but 
+should be fairly accessible for those that missed earlier weeks in the 
+seminar.
+
+<p>
+<a href="SurfaceGraphs.pdf">Slides</a>
+</p>
+
+<hr>
+
+<p> Tuesday, 10/17</p>
+<p>Speaker: Erin Chambers</p>
+
+<p>Title: Homology flows (and cohomology cuts)</p>
+
+<p>Abstract: 
+This week, we'll continue discussing topological algorithms for graphs 
+embedded on surfaces, as built from surface reconstructions algorithms 
+like the ones we saw in week 3.  We will focus on how homology and 
+cohomology connect to computing maximum flows and minimum cuts, both of 
+which are fundamental problems in graph theory. Again, the topic will be 
+kept accessible for those who missed prior discussions of homology or 
+who are less familiar with graph algorithms.
+
+
+<p>
+<a href="SurfaceGraphs2.pdf">Slides</a>
+</p>
+
+<hr>
+
+<p> Tuesday, 10/31</p>
+<p>Speaker: David Letscher</p>
+
+<p>Generalized Persistent Homology: Part 1, Modules</p>
+
+<p>Abstract: We will examine multiple ways that persistent homology can be generalized.  There 
+are two directions of generalization we will discuss.  The first uses more general structures 
+on the set of topological spaces being considered and includes zigzag, multidimensional and dag 
+persistence.  The second uses alternate topological invariants and includes persistence 
+homotopy and persistent knot theory.
+
+<p>
+<a href="persistence_modules.pdf">Slides</a>
+</p>
+
+<hr>
+
+<p>Tuesday, November 14</p>
+<p>Speaker: Erin Chambers</p>
+
+<p> Topological measures of similarity (for curves, mostly)</p>
+
+<p>Abstract:
+
+For two curves on a surface, one interesting question is how to quantify how similar the curves are, motivated by applications in GIS data analysis, medical imaging, and computer graphics. Geometric measures such as Hausdorff and Frechet distance are computable, but often not desirable since they do force the deformation to move continuously in the ambient space.  
+
+In this talk, we'll consider measures that instead are based on homotopy or homology.  Such deformations will generally look to minimize some quantity associated with the homotopy or homology, such as total area swept or longest intermediate curve, for example. We will survey several measures which have been introduced and studied in recent years, giving structural properties as well as considering the complexity of the problem or known algorithms to compute it.
+
+<p>
+<a href="curvesim_topology_seminar.pdf">Slides</a>
+</p>
+
+
+<hr>
+
+<p> Tuesday, 11/21</p>
+<p>Speaker: David Letscher</p>
+
+<p>Generalized Persistent Homology: Part 2, Why Homology?</p>
+
+<p>Abstract: We will examine multiple ways that persistent homology can be generalized.  There
+are two directions of generalization we will discuss.  The first uses more general structures
+on the set of topological spaces being considered and includes zigzag, multidimensional and dag
+persistence.  The second uses alternate topological invariants and includes persistence
+homotopy and persistent knot theory.
+
+<p>
+<a href="persistence_general.pdf">Slides</a>
+</p>
+
+<hr>
+
+<p>Tuesday, 11/29</p>
+<p>Speaker: David Letscher</a>
+
+<p>Introduction to 3-Manifold Algorithms</p>
+
+Abstract: We will study two fundamental algorithms in 3-manifold topology.  These are the 
+unknot recognition (Haken) and sphere recognition problems (Rubinstein/Thompson).  These 
+utilize the techniques of normal and almost normal surfaces.  If time permits, computational 
+complexity of these algorithm will be discussed.
+
+<p>Some relevant references:
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Unknot">Unknot pictures</a>
+<li><a href="https://www.di.ens.fr/pub/Main/TalgoSeminaire/slides-burton.pdf">Talk by Ben Burton</a>
+</ul>
+
+<hr>
+
+<p>Tuesday, 12/5</p>
+<p>Speakers: Erin Chambers and David Letscher</a>
+
+<p>
+Research Directions in Computational Topology
+</p>
+
+Abstract:  Over the semester we have seen a variety of topics in computational topology.  In this final talk we will talk about current active areas of research and open research directions.  These directions of research include areas of mathematics, computer science, statistics and a variety of application domains.
+
+</body>
+</html>
+
+
+
+

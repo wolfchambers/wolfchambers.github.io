@@ -1,0 +1,38 @@
+digraph {
+root [label="_root"];
+root -> node0x1978970;
+node0x1975c20 [shape=record,label="{<parent> _parent | _data = 10 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x1976060 [shape=record,label="{<parent> _parent | _data = 5 | _aux = 1 | { <left> _left | <right> _right } }"];
+node0x1976090 [shape=record,label="{<parent> _parent | _data = 15 | _aux = 2 | { <left> _left | <right> _right } }"];
+node0x19760c0 [shape=record,label="{<parent> _parent | _data = 21 | _aux = 2 | { <left> _left | <right> _right } }"];
+node0x1978350 [shape=record,label="{<parent> _parent | _data = 35 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x1978380 [shape=record,label="{<parent> _parent | _data = 17 | _aux = 1 | { <left> _left | <right> _right } }"];
+node0x19783d0 [shape=record,label="{<parent> _parent | _data = 44 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x1978940 [shape=record,label="{<parent> _parent | _data = 42 | _aux = 1 | { <left> _left | <right> _right } }"];
+node0x1978970 [shape=record,label="{<parent> _parent | _data = 18 | _aux = 3 | { <left> _left | <right> _right } }"];
+node0x1978ad0 [shape=record,label="{<parent> _parent | _data = 20 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x1978e80 [shape=record,label="{<parent> _parent | _data = 16 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x1978fe0 [shape=record,label="{<parent> _parent | _data = 3 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x1975c20:parent:n -> node0x1976060;
+node0x1976060:parent:n -> node0x1976090;
+node0x1976060:left:s -> node0x1978fe0;
+node0x1976060:right:s -> node0x1975c20;
+node0x1976090:parent:n -> node0x1978970;
+node0x1976090:left:s -> node0x1976060;
+node0x1976090:right:s -> node0x1978380;
+node0x19760c0:parent:n -> node0x1978970;
+node0x19760c0:left:s -> node0x1978ad0;
+node0x19760c0:right:s -> node0x1978940;
+node0x1978350:parent:n -> node0x1978940;
+node0x1978380:parent:n -> node0x1976090;
+node0x1978380:left:s -> node0x1978e80;
+node0x19783d0:parent:n -> node0x1978940;
+node0x1978940:parent:n -> node0x19760c0;
+node0x1978940:left:s -> node0x1978350;
+node0x1978940:right:s -> node0x19783d0;
+node0x1978970:left:s -> node0x1976090;
+node0x1978970:right:s -> node0x19760c0;
+node0x1978ad0:parent:n -> node0x19760c0;
+node0x1978e80:parent:n -> node0x1978380;
+node0x1978fe0:parent:n -> node0x1976060;
+}

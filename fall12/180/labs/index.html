@@ -1,0 +1,380 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<A HREF="../homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="../programming/">Programming</A> |
+<b>Labs</b> |
+<A HREF="../schedule/index.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 180: Data Structures <br> Fall 2011 </h1>
+
+</center>
+
+
+
+<p>
+The table below lists the programming assignments and associated
+dates.
+
+<ul>
+  <li>
+      Please make sure you understand the policy towards <a
+      href="../#integrity">Academic Integrity</a>. 
+  </li>
+  <li>
+      Labs must be submitted on or before the stated deadline (late
+      labs will not be accepted).
+  </li>
+</ul>      
+
+
+<p>
+      <table cellpadding=3 border=1>
+
+	<tr>
+	  <th> Lab</th>
+	  <th> Topic</th>
+	  <th> Class Date</th>
+	  <th> Due</th>
+	  <th> Collaboration Policy</th>
+	</tr>
+
+        <tr>
+          <th> Lab 1</th>
+          <th> <a href="lab01.html">Compiling and running a C++ program</a></th>
+          <th> Aug. 30</th>
+          <th> Sept. 2 by 11:59pm</th>
+          <th> Individual</th>
+        </tr>
+
+        <tr>
+          <th> Lab 2</th>
+          <th> <a href="lab02.html">Copier</a></th>
+          <th> Sept. 6</th>
+          <th> Sept. 9 by 11:59pm</th>
+          <th> Pair</th>
+        </tr>
+
+        <tr>
+          <th> Lab 3</th>
+          <th> <a href="lab03.html">Speed Limit</a></th>
+          <th> Sept. 13</th>
+          <th> Sept. 16 by 11:59pm</th>
+          <th> Individual</th>
+        </tr>
+
+        <tr>
+          <th> Lab 4</th>
+          <th> <a href="lab04.html">Symmetric Order</a></th>
+          <th> Sept. 20</th>
+          <th> Sept. 23 by 11:59pm</th>
+          <th> Individual</th>
+        </tr>
+
+        <tr>
+          <th> Lab 5</th>
+          <th> <a href="lab05.html">Doubles</a></th>
+          <th> Oct. 4</th>
+          <th> Oct. 7 by 11:59pm</th>
+          <th> Individual</th>
+        </tr>
+
+        <tr>
+          <th> Lab 6</th>
+          <th> <a href="lab06.html">Symmetric Order (again)</a></th>
+          <th> Oct. 11</th>
+          <th> Oct. 14 by 11:59pm</th>
+          <th> Individual</th>
+        </tr>
+
+        <tr>
+          <th> Lab 7</th>
+          <th> <a href="lab07.html">Tanning Salon</a></th>
+          <th> Oct. 18</th>
+          <th> Oct. 21 by 11:59pm</th>
+          <th> Individual</th>
+        </tr>
+
+        <tr>
+          <th> Lab 8</th>
+          <th> <a href="lab08.html">Tree Grafting (pt 1)</a></th>
+          <th> Nov. 29</th>
+          <th> Dec. 2 by 11:59pm</th>
+          <th> Pairs</th>
+        </tr>
+
+        <tr>
+          <th> Lab 9</th>
+          <th> <a href="lab09.html">Tree Grafting (pt 2)</a></th>
+          <th> Dec. 6</th>
+          <th> Dec. 9 by 11:59pm</th>
+          <th> Pairs</th>
+        </tr>
+
+  </table>
+	
+  <hr>
+  
+  <a name="general">
+  <H2>Information About Lab Assignments</H2>
+  </a>
+
+  <UL>
+    <LI>
+	<a href="#icpc">ACM's International Collegiate Programming Contest</a>
+    </LI>
+    <LI>
+	<a href="#format">General Problem Format</a>
+    </LI>
+    <LI>
+	<a href="#conventions">Important Conventions</a>
+    </LI>
+    <LI>
+	<a href="#testing">Testing Your Implementation</a>
+    </LI>
+    <LI>
+	<a href="#submit">Formal Submission</a>
+    </LI>
+  </UL>
+
+
+  <h3><a name="icpc">ACM's International Collegiate Programming Contest</a></h3>
+  <p>
+  This year, each of our lab assignments will be a problem taken from
+  a past offering of the ACM International Collegiate Programming
+  Contest (ICPC).  Students work in teams of three to solve as many
+  problems as possible in a five-hour time period. 
+
+  <p>
+  Hundreds of regional contests are held each Fall, involving
+  thousands of teams across the world.  The top 100 teams from the
+  regionals qualify for the World Finals held in the Spring.
+  More information can be found on the <a
+  href="http://icpc.baylor.edu/icpc/">official ICPC site</a>.
+  Also, if you have any interest in participating on
+  <a href="/~goldwasser/icpc">SLU's teams</a>, please let me know next
+  Fall.
+  
+  
+  <h3><a name="format">General Problem Format</a></h3>
+
+  <p>
+  Each problem is computational in nature, with the goal being to
+  compute a specific output based on some input parameters. 
+  Each problem defines a clear and unambigous form for the expected input
+  and desired output.  Relevant bounds on the size of the input
+  are clearly specified. To be successful, the program must complete
+  within 60 seconds on the given machine (thus, efficiency can be
+  important for certain problems).
+
+  <p>
+  Each problem description offers a handful of sample inputs and the
+  expected output for those trials as a demonstration.  Behind the
+  scene, the judges often have hundreds of additional tests.
+  Submitted programs are "graded" by literally running them on all of
+  the judges' tests, capturing the output, and comparing whether the
+  output is identical (character-for-character) to the expected output.
+
+  <p>
+  If the test is successful, the team gets credit for completing the
+  problem.  If the test fails, the team is informed of the failure and
+  allowed to resubmit (with a slight penalty applied).  However, the
+  team receives very little feedback from the judges.  In essence,
+  they are told that it failed but given no explanation as to the
+  cause of the problem, or even the data set that leads to the
+  problem.
+
+  <p>
+  Actually, the feedback is slightly more informative. Upon submitting a
+  program, the team formally receives one of the following responses:
+  <ul>
+    <li>
+	<p>
+	<b>Success</b>
+    </li>
+    <li>
+	<p>
+	<b>Submission Error</b>
+	<br>
+	This is reported if the submitted program does not properly
+	compile, is not properly named, or is clearly an attempt at a
+	different problem.
+    </li>
+    <li>
+	<p>
+	<b>Run-time Error</b>
+	<br>
+	This is reported if the program crashes during execution.
+    </li>
+    <li>
+	<p>
+	<b>Wrong Answer</b>
+	<br>
+	This designates that the program ran to completion, but the
+	content of the output does not match the expected results.
+    </li>
+    <li>
+	<p>
+	<b>Presentation Error</b>
+	<br>
+	In spirit, there are some cases where the students got the
+	wrong output not because their computations were wrong, but
+	due to a superficial problem in formatting their output.  This
+	can occur if they misspell words, use incorrect or missing
+	punctuation, capitalize incorrectly, use too few or too many
+	spaces or extra blank lines, or present the wrong number of
+	significant digits in numeric output.
+    </li>
+  </ul>
+
+  
+  <h3><a name="conventions">Important Conventions</a></h3>
+
+  <p>
+  Because of the automated nature of the judging, it is important that
+  programs follow these conventions:
+
+  <ul>
+    <li>
+	<p>
+	The source code solving a problem must be self-contained in a
+	single file.
+    </li>
+    <li>
+	<p>
+	Each problem statement will clearly designate a precise
+	filename that must be used for the source code
+	(e.g., <tt>copier.cpp</tt>).
+    </li>
+    <li>
+	<p>
+	Please put a comment at the top of your source code indicating
+	the names of the contributing team members.
+    </li>
+    <li>
+	<p>
+	All input should be read from standard input (i.e., using
+	<tt>cin</tt> in C++).
+    </li>
+    <li>
+	<p>
+	All output should be written to standard output (i.e., using
+	<tt>cout</tt> in C++).
+    </li>
+  </ul>
+
+  <p>
+  Please note as well that the format of most problems is designed so
+  that judges can specify multiple tests as part of a single
+  execution.  Typically this is done by having an input format where
+  initial parameters are read, using a special value (such as 0 or #)
+  to designate the end of the trials.  Therefore, most programs will
+  need to iterate through multiple trials using an outer loop. It is
+  also important that relevant data structures be initialized for each
+  trial, so that earlier trials do not affect later ones.
+  
+  
+  <h3><a name="testing">Testing Your Implementation</a></h3>
+
+  <ul>
+    <li>
+	<p>
+	<b>Testing on your own</b>
+	<br>
+	Since each problem specification includes at least a few
+	sample cases of input and the expected output, there is no
+	reason to submit your program to the judges until you are
+	confident that it succeeds on those sample inputs.
+	<p>
+	Although the program is formally written to to accept input
+	from standard input, it can be quite tiring (not to mention,
+	error-prone) to have to type the test input each time you want
+	to run your program.  For some problems, the test input is
+	also quite large.
+	<p>
+	It is possible to redirect input from a text file to the
+	standard input without needing to rewrite your source code.
+	On our system, this can be done with the following syntax:
+	<pre>
+	./myProgram < myInput.txt
+	</pre>
+	This behaves just as if someone were to type the characters
+	from the file <tt>myInput.txt</tt> on the keyboard while the
+	program executes.
+    </li>
+    <li>
+	<p>
+	<b>Testing on judge's data (on turing)</b>
+	<br>
+	When you have the program working on the sample data and you
+	wish to test it on the judges hidden data, you may execute the
+	following command from your turing account.
+	<pre>
+	/export/mathcs/home/public/chambers/180/labs/judge myProgram.cpp
+	</pre>
+	(of course, using the actual name of the source code file).
+	Our automated program is not quite as professional as the
+	real judges, but it will do.  In particular it does not
+	automatically terminate after 60 seconds elapse.  In fact, it
+	never terminates.  It will tell you when it starts executing.
+	If too much time has passed, you may press cntr-C to kill the
+	process yourself.
+	<p>
+	Also, a correct distinction between "wrong output" and
+	"presentation error" is difficult to automate. We've made a
+	decent attempt to look for common presentation errors, but in
+	case of doubt, we will report it as a "wrong output".
+    </li>
+    <li>
+	<p>
+	<b>Testing on judge's data (web-based)</b>
+	<br>
+	If you get really competitive, there is an official website
+	that archives all of the past ICPC problems and allows you to
+	submit your source code on their system.  They also keep track
+	of statistics and have a leaderboard available for those who
+	have the most efficient solutions for a given problem.
+	The site is at <nobr><a
+	href="http://cii-judge.baylor.edu/">http://cii-judge.baylor.edu/</a></nobr>.
+	
+	<p>
+	In order to submit attempts on that website, you must register
+	and get an ID used for tracking.  You should also be aware
+	that the compiler that they use on that system is not
+	necessarily configured the same as our on turing.  So it is
+	possible that you have code that compiles and executes
+	properly on turing, but which results in a compile error on
+	this website.  If this happens, you may indicate that you want
+	to receive the full compile errors in an email message.
+    </li>
+  </ul>
+  
+  <h3><a name="submit">Formal Submission</a></h3>
+
+  <p>
+Although the online tools give you a way to test your
+implementation, <b>you must submit to the instructor via email</a> in order to get credit for the lab</b>.  Please
+keep in mind that we will award half-credit for any sincere attempt at a lab, even if you are unable to succeed with the automated testing.  However, you will get zero credit if you do not ever submit your attempt.
+  
+  <p>  
+  Also, make sure to include the names of all team members in comments at
+  the top of the submit source code.
+  
+
+
+
+  </body>
+  </html>

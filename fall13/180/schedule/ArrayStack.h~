@@ -1,0 +1,61 @@
+#ifndef ARRAY_STACK_H
+#define ARRAY_STACK_H
+
+#include <stdexcept> 
+using namespace std;
+
+/**
+ * Array-Based Stack Interface
+ **/
+
+template <typename Object>
+class ArrayStack {
+  
+private:
+  
+  int _cap;	//The maximum size of the stack
+  int _t; 		//index of the top of the stack
+  Object* _S;		//Ponter to the array for our stack
+  
+public:
+  
+  /** Standard constructor creates an empty stack with given capacity. */
+  ArrayStack(int cap);
+  
+  /** Returns the number of objects in the stack.  
+   *  Return: number of elements 
+   */ 
+  int size() const;
+  
+  /** Returns a const reference to the top object in the stack. 
+   * Return: reference to top element 
+   */ 
+  const Object& top() const;
+  
+  /** Returns a live reference to the top object in the stack. 
+   * Return: reference to top element 
+   */ 
+  Object& top();
+  
+  /** Inserts an object at the top of the stack. 
+   *  Input: the new element 
+   */ 
+  void push(const Object& elem);
+  
+  /** Removes the top object from the stack. */ 
+  void pop();
+  
+  /** Housekeeping Functions */
+  
+  //Copy constructor
+  ArrayStack(const ArrayStack& other);
+  
+  //Destructor 
+  ~ArrayStack();
+  
+  //Operator=
+  ArrayStack& operator=(const ArrayStack& other);
+  
+}; //end of ArrayStack.h
+#include "ArrayStack.tcc"
+#endif

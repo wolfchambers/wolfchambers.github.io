@@ -1,0 +1,25 @@
+digraph {
+rankdir=LR;
+_front [shape=ellipse];
+_back [shape=ellipse];
+node36593680 [shape=record, label="0 | { <prev> | <next> }"];
+node36593712 [shape=record, label="0 | { <prev> | <next> }"];
+node36593744 [shape=record, label="5 | { <prev> | <next> }"];
+node36593808 [shape=record, label="7 | { <prev> | <next> }"];
+node36593840 [shape=record, label="11 | { <prev> | <next> }"];
+node36602800 [shape=record, label="12 | { <prev> | <next> }"];
+_front -> node36593680:w;
+node36593712:e -> _back [dir=back];
+node36593680:next:e -> node36593808:w;
+node36593712:prev:w -> node36602800:e [weight=0];
+node36593744:next:e -> node36602800:w;
+node36593744:prev:w -> node36593840:e [weight=0];
+node36593808:next:e -> node36593840:w;
+node36593808:prev:w -> node36593680:e [weight=0];
+node36593840:next:e -> node36593744:w;
+node36593840:prev:w -> node36593808:e [weight=0];
+node36602800:next:e -> node36593712:w;
+node36602800:prev:w -> node36593744:e [weight=0];
+iterator [shape=rectangle];
+iterator -> node36593776[label="_current"];
+}

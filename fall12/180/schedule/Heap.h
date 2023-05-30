@@ -1,0 +1,141 @@
+#ifndef __HEAP_H
+#define __HEAP_H
+
+/* 
+Class to store a max heap
+*/
+
+template <typename ItemType> class Heap {
+
+  private:
+    ItemType* _data;	//pointer to underlying array to hold data
+    unsigned int _capacity, _size;	//max capacity and size of array
+
+  public:
+
+    /* Contructor: makes empty heap */
+    Heap() : _data(new ItemType[1]), _capacity(1), _size(0) {}
+
+    /*  Insert function: inserts into the heap
+      input val: the value to be added
+    */
+    void insert(const ItemType& val) {
+      //check if capacity is too small
+      if (_size == _capacity) {
+	_capacity = _capacity*2;
+	ItemType* newarray = new ItemType[_capacity];
+	for (int i = 0; i < _size; i++)
+	  newarray[i] = _data[i];
+	delete[] _data;
+	_data = newarray;
+      }
+      
+      //insert new element
+      _data[_size] = val;
+      _size++;
+      
+      //"bubble-up" if not in correct stop
+      int current = _size-1;
+      int parent = (current-1)/2;
+      
+      while ((_data[current] > _data[parent]) && (current !=0)) {
+	//swap current and parent
+	ItemType temp = _data[current];
+	_data[current] = _data[parent];
+	_data[parent] = temp;
+	current = parent;
+	parent = (current-1)/2;
+      }
+    }
+
+    /* removeMax: removes maximum value from the head */
+    void removeMax() {
+      //move last child to root and decrement size
+      _size--;
+      _data[0] = _data[_size];
+      
+      //loop fix the tree
+      int current = 0;
+      int left = 1;
+      int right = 2;
+      
+      while (((_data[current] < _data[left]) || (_data(current) < _data[right])) && (left < _size)){
+	
+	//case with only 1 child
+	if (right >= _size) {
+	  ItemType temp = _data[left];
+	  _data[left] = _data[current];
+	  _data[current] = temp;
+	  current = left;	  
+	}
+	//case with 2 children
+	else {  
+	  if (_data[left] > _data[right]) {
+	    //swap with left child
+	  ItemType temp = _data[left];
+	  _data[left] = _data[current];
+	  _data[current] = temp;
+	  current = left;
+	  }
+	  else {
+	    //swap with right child 
+	    ItemType temp = _data[right];
+	  _data[right] = _data[current];
+	  _data[current] = temp;
+	  current = right;
+	    
+	  }
+	}
+	
+	//update left and right
+	left = 2*current + 1;
+	right = 2*current + 2;
+      } //end while
+    } //end function
+
+    /* top: returns maximum value in heap 
+    Note: returns const reference so that user cannot destroy heap property 
+    */
+    const ItemType& getMax() const {
+      return _data[0];
+    }
+
+    /* size: returns current size of the heap */
+    unsigned int size() const {
+      return _size;
+    }
+
+    /* empty: returns true if the heap is empty, false otherwise */
+    bool empty() const {
+      return _size ==0;
+    }
+
+    /* clear: empties heap of data */
+    void clear() {
+      delete[] _data;
+      _size = 0;
+      _capacity = 1;
+      _data = new ItemType[1];
+    }
+
+
+    /* Housekeeping funcitons */
+
+    /* Copy constructor */
+    Heap(const Heap& other) {
+
+    }
+
+    /* Operator= */ 
+    Heap& operator=(const Heap& other){
+
+    }
+
+    /* Destructor */
+    ~Heap() {
+      delete[] _data;
+
+    }
+};
+
+#endif

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+	<TITLE>Notes 40</TITLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<PRE>
+
+Math server:
+from SocketServer import TCPServer, BaseRequestHandler
+
+#class to handle connections
+class MathHandler(BaseRequestHandler):
+  """class to handle math query connections"""
+  def handle(self):
+    """function to handle requests"""
+
+    #get request and split it to get command and numbers
+    message = self.request.recv(1024)
+    messageList = message.split()
+    command = messageList[0]
+    numList = [ float(i) for i in messageList[1:] ]
+
+    #decide what to send back
+
+    #send back the mean
+    if command == 'MEAN':
+      response = 'Mean is %f' % (sum(numList)/len(numList))
+
+    #send back the median
+    elif command == 'MEDIAN':
+      numList.sort()
+      response = 'Median is %f' % numList[len(numList)/2]
+
+    #send back the mode
+    elif command == 'MODE':
+      d = dict()
+
+      #use dictionary to count the number of times each entry appears
+      for n in numList:
+        if n not in d:
+          d[n] = 1
+        else:
+          d[n] += 1
+      #find the numbers with highest value in dictionary
+      mode = numList[0]
+      numOccurances = 0
+      for n in d:
+        if d[n] > numOccurances:
+          mode = n
+          numOccurances = d[n]
+
+      response = 'Mode is %f' % mode
+  
+    else:
+      response = 'Unknown operation ' + command
+    
+    self.request.send(response)
+    
+#main script
+address = ('localhost', 9823)
+mathServer = TCPServer(address, MathHandler)
+mathServer.serve_forever()   
+
+Math Client code:
+
+from socket import socket
+
+address = ('localhost', 9823)
+
+numbers = raw_input('Enter a list of numbers, separated by spaces: ')
+running = True
+
+while running:
+  print """
+1. Calculate mean
+2. Calculate median
+3. Calculate mode
+4. Enter a new list of numbers
+5. Quit
+"""
+  option = raw_input('Choose: ')
+  if option == '1':
+    command = "MEAN"
+  elif option == '2':
+    command = 'MEDIAN'
+  elif option == '3':
+    command = 'MODE'
+  elif option == '4':
+    numbers = raw_input('Enter a new list of numbers, separated by spaces: $
+    continue
+  elif option == '5':
+    running = False
+    continue
+
+  buf = command + ' ' + numbers
+  connection = socket()
+  connection.connect(address)
+  connection.send(buf)
+  print connection.recv(1024)
+  connection.close()
+
+
+
+</PRE>
+</BODY>
+</HTML>

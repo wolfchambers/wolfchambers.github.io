@@ -1,0 +1,66 @@
+#include "List.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  List<int> mylist; // create a list
+  List<int>::iterator it;
+  
+  
+  //add a few elements and keep drawing it
+  //mylist.draw("list", 0, true);
+  mylist.push_back(5);
+  
+  //mylist.draw("list", 0, true);
+  mylist.push_back(10);
+  //mylist.draw("list", 0, true);
+  mylist.push_back(100);
+  //mylist.draw("list", 0, true);
+  mylist.push_front(11);
+  //mylist.draw("list", 0, true);
+  
+  //print the list
+  for (it = mylist.begin(); it != mylist.end(); it++)
+    cout << *it << " ";
+  cout << endl;
+  
+  //test pop_back
+  mylist.pop_back();
+  mylist.draw("list", 0, true);
+
+  //set our iterator and draw it
+  it = mylist.begin();
+  //mylist.draw("list", &it, true);
+  
+  //test insert and draw
+  mylist.insert(it, 7);
+  //mylist.draw("list", &it, true);
+  
+  it = mylist.end();
+  mylist.insert(it, 12);
+  it--;
+  it--;
+  
+  cout << "test remove" << endl;
+  mylist.draw("list", &it, true);
+  
+
+  mylist.remove();
+  mylist.draw("list", &it, true);
+  
+  //test copy constructor
+  List<int> otherList(mylist);
+  otherList.push_front(9999);
+  
+  //if made a deep copy, the lists will be different
+  cout << "The new list is: ";
+  for (it = otherList.begin(); it != otherList.end(); it++)
+    cout << *it << " ";
+  
+  cout << endl;
+  cout << "The old list is: ";
+  for (it = mylist.begin(); it != mylist.end(); it++)
+    cout << *it << " ";
+
+  cout << endl;
+}

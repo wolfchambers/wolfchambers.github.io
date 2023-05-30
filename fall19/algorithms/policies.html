@@ -1,0 +1,568 @@
+<html>
+
+<head> 
+<title>CSCI 3100: Algorithms</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="index.html">Course Home</a> | 
+<b>Course Policies and Syllabus</b> |
+<A HREF="homeworks/">Homework</A> | 
+<A HREF="schedule">Schedule & Lecture Notes</A> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 3100: Algorithms <br> Fall 2019 </h1>
+
+<h2>Course Policies and Syllabus</h2>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: erin.chambers - at - slu.edu 
+
+</h3>
+</center>
+
+<UL>
+  <LI>
+      Overview
+      <UL>
+	<LI>
+	    <A href="#catalog">Catalog Description</A>
+	</LI>
+	<li>
+	    <a href="#prereqs">Prerequisites</a>
+	</li>
+	<li>
+	    <a href="#outcomes">Course outcomes</a>
+	</li>
+	<li>
+            <a href="#meet">Meeting times</a>
+        </li>
+
+      </UL>
+      <BR>
+  </LI>
+
+  <LI> Course Materials and Resources
+      <UL>
+	<LI>
+	    <A href="#textbook">Textbook</A>
+	</LI>
+	<LI>
+	    <A href="#lecturenotes">Lecture Notes</A>
+	</LI>
+	<LI>
+	    <A href="#email">Email</A>
+	</LI>
+	<LI>
+	    <A href="#computercell">Computer and Cell Phone Policy</A>
+	</LI>
+	<LI>
+            <A href="#attendance">Attendance Policy</A>
+        </LI>
+      </UL>
+      <BR>
+  </LI>
+
+  <LI>
+      Grading
+      <UL>
+	<LI>
+	    <A href="#gradedwork">Graded Work</A> 
+	</LI>
+
+	<li>
+	    <a href="#idontknow">The "I don't know" policy</a>
+	</li>
+
+	<LI>
+	    <A href="#percentages">Percentages</A>
+	</LI>
+	<LI>
+	    <A href="#extracredit">Extra Credit</A>
+	</LI>
+	<LI>
+	    <A href="#latehomework">Late Homework</A>
+	</LI>
+	<li>
+	    <a href="#regrades">Regrade Requests</a>
+	</li>
+	<LI>
+	    <A href="#academicintegrity">Academic Integrity</A>
+	</LI>
+      </UL>
+      <BR>
+  </LI>
+
+  <LI>
+      Additional Information
+      <UL>
+	
+        <LI>
+            <A href="#universityservices">University Services</A>
+        </LI>
+
+        <LI>
+            <A href="#title9">Title IX</A>
+        </LI>
+
+	<LI>
+            <A href="#disabilities">Disability Services</A>
+        </LI>
+
+        <LI>
+            <A href="#childrens">Policy on Children in Class</A>
+        </LI>
+      </UL>
+      <BR>
+  </LI>
+      
+</UL>
+
+
+<hr>
+
+<H2>
+<A name="overview">Overview</A>
+</H2>
+
+<UL>
+  <LI>
+      <H3><A name="catalog">Catalog Description</A></H3>
+      
+      <blockquote>
+
+Introduction to analysis and complexity of algorithms. Big-O notation. Running time 
+analysis of algorithms for traversing graphs and trees, searching and sorting. Recursive 
+versus iterative algorithms. Complexity, completeness, computability. (3 credit hours)
+
+      </blockquote>
+
+  </LI>
+  <li> 
+      <H3><A name="prereqs">Prerequisites</A></H3>
+
+      <p> CSCI 180: Data structures and Math 143: Calculus 2.  While not officially required, you are also strongly encouraged to have completed either MATH 135: Discrete Mathematics or MATH 266: Principles of Mathematics before taking this course.
+      
+</p>
+  </li>
+  <li>
+      <H3><a name="outcomes">Course outcomes</a></H3>
+
+      <p> At the conclusion of this course, students should be able to: </p>
+      <ul>
+        <li> Analyze the asymptotic performance of algorithms.
+	<li> Write rigorous correctness proofs for a variety of algorithic paradigms.
+	<li> Demonstrate a familiarity with prominent algorithms and data structures.
+	<li> Apply the major algorithmic design paradigms and be able to analyze them.
+	<li> Devolop efficient and correct algorithms for common code development projects.
+      </ul>
+
+
+  <li>
+
+      <H3><A name="meet">Meeting times</A></H3>
+      <p> 
+	Class: MWF at 9am, Room 202 in Ritter Hall
+      </p>
+      <p>
+         Office Hours:  TBD
+	</p>      
+  </li>
+
+</UL>
+
+<HR>
+
+<H2>
+<A name="resources">Course Materials and Resources</A>
+</H2>
+
+    <ul>
+
+    <li>
+      <h3><a name="email">Email</a></h3>
+      <p> Outside of office hours and lectures, email is usually the easiest way to 
+get ahold of me with questions.  I will check email several times throughout the 
+work day, and will also usually check email once per evening to answer questions and 
+resolve issues.  Email contact over the weekend will likely be more sporadic, 
+although I will be sure to check at least once.
+      </p>
+    </li>
+
+  <LI>
+
+      <H3><A name="textbook">Textbook</A></H3>
+
+        <p> Your primary textbook <a 
+href="http://jeffe.cs.illinois.edu/teaching/algorithms/">Algorithms</a>, written by
+Jeff Erickson.  Note that the book is freely available as a pdf, or you may 
+purchase a copy from Amazon.  He also has a list of old homework and exam problems
+on the same webpage, which are a good additional source for practice problems. </p>
+
+      In addition, I will pull material 
+from the following textbooks, all of which are excellent references if you find 
+yourself in need of a different explanation:
+
+      <DL>
+	<DD>
+	    <A href="http://www.cs.berkeley.edu/~vazirani/algorithms/all.pdf">Algorithms</A> (freely available online)
+
+	</DD>
+	<DD>
+	    by S. Dasgupta, C.H. Papadimitriou, and U.V. Vazirani
+	</DD>
+      </DL>
+
+      <DL>
+        <DD>
+            <A href="https://mitpress.mit.edu/books/introduction-algorithms">Introduction to Algorithms</A>
+
+        </DD>
+	<DD>
+            by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein
+        </DD>
+      </DL>
+
+
+      <DL>
+	<DD>
+            <A href="https://www.pearson.com/us/higher-education/program/Kleinberg-Algorithm-Design/PGM319216.html">Algorithm Design</a>
+
+        </DD>
+	<DD>
+            by Jon Kleinberg and &Eacute;va Tardos
+        </DD>
+      </DL>
+
+<p>Note that all of these additional references are available in the library or 
+can be purchased used; you can also look at them in my office, if you want to look them over.  
+
+    </LI>
+
+
+
+
+    <li> <h3><A name="computercell">Computer and Cell Phone Policy</a></h3>
+
+    <p> Laptops and other electronic devices are unnecessary for most of this course, and are frequently a distraction to other students in lecture.  Since you are unlikely to need a computer during lecture, please do not bring laptops or other electronics for use in class.  
+      </p>
+
+    <p> Also, please ensure that your cell phone is set to vibrate or silent during lecture, and do not send text messages of any kind.  </p>
+
+
+    <li> <h3><A name="attendance">Attendance Policy</a></h3>
+
+    <p> In general, I won't be taking attendance in lectures.  However, you 
+will miss important material if you are not present, including occasional 
+opportunities for extra credit, hints on the homework, and guidance on studying 
+for exams.  You are responsible for any material covered in class; this 
+includes course material as well announcements such as exam dates, changes in 
+homework due date, etc.  I will do my best to also post these in the lecture 
+notes and/or in course announcements, but that is a courtesy and not a 
+requirement, so please plan accordingly!  If you will miss a lecture, I'd 
+suggest checking with a fellow student, since my tablet does occasionally fail.  
+You're also welcome to check in with me, especially if the absence is for a 
+documented and authorized reason.
+
+    </ul>
+
+<HR>
+
+<H2>
+<A name="grading">Grading</A>
+</H2>
+
+<ul>
+
+    <li> <h3><A name="gradedwork">Graded Work</A></H3>
+    <ul> 
+      <li> Homework (40%)
+	<p> There will be homework due (almost) every week, for a total of about 10-12 homework assignments over the course of the semester.  Some homeworks will be written assignments turned in during class, while others will be presented orally to the instructor.
+	</p>
+
+	<p> For all homeworks, you are allowed to submit in groups of 2-3.  In 
+fact, given the difficult nature of the assignments, I encourage all of you to work 
+with another student, as the best way to learn this material is to discuss and 
+problem solve in a small group.</p>
+
+	<p> As discussed <a href="#academicintegrity">below</a>, students are 
+expected to complete assignments using only approved course materials. </p>
+
+	<li> Reading (10%):
+
+	<p> I will be uploading reading assignments from the course text to 
+Perusall this semester.  Your grade for reading is then set by the system based on 
+how you comment on and interact with the material assigned.  (Please come talk to 
+me during the semester if you notice odd grades, as I'm happy to tinker with the 
+grading system they use if needed!)
+	</li>
+
+	<li> Exams (50%)
+	        <UL>
+	<LI>
+	    Midterm (20%): TBD
+	</LI>
+	<LI>
+	    Final Exam (30%): Friday, Dec. 16, at 8am
+	</LI>
+      </UL>
+
+    </ul> 
+
+    </li>
+
+    <li> <h3><a name="#idontknow">The "I don't know" policy</a></h3>
+
+	<p>It is important in this course to write clearly and concisely.  Don't 
+babble, regurgitate, or otherwise try to fake out the instructor if you don't know 
+the answer!  Include relevant details or citations, and make sure to write the 
+entire solutions clearly and in your own words.  </p>
+
+	<p> For any question, either on the homework or on an exam, if you do not 
+know the answer, you may write "I don't know" <b>and nothing else</b> to receive 
+25% of the total points for that problem.  So if you don't know the solutions, 
+don't waste the grader's time by writing steaming piles of crap for a solution; 
+it'll only make her grumpy.</p>
+
+    </li>
+
+    <LI> <H3><A name="percentages">Percentages</A></H3>
+
+      <P>
+      Letter grades will be based on each students overall
+      percentage of awarded points according to the following
+      formula.
+      </P>
+      
+      <DL>
+
+	<DD>
+	    Student percentage above 93% will result in a grade of
+	    A or better.
+	</DD>
+	<DD>
+	    Student percentage above 90% will result in a grade of
+	    A- or better.
+	</DD>
+	<DD>
+	    Student percentage above 87% will result in a grade of
+	    B+ or better.
+	</DD>
+	<DD>
+
+	    Student percentage above 83% will result in a grade of
+	    B or better.
+	</DD>
+	<DD>
+	    Student percentage above 80% will result in a grade of
+	    B- or better.
+	</DD>
+	<DD>
+	    Student percentage above 77% will result in a grade of
+	    C+ or better.
+	</DD>
+	<DD>
+	    Student percentage above 73% will result in a grade of
+	    C or better.
+	</DD>
+
+	<DD>
+	    Student percentage above 70% will result in a grade of
+	    C- or better.
+	</DD>
+	<DD>
+	    Student percentage above 60% will result in a grade of
+	    D or better.
+	</DD>
+	<DD>
+	    Student percentage below 60% will result in a grade of
+	    F.
+	</DD>
+      </DL>
+
+      <p>Any modification to this scale at the end of the year
+      will be <EM>in favor of the students</EM>. That is we may
+      later decide to award an A to a student who is slightly
+      below the cutoff, but we certainly will not deny
+      an A from someone who is above the cutoff. </p>
+
+      <p> No matter what curve I impose, I maintain that the minimum passing grade 
+for this class is a 50% - so if your average is lower than that, you will fail this 
+class.</p>
+  </LI>
+
+  <li> <H3><A name="extracredit">Extra Credit</A></H3>
+
+      <P>In general, extra credit will not be assigned in this class.  The 
+      homework assignments provided will be challenging enough
+      for everyone, so I would like for students to focus on the 
+      assignments provided. 
+      </P>
+
+      <p> Upon occasion (and solely at the instructor's discretion), some
+      small extra credit activities may be included, either by announcement
+      in class or as part of an assignment.  Please keep in mind that the extra credit is unlikely to
+      significantly affect your grade; if you are concerned about your final grade, 
+      it is much better to focus your energy on the regular assignment.  Extra 
+      credit is solely designed to provide an opportunity to students who wish to 
+      explore the topics further. </p>
+      
+     <p> And no, you can't say "I don't know" on an extra credit problem to get 25% 
+of the points!</p>
+
+  </li>
+
+  <li> <h3><a name="latehomework">Late Homework</a></h3>
+
+    <p> Homeworks will generally be due at 11:59pm via email, or (if an oral 
+presentation) will be due during the time slot you sign up for in class. Late 
+submissions will generally not be accepted unless arrangements have been made ahead 
+of time. Please contact me as early as possible with any potential issues, since I 
+am much more likely to grant an extension if you come to be ahead of time! In 
+general, I try to be flexible if students have good reason, but I do reserve the 
+right to not accept late submissions if solutions have already been released or if 
+a student is abusing this flexibility.
+
+  </li>
+
+  <li> <h3><a name="regrades">Regrade Requests</a></h3>
+
+	<p> I am happy to regrade any assignmentss or exam problems which you think 
+were unfair or incorrect.  Please bring me the original assignment, plus a written 
+explanation of your question or complaint, within <em>two weeks</em> of the time 
+the paper in question is graded and returned to you.
+
+  </li>
+
+  <li> <H3><A name="academicintegrity">Academic Integrity</A></H3>
+
+<p> In the context of this course, I encourage students to discuss general course 
+material, which includes studying for exams, sharing notes if a student must miss 
+class, and working on any practice problems which are assigned.  You are also 
+allowed to turn in homework assignments in pairs.  I also encourage you to discuss 
+problems with other students, but please be careful to write up all solutions 
+separately in your own group, and do not copy any material from another student.  
+As a good rule of thumb, make sure to write your solutions without using any notes 
+or papers written while talking to anyone other than your partner.  Remember, you 
+will be on your own in the exam, so it is in your own best interest to make sure 
+that you really understand the material and can solve each problem on your own!</p>
+
+<p> You are allowed to use outside sources of information in this class, including 
+textbooks and webpages.  If the complete and correct answer is on page 263 of the 
+textbook, the best solution you can submit is "See page 263 of the text." Period.  
+However, if you find a solution from any other source, such as a web page, a 
+journal paper, a different algorithms textbook, or your mom, <b>you must rewrite 
+the solution in your own words, and you must properly cite your sources</b>. Assume 
+the graders have access to all the official course material, but nothing else. 
+While we strongly encourge you to use any outside source at your disposal, please 
+remember that the homework is supposed to demonstrate that you understand of the 
+material, not just how to use Google. In particular, verbatim copying is worth 
+NOTHING, and will be considered a violation of the academic integrity policy.  
+(Note that I'm also pretty good with google, so I wouldn't recommend trying 
+it!)</p>
+
+
+<p> Students who violate academic integrity policies will be reported to the department, particularly in cases where relevant sources are not cited or in cases of direct copying of another student's work.  First time
+offenses on homework will result in a minimum of a failing grade on the assignment in question, with
+egregious or repeated offenses resulting in failure in the course.  In addition, students may be
+referred to the College of Arts and Sciences for further disciplinary action.
+
+    <p>The following is a statement of minimum standards for student academic 
+integrity at Saint Louis University; I expect full compliance with the policies 
+described.</p>
+
+Academic integrity is honest, truthful and responsible conduct in all academic endeavors. The mission of Saint Louis University is "the pursuit of truth for the greater glory of God and for the service of humanity." Accordingly, all acts of falsehood demean and compromise the corporate endeavors of teaching, research, health care, and community service through which SLU embodies its mission. The University strives to prepare students for lives of personal and professional integrity and therefore regards all breaches of academic integrity as matters of serious concern.
+
+The governing University-level Academic Integrity Policy was adopted in Spring 2015, and can be accessed on the Provost's Office website: https://www.slu.edu/the-office-of-the-provost/academic-affairs-policies
+
+Additionally, each SLU college, school and center has adopted its own academic integrity policies, available on their respective websites. All SLU students are expected to know and abide by these policies, which detail definitions of violations, processes for reporting violations, sanctions, and appeals. Please direct questions about any facet of academic integrity to your faculty, the chair of the department of your academic program, or the dean/director of the college, school or center in which your program is housed. Specific College of Arts and Sciences Academic Honesty Policies and Procedures may be found here.
+
+
+
+  </li>
+
+</ul>
+
+<HR>
+
+<H2>
+<A name="misc">Miscellaneous</A>
+</H2>
+
+<UL>
+
+<LI>
+<A name="universityservices"><h3>University Services</h3></A>
+
+<p><b>Student Success Center:</b>
+In recognition that people learn in a variety of ways and that learning is influenced by multiple factors (e.g., prior experience, study skills, learning disability), resources to support student success are available on campus. The Student Success Center assists students with academic-related services and is located in the Busch Student Center (Suite, 331). Students can visit https://www.slu.edu/life-at-slu/student-success-center/ to learn more about tutoring services, university writing services, disability services, and academic coaching.
+
+<p><b>University Writing Services: </b>
+Students are encouraged to take advantage of University Writing Services in the Student Success Center; getting feedback benefits writers at all skill levels. Trained writing consultants can help with writing projects, multimedia projects, and oral presentations. University Writing Services offers one-on-one consultations that address everything from brainstorming and developing ideas to crafting strong sentences and documenting sources. For more information, visit https://www.slu.edu/life-at-slu/student-success-center/ or call the Student Success Center at 314-977-3484.
+
+
+
+</LI>
+
+<LI>
+<A name="title9"><h3>Title IX</h3></A>
+
+<p>Saint Louis University and its faculty are committed to supporting our students and seeking an environment that is free of bias, discrimination, and harassment. If you have encountered any form of sexual misconduct (e.g., sexual assault, sexual harassment, stalking, domestic or dating violence), we encourage you to report this to the University. If you speak with a faculty member about an incident that involves a Title IX matter, that faculty member must notify SLU’s Title IX coordinator (or that person’s equivalent on your campus) and share the basic facts of your experience. This is true even if you ask the faculty member not to disclose the incident. The Title IX contact will then be available to assist you in understanding all of your options and in connecting you with all possible resources on and off campus.
+
+<p>For most students on the St. Louis campus, the appropriate contact is Anna R. Kratky (DuBourg Hall, room 36; anna.kratky@slu.edu; 314-977-3886). If you wish to speak with a confidential source, you may contact the counselors at the University Counseling Center at 314-977-TALK. To view SLU’s sexual misconduct policy, and for resources, please visit the following web addresses: https://www.slu.edu/here4you and https://www.slu.edu/general-counsel.
+
+
+</LI>
+
+<LI>
+<A name="disabilities"><h3>Disability Services</h3></A>
+
+
+<p>Students with a documented disability who wish to request academic accommodations must formally register their disability with the University. Once successfully registered, students also must notify their course instructor that they wish to use their approved accommodations in the course. 
+
+<p>Please contact Disability Services to schedule an appointment to discuss accommodation requests and eligibility requirements. Most students on the St. Louis campus will contact Disability Services, located in the Student Success Center and available by email at Disability_services@slu.edu or by phone at 314.977.3484. Once approved, information about a student’s eligibility for academic accommodations will be shared with course instructors by email from Disability Services and within the instructor’s official course roster. Students who do not have a documented disability but who think they may have one also are encouraged to contact to Disability Services. Confidentiality will be observed in all inquiries.
+
+
+
+</LI>
+
+
+<li>
+<a name="children"><h3>Policy on Children in Class:</h3></a>
+
+<p> For any student raising children, I understand that minor illnesses and 
+unforeseen disruptions in childcare often put parents in the position of having to 
+chose between missing class to stay home with a child and leaving him or her with 
+someone you or the child does not feel comfortable with. While this is not meant to 
+be a long-term childcare solution, occasionally bringing a child to class in order 
+to cover gaps in care is perfectly acceptable. (You are likely to meet mine at some 
+point this semester!)
+
+<p> All exclusively breastfeeding babies are welcome in class as often as is
+necessary to support the breastfeeding relationship. Because not all women can
+pump sufficient milk, and not all babies will take a bottle reliably, I never
+want students to feel like they have to choose between feeding their baby and
+continuing their education. You and your nursing baby are welcome in class
+anytime.
+
+<p>I ask that all students work with me to create a welcoming environment that
+is respectful of all forms of diversity, including diversity in parenting
+status. In all cases where babies and children come to class, I ask that you
+sit close to the door so that if your little one needs special attention and is
+disrupting learning for other students, you may step outside until their need
+has been met. Non-parents in the class, please reserve seats near the door for
+your parenting classmates.
+
+(Policy	adapted	from Dr. Melissa Cheyney)
+</ul>
+
+</UL>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+#include "LinkedStack.h"
+using namespace std;
+
+template <typename Object>
+LinkedStack<Object>::LinkedStack() : _size(0) {}
+ 
+template <typename Object>
+int LinkedStack<Object>::size() const {
+  return _size;
+}
+ 
+template <typename Object> 
+bool LinkedStack<Object>::empty() const {
+  return (_size == 0);
+
+}
+
+template <typename Object>
+const Object& LinkedStack<Object>::top() const {
+  return _S.front();
+}
+
+template <typename Object>
+void LinkedStack<Object>::push(const Object& elem) {
+  _S.addFront(elem);
+  _size++;
+}
+
+template <typename Object>  
+void LinkedStack<Object>::pop() {
+  _S.removeFront();
+  _size--;
+}
+

@@ -1,0 +1,321 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+<h1>Lab Assignment 
+09
+
+</h1>
+<table>
+  <tr>
+    <td>
+	<b>Topic:</b>
+    </td>
+    <td>
+	Tree Grafting 2
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Source Code:</b>
+    </td>
+    <td>
+	<tt>graft2.cpp</tt>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Live Archive Ref#:</b>
+    </td>
+    <td>
+	<a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/problem.php?p=3821">3821</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Pre-lab Due:</b>
+    </td>
+    <td>
+	<br>
+	Tuesday April 18 by the start of class
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Submission Deadline:</b>
+    </td>
+    <td>
+	Friday, 21 April 2016, 11:59pm
+
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Techniques:</b>
+    </td>
+    <td>
+	<br>
+	Recursion, Tree traversals
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>More Information:</b>
+    </td>
+    <td>
+	<br>
+	<a href="index.html">General information about labs, testing, judging utility</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+The pre-lab requirement must be completed and submitted individually.
+</p>
+
+<p>
+The remainder of the lab activity should be completed <b>working in pairs</b>.
+One person should submit the result, making sure that both partners'
+names are clearly identified in that submission.
+</p>
+
+
+<hr>
+
+<h2>Pre-Lab Requirement</h2>
+
+<p>
+Read the complete problem description and then determine what the
+expected output should be if given the following input:
+
+<table border="1" cellpadding="10">
+<thead>     
+<tr>
+    <td><b>Prelab input:</b></td>
+    <td><b>Prelab output:</b></td>
+</tr>
+</thead>   
+<tbody>
+    <tr>
+        <td style="font-family: monospace;">
+dddududuuu<br>
+dduudduduu<br>
+duddduduuu<br>
+#      
+       </td>
+       <td valign="top" style="font-family: monospace;">
+       </td>
+    </tr>
+</tbody>
+</table>
+</p>
+
+
+<hr>
+
+<h1>Tree Grafting 2</h1>
+
+
+<p>
+
+Trees have many applications in computer science. Perhaps the most commonly
+used trees are rooted binary trees, but there are other types of rooted
+trees that may be useful as well. One example is ordered trees, in
+which the subtrees for any given node are ordered. The number of
+children of each node is variable, and there is no limit on the number.
+Formally, an ordered tree consists of a finite set of nodes T such that
+
+<ul>
+<li> there is one node designated as the root, denoted root(T);<br></li>
+<li> the remaining nodes are partitioned into subsets T1, T2, ..., Tm, each of which is also a tree (subtrees).</li>
+</ul>
+
+Also, define root(T1), ..., root(Tm) to be the children of root(T), with
+root(Ti) being the i-th child. The nodes root(T1), ..., root(Tm) are
+siblings.
+
+<p>It is often more convenient to represent an ordered
+tree as a rooted binary tree, so that each node can be stored in the
+same amount of memory. The conversion is performed by the following
+steps:
+
+<ol>
+<li>remove all edges from each node to its children;</li>
+<li>for each node, add an edge to its first child in T (if any) as the left child;</li>
+<li>for each node, add an edge to its next sibling in T (if any) as the right child.</li>
+</ol>
+
+<p>This is illustrated by the following:
+<blockquote><pre>
+         0                             0
+       / | \                          /
+      1  2  3       ===&gt;             1
+        / \                           \
+       4   5                           2
+                                      / \
+                                     4   3
+                                      \
+                                       5
+</pre></blockquote>
+In most cases, the height of the tree (the number of edges in the longest
+root-to-leaf path) increases after the conversion. This is undesirable
+because the complexity of many algorithms on trees depends on its
+height.
+
+<p>You are asked to write a program that computes the height of the tree before and after the conversion.
+
+
+<h2>Input</h2>
+<p>The input is given by a number of lines giving the directions taken
+in a depth-first traversal of the trees. There is one line for each
+tree.  For example, the tree above would give dudduduudu, meaning 0
+down to 1, 1 up to 0, 0 down to 2, etc. The input is terminated by a
+line whose first character is #. You may assume that each tree has at
+least 2 and no more than 10000 nodes.</p>
+
+<h2>Output</h2>
+<p>For each tree, print the heights of the tree before and after the
+conversion specified above.  Use the format:
+<blockquote><pre>
+Tree t: h1 =&gt; h2
+</pre></blockquote>
+where t is the case number (starting from 1), h1 is the height of the
+tree before the conversion, and h2 is the height of the tree after the
+conversion.
+</p>
+
+<table border="1" cellpadding="10">
+          <thead>  <tr>
+           <td><b>Example input:</b></td>
+            <td><b>Example output:</b></td>
+          </tr>
+          </thead>  <tbody>
+          <tr>
+           <td style="font-family: monospace;">
+dudduduudu<br>
+ddddduuuuu<br>
+dddduduuuu<br>
+dddduuduuu<br>
+#<br>
+              </td>
+           <td valign="top" style="font-family: monospace;">
+Tree 1: 2 =&gt; 4<br>
+Tree 2: 5 =&gt; 5<br>
+Tree 3: 4 =&gt; 5<br>
+Tree 4: 4 =&gt; 4<br>
+            </td>
+          </tr>
+
+  </tbody>
+</table>
+
+
+
+<hr>
+<h2>Submit</h2>
+<p>
+One member of the team should submit the file <tt>graft2.cpp</tt>
+via email. Please
+make sure that the names of <em>both</em> members of the team are
+included in the email and in the comments at the beginning of the source code.
+</p>
+
+<hr>
+
+<h1>Hints</h1>
+
+<p>
+Upon first glance, this problem seems like it's going to require you
+to build a tree data structure and then implement the conversion from
+the general tree to the binary tree.   But as is the case with many of
+these contest problems, there's a much easier way.
+
+<p>
+It is possible to compute the resulting depths without ever building
+the trees.  We suggest a recursive approach.  In the end we want a
+function that can compute the depth of the entire tree;  we will
+design a recursion that computes the depth of any subtree.  Consider
+the following local view:
+<br>
+<img src="view.gif">
+<br>
+If you were told the traditional depths for each of the four children,
+can you compute the traditional depth of the larger subtree?   
+Consider the "converted" case.  If you were told the "converted" depth
+for each of the four children, can you determine the converted depth
+for the larger subtree?
+
+
+<p>
+Here is how we recommend setting up the recursion.  Remember that the
+original input is just a sequence of 'd' and 'u' designators to
+describe the shape of the tree.   We want to think about starting the
+recursion at the root.  Technically, there is no 'd'/'u' pair in the
+input for going down to the root up up from it, but for consistency
+sake, <b><em>we recommend that you alter the original input string by adding
+a preceding 'd' and a trailing 'u'.</em></b>
+</p>
+
+<p>
+There are several strategies you might use in order to compute BOTH
+versions of the depth. One is to have two separate recrusive functions
+<pre>
+int originalDepth(string::iterator&amp; i);
+int modifiedDepth(string::iterator&amp; i);
+</pre>
+and then call each of them from within main (although note well that
+you will need to reset the iterator to the beginning of the string
+before the second call).  Given that we are in "contest mode" and just
+want to get this done, two separate functions is permissible.
+</p>
+
+<p>
+Of course, the two functions will have almost the same logic in the
+way that parse the string and make recursive calls. The only
+difference is in how they use the information gathered about the
+children in determining their defined height. A slight improvement in
+design would be to code the function once, using an extra boolean
+parameter to denote which version of the logic you want to use.
+<pre>
+int depth(string::iterator&amp; i, bool converted);
+</pre>
+With this design, you only need to code the core logic once, with some
+care to denote how the height calculation is done based on the
+boolean. But from within main, you will still need to call the
+function twice (once with coverted=false and once with converted=true).
+</p>
+
+<p>
+The idea design would be to have a single function that simultaneously
+computes BOTH definitions of height during the same run, so that the
+string is only parsed once. Such a function can be coded with the signature
+<pre>
+pair&lt;int,int&gt; depth(string::iterator&amp; i);
+</pre>
+so that the function is tasked with returning a <em>pair</em> of
+integers to represent the two notions of height. Similarly, each
+recursive call will be tasked with returning the pair of integers
+representing its subtree. See documentation for the C++ <a
+href="http://www.cplusplus.com/reference/utility/pair">pair</a> class
+for more technical details; that class is quite useful for experienced
+C++ programmers.
+</p>
+
+
+  </body>
+</html>

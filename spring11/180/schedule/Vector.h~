@@ -1,0 +1,11 @@
+#include <stdexcept>
+using namespace std;
+
+template <typename Object>
+class Vector {
+  
+private:
+  
+public:
+  
+};

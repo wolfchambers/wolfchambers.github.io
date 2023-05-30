@@ -1,0 +1,152 @@
+\documentclass[11pt]{article}
+\usepackage{jeffe, handout}
+\hidesolutions
+
+\setlength{\headsep}{0.5in}
+
+% ======================================================================
+\begin{document}
+
+%\thispagestyle{empty}
+
+\headers{CS314: Algorithms}{Homework 0 (due 1/16/2005)}{Spring 2009}
+
+\begin{center}
+{\LARGE\bf      CS314: Algorithms}
+\\[1ex]
+{\Large\bf      Homework 0, due Friday, January 16 at the beginning
+of class}
+\\[0.25in]
+\end{center}
+
+%----------------------------------------------------------------------
+\bigskip\hrule\bigskip
+\noindent This homework tests your familiarity with the prerequisite
+material from Data Structures and Discrete Math, primarily to help
+you identify gaps in your knowledge. \textbf{You are responsible for
+   filling those gaps on your own.}
+
+%----------------------------------------------------------------------
+\bigskip\hrule\bigskip
+\noindent Before you do anything else, read the Course Policies on
+the webpage.  This web page gives instructions on how to write and
+submit homeworks---staple your solutions together in order, write
+your name on every page, don't turn in source code, analyze
+everything, use good English and good logic, and so forth.
+
+\medskip
+\bigskip\hrule\bigskip
+
+\section*{Required Problems}
+
+% ======================================================================
+\begin{problems}
+    %----------------------------------------------------------------------
+    \item \textsc{Recurrences} \hfill (20 points)
+
+    Solve the following recurrences.  State tight asymptotic bounds
+    for each function in the form $\Theta(f(n))$ for some recognizable
+    function $f(n)$.  You do not need to turn in proofs (in fact,
+    please \emph{don't} turn in proofs), but you should do them anyway
+    just for practice.  Assume reasonable but nontrivial base cases if
+    none are supplied.  More exact solutions are better.
+    \begin{enumerate}
+        \item $A(n) = 2A(n/2) + \lg n$
+        \item $B(n) = 3B(n/2) + n$
+        \item $C(n) = 2C(n/2) + n^2$
+        \item  $D(n) = 2D(n-1) + 1$
+        \item  $E(n) = \max_{1\le k \le n/2} (E(k) + E(n-k) + n)$
+        \item $F(n) = 2F(\floor{n/3} + 9) + n^2$
+        \item  $G(n) = 2G(n-1)/G(n-2)$
+        \item $H(n) = \log( H(n-1) ) + 1$
+        \item $I(n) = 2I(\sqrt(n)) + 1$
+        \item  $J(n) = J( { n/2 }) + 1$
+    \end{enumerate}
+
+\newpage
+
+    \item \textsc{Sorting functions} \hfill (20 points)
+
+    Sort the following 25 functions from asymptotically
+    smallest to asymptotically largest, indicating ties if
+    there are any.  You do not need to turn in proofs (in
+    fact, please \emph{don't} turn in proofs), but you
+    should do them anyway just for practice.
+    \[
+    \begin{array}{c@{\qquad}c@{\qquad}c@{\qquad}c@{\qquad}c}
+        1
+        &       n
+        &       n^2
+        &       \lg n
+        &       1 + \lg \lg n
+        \\[1ex]
+        \cos n + 2
+        &       n^{\lg n}
+        &       (\lg n)!
+        &       (\lg n)^{\lg n}
+        &       F_n
+        \\[1ex] \lg^{1000} n
+        &       2^{\lg n}
+        &       n \lg n
+        &       \Sum_{i=1}^{n} {i}
+        &       \Sum_{i=1}^{n} {i^2}
+        \\[1ex] n!
+        &       \lg (n^{10000})
+        &       \floor{\lg \lg (n)}
+        &       2^{2 \log n}
+        &       15n^2 - 12n + 8 \lg n + 4
+    \end{array}
+    \]
+    To simplify notation, write $f(n) \ll g(n)$ to mean $f(n) =
+    o(g(n))$ and $f(n) \equiv g(n)$ to mean $f(n) = \Theta(g(n))$.
+    For example, the functions $n^2$, $n$, $\binom{n}{2}$, $n^3$ could
+    be sorted either as $n \ll n^2 \equiv \binom{n}{2} \ll n^3$ or as
+    $n \ll \binom{n}{2} \equiv n^2 \ll n^3$. \Hint{When considering
+       two functions $f(\cdot)$ and $g(\cdot)$ it is sometime useful
+       to consider the functions $\ln f(\cdot)$ and $\ln g(\cdot)$.}
+
+
+    \item \textsc{Trees, Fibonacci numbers, and Induction} \hfill (20 points)
+
+    The $n^{th}$ Fibonacci binary tree $\mathcal{F}_n$ is defined
+    recursively as follows:
+
+    \begin{itemize}
+    \item $\mathcal{F}_1$ is a single root node with no children.
+    \item For all $n \ge2$, $\mathcal{F}_n$ is obtained from
+    $\mathcal{F}_{n-1}$ by adding a right child to every leaf node
+    and adding a left child to every node that has only one child.
+    \end{itemize}
+
+    \begin{enumerate}
+    \item Prove that the number of leaves in $\mathcal{F}_n$ is
+    precisely the $n^{th}$ Fibonacci number: $F_0 = 0, F_1 = 1,$ and
+    $F_n = F_{n-1} + F_{n-2}$ for all $n \ge 2$.
+
+    \item How many nodes does $\mathcal{F}_n$ have?  For full
+    credit, give an \emph{exact} closed form answer in terms of the
+    Fibonacci numbers and prove that your answer is correct.
+
+    \item Prove that for $n \ge 2$, the left subtree of $\mathcal{F}_n$ is a copy
+    of $\mathcal{F}_{n-2}$. (Hint: This is easier than it sounds!)
+    \end{enumerate}
+
+    \item \textsc{Fractions and Pigeonholes} \hfill (20 points)
+
+    The \emph{fractional part} of $x$ is the amount by which $x$
+    exceeds its floor, $\floor{x}$.  For $x \in \R$ and $n \in \N$,
+    let $S = \set{x, 2x, \ldots, (n-1)x}$.
+
+    \begin{enumerate}
+        \item Prove that if some pair of numbers in $S$ have
+        fractional parts that differ by at most $1/n$, then some
+        number in $S$ is within $1/n$ of an integer.
+
+        \item Use part (a) to prove that some number in $S$ is
+        within $1/n$ of an integer.
+
+    \end{enumerate}
+
+\end{problems}
+
+\end{document}

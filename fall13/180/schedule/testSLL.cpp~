@@ -1,0 +1,18 @@
+#include "SLinkedList.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  
+  //test constructor
+  SLinkedList<float> numList;
+
+  if (numList.empty())
+    cout << "Yeah, we're empty!" << endl;
+  else
+    cout << "Your list should be empty" << endl;
+  
+  numList.addFront(7.8);
+  cout << "Added " << numList.front() << " to our list" << endl;
+
+}

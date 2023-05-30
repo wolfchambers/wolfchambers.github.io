@@ -1,0 +1,102 @@
+#ifndef __HEAP_H
+#define __HEAP_H
+
+#include <stdexcept>
+#include <iostream>
+using namespace std;
+
+template <typename ItemType>
+class Heap {
+  
+private:
+  
+  ItemType * _data;  //array to store the heap
+  int _size; //number of items in the array
+  int _capacity; //max size of my array
+    
+public:
+  
+  /** Constructor **/
+  Heap() : _data(new ItemType[1]), _capacity(1), _size(0) {}
+  
+  /** Size function **/
+  int size() const {
+    return _size;
+  }
+  
+  /** Empty function **/
+  bool empty() const {
+   return _size == 0; 
+  }
+  
+  const ItemType& getMax() {
+    if (!empty())
+      return _data[0];
+    else 
+      throw runtime_error("Heap is empty");
+  }
+  
+  void insert(const ItemType& val) {
+   //check if array is full, and enlarge capacity if so
+   if (_size == _capacity) {
+     _capacity = 2*_capacity + 1;
+     ItemType* newData = new ItemType[_capacity];
+     for (int i = 0; i < _size; i++)
+       newData[i] = _data[i];
+     delete _data;
+     _data = newData;
+   }
+    
+   //insert the new value
+   _data[_size] = val;
+   _size++;
+  
+   //bubble up if necessary
+   int current = _size-1;
+   int parent = (current - 1) / 2;
+   while ((current > 0) && (_data[current] > _data[parent])) {
+    //swap the elements
+    ItemType temp = _data[current];
+    _data[current] = _data[parent];
+    _data[parent] = temp;
+    
+    current = parent;
+    parent = (current-1)/2;
+   }
+   
+  } //end of insert
+  
+  void removeMax() {
+    
+    if (empty())
+      throw runtime_error("Cannot remove from empty heap");
+    
+    //remove the root 
+    _size--;
+    _data[0] = _data[_size];
+    
+    //initialize for "bubble down"
+    int current = 0;
+    int left = 1;
+    int right = 2;
+    
+    bool changed = true; //boolean will be true if we bubble
+    while (changed) {
+      
+      //check if we have 2 children
+      if (right < _size) {
+	
+	if (_data[left] > _data[right] {
+	}
+	else { //right is bigger 
+	}
+      }
+      
+      
+    }
+    
+  }
+  
+};
+
+#endif

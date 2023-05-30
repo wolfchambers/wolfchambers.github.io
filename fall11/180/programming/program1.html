@@ -1,0 +1,579 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<center>
+<h2>Programming Assignment 1
+
+</h2>
+<h3>
+Due:
+Monday, September 18, 2010, 11:59pm
+
+
+</h3>
+</center>
+
+<P>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a>.
+
+<P>
+Please see the <a href="../#general">general programming webpage</a> for details about
+the programming environment for this course,  guidelines for
+programming style, and details on electronic submission of assignments.
+
+<P>
+The files you may need for this assignment can be
+<a href="p1/">downloaded here</a>.
+
+<hr>
+
+
+<h3>Contents:</h3>
+<UL>
+  <li>
+      <a href="#collaboration">Collaboration Policy</a>
+  </li>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#specs">Specifications</a>
+  </LI>
+  <LI>
+      <a href="#example">An Example</a>
+  </LI>
+  <LI>
+      <a href="#private">Your Private Implementation</a>
+  </LI>
+  <LI>
+      <a href="#testing">Testing your Credit Card class</a>
+  </LI>
+  <LI>
+      <a href="#gading">Grading Standards</a>
+  </LI>
+  <LI>
+      <a href="#files">Files You Will Need</a>
+  </LI>
+  <LI>
+      <a href="#submit">Submitting Your Assignment</a>
+  </LI>
+</UL>
+
+
+<hr>
+
+<H1><A NAME="collaboration">
+Collaboration Policy</A>
+</H1>
+
+<p>
+For this assignment, <b>you are allowed to work with one other
+student</b> if you wish (in fact, we suggest that you do so).
+If any student wishes to have a partner but
+has not been able to locate one, please let the instructor know so
+that we can match up partners.
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+
+
+<hr>
+
+
+<H1><A NAME="overview">Overview</A></H1>
+
+<P>
+Chapter&nbsp;1.6 of the text introduces an example of a credit card
+class.  We will use that class as a model for that assignment, but we
+are making some adaptions and adding additional functionality.  In
+particular, we will introduce bookkeeping for a typical monthly cycle.
+
+
+<HR>
+
+
+<H1><A NAME="specs">Specifications</A></H1>
+
+<P>
+Meeting formal specifications is a vital aspect of programming.
+The public interface for a class serves as a contract for coordination
+between the implementor of the class (in this case, you)  and the
+users of that class (in this case, you and the rest of the class).
+As part of this assignment, we are providing a header file,
+<tt>CreditCard.h</tt>, which defines the public interface for the
+<tt>CreditCard</tt> class.   This includes signatures for the required
+<b>public</b> member functions. <b>Formal documentation has been embedded
+in the source code and is <a
+href="http://mathcs.slu.edu/~goldwasser/courses/slu/csci180/2009_Spring/programs/prog01/doxygen/class_credit_card.html">viewable here</a></b>.
+Please make sure that you carefully
+read and follow the specifications outlined in this section when
+designing your program. If you feel that there are any ambiguities,
+ask for clarification <em>before</em> completing the assignment.
+
+
+<P>
+A <tt>CreditCard</tt> instance manages aspects of a typical credit
+card account.   Some of the functionality is rather basic, for example
+keeping track of the owner's name, the card number, the credit limit.
+There must also be basic support for managing the up-to-the-minute
+balance on the account, including allowing for the customer to make
+charges against the card (though not exceeding the limit) and making
+payments to pay off some portion of the current balance.
+
+
+<P>
+The most challenging aspect of our specification is that your class
+must also manage the typical monthly cycle for a credit card.  A
+customer can stay in good grace each month by paying the full
+balance as it existed at the time of the most recent formal statement.
+(even if new charges this month means that the current balance is
+non-zero).    A good customer is never charged 
+interest or fees.    However, additional charges are accrued when that
+previous balance is not paid off.  In particular, once a customer
+loses good graces, interest is charged on the entire current balance
+(old charges and new charges).   Furthermore, if the customer did not
+even meet the minimum payment schedule established by the company, an
+additional late fee is assessed.
+
+<p>
+More formally, a <tt>processMonth</tt> method will be triggered
+at the end of each hypothetical month.  The responsibility of that
+method is to calculate appropriate interest and fees and to
+recalculate a minimum payment for the coming month.  The 
+formal rules  are as follows.
+<UL>
+  <LI>
+      <P>
+      The process is based upon the balance and minimum payment that
+      had been recorded at the conclusion of the most recent call to
+      <tt>processMonth</tt> (these figures are assumed to be $0 if this is the
+      customer's first month with the card). The updated balance and 
+      minimum payment should be computed as follows: 
+      <OL>
+	<LI>
+	    <P>
+	    If payments received this month did not meet or exceed
+	    the <em>balance on record at the conclusion of the most recent
+	    call to <tt>processMonth</tt></em>, an interest charge
+	    of <NOBR>(current balance)*(monthly interest rate)</NOBR>
+	    should be added to the current balance (rounded to the
+	    nearest cent).
+	</LI>
+
+	<LI>
+	    <P>
+	    If payments received this month do not meet or exceed the
+	    <em>minimum monthly payment on record at the conclusion of
+	    the most recent call to <tt>processMonth</tt></em>,
+            an additional late charge of $20 should be added to the balance.
+	</LI>
+
+      	<LI>
+	    <P>
+	    This updated balance becomes the current balance, but is
+	    also recorded as the offical "statement" balance,
+	    for future reference.
+	</LI>
+
+	<LI>
+	    <P>
+	    If the new balance is non-zero, a minimum monthly payment
+	    should be calculated and recorded.   Generally, the
+	    minimum payment will be the larger of $30 or 5% of the
+	    new balance (rounded to the nearest dollar).  However, we
+	    cannot demand a minimum payment that is greater than the
+	    balance.  If the above calculation were greater than the
+	    current balance, the minimum payment should be set to the
+	    full balance (unless, of course, the current balance is
+	    negative, in which case a minimum payment of $0 should be
+	    assigned).
+	</LI>
+      </OL>
+  </LI>
+</UL>
+
+
+<p>
+The official set of <b>public</b> methods which must be supported is as follows:
+
+<h4>The constructor</h4>
+
+<p>
+The constructor has the following signature
+<UL>
+  <LI>
+      <P>
+      <B><TT>CreditCard(string no, string nm, int lim, double rate, int bal=0)</TT></B>
+  </LI>
+</UL>
+Note well that we have varied slightly from the convention of the
+text's version.   The parameter <tt>lim</tt> defines the credit limit
+for the card (expressed in dollars).   The parameter <tt>bal</tt>
+defines the initial balance on the account <b>(expressed in cents)</b>.
+We provide a default initial balance of 0, as a new account typically
+starts with a zero balance.  However, we leave open the possibility
+that someone may open a new credit card while transferring a non-zero
+balance from elsewhere. 
+
+<p>
+Although your class may have other private attributes in addition to
+those listed as parameters, all others attributes should have initial
+values that are not directly customizable. For example, the minimum
+required payment for the first month of a new card is automatically
+zero (even with a non-zero starting balance).
+
+
+
+<h4>Accessors</h4>
+<p>
+There are seven standard accessor functions to return the values of
+respective aspects of the underlying state.  Those signatures are:
+
+<UL>
+  <LI>
+      <p>
+      <B><TT>string getNumber() const</TT></B>
+      <br>
+      Though we talk about the 16-digit "credit card number", we
+      represent this as a string, because it is too large to represent
+      numerically.
+  </LI>
+  <LI>
+      <p>
+      <B><TT>string getName() const</TT></B>
+      <br>
+      Customer's name.
+  </LI>
+  <LI>
+      <p>
+      <B><TT>int getLimit() const</TT></B>
+      <br>
+      Reports the card's credit limit (expressed in dollars).
+      Note, however, that interest charges may actually cause
+      a balance to rise above this limit.
+  </LI>
+  <LI>
+      <p>
+      <B><TT>double getRate() const</TT></B>
+      <br>
+      Montly interest rate.  Represented as a floating-point number
+      rather than as a percentage.  (e.g., an interest rate of .01
+      represents 1% per month)
+  </LI>
+  <LI>
+      <p>
+      <B><TT>int getCurrentBalance() const</TT></B>
+      <br>
+      This reports the up-to-the-minute balance on the account
+      (measured in cents).
+  </LI>
+  <LI>
+      <p>
+      <B><TT>int getStatementBalance() const</TT></B>
+      <br>
+      This reports the balance (measured in cents) that had been recorded at the
+      conclusion of the most recent call to <tt>processMonth</tt>
+      This is significant, as it affects the rules for interest
+      charges and late fees.
+  </LI>
+  <LI>
+      <p>
+      <B><TT>int getMinPayment() const</TT></B>
+      <br>
+      This should be the minimum payment (measured in cents) that was
+      recorded at the 
+      conclusion of the most recent call to <tt>processMonth</tt>
+      This is significant to the customer when making payments to
+      avoid subsequent late fees.
+  </LI>
+</UL>
+
+<h4>Mutators</h4>
+
+<UL>
+  <LI>
+      <P>
+      <B><TT>bool chargeIt(int price)</TT></B>
+      <BR>
+      This is called when the card owner attempts to make a purchase
+      for the given price (measured in cents).  The charge should only be approved if the
+      resulting balance were to remain at or below the user's credit
+      limit.  The return value should be <tt>true</tt> if the charge
+      is being accepted and <tt>false</tt> if rejected.
+      <P>
+      <em>You should refuse charges for a negative amount.</em>
+  </LI>
+
+  <LI>
+      <P>
+      <B><TT>void makePayment(int payment)</TT></B>
+      <BR>
+      This is called when the card owner submits the specified
+      payment (measured in cents).
+      <em>Negative payments should be ignored.</em>
+      Assuming the payment is positive, the customer's current
+      balance should be reduced to reflect the payment.
+  </LI>
+
+  <LI>
+      <P>
+      <B><TT>int processMonth()</TT></B>
+      <BR>
+      This is the method which is responsible for the end-of-month
+      bookkeeping, as explained in detail above.   The updated balance
+      and new minimum payment should be recorded internally for future
+      reference.   In addition, the new minimum payment should be
+      returned to the caller (measured in cents).
+  </LI>
+
+</UL>
+
+
+
+<p>
+<b>Note Well:</b>
+None of your methods should generate any output.   We have provided an
+implementation already for the output stream operator (&lt;&lt;) and
+the user of a credit card can print their own information based on
+values returned by the standard accessors.
+
+
+
+
+<hr>
+
+<H1><A NAME="example">An example</A></H1>
+
+<p>
+As an example, assume a new card is created with zero balance and
+0.79% monthly interest (approximately 9.5% per year).
+During the first month, charges of $325.75, $800 and $100 are made to the card.
+When <tt>processMonth()</tt> is called, no late charge or interest charge
+should be incurred, because there was no minimum payment or balance as
+of the beginning of the month.  However at this time, the current
+balance of $1225.75 and a minimum payment of $61 is recorded.
+
+
+<P>
+Continuing, lets assume that the next month includes new charges
+totaling $228, and payments totaling $300.   If <tt>processMonth()</tt>
+is again called, the processing should be handled as follows.   The
+received payments of $300 surpass the minimum monthly requirement of
+$61, so no late charge is assessed.  However, the $300 does not
+constitute payment in full against the previous monthly balance of
+$1225.75.  Therefore interest will be computed based on the <u>current</u>
+balance which is <NOBR>$1153.75 ($1125.75 + $228 - $300)</NOBR>.  At the specified
+rate, an interest charge of $9.11 is added to the balance, resulting
+in an end of the month balance of $1162.86, and an associated minimum
+monthly payment of $58.
+
+
+<P>
+In the third month, assume that there is no activity on the card.
+Because there is an unpaid balance of $1162.86, an interest charge of
+$9.19 is added to the balance.   Worse yet, because not even the
+minimum payment from the previous statement was paid, a late charge of
+$20 is added to the balance.   Therefore the new balance is $1192.05.
+The minimum payment assigned for the subsequent month is $60.
+
+<p>
+In the fourth month, the customer makes a payment of $1200 and an
+additional purchase of $500.  In this case, at the end of the month,
+no late fees or interest are charged, because the payment of $1200
+exceeds the previous month's balance of $1192.05.    At this point
+the updated balance of $492.05 ($1192.05 - $1200 + $500) is recorded, along
+with a minimum monthly payment of $30.
+
+<P>
+In the fifth month, the customer makes a payment of $475 and does
+not charge any purchase.  Because there is an unpaid balance of
+$17.05, an interest charge of $0.13 is added to the balance.
+Therefore the new balance is $17.18 and the minimum payment assigned
+for the subsequent month is also $17.18.
+
+
+<hr>
+
+<H1><A NAME="private">Your Private Implementation</A></H1>
+
+
+<p>
+Thus far, we have given a clear explanation of the public semantics of
+the class, and examples of several scenarios.   However we have said
+nothing at all about how you are to implement this.   Based on the
+concept of encapsulation, it is up to you how to accomplish this.
+
+<p>
+You may feel free to add any <b>private</b> members to the
+original definition in <tt>CreditCard.h</tt>.   Clearly, some basic
+attributes will be necessary to store the information needed for the
+standard accessor methods.   However you will likely need to store
+additional internal information to properly support the
+specifications.
+
+<p>
+We strongly suggest that you think a bit about your design before
+getting too far into your implementation.
+
+
+
+<hr>
+
+<H1><A NAME="testing">Testing your Credit Card class</A></H1>
+
+<P>
+For this assignment, we have designed a method to test various aspects of your credit card class; it is available in this file:
+<a href="p1/Test_CreditCard.cpp">Test_CreditCard.cpp</a>.  This file
+simulates the five months of activity as
+described in the above example, as well as five additional months.
+
+
+<HR>
+
+
+<H1><A NAME="grading"> Grading Standards</A></H1>
+
+The assignment is worth <em>10</em> points.
+<ul>
+  <li>
+      Nine points will be awarded based on our own evaluation of your
+      assignment.
+  </li>
+  <li>
+      The final point will be awarded based on a checkpoint the Monday before the program is due.  You will be expected to have coded at least 20 lines, including private variables in the class and some work on the methods, particularly processMonth.
+  </li>
+</ul>
+
+
+<HR>
+
+<H1><A NAME="files">Files You Will Need</A></H1>
+
+<P>
+Rather than have the entire project in a single file, we would like to
+shift to a more standard development practice where components of a
+program are stored in a combination of different files which support
+better reuse of components.  Please read Chapter&nbsp;1.6 of our text
+for a discussion of this breakdown.
+
+<p>
+For this assignment, we are providing four files.
+These can either be
+<A href="p1/">downloaded from this website</A>, or copied directly
+into your account on <tt>turing</tt>, with the command
+<pre>
+    cp -R /export/mathcs/home/public/chambers/180/credit/ .
+</pre>
+</P>
+
+<p>
+The files are:
+<UL>
+
+  <LI>
+      <P>
+      <TT>CreditCard.h</TT> - The header file which contains the class definition.
+      </P>
+  </LI>
+
+  <LI>
+      <P>
+      <TT>CreditCard.cpp</TT> - A file that should provide the bodies of
+      the functions that were declared in CreditCard.h.
+      </P>
+  </LI>
+
+  <LI>
+      <P>
+      <TT>Test_CreditCard.cpp</TT> - A file which serves as a main
+      driver for testing the credit card. 
+      </P>
+  </LI>
+
+  <LI>
+      <P>
+      <TT>makefile</TT> -  A makefile is a special configuration file
+      which can help when trying to compile large projects with
+      multiple pieces of source code.
+      <b>
+      Rather than invoking the compiler directly, you should be able
+      to build an executable for this project by typing the simple
+      command,</b>
+      <blockquote>
+      <tt>make</tt>
+      </blockquote>
+  </LI>
+
+</UL>
+</p>
+
+
+
+<hr>
+
+<H1><A NAME="submit">Submitting Your Assignment</A></H1>
+
+<p>
+Please email me the files for your program, including the readme file described in the programming assignments.
+</p>
+
+<p>
+Because this is a pair assignment, you should abide by the following
+procedures:
+
+
+<ul>
+  <li>
+      <p>
+      Both members of the pair should submit a <tt>readme</tt> file
+      (plain text format).  This provides a way for you to add any
+      further comments you wish to make to the grader. In the case of
+      a pair assignment, please give a brief overview of the breakdown
+      of work and describe your personal role in the development of
+      the submitted work.
+  </li>
+</ul>
+
+<P>
+In addition, one member of the team should submit the three source
+code files:
+
+<UL>
+
+  <LI>
+      <P>
+      <TT>CreditCard.h</TT> - The header file which contains the class
+      definition, akin to that of <NOBR>Code Fragment 1.5</NOBR>.
+      </P>
+  </LI>
+
+  <LI>
+      <P>
+      <TT>CreditCard.cpp</TT> - A file which includes additional code
+      providing the bodies of the member function for class CreditCard,
+      akin to that of  <NOBR>Code Fragment 1.6</NOBR>.
+      </P>
+  </LI>
+
+  <LI>
+      <P>
+      <TT>Test_CreditCard.cpp</TT> - A file which provides a main driver for
+      testing the credit card.  Please make sure to adhere to
+      the requirements as described in the above <A
+      href="#testing">section on testing</A>.
+      </P>
+  </LI>
+
+</UL>
+
+
+
+  </body>
+</html>

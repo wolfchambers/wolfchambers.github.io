@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Programming Assignment 3
+
+
+-
+CS 150, Spring 2009
+</title>
+</head>
+
+<body>
+
+<HR>
+
+<center>
+<h2>Programming Assignment 3
+
+
+</h2>
+<h2>Hangman</h2>
+<h3>
+Due: Monday, March 2 at 11:59pm (via email)
+
+</h3>
+</center>
+
+<hr>
+
+<h3>Contents:</h3>
+<UL>
+  <li>
+      <a href="#overview">Overview</a>
+  </li>
+  <li>
+      <a href="#collaboration">Collaboration Policy</a>
+  </li>
+  <li>
+      <a href="#submit">Submitting Your Assignment</a>
+  </li>
+  <li>
+      <a href="#grading">Grading Standards</a>
+  </li>
+  <li>
+      <a href="#extra">Extra Credit</a>
+  </li>
+</UL>
+
+
+<hr>
+
+<H1><A NAME="overview">Overview</A></H1>
+
+<p>
+The goal of this assignment is to write a program which simulates the
+classic game, Hangman.
+
+<P>
+See Exercise&nbsp;4-49 on page.&nbsp;222 for
+more detailed requirements.  In addition to those requirements, please
+try to do the following:
+<ul>
+  <li>
+      As a favor to the player, before each guess:
+      <ul>
+	<li>
+	    Redisplay all letter which have been previously guessed
+	    (both misses and correct ones)
+	</li>
+	<li>
+	    Let them know how many wrong guesses have been made, or
+	    how many more they are allowed to make before losing
+	</li>
+      </ul>
+  </li>
+  <li>
+      If they guess a letter which was already previously guessed,
+      please give an appropriate error message and do not count this
+      against their score.
+  </li>
+  <li>
+      The secrets involve a mix of lower and uppercase letters, spaces
+      and punctuations.  Show them the
+      letters in their original form once uncovered, but of course let
+      them enter their guesses in lower or upper case.
+  </li>
+  <li>
+      Offer the user an option to play again after each game.
+  </li>
+</ul>
+</p>
+
+<p>
+The one drawback to our game right now is that someone needs to type
+in the secret word, but presumably that shouldn't be the same person
+who is guessing.   In the long run, we will learn how to open up a
+file of words and randomly select one, but for now, we'll
+give the snipet of code that is required for this behavior.  (The
+filename used here is presuming you are working on turing - it could
+be adjusted accordingly.)
+
+<tt>
+<pre>
+from random import *
+
+def pickSecret(filename='/home/faculty/echambe5/Public/movies.txt'):
+  choices = file(filename)
+  secret = ''
+  linenum = 0
+  for word in choices:
+    linenum += 1
+    if randrange(0,linenum)==0:
+       secret = word.strip()
+  return secret
+</pre>
+</tt>
+</p>
+
+<p>
+<b>You may safely assume that the underscore character (_) does not
+appear in any of the secrets.</b>
+</p>
+
+<p>
+Note:  If you would like to use this file on some machine other than
+turing, feel free to download it (<a href="../../../Public/movies.txt">movies.txt</a>)
+and save it on your own machine.
+</p>
+
+<hr>
+
+<H1><A NAME="collaboration">
+Collaboration Policy</A>
+</H1>
+
+<p>
+For this assignment, <b>you are allowed to work with one other
+student</b> if you wish (in fact, we suggest that you do so).
+If any student wishes to have a partner but
+has not been able to locate one, please let the instructor know so
+that we can match up partners.
+</p>
+
+<hr>
+
+
+<H1><A NAME="submit">
+Submitting Your Assignment</A>
+</H1>
+
+<p>
+You should create a new file, <tt>hangman.py</tt>, which contains
+all of the code.  This file must be submitted electronically via email.
+</p>
+
+
+<hr>
+
+<H1><A NAME="extra">
+Extra Credit</A>
+</H1>
+
+<p>
+Use graphics creatively to animate a game in progress.
+</p>

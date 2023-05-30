@@ -1,0 +1,591 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<A HREF="../homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="../labs/">Labs</a> |
+<b>Schedule & Lecture Notes</b>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 2100: Data Structures, Spring 2018 <br> Schedule and Lecture Notes</h1>
+
+</center>
+
+
+<hr>
+<blockquote>
+
+<p>Here is this semester's tentative schedule; we will update it as the semester
+progresses.
+
+<p>Please note that lecture notes are provided as a supplement, and are NOT a
+substitute for attending lecture.  In particular, these are not guaranteed, so
+expect technical difficulties to prevent them from being posted at least a few
+times in the semester, and plan accordingly to either take notes or get them
+from a friend if necessary.
+
+<p>
+<table align="center" border="0" rules="rows" cellspacing="0" cellpadding="2" width="80%">
+<tr valign="middle" height="30">
+<td align="center" width="18%"><b>Date</b></td>
+<td align="center" width="30%"><b>Topic</b></td>
+<td align="center" width="25%"><b>Reading</b></td>
+<td align="center" width="15%"><b>Lecture Notes</b></td>
+<td align="center" width="12%"><b>Code or Lab assignment</b></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Jan 16</td>
+<td>Syllabus, intro to C++</td>
+<td height="45">Transition guide, sections 1-3</td>
+<td align="center"><a href="Lecture1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Jan 17</td>
+<td>Intro to C++: compiling, data types, loops, functions</td>
+<td height="45">Transition guide</td>
+<td align="center"><a href="Lecture2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Jan 19</td>
+<td>Intro to C++: Unix tools, functions, arrays, I/O</td>
+<td height="45">Transition guide</td>
+<td align="center"><a href="Lecture3.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Jan 22</td>
+<td>Intro to C++: I/O, scope, classes</td>
+<td height="45">Transition guide</td>
+<td align="center"><a href="Lecture4.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Jan 23</td>
+<td>Lab 2 day</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"><a href="../labs/lab02.html">Lab 2</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Jan 24</td>
+<td>Intro to C++: classes</td>
+<td height="45">Transition guide</td>
+<td align="center"><a href="Lecture5.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Jan 26</td>
+<td>Intro to C++: Variables types</td>
+<td height="45">Transition guide</td>
+<td align="center"><a href="Lecture6.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Jan 29</td>
+<td>Intro to C++: Housekeeping functions</td>
+<td height="45">Transition guide</td>
+<td align="center"><a href="Lecture7.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Jan 30</td>
+<td>Lab 3 day</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"><a href="../labs/lab03.html">Lab 3</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Jan 31</td>
+<td>Final bits of C++<br> Singly linked lists</td>
+<td height="45">Transition guide</td>
+<td align="center"><a href="SimpleLists.pdf">Lecture Notes</a></td>
+<td align="center"><a href="SLinkedList.h">SLinkedList.h</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Feb. 1</td>
+<td>Singly linked lists</td>
+<td height="45"></td>
+<td align="center"><a href="SimpleLists2.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="SLinkedList.h">SLinkedList.h</a>
+<br>
+<a href="SLinkedList.cpp">SLinkedList.cpp</a>
+<br>
+<a href="testSLL.cpp">testSLL.cpp</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Feb. 5</td>
+<td>Guest Lecture: Stacks</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">
+<a href="LinkedStack.h">LinkedStack.h</a>
+<br>
+<a href="ArrayStack.h">ArrayStack.h</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 6</td>
+<td>Guest instructor: Lab 4</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"><a href="../labs/lab04.html">Lab 4</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 7</td>
+<td>Recap of housekeeping <br> Intro to big-o</td>
+<td height="45"></td>
+<td align="center"><a href="Housekeeping.pdf">Lecture notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Feb. 9</td>
+<td>Big-O and runtimes</td>
+<td height="45"></td>
+<td align="center"><a href="BigO.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Feb. 12</td>
+<td>Queues</td>
+<td height="45"></td>
+<td align="center"><a href="Queues.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="LinkedQueue.h">LinkedQueue.h</a>
+<br>
+<a href="ArrayQueue.h">ArrayQueue.h</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 13</td>
+<td>Lab 5</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"><a href="../labs/lab05.html">Lab 5</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 14</td>
+<td>Queues</td>
+<td height="45"></td>
+<td align="center"><a href="Queues2.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="LinkedQueue.h">LinkedQueue.h</a>
+<br>
+<a href="ArrayQueue.h">ArrayQueue.h</a>
+<br>
+<a href="testQ.cpp">testQ.cpp</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Feb. 16</td>
+<td>Vectors</td>
+<td height="45"></td>
+<td align="center"><a href="Vectors1.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="Vector.h">Vector.h</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Feb. 19</td>
+<td>Review session</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 20</td>
+<td>Midterm 1</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 21</td>
+<td>Vectors</td>
+<td height="45"></td>
+<td align="center"><a href="Vectors2.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="Vector.h">Vector.h</a>
+<br>
+<a href="testVector.cpp">testVector.cpp</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 23</td>
+<td>Vectors: Asymptotic analysis</td>
+<td height="45"></td>
+<td align="center"><a href="Vectors3.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="Vector.h">Vector.h</a>
+<br>
+<a href="testVector.cpp">testVector.cpp</a>
+</td>
+</tr>
+
+
+<tr valign="middle">
+<td align="center">Monday, Feb. 26</td>
+<td>Lists</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">
+<a href="List.h">List.h</a>
+<br>
+<a href="testList.cpp">testList.cpp</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 27</td>
+<td>Lab 6</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"><a href="../labs/lab06.html">Lab 6</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 28</td>
+<td>Lists</td>
+<td height="45"></td>
+<td align="center"><a href="Lists.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="List.h">List.h</a>
+<br>
+<a href="testList.cpp">testList.cpp</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, March 2</td>
+<td>Sorting</td>
+<td height="45"></td>
+<td align="center"><a href="Sorting1.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, March 5</td>
+<td>Sorting</td>
+<td height="45">
+<a href="http://i.imgur.com/fq0A8hx.jpg">Nice visualization</a>
+</td>
+<td align="center"><a href="Sorting2.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, March 6</td>
+<td>Lab 7</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"><a href="../labs/lab07.html">Lab 7</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, March 7</td>
+<td>Intro to trees <br> Priority Queues</td>
+<td height="45"></td>
+<td align="center"><a href="Heaps1.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, March 9</td>
+<td>Priority Queues (and heaps)</td>
+<td height="45"></td>
+<td align="center"><a href="Heaps2.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="Vector.h">Heap.h</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, March 19</td>
+<td>Binary Search Trees</td>
+<td height="45"></td>
+<td align="center"><a href="BST1.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, March 20</td>
+<td>Lab 8</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"><a href="../labs/lab08.html">Lab 8</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, March 21</td>
+<td>Tree implementation</td>
+<td height="45"></td>
+<td align="center"><a href="BST2.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="BinaryTree.h">BinaryTree.h</a>
+<br>
+<a href="testBinaryTree.cpp">testBinaryTree.cpp</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, March 23</td>
+<td>BST implementaion</td>
+<td height="45"></td>
+<td align="center"><a href="BST3.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="BinarySearchTree.h">BinarySearchTree.h</a>
+<br>
+<a href="testBST.cpp">testBST.cpp</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, March 26</td>
+<td>AVL Trees</td>
+<td height="45"></td>
+<td align="center"><a href="AVL1.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, March 27</td>
+<td>Work day in class</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, March 28</td>
+<td>AVL Tree implementation</td>
+<td height="45"></td>
+<td align="center"><a href="AVL2.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="BinaryTree.h">BinaryTree.h</a>
+<br>
+<a href="AVLTree.h">AVLTree.h</a>
+<br>
+<a href="testAVL.cpp">testAVL.cpp</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, April 3</td>
+<td>AVL Tree implementation</td>
+<td height="45"></td>
+<td align="center"><a href="AVL3.pdf">Lecture Notes</a></td>
+<td align="center">
+<a href="AVLTree.h">AVLTree.h</a>
+<br>
+<a href="testAVL.cpp">testAVL.cpp</a>
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, April 4</td>
+<td>AVL Tree analysis</td>
+<td height="45"></td>
+<td align="center"><a href="AVL4.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, April 6</td>
+<td>Treaps</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/10-treaps.pdf">Additional reference</a></td>
+<td align="center"><a href="Treaps1.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, April 9</td>
+<td>Treaps</td>
+<td height="45"></td>
+<td align="center"><a href="Treaps2.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, April 10</td>
+<td>Lab: Tree grafting part 1</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, April 11</td>
+<td>Work day</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, April 13</td>
+<td>Review session for midterm 2</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, April 16</td>
+<td>Midterm 2</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, April 17</td>
+<td>Lab: Tree grafting part 2</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, April 18</td>
+<td>Hash maps</td>
+<td height="45"></td>
+<td align="center"><a href="CSCI2100_HashMap.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, April 20</td>
+<td>Hash maps</td>
+<td height="45"></td>
+<td align="center"><a href="CSCI2100_HashMap.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday and Wednesday <br> April 23 and 25</td>
+<td>Huffman trees and codes</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, April 27</td>
+<td>Hash maps</td>
+<td height="45"></td>
+<td align="center"><a href="Hashing.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, April 30</td>
+<td>Graphs: representations</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/18-graphs.pdf">Reading</a>
+</td>
+<td align="center"><a href="Graphs1.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, May 1</td>
+<td>Graphs: traversals</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/18-graphs.pdf">Reading</a>
+</td>
+<td align="center"><a href="Graphs2.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, May 2</td>
+<td>Graphs: topological sort</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/19-dfs.pdf">Reading</a>
+</td>
+<td align="center"><a href="Graphs3.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, May 4</td>
+<td>Data structures recap</td>
+<td height="45">
+<a href="http://careerdrill.com/blog/coding-interview/choosing-the-right-data-structure-to-solve-problems/">Cool overview</a>
+<br>
+<a href="http://data-mining.philippe-fournier-viger.com/choosing-data-structures-according-to-what-you-want-to-do/">And another on tradeoffs</a>
+</td>
+<td align="center"><a href="FinalLecture.pdf">Lecture Notes</a></td>
+<td align="center">
+</td>
+</tr>
+
+
+
+</table>
+</blockquote>
+
+</body>
+
+</html>
+

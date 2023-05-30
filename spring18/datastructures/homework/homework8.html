@@ -1,0 +1,216 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+<center>
+<h2>Homework 8
+
+<br>
+Removing in a Binary Search Tree 
+</h2>
+<h3>
+Due:
+Tuesday, April 3, 11:59pm
+
+</h3>
+</center>
+
+
+<P>
+The files you may need for this assignment can be
+<a href="../schedule/">downloaded from the schedule page</a> or are available in the course git repository.  
+A makefile is available <a href="makefile">here</a>.
+</P>
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p> For this assignment, you may work with a partner.  If you do, please submit only one version of the files, and 
+clearly include your names and a discussion of the workload distribution in your readme. </p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+</p>
+
+
+<hr>
+
+
+<h3>Contents:</h3>
+<UL>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#debug">Debugging Your Program</a>
+  </LI>
+  <LI>
+      <a href="#files">Files We Are Providing</a>
+  </LI>
+  <LI>
+      <a href="#submit">Files to Submit</a>
+      <UL>
+	<LI>
+	    <a href="#code">Source Code</a>
+	</LI>
+	<LI>
+	    <a href="#readme">Readme File</a>
+	</LI>
+      </UL>
+  </LI>
+  <LI>
+      <a href="#grading">Grading Standards</a>
+  </LI>
+  <LI>
+      <a href="#ec">Extra Credit</a>
+  </LI>
+</UL>
+
+
+<hr>
+
+
+<H1><A NAME="overview">Overview and Task</A></H1>
+
+<P> For this assignment, you must implement the remove method for 
+the Binary Search Tree class.  The general idea was covered 
+in class, and you may refer to lecture notes or the text book for 
+assistance. </p>
+
+<p>To implement remove, you will first use the find function to see if 
+the value is in the list.  If it is, there are several cases to consider.</p>
+
+<p>  Say that your value is in node x.  If x
+ is a leaf, you can simply delete it (using helper functions from 
+BinaryTree.h).  If x has only 1 child, you can delete it and promote that 
+child while maintaining a binary search tree property.  However, if it 
+has two children, you need to find the next node in an inorder traveral.  
+Call this node y.  If y is a leaf, you swap the value into x's position 
+and then delete the leaf node that contained y.  If it is not a leaf, it 
+must have only a right child (since the left child would come first in an 
+inorder traversal), so you can delete y, promote its right child, and 
+still put y's value into x's node.</p>
+
+<p>For this assignment, you are welcome to implement any helper functions 
+you need - just be careful to put them in a protected or private setting 
+if they are not something an end user should have access to.  More 
+likely, you will want to use the functions provided in BinaryTree.h, both 
+for the tree and for iterators. </p>
+
+<p>Note: For simplicity, we are assuming that your trees will only store 
+distinct elements.  So if a value is inserted twice, you do not need to 
+have it represented twice in your tree.  You DO need to handle this case 
+without crashing, however! </P>
+
+<H1><A NAME="debug">Debugging Your Program</A></H1>
+
+<p> Write a function called TestBST.cpp which creates a binary 
+search tree and performs inserts and removes on the tree.  
+You are welcome to use the draw function (inherited from BinaryTree.h) to 
+draw your tree at each step and debug your code. Note that you should
+do fairly exhaustive testing here - make sure you handle all possible cases, 
+including those that involve the root, leaves, etc., which are commonly
+left out of testing.
+</p>
+
+<p>Again, feel free to write other test functions - such as a function 
+that prints the height of a node, or an inorder traversal of the tree - 
+if that is helpful for your debugging process. </p>
+
+<HR>
+
+
+<H1><A NAME="files">Files We Are Providing</A></H1>
+
+<P> All files are in the course git repository, or can be downloaded from the <a 
+href="../schedule/index.html">schedule</a> page, except the makefile, which you may download <a href="makefile">here</a>. </P>
+
+<UL>
+  <LI>
+      <P>
+      <tt>BinaryTree.h</tt> and <tt>BinarySearchTree.h</TT>
+      <BR>
+      These are the implementations of the Binary Tree and Binary Search
+Tree, from our work in class.
+      <p>
+      Note:  For the sake of simplicity, we did not bother to separate
+      out the function bodies for the class into a separate
+      cpp files.  All the function bodies are embeded
+      directly into the header.  You should make your changes directly
+      to the .h file as well.
+  </LI>
+
+  <LI>
+      <P>
+      <TT>makefile</TT>
+      <BR>
+      This makefile should allow  you to rebuild your project by
+      simply typing 'make' rather than in invoking the compiler
+      directly.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code">Source Code</a>
+      <br>
+      Submit your revised <tt>BinarySearchTree.h</tt> files. Note that you should not need to alter BinaryTree.h, so 
+please let me know if you make any changes there (and explain why they are needed)!
+  </LI>
+  <LI>
+      <P>
+      <a name="test">TestBST.cpp</a>
+      <br>
+      A sample program that creates a binary search tree and walks through 
+a set operations, checking that inserting and removing elements works.
+  </LI>
+  <LI>
+      <P>
+      <a name="readme">"readme" file</a>
+      <br>
+      Discuss an overview of your
+      final product, and any further comments you
+      wish to make to the grader.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P>
+The assignment is worth <em>10</em> points. 
+
+Your readme is worth a half point.  Part of the readme expectation beyond
+the usual discussion of your implementation is that you also discuss and
+justify that you have done fairly exhaustive testing
+to be sure no cases are missing, particularly those that are likely to cause
+segmentation faults.
+
+Your test file will be worth 2 points.  
+
+The remaining 7.5 points will be given for working remove code in the Binary 
+Search Tree class. </P>
+
+
+<hr>
+</body>
+</html>

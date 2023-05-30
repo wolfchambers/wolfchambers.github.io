@@ -1,0 +1,230 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+<h1>Lab Assignment 
+07
+
+</h1>
+
+<table>
+  <tr>
+    <td>
+	<b>Topic:</b>
+    </td>
+    <td>
+	Phone List
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Source Code:</b>
+    </td>
+    <td>
+	<tt>phone.cpp</tt>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>In-Class Day:</b>
+    </td>
+    <td>
+	<br>
+	Tuesday, March 22
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Submission Deadline:</b>
+    </td>
+    <td>
+	Friday, March 25, 11:59pm
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Techniques:</b>
+    </td>
+    <td>
+	<br>
+	Use of strings and system sort.
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+The pre-lab requirement must be completed and submitted individually.
+</p>
+
+<p>
+The remainder of the lab activity can be completed <b>working in pairs</b>.
+One person should submit the result, making sure that both partners'
+names are clearly identified in that submission.
+</p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../../#integrity">academic integrity</a> in this regard.
+</p>
+
+<h2>Pre-Lab Requirement</h2>
+
+<p>
+Read the complete problem description and then determine what the
+expected output should be if given the following input:
+
+<table border="1" cellpadding="10">
+<thead>     
+<tr>
+    <td><b>Prelab input:</b></td>
+    <td><b>Prelab output:</b></td>
+</tr>
+</thead>   
+<tbody>
+    <tr>
+        <td style="font-family: monospace;">
+3<br>
+3<br>
+9777039<br>      
+9772444<br>
+3149777039<br>      
+3<br>
+012<br>
+12<br>
+210<br>
+4<br>
+3<br>      
+4<br>
+1234<br>
+4321
+       </td>
+       <td valign="top" style="font-family: monospace;">
+       </td>
+    </tr>
+</tbody>
+</table>
+</p>
+
+
+
+<hr>
+
+<h1>Phone List</h1>
+
+<p>
+Given a list of phone numbers, determine if it is consistent in the
+sense that no number is the prefix of another. Let's say the phone
+catalogue listed these numbers:
+<ul>
+<li>Emergency 911</li>
+<li>Alice 97 625 999</li>
+<li>Bob 91 12 54 26</li>
+</ul>
+In this case, it's not possible to call Bob, because the central would
+direct your call to the emergency line as soon as you had dialled the
+first three digits of Bob's phone number.  So this list would not be
+consistent.
+
+
+
+
+<p><b>Input:</b>
+The first line of input gives a single integer, 1&le;t&lt;40, the
+number of test cases. Each test case starts with n, the number of
+phone numbers, on a separate line, 1&lt;n&lt;10000.  Then follows n
+lines with one unique phone number on each line. A phone number is a
+sequence of at most ten digits.
+
+
+<p> <b>Output:</b> For each test case, output "YES" if hte list is
+consistent, or "NO" otherwise.
+<p></p>
+<table border="1" cellpadding="2">
+  <thead> <tr>
+    <td> <b>Example input:</b> </td>
+    <td style="vertical-align: top;"> <b>Example output:</b> </td>
+  </tr>
+  </thead> <tbody>
+    <tr>
+      <td style="font-family: monospace;">2<br>
+3<br>
+911<br>
+97625999<br>
+91125426<br>
+5<br>
+113<br>
+12340<br>
+123440<br>
+12345<br>
+98346<br>
+</td>
+<td valign="top" style="font-family: monospace;">NO<br>YES<br></tr>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<hr>
+
+<h1>Hints</h1>
+
+<p>
+Although this problem is about "numbers", you should store all of
+these as <b>strings</b>.
+</p>
+
+<p>
+Then, the key to efficiency for this problem is to first sort the
+list of strings, and then you can determine consistency by checking
+whether any entry is a prefix of the one immediately following it.
+</p>
+
+<p>
+Useful documentation:
+<ul>
+  <li>
+      <p>
+      <a href="http://www.cplusplus.com/reference/string/string/">STL string class</a>
+      </p>
+  </li>
+  <li>
+      <p>
+      Sorting can be done with
+      <a
+      href="http://www.cplusplus.com/reference/algorithm/sort/">sort</a> function
+      from the <a
+  href="http://www.cplusplus.com/reference/algorithm/">&lt;algorithm&gt;</a>
+      library, for arrays and vectors, or the <tt>sort</tt> method of
+      the <a href="http://www.cplusplus.com/reference/stl/list/">list</a> class.
+      </p>
+      <p>
+      Syntax for sorting array A of length n is:  <tt>sort(A, A+n)</tt>.
+      </p>
+      <p>
+      Syntax for sorting vector V:  <tt>sort(V.begin(), V.end())</tt>.
+      </p>
+      <p>
+      Syntax for sorting list L:  <tt>L.sort()</tt>.
+      </p>
+  </li>
+</ul>
+</p>
+
+
+  </body>
+</html>

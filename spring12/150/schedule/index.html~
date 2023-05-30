@@ -1,0 +1,457 @@
+<html>
+
+<head>
+<title>CS 150 Schedule</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> | 
+<a href="policies.html">Course Policies</a> |
+<A HREF="programming/">Programming</A> | 
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> | 
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 150: Introduction to Object Oriented Programming <br> Spring 2012 </h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu 
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Monday 10-11am, Tuesday 10-11, and Wednesday 2-3
+
+</h3>
+
+</center>
+
+
+
+<hr>
+<blockquote>
+
+<p>Here is this semester's tentative schedule; we will update it as the semester 
+progresses.  
+
+<p>Please note that lecture notes are provided as a supplement, and are NOT a 
+substitute for attending lecture.  In particular, these are not guaranteed, so 
+expect technical difficulties to prevent them from being posted at least a few 
+times in the semester, and plan accordingly to either take notes or get them 
+from a friend if necessary.
+
+<p>
+<table align="center" border="0" rules="rows" cellspacing="0" cellpadding="2" width="80%">
+<tr valign="middle" height="30">
+<td align="center" width="18%"><b>Date</b></td>
+<td align="center" width="30%"><b>Topic</b></td>
+<td align="center" width="25%"><b>Reading</b></td>
+<td align="center" width="15%"><b>Lecture Notes</b></td>
+<td align="center" width="12%"><b>Code or Lab assignment</b></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Jan. 17</td>
+<td>Syllabus, intro to programming</td>
+<td height="45">Chapter 1 of textbook</td>
+<td align="center"><a href="lecture1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Jan. 18</td>
+<td>Objects</td>
+<td height="45">Chapter 1 of textbook</td>
+<td align="center"><a href="lecture2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Jan. 20</td>
+<td>CS1Graphics package</td>
+<td height="45">Chapter 3 of textbook</td>
+<td align="center"><a href="cs1graphics1.pdf">Lecture Notes</a></td>
+<td align="center"><a href="http://www.cs1graphics.org/">cs1graphics page </a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Jan. 23</td>
+<td>More CS1graphics</td>
+<td height="45">Chapter 3</td>
+<td align="center"><a href="cs1graphics2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Jan. 24</td>
+<td>Finish cs1graphics</td>
+<td height="45">Chapter 3</td>
+<td align="center"><a href="cs1graphics3.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Jan. 25</td>
+<td>Numbers and lists</td>
+<td height="45">Chapter 2</td>
+<td align="center"><a href="chapter2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Jan. 27</td>
+<td>Strings and tuples</td>
+<td height="45">Chapter 2</td>
+<td align="center"><a href="chapter2-2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Jan. 30</td>
+<td>Intput and Output</td>
+<td height="45">Chapter 2</td>
+<td align="center"><a href="chapter2-3.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Jan. 31</td>
+<td>Chapter 2 recap and practice</td>
+<td height="45">Chapter 2</td>
+<td align="center"><a href="chapter2-4.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 1</td>
+<td>For loops</td>
+<td height="45">Chapter 4.1</td>
+<td align="center"><a href="forloops.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Feb. 3</td>
+<td>For loops<br> If statements</td>
+<td height="45">Chapter 4.2,4.4</td>
+<td align="center"><a href="forloopsandifs.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+
+<tr valign="middle">
+<td align="center">Monday, Feb. 6</td>
+<td>If statements</td>
+<td height="45">Chapter 4.4</td>
+<td align="center"><a href="ifs.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 7</td>
+<td>While loops</td>
+<td height="45">Chapter 5.1</td>
+<td align="center"><a href="while1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 8</td>
+<td>While loops<br>Continue and break</td>
+<td height="45">Chapter 5.1</td>
+<td align="center"><a href="while2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+
+<tr valign="middle">
+<td align="center">Friday, Feb. 10</td>
+<td>Functions</td>
+<td height="45">Chapter 5.2</td>
+<td align="center"><a href="functions1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Feb. 13</td>
+<td>More on functions</td>
+<td height="45">Chapter 5.2</td>
+<td align="center"><a href="functions2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 14</td>
+<td>Type Checking</td>
+<td height="45">Chapter 5.5</td>
+<td align="center"><a href="exceptions1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 15</td>
+<td>Exceptions</td>
+<td height="45">Chapter 5.5</td>
+<td align="center"><a href="exceptions2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Feb. 17</td>
+<td>Classes: a first example</td>
+<td height="45">Chapter 6.1</td>
+<td align="center"><a href="classes1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Feb. 20</td>
+<td>More classes</td>
+<td height="45">Chapter 6.1-6.2</td>
+<td align="center"><a href="classes2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 21</td>
+<td>Classes</td>
+<td height="45">Chapter 6.2</td>
+<td align="center"><a href="classes3.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 22</td>
+<td>Fraction class</td>
+<td height="45">Chapter 6.4</td>
+<td align="center"><a href="classes4.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Feb. 24</td>
+<td>In class review</td>
+<td height="45">Chapters 1-5</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Feb. 27</td>
+<td>Midterm 1</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 28</td>
+<td>Docstrings</td>
+<td height="45">Chapter 7.5</td>
+<td align="center"><a href="docstrings.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Feb. 29</td>
+<td>Unit testing</td>
+<td height="45">Chapter 7.7</td>
+<td align="center"><a href="unittests.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, March 2</td>
+<td>Review of midterm <br> Unit testing</td>
+<td height="45">Chapter 7.7</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, March 5</td>
+<td>String formatting</td>
+<td height="45">Chapter 8.1-8.2</td>
+<td align="center"><a href="ch8-1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, March 6</td>
+<td>Reading from a file</td>
+<td height="45">Chapter 8.3</td>
+<td align="center"><a href="ch8-2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, March 7</td>
+<td>Writing to a file</td>
+<td height="45">Chapter 8.3-8.4</td>
+<td align="center"><a href="ch8-3.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, March 9</td>
+<td>Modules</td><tr valign="middle">
+<td align="center">Friday, March 9</td>
+<td height="45"></td>
+<td align="center"><a href="modules.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, March 19</td>
+<td>Inheritance</td>
+<td height="45">Chapter 9</td>
+<td align="center"><a href="inheritance1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, March 20</td>
+<td>Inheritance</td>
+<td height="45">Chapter 9</td>
+<td align="center"><a href="inheritance2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, March 21</td>
+<td>When NOT to use inheritance</td>
+<td height="45">Chapter 9.3</td>
+<td align="center"><a href="inheritance3.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, March 23</td>
+<td>Inheritance in cs1graphics</td>
+<td height="45">Chapter 9.4-9.5</td>
+<td align="center"><a href="inheritance4.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, March 26</td>
+<td>Memory management and objects</td>
+<td height="45">Chapter 10</td>
+<td align="center"><a href="ch10-1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, March 27</td>
+<td>Deep and shallow copies</td>
+<td height="45">Chapter 10</td>
+<td align="center"><a href="ch10-2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, March 28</td>
+<td>Objects and functions<br>Recursion</td>
+<td height="45">Chapter 10.3, 11</td>
+<td align="center">On the board - no notes</td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, March 30</td>
+<td>Recursion: Bullseye class</td>
+<td height="45">Chapter 11.1</td>
+<td align="center"><a href="recursion.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+
+<tr valign="middle">
+<td align="center">Monday, April 2</td>
+<td>Recursion</td>
+<td height="45">Chapter 11</td>
+<td align="center"><a href="">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, April 3</td>
+<td>More recursion</td>
+<td height="45">Chapter 11</td>
+<td align="center"><a href="">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, April 4</td>
+<td>Recursion</td>
+<td height="45">Chapter  11</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+
+
+<tr valign="middle">
+<td align="center">Tuesday, April 10</td>
+<td>Review for midterm 2</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, April 11</td>
+<td>Midterm 2</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, April 13</td>
+<td>Dictionaries</td>
+<td height="45">Chapter 12</td>
+<td align="center"><a href="dictionaries.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, April 16</td>
+<td>GUIs <br> Tkinter</td>
+<td height="45"><a href="http://www.pythonware.com/library/tkinter/introduction/">Online referece</a></td>
+<td align="center"><a href="gui1.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, April 17</td>
+<td>Review of midterm 2</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, April 18</td>
+<td>Tkinter</td>
+<td height="45"><a href="http://mathcs.slu.edu/~rseibel/Notes36.html">Examples in text format</a></td>
+<td align="center"><a href="gui2.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, April 20</td>
+<td>Tkinter</td>
+<td height="45"><a href="http://mathcs.slu.edu/~rseibel/Notes37.html">Examples in text format</a></td>
+<td align="center"><a href="tkinter3.pdf">Lecture Notes</a></td>
+<td align="center"></td>
+</tr>
+
+</table> </blockquote>
+
+</body>
+
+</html>

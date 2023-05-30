@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Courses</title>
+</head>
+<body>
+<center><h1>Teaching</h1></center>
+
+<h4>Courses Taught at SLU</h4>
+
+<ul>
+
+<li>MATH 135: Discrete Mathematics
+
+<ul>
+<li> <a href="spring10/135/index.html">Fall 2008</a>
+</ul>
+
+<br>
+
+<li>CSCSI 140: Intro to Computer Science
+
+<ul>
+<li> <a href="fall08/cs140/index.html">Fall 2008</a>
+</ul>
+
+<br>
+
+<li>CSCI 150: Intro to Object Oriented Programming
+
+<ul> 
+<li> <a href="spring09/cs150/index.html">Spring 2009</a>
+<li> <a href="fall08/cs150/index.html">Fall 2008</a>
+</ul>
+
+<br>
+
+<li>CSCI 314: Algorithms
+<ul>
+<li> <a href="spring09/cs314/index.html">Spring 2009</a>
+<li> <a href="spring10/314/index.html">Spring 2010</a>
+</ul>
+
+</ul>
+
+<h4>Courses Taught at UIUC</h4>
+
+<ul>
+
+<li><a href="http://www.cs.uiuc.edu/class/sp08/cs173/"> CS173: Discrete Mathemathics</a>
+
+<li> CS273: Introduction to Theory of Computation
+
+
+</ul>
+
+<hr>
+
+</body>
+</html>

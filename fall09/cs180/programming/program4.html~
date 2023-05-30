@@ -1,0 +1,359 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<a href="../homework/">Homework</a> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<b>Programming</b> |
+<A HREF="../labs/">Labs</a> |
+<A HREF="../schedule/schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+
+<center>
+<h2>Programming Assignment
+05
+
+</h2>
+<h2>
+Merging Lists
+</h2>
+<h3>
+Due:
+Thursday, November 5, 11:59pm
+
+
+</h3>
+</center>
+
+<P>
+Please see the <a href="../policies.html/#general">general programming webpage</a> for details about
+the programming environment for this course,  guidelines for
+programming style, and details on electronic submission of assignments.
+</P>
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+For this assignment, <b>you must work individually</b> in regard to
+the design and implementation of your project.
+</P>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+</p>
+
+<hr>
+
+
+<h3>Contents:</h3>
+<UL>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#limits">Limitations</a>
+  </LI>
+  <LI>
+      <a href="#files">Files We Are Providing</a>
+  </LI>
+  <LI>
+      <a href="#driver">Using Our Driver</a>
+  </LI>
+  <LI>
+      <a href="#submit">Files to Submit</a>
+      <UL>
+	<LI>
+	    <a href="#code">Source Code</a>
+	</LI>
+	<LI>
+	    <a href="#readme">Readme File</a>
+	</LI>
+      </UL>
+  </LI>
+  <LI>
+      <a href="#grading">Grading Standards</a>
+  </LI>
+</UL>
+
+
+<hr>
+
+
+<H1><A NAME="overview">Overview</A></H1>
+
+<P>
+Our goal for this assignment is to manipulate list of integers and
+iterators for those lists.  Given two lists, both of which are known
+to be sorted in non-decreasing order, your goal is to efficiently
+merge the elements from the second list into the first list, while
+ensuring that the combined result is still sorted.  Because the two
+original lists are internally sorted, the merging process can be
+completed in linear time.
+</P>
+
+
+<P>
+The source code for the entire project is already complete, with the
+exception of a single routine that we ask you to implement. 
+
+<blockquote>
+<TT>
+<PRE>
+/**
+ * Given two distinct lists, each of which are assumed to be sorted in
+ * non-decreasing order, this function mutates the primary list so as
+ * to include all elements of the secondary list while maintaining the
+ * non-decreasing invariant.
+ */
+void merge(list<int>& primary, const list<int>& secondary)
+</PRE>
+</TT>
+</blockquote>
+
+
+Notice that we have designated the secondary list as immutable with
+the <tt>const</tt> designation.  You are not to remove any values from
+that list, but to reinsert those values in the proper place in the
+primary list.
+</P>
+
+
+<P>
+Before writing your code, think about how you will accomplish the
+task. It may help to consider the process you might use if doing this with
+lists written on paper.  You might
+imagine placing one finger at the beginning of the
+first list and one finger at the beginning of the second list.  Now,
+you should be able to advance the fingers in a way, ensuring that
+items are copied from the second list into the proper place in the
+first list as you go.
+To implement this strategy, the iterator classes can be used to
+represent the idea of a finger moving through a list.
+</p>
+
+<P>
+<B>
+Advice: if you are having trouble, always consider that a problem can be
+fixed by simplifying your code rather than complicating it.
+There exists a remarkably simple solution to this assignment.
+</B>
+In fact, the merging process is described on page 491 of the text, due
+to its role in the larger context of designing an algorithm for
+sorting elements.  You may skim that material from the book for
+general guidelines regarding the merging process, but the
+implementation details for this assignment vary greatly from the
+coverage in the book.  In particular, the description in the book
+creates a third list as the result, rather than mutating one of the
+original lists.  Furthermore, the book bases its description on their
+Sequence ADT rather than the stl::list interface.
+
+
+
+<hr>
+
+
+<H1><A NAME="limits">Limitations</A></H1>
+
+<p>
+Our goal for this assignment is to have you get used to using the
+standard library <tt>list</tt> class and its <tt>iterator</tt> and
+<tt>const_iterator</tt> classes for low-level manipulations of a list.
+The list class includes some higher-level functionality including, as
+it happens, a function to merge a second list into a first.  Needless to say, you are
+not allowed to use that method for this assignment (nor should you
+be using the <tt>sort</tt> method). You should be primarily relying on
+the <tt>insert</tt> method to add individual elements to your list.
+
+
+
+
+<HR>
+
+<H1><A NAME="files">Files We Are Providing</A></H1>
+
+<P>
+All such files can be <a href="files/">downloaded here</a>.
+</P>
+
+<UL>
+  <LI>
+      <P>
+      <b><TT>Merger.cpp</TT></b>
+      <BR>
+      <B>This is the one file which you surely must modify</B>
+      It contains a stub for the <tt>merge</tt> function,
+      yet without any code.
+      </P>
+  </LI>
+  <LI>
+      <P>
+      <b><TT>MergeTest.cpp</TT></b>
+      <BR>
+      This file provides a main driver to be used in testing your
+      program.  You will not need to modify or examine this code.  The
+      use of the driver is discussed <a href="#driver">later in this
+      assignment description.</a>
+      </P>
+  </LI>
+  <LI>
+      <P>
+      <b><TT>makefile</TT></b>
+      <BR>
+      This makefile should allow  you to rebuild your project by
+      simply typing 'make' rather than in invoking the compiler
+      directly.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="driver">Using Our Driver</A></H1>
+
+<P>
+The executable <tt>MergeTest</tt> is a driver which will handle
+reading the input, creating the initial lists, calling your routine,
+and then outputting the merged result.
+</P>
+
+<P>  You may wish to design your own input; in particular, I recommend constructing a simpler merging example when starting the project, since you may need to debug initially and may not want to run the full test code.  If you choose to make your own input, 
+the expected format for input is as follows:
+
+<UL>
+  <LI>
+    Each line is to contain a single integer.
+  </LI>
+  <LI>
+      The end of a particular list is indicated by 1000.
+  </LI>
+  <LI>
+      The final end of data is indicated by -1.
+  </LI>
+  <LI>
+      All other integer values must be between 0 and 999.
+  </LI>
+  <LI>
+      Each individual list must have elements entered in non-decreasing order.
+  </LI>
+  <LI>
+      Duplicate values may appear in one or both of the lists. In this
+      case, the final merged list will contain multiple copies of those
+      particular values.
+  </LI>
+  <LI>
+      The file is at most 100 lines.
+  </LI>
+</UL>
+</P>
+
+<P>
+You will notice that this format allows you to specify a test file
+which involves many different merges, as demonstrated in the following
+example of a properly formatted input file.
+<PRE>5
+9
+12
+1000
+4
+10
+11
+15
+1000
+3
+4
+1000
+1000
+1
+5
+5
+8
+1000
+2
+8
+10
+1000
+-1</PRE>
+<P>
+
+<P>
+The driver will create the two lists <NOBR><TT>A = {5, 9, 12}</TT></NOBR> and
+<NOBR><TT>B = {4, 10, 11, 15}</TT></NOBR>, and then invoke
+<TT>merge(A,B)</TT>. Hopefully this results in 
+<NOBR><TT>A = {4, 5, 9, 10, 11, 12, 15}</TT></NOBR>.
+</P>
+
+<P>
+After that, it will create two lists
+<NOBR><TT>A = {3, 4}</TT></NOBR> and <NOBR><TT>B = { }</TT></NOBR>, and
+again call <tt>merge(A,B)</tt> (which 
+hopefully results in <NOBR><TT>A = {3, 4}</TT></NOBR>).
+</P>
+
+<P>
+Then it will merge
+<NOBR><TT>{1, 5, 5, 8}</TT></NOBR> and <NOBR><TT>{2, 8, 10}</TT></NOBR>,
+hopefully producing the list <NOBR><TT>{1, 2, 5, 5, 8, 8,
+10}</TT></NOBR>.  After this, it exits.
+</P>      
+
+<P>
+By default, the driver reads input from the keyboard.
+However, if you would like to have the driver read input from a text
+file, give the filename as a
+single argument when starting the program (as was done in an
+<a href="program2.html/#driver">earlier programming assignment</a>)
+</P>      
+
+<p>The driver will output the sorted result.  Your code is expected to succesfully sort all the inputs given in our test file.
+
+<HR>
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code"><B><tt>Merger.cpp</tt></b></a>
+      </P>
+  </LI>
+  <LI>
+      <P>
+      <a name="readme"><B>Readme File</B></a>
+      <br>
+      A brief summary of your program, and any further comments you
+      wish to make to the grader.
+      </P>
+  </LI>
+</UL>
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P>
+The assignment is worth <em>10</em> points.  Nine points will be
+awarded based on our own evaluation of your assignment and the readme
+file.  
+
+One point will be awarded based on a checkpoint - you will be expected to show the instructor 10-20 lines of code <b>in person</a> by next Tuesday.
+</P>
+
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+#include "BinarySearchTree.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  BinarySearchTree<int> mytree;
+  
+  mytree.insert(12);
+  //mytree.draw("testBST", 0, true);
+  mytree.insert(15);
+  //mytree.draw("testBST", 0, true);
+  mytree.insert(20);
+  //mytree.draw("testBST", 0, true);
+  mytree.insert(11);
+  //mytree.draw("testBST", 0, true);
+  
+  BinarySearchTree<int>::Iterator it = mytree.root();
+  mytree.draw("testBST", &it, true);
+  it++;
+  mytree.draw("testBST", &it, true);
+}

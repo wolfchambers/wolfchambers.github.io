@@ -1,0 +1,203 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+<hr>
+
+
+<center>
+<h2>Programming Assignment 9
+
+<br>
+Removing in an AVL tree 
+</h2>
+<h3>
+Due:
+Tuesday, April 12, 11:59pm
+
+</h3>
+</center>
+
+
+<P>
+Please see the <a href="../#general">general programming webpage</a> for details about
+the programming environment for this course,  guidelines for
+programming style, and details on electronic submission of assignments.
+</P>
+
+<P>
+The files you may need for this assignment can be
+<a href="../schedule/">downloaded from the schedule page</a>.  
+</P>
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+For this assignment, <b>you may work with 1 partner</b> (and in fact are encouraged to do so).
+</p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+</p>
+
+
+<hr>
+
+
+<h3>Contents:</h3>
+<UL>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#debug">Debugging Your Program</a>
+  </LI>
+  <LI>
+      <a href="#files">Files We Are Providing</a>
+  </LI>
+  <LI>
+      <a href="#submit">Files to Submit</a>
+      <UL>
+	<LI>
+	    <a href="#code">Source Code</a>
+	</LI>
+	<LI>
+	    <a href="#readme">Readme File</a>
+	</LI>
+      </UL>
+  </LI>
+  <LI>
+      <a href="#grading">Grading Standards</a>
+  </LI>
+  <LI>
+      <a href="#ec">Extra Credit</a>
+  </LI>
+</UL>
+
+
+<hr>
+
+
+<H1><A NAME="overview">Overview and Task</A></H1>
+
+<P> For this assignment, you must implement the remove method for 
+the AVL Tree class.  The general idea was covered 
+in class, and you may refer to lecture notes or come talk to me with questions. </p>
+
+<p>For this assignment, you are welcome to implement any helper functions 
+you need - just be careful to put them in a protected or private setting 
+if they are not something an end user should have access to.  More 
+likely, you will want to use the functions provided in BinaryTree.h, both 
+for the tree and for iterators. </p>
+
+<p>Note: For simplicity, we are assuming that your trees will only store 
+distinct elements.  So if a value is inserted twice, you do not need to 
+have it represented twice in your tree.  You DO need to handle this case 
+without crashing, however! </P>
+
+<H1><A NAME="debug">Debugging Your Program</A></H1>
+
+<p> Write a function called testAVL.cpp which creates a binary 
+search tree and performs inserts and removes on the tree.  
+You are welcome to use the draw function (inherited from BinaryTree.h) to 
+draw your tree at each step and debug your code. </p>
+
+<p>Again, feel free to write other test functions - such as a function 
+that prints the height of a node, or an inorder traversal of the tree - 
+if that is helpful for your debugging process. </p>
+
+<HR>
+
+
+<H1><A NAME="files">Files We Are Providing</A></H1>
+
+<P> All such files can be downloaded from the <a 
+href="../schedule/index.html">schedule</a> page, except the makefile, which is available <a href="makefile">here</a> </P>
+
+<UL>
+  <LI>
+      <P>
+      <tt>BinaryTree.h</tt> and <tt>BinarySearchTree.h</TT> and <TT>AVLTree.h</TT>
+      <BR>
+      These are the implementations of the Binary Tree, Binary Search
+Tree, and AVL trees from our work in class.
+      <p>
+      Note:  For the sake of simplicity, we did not bother to separate
+      out the function bodies for the class into a separate
+      cpp files.  All the function bodies are embeded
+      directly into the header.  You should make your changes directly
+      to the .h file as well.
+  </LI>
+
+  <LI>
+      <P>
+      <TT>makefile</TT>
+      <BR>
+      This makefile should allow  you to rebuild your project by
+      simply typing 'make' rather than in invoking the compiler
+      directly.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code">Source Code</a>
+      <br>
+      Submit your revised <tt>AVLTree.h</tt> files. 
+      Note that you should not need to alter BinaryTree.h or BinarySearchTree.h, 
+      so please let me know in your readme if you make any changes there 
+      (and explain why they are needed).
+  </LI>
+  <LI>
+      <P>
+      <a name="test">testAVL.cpp</a>
+      <br>
+      A sample program that creates an AVL tree and walks through 
+a set operations, checking that inserting and removing elements works
+for any possible setup of the tree.
+  </LI>
+  <LI>
+      <P>
+      <a name="readme">"readme" file</a>
+      <br>
+      Discuss an overview of your
+      final product, and any further comments you
+      wish to make to the grader, including known bugs, design decisions,
+      or extra functions that you implemented (and why).
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P>
+The assignment is worth <em>10</em> points. 
+
+Your test file will be worth 3 points; please be sure to comment and document which test cases cover which structural situations, as this is a key part of testing in this class.  Your readme and discussion is worth .5 points.
+
+The remaining  points will be given for working remove code in the AVL Tree class. </P>
+
+
+<hr>
+</body>
+</html>

@@ -1,0 +1,37 @@
+//avoid repeat expressions
+#ifndef CREDIT_CARD_H 
+#define CREDIT_CARD_H
+
+//include standard packages
+#include <string>
+#include <iostream>
+using namespace std;
+using std::string;
+
+class CreditCard {
+ private:
+	string number;	//credit card number
+	string name;	//card owners name
+	int limit;	//credit limit
+	double balance;	//balance for card
+ public:
+	//constructor function
+	CreditCard(string num, string nme, int lim, double bal=0);
+
+	//accessor functions
+	string getNumber() const {return number;}
+	string getName() const {return name;}
+	double getBalance() const {return balance;}
+	int getLimit() const {return limit;}
+
+	//function to make a charge
+	bool chargeIt(double price);
+
+	//function to make a payment
+	void makePayment(double payment) {balance -= payment;}
+};
+
+//function to print card info
+ostream& operator<<(ostream& out, const CreditCard& c);
+
+#endif

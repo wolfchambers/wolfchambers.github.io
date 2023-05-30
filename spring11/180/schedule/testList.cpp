@@ -1,0 +1,51 @@
+#include "List.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  List<int> mylist; // create a list
+  List<int>::iterator it;
+  
+  
+  //add a few elements and keep drawing it
+  mylist.draw("list", 0, true);
+  mylist.push_back(5);
+  
+  mylist.draw("list", 0, true);
+  mylist.push_back(10);
+  mylist.draw("list", 0, true);
+  mylist.push_back(100);
+  mylist.draw("list", 0, true);
+  mylist.push_front(11);
+  mylist.draw("list", 0, true);
+
+  for (it = mylist.begin(); it != mylist.end(); it++)
+    cout << *it << endl;
+  
+  mylist.pop_back();
+  mylist.draw("list", 0, true);
+  
+  it = mylist.begin();
+  mylist.draw("list", &it, true);
+  mylist.insert(it, 7);
+  mylist.draw("list", &it, true);
+  
+  it = mylist.end();
+  mylist.insert(it, 12);
+  mylist.draw("list", &it, true);
+  
+
+  List<int> otherList(mylist);
+  otherList.push_front(9999);
+  
+  cout << "The new list is: ";
+  for (it = otherList.begin(); it != otherList.end(); it++)
+    cout << *it << " ";
+  
+  cout << endl;
+  cout << "The old list is: ";
+  for (it = mylist.begin(); it != mylist.end(); it++)
+    cout << *it << " ";
+
+  cout << endl;
+}

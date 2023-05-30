@@ -1,0 +1,210 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<a href="../homework/">Homework</a> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<b>Programming</b> |
+<A HREF="../labs/">Labs</a> |
+<A HREF="../schedule/schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+
+<hr>
+
+
+<center>
+<h2>Programming Assignment 5
+
+<br>
+Removing in a BST and AVL tree
+</h2>
+<h3>
+Due:
+Tuesday, November 23, 2010, 11:59pm
+
+Checkpoint: Thursday, Nov.18
+
+</h3>
+</center>
+
+
+<P>
+Please see the <a href="../#general">general programming webpage</a> for details about
+the programming environment for this course,  guidelines for
+programming style, and details on electronic submission of assignments.
+</P>
+
+<P>
+The files you may need for this assignment can be
+<a href="p5/">downloaded here</a>.
+</P>
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+For this assignment, <b>you are allowed to work with one other
+student</b> if you wish (in fact, we STRONGLY suggest that you do so).
+If any student wishes to have a partner but
+has not been able to locate one, please let the instructor know so
+that we can match up partners.
+</p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+</p>
+
+
+<hr>
+
+
+<h3>Contents:</h3>
+<UL>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#debug">Debugging Your Program</a>
+  </LI>
+  <LI>
+      <a href="#files">Files We Are Providing</a>
+  </LI>
+  <LI>
+      <a href="#submit">Files to Submit</a>
+      <UL>
+	<LI>
+	    <a href="#code">Source Code</a>
+	</LI>
+	<LI>
+	    <a href="#readme">Readme File</a>
+	</LI>
+      </UL>
+  </LI>
+  <LI>
+      <a href="#grading">Grading Standards</a>
+  </LI>
+  <LI>
+      <a href="#ec">Extra Credit</a>
+  </LI>
+</UL>
+
+
+<hr>
+
+
+<H1><A NAME="overview">Overview and Task</A></H1>
+
+<P>
+For this assignment, you must implement the remove method for both the Binary Search Tree and AVL Tree class.  The general idea was covered in class, and you may refer to lecture notes or the text book for assistance.
+</p>
+
+<p>For this assignment, you are welcome to implement any helper functions you need - just be careful to put them in a protected or private setting if they are not something an end user should have access to.  More likely, you will want to use the functions provided in BinaryTree.h, both for the tree and for iterators.
+</p>
+
+<p>Note: For simplicity, we are assuming that your trees will only store distinct elements.  So if a value is inserted twice, you do not need to have it represented twice in your tree.  You DO need to handle this case without crashing, however!
+</P>
+
+<H1><A NAME="debug">Debugging Your Program</A></H1>
+
+<p> Write a function called TestAVLTree.cpp which creates both a binary search tree and an AVL tree and performs inserts and removes on the tree.  You are welcome to use the draw function (inherited from BinaryTree.h) to draw your tree at each step and debug your code. </p>
+
+<p>Again, feel free to write other test functions - such as a function that prints the height of a node, or an inorder traversal of the tree - if that is helpful for your debugging process.
+</p>
+
+<HR>
+
+
+<H1><A NAME="files">Files We Are Providing</A></H1>
+
+<P>
+All such files can be <a href="p5/">downloaded here</a>.
+</P>
+
+<UL>
+  <LI>
+      <P>
+      <TT>AVLTree.h</TT> and <tt>BinarySearchTree.h</TT>
+      <BR>
+      These are the implementations of the Binary Search Tree and AVL Tree, from our work in class.  
+      <p>
+      Note:  For the sake of simplicity, we did not bother to separate
+      out the function bodies for the class into a separate
+      "AVLTree.cpp" file.  All the function bodies are embeded
+      directly into the header.  You should make your changes directly
+      to the .h file as well.
+  </LI>
+
+  <LI>
+      <P>
+      <TT>makefile</TT>
+      <BR>
+      This makefile should allow  you to rebuild your project by
+      simply typing 'make' rather than in invoking the compiler
+      directly.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code">Source Code</a>
+      <br>
+      Submit your revised <tt>AVLTree.h</tt> and <tt>BinarySearchTree.h</tt> files.
+  </LI>
+  <LI>
+      <P>
+      <a name="test">TestAVLTree.cpp</a>
+      <br>
+      A sample program that creates both types of tree and walks through a set operations, checking that inserting and removing elements works.
+  </LI>
+  <LI>
+      <P>
+      <a name="readme">"readme" file</a>
+      <br>
+      Discuss the dynamics of your partnership, an overview of your
+      final product, and any further comments you
+      wish to make to the grader.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P>
+The assignment is worth <em>10</em> points. 
+
+One point will be awarded for an early checkpoint on next Thursday, Nov. 18, at which point we expect to see (mostly) working code for deleting in the binary search tree, as well as code started for the AVL tree.  
+
+Your test file will be worth 1 point.
+
+The remaining 8 points will be given for working remove code in both tree classes.
+</P>
+
+
+<hr>
+</body>
+</html>

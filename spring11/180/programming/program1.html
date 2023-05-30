@@ -1,0 +1,509 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<a href="../homework/">Homework</a> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<b>Programming</b> |
+<A HREF="../labs/">Labs</a> |
+<A HREF="../schedule/schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+
+<hr>
+
+
+<center>
+<h2>Programming Assignment 1
+
+<br>
+Web History
+</h2>
+<h3>
+Due:
+Thursday, Feb. 17, 11:59pm
+
+
+</h3>
+</center>
+
+
+<P>
+Please see the <a href="index.html">programming webpage</a> for details about
+the programming environment for this course,  guidelines for
+programming style, and details on electronic submission of assignments.
+
+<P>
+The files you may need for this assignment can be
+<a href="p1/">downloaded here</a>.
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+For this assignment, you will work individually and submit your own work.
+
+<p>
+Please make sure you adhere to the policies on academic integrity in this regard.
+
+
+
+<hr>
+
+
+<h3>Contents:</h3>
+<UL>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#task">Your Task</a>
+  </LI>
+  <LI>
+      <a href="#files">Files We Are Providing</a>
+  </LI>
+  <LI>
+      <A href="#driver">Use of the Driver</A>
+  </LI>
+  <LI>
+      <A href="#testing">Black-Box, Unit Testing</A>
+  </LI>
+  <LI>
+      <a href="#submit">Files to Submit</a>
+      <UL>
+	<LI>
+	    <a href="#code">Source Code</a>
+	</LI>
+	<LI>
+	    <a href="#readme">Readme File</a>
+	</LI>
+	<LI>
+	    <a href="#testinput">Test Input</a>
+	</LI>
+      </UL>
+  </LI>
+  <LI>
+      <a href="#grading">Grading Standards</a>
+  </LI>
+  <LI>
+      <a href="#modular">Hints Regarding Modular Arithmetic</a>
+  </LI>
+</UL>
+
+
+<hr>
+
+
+<H1><A NAME="overview">Overview</A></H1>
+
+<P>
+Web browsers commonly allow you to navigate through a "history" of
+web pages that have previously been visited.  The mechanism is
+somewhat like a stack, in that the most recently visited pages are at
+the top of the history and revisited when the "back" button is
+pressed. 
+
+
+<P>
+However, the history does not necessarily have unbounded capacity.
+In reality, there may exist a fixed limit on the size of the
+history.  The issue arises as to what should happen when the capacity
+is exhausted and a new item is pushed onto the stack.  One possibility
+is to throw an exception.
+But this is not how a Web browser behaves.  If it only has room to save
+<em>50</em> pages in its history and yet you visit more pages, it will
+make room in the history for a new page by throwing away the page
+that is on the very bottom of the history (i.e., the least recently
+visited page).  The formal <TT>Stack</TT> interface does not help, as
+it gives us no way to directly access or remove the object on the
+bottom of the stack.
+
+<P>
+In this assignment, we define a new ADT that we call a
+<TT>LeakyStack</TT>.  The interface for a <TT>LeakyStack</TT> is very
+similar to the interface given for a <TT>Stack</TT>. However in the
+case when the capacity is exhausted, a call to <TT>push</TT> will
+result in the placement of the new page at the expense of the loss of
+the least recently accessed page.  We formalize this interface as an
+abstract class definition, provided online in file
+<TT>LeakyStack.h</TT>.
+
+<PRE>
+/**
+ * Interface for a leaky stack: A collection of objects that are inserted
+ * and removed according to the last-in first-out principle, but with
+ * overflow handled by the removal of the least-recently accessed item.
+ */
+class LeakyStack {
+ public:
+  /** Returns the number of objects in the stack.
+   *  @return number of elements
+   */
+  int size() const;
+
+  /** Determines if the stack is currently empty.
+   *  @return true if empty, false otherwise.
+   */
+  bool empty() const;
+
+  /** Returns a const reference to the top object in the stack.
+   *  Throws a runtime_error if the stack is empty.
+   * @return reference to top element
+   */
+  const string& top() const;
+
+  /** Inserts an object at the top of the stack. If the stack
+   *  is already at capacity, the oldest element will be lost.
+   *  @param the new element
+   */
+  void push(const string& elem); 
+
+  /** Removes the top object from the stack.
+   *  Throws a runtime_error if the stack is empty.
+   */
+  void pop();
+};
+</PRE>
+
+
+<HR>
+
+
+<H1><A NAME="task">Your Task</A></H1>
+
+<P>
+For this assignment, you will be required to give two different
+implementations for the <TT>LeakyStack</TT> interface, as described below. 
+We will provide you with sample initial files for these classes.
+
+<P>
+
+<UL>
+  <LI>
+      <B><TT>LeakyStackA</TT></B> 
+
+      <P>
+      One way to implement a <TT>LeakyStack</TT> is as follows.
+      Use the <tt>ArrayStack</tt> implementation essentially verbatim
+      from lecture, modifying only the <tt>push</tt> method accordingly.
+      In the case when pushing onto a "full" stack, use a
+      loop to shift all items down one location in the array.  By doing
+      this, you will lose your bottommost item while
+      opening up the topmost location for the newly pushed object.
+
+  </LI>
+
+  <LI>
+      <B><TT>LeakyStackB</TT></B> 
+
+      <P>
+      A second way to implement a <TT>LeakyStack</TT> is to use an array viewed
+      in a circular manner (in a style similar to our
+      <tt>ArrayQueue</tt> implementation). You can mark the "top" of the circular
+      stack with an extra integer variable that is an index into your
+      array.  By also keeping explicit count of the current size of
+      the stack, you can effectively identify the "bottom" of the
+      stack as well, when needed. With a bit of care, you can more
+      efficiently handle pushes, even those involving overflow.
+
+
+  </LI>
+</UL>
+
+<H2>Simplifications</H2>
+
+<p>
+To make things a bit easier for this assignment,
+<ul>
+  <li>
+      <p>
+      we have intentionally defined the LeakyStack to be a stack of
+      strings rather than using a generic item type.  This means that
+      you do not need to write templated code for this assignment.
+
+  </li>
+  <li>
+      <p>
+      our driver will not rely upon the existence of proper
+      "housekeeping" methods (a copy constructor, assignment operator,
+      and destructor).   So you do not need to implement them, even
+      though they would be necessary for legitimate versions of these
+      classes.
+
+  </li>
+</ul>
+
+
+<HR>
+
+
+<H1><A NAME="files">Files We Are Providing</A></H1>
+
+<P>
+All such files can be <a href="p1/index.html">downloaded here</a>.
+
+
+<UL>
+  <LI>
+      <P>
+      <TT>LeakyStack.h</TT>
+      <BR>
+      This file formally defines the abstract class <tt>LeakyStack</tt>.
+
+  </LI>
+  <LI>
+      <P>
+
+      <TT>LeakyStackA.h</TT>
+      <BR>
+      This file should be used to formally define the
+      <tt>LeakyStackA</tt> class, which is the first of the two
+      implementations of the <tt>LeakyStack</tt> interface.
+      The initial file that we provide is not complete.  Rather it
+      defines all of the public methods that you will need to
+      implement, yet with stubs for most of the method bodies.   You
+      will need to modify this file appropriately.
+
+  </LI>
+  <LI>
+      <P>
+      <TT>LeakyStackA.cpp</TT>
+      <BR>
+      This file should contain the implementations for most of the
+      methods defined in the <tt>LeakyStackA</tt> class.
+      The initial file that we provide is not complete.  Rather it
+      defines so-called <em>stubs</em> for each such method.  The
+      stubs are syntactically correct so that they can be compiled,
+      but they are in no way semantically correct implementations of
+      the desired behaviors. You
+      will need to modify this file appropriately.
+
+  </LI>
+  <LI>
+      <P>
+      <TT>LeakyStackB.h</TT>
+      <BR>
+      Analog to <tt>LeakyStackA.h</tt> but to be used for the
+      <em>second</em> of the two implementations as outlined in this
+      assignment.
+
+  </LI>
+  <LI>
+      <P>
+      <TT>LeakyStackB.cpp</TT>
+      <BR>
+      Analog to <tt>LeakyStackA.cpp</tt> but to be used for the
+      <em>second</em> of the two implementations as outlined in this
+      assignment.
+
+  </LI>
+  <LI>
+      <P>
+      <TT>WebHistoryDriver.cpp</TT>
+      <BR>
+      This file provides a main driver to be used in testing your
+      program.  You will not need to modify this code.
+      The use of the driver is discussed in the <A href="#driver">next section</A>.
+  </LI>
+  <LI>
+      <P>
+      <TT>makefile</TT>
+      <BR>
+      This makefile should allow  you to rebuild your project by
+      simply typing 'make' rather than invoking the compiler
+      directly.
+
+  </LI>
+</UL>
+
+
+
+<HR>
+
+
+<H1><A NAME="driver">Use of the Driver</A></H1>
+
+<P>
+<tt>WebHistoryDriver</tt> is a text-based, menu-driven program for
+testing your LeakyStack implementations.  The menu allows you to
+call any combination of LeakyStack methods.  You may even call the
+constructors for either of the two implementations anytime you want to
+restart with a different capacity.
+
+
+<P>
+By default, the program takes input from the keyboard.  However the
+driver has an optional feature which allows it to read input from a
+file rather than from a keyboard.  The file should have the identical
+characters which you would use if you were typing them yourself on the
+keyboard.  This feature simply allows you to test and retest your
+program on a particular input without having to retype the input each
+time you want to run the program.  It is also convenient at times when
+running with a debugger to have the input read from a file rather than
+from the keyboard.  If the program reaches the end of the file without
+exiting, then it will revert back to reading input from the keyboard
+for the remainder of the program.
+
+
+<P>
+To use this feature, you must specify the exact filename (including
+any suffix), as a single argument at runtime, using a syntax such as
+<pre>
+./WebHistoryDriver inputfile
+</pre>
+
+
+
+
+
+<HR>
+
+
+<H1>
+<A name="testing">Black-Box, Unit Testing</A>
+</H1>
+
+<P>
+
+Part of developing good software is also knowing how to perform
+meaningful testing of your software.  Our hypothetical motivation for
+this data structure was that it might be used in the larger context of
+a web browser.  One approach to testing would be to wait until the
+entire project were completed and then to test the final result.  Of
+course, if the browser history were not operating properly at that
+point, we would have to wonder whether the problem was due to an
+errant implementation of the data structure, to an errant use of a
+well-written data structure, or some other problem.  Rather than
+relying on a test of the entire end product, a useful approach is to
+make sure that each individual piece works in isolation.  This is
+called <em>unit testing</em>.  So for this assignment, you will
+develop a test plan for evaluating the correctness of the
+<tt>LeakyStack</tt> implementations without actually considering the
+larger application (in fact, we will not actually be writing any such
+hypothetical web browser).   To perform unit testing of this data
+structure, you will use the provided driver which allows you to
+individually call any of the public methods supported by the data
+structure.
+
+
+<P> There is another issue we wish for you to consider when developing
+test plans.  Often, testing is performed in close coordination with an
+examination of source code.  For example, we may write some code or
+view some code, and then try to test that particular chunk of code.
+There is an inherent danger in relying only on such tests. In
+particular, if the tests are based on the same flow of thoughts as
+(errant) code, we are more likely to forget to test for a particular
+combination of events that were not considered by the code.  The
+practice of "black box" testing is to design a set of tests based
+purely on the formal specifications for a data structure, but without
+actually seeing the source code.
+
+
+<P>
+On this assignment, we will have you develop a black-box unit
+test plan for <tt>LeakyStack</tt> implementations.  Specifically, you
+must submit a plain text file named "inputfile" which will be used to
+test <em>other students'</em> implementations.  The goal is to create
+test input which causes as many as possible of the other students'
+programs to fail in some way.
+Because our execution of student tests will be automated, you must
+make sure that your "inputfile" strictly adheres to the file format
+which is expected by the <a href="#driver">text-based driver</a>,
+<TT>WebHistoryDriver</TT>, described earlier.
+Your file may use at most 100 commands.  <EM>If your input file
+contains more than the prescribed number of commands, we will simply
+truncate the end of the file.</EM>
+In order to
+make sure that your inputfile follows the proper format, we strongly
+recommend that you run <u>your</u> program on <u>your</u> inputfile to
+make sure it is accepted by the driver.
+
+<P>
+Here is a <a href="p1/inputfile">sample input file</a>, appropriately formatted.
+
+<HR>
+
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code">Source Code</a>
+      <br>
+      Please submit all source code files which you have either
+      modified or added.  For this assignment, we expect this to include the
+      four files <tt>LeakyStackA.h</tt>,
+      <tt>LeakyStackA.cpp</tt>,
+      <tt>LeakyStackB.h</tt>, and
+      <tt>LeakyStackB.cpp</tt>.
+  </LI>
+  <LI>
+      <P>
+      <a name="testinput">Test Input</a>
+      <br>
+      Please submit a single file, <tt>inputfile</tt>, as outlined in the
+      earlier section on testing.
+  </LI>
+  <LI>
+      <P>
+      <a name="readme">Readme File</a>
+      <br>
+
+      For each assignment, you are to submit a separate file "readme" as
+      specified in the <a href="../#readme">general programming webpage</a>.
+      For this assignment, you should include two separate tables, similar
+      to Table&nbsp;4.2 on page&nbsp;174 of the text, summarizing the
+      worst-case <EM>asymptotic</EM> running times for your implementations.
+      One table should discuss <TT>LeakyStackA</TT> and one should discuss
+      <TT>LeakyStackB</TT>.
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P> The assignment is worth <em>10</em> points.  Eight points will be awarded 
+based on our own evaluation of your assignment and the readme file.  One point 
+will be based on how well your test input checks both your and the other 
+students' implementations.
+
+<p> The final point will be added based on an early check-in with the 
+professor; you will be expected to show at least 25 lines of (new) code in by 
+Tuesday, Sept. 25.  This may be done via email, after 
+class, in normal office hours, or at a different time by appointment, but it 
+must be done by the end of the day on Tuesday.
+
+
+<HR>
+
+<H1><A NAME="modular">Hints Regarding Modular Arithmetic</A></H1>
+
+<P>
+When dealing with an array in a circular fashion, there are many
+possible ways for adjusting indicies as they "wrap around" the ends of
+the array.  The text chooses to use modular arithmetic (the "%"
+operator in C++).   Please note that its precedence is equivalent to
+multiplication and division, and therefore the expression
+<nobr><tt>a+b%c+d</tt></nobr> is evaluated as
+<nobr><tt>a+(b%c)+d</tt></nobr> by default.  Also, the results of
+<tt>a%b</tt> is system dependent if one of the operands is negative.
+
+
+
+  </body>
+</html>

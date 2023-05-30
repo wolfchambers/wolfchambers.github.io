@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="programming/">Programming</A> |
+<A HREF="labs/">Labs</a> |
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 180: Data Structures <br> Fall 2011 <br> MWThF 10-10:50am in 121 RH</h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 011 Ritter Hall
+<br> Office Hours: 2-4pm Monday, 11-12 Thursday
+
+</h3>
+
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p>Nov. 26: The program due date is extended until Monday at 
+midnight, instead of Sunday at midnight.  This is due to a slight bug 
+in my code.  I've had to update the <a 
+href="programming/p6/BinaryTree.h">BinaryTree.h</a> file for program 6. 
+(If you are curious, it was in _duplicate, where I used other._data 
+when other is a pointer, rather than other->_data, as well as a few 
+similar errors.)  Please make sure to redownload a NEW copy of 
+BinaryTree.h, or else you will find errors in your program from the old 
+file!  You can check the function _duplicate yourself to be sure that you
+have the new version, where the -> notation is used.
+
+<li><p>Nov. 21: You are allowed to redo one of your problems from the midterm.  This redo will be due on Monday, Nov. 28, at the start of class.  If you miss class today and do not get your graded midterm 2 back, please email or come see me ASAP so that I can suggest a problem for you to rework over break, since there will be no extensions on this particular extra credit opportunity.
+
+<li><p>Nov. 21: <a href="homework/hw4.pdf">Homework 4</a> is available; it will be due on Wednesday, Nov. 30, by the start of class.  
+
+<li><p>Nov. 16:<a href="programming/program6.html">Program 6</a> is available; it will be due Sunday, Nov. 17, by 11:59pm.  Note that there is a checkpoint on Monday, Nov. 21, and that you are welcome to work with a partner on this assignment.
+
+<li><p>Nov. 4: The next midterm will be in class on Monday, Nov. 14, and there will be a review session the Friday before.
+
+<li><p>Nov. 4: <a href="homework/hw3.pdf">Homework 3</a> is available; it will be due next Friday, Nov. 11, at the beginning of class.  
+
+<li><p>Oct. 28: <a href="programming/program5.html">Program 5</a> is available; it will be due next Saturday, Nov. 5, by 11:59pm.  (Again, you must work individually on program 5.)  There will be a checkpoint due next Tuesday, Nov. 1.
+
+<li><p>Oct. 21: <a href="programming/program4.html">Program 4</a> is available; it will be due next Thursday, Oct. 27, by 11:59pm.  (Note that you must work individually on program 4.)
+
+<li><p>Oct. 17: Sorry for the difficulty this morning; I am back on campus now and will have office hours as usual from 2-4pm.
+
+<li><p>Oct. 12: <a ref="programming/program3.html">Program 3</a> is available; it will be due next Wednesday, Oct. 19, by 11:59pm.  Note that you may work with a partner on this programming assignment.
+
+<li><p>Oct. 12: No class today due to illness.  I'll post the next programming assignment and the lab for tomorrow, so please make sure to check back shortly.
+
+<li><p>Oct. 3: There will be no class today due to illness.  Since I am out of the 
+office, you may have 1 extra day to work on your programs; they will now 
+be due before midnight tomorrow, Oct. 4.  I'll do my best to keep up 
+with email questions.
+
+<li><p>Sept. 26: My office hours today from 2-4pm are canceled due to a sick child; please email me with any questions or to set up another time to meet.
+
+<li><p> Sept. 26: <a href="programming/program2.html">Program 2</a> is available; it will be due next Monday by 11:59pm.
+
+<li><p>Sept. 19: Office hours today are changed to be from 2-3pm only.  Email me if you have additional questions or need to set up a different time.
+
+<li><p>Sept. 12: <a href="programming/program1.html">Program 1</a> is available; it will be due next Monday, Sept. 18, by 11:59pm.  Note that you allowed to work with a partner on this assignment.
+
+<li><p>Sept. 3: <a href="homework/hw1.pdf">Homework 1</a> is available; it will be due next Saturday, Sept. 10, by 11:59pm.
+
+<li><p> Sept. 1: If anyone attended the help session yesterday and didn't sign the extra credit sheet, email me ASAP so I can record your name.  Please include in your email one interesting thing you learned about in the help session as a verification of your attendance.
+
+<li><p>Aug. 31: The first lab has been posted (and don't worry, this prelab 
+is fairly easy).  It can be on the "labs" portion of the website, by 
+clicking on the menu above.  Note that this lab is slightly different, and 
+won't use the contest format that is described under "Information about Lab 
+Assignments" on the lab page; that format of lab will begin next week with 
+lab 2.
+
+<li><p> Aug. 29: <a href="http://cs.slu.edu/~goldwasser/publications/python2cpp.pdf">Here</a> is a link to the transition guide that we will be using for the first 2-3 weeks of class.
+
+<li><p> August 24: Welcome to CS180!  Please be sure to read course policies 
+carefully, and check this page daily for updates or announcements.
+
+</ul>
+
+</body>
+</html>

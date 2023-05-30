@@ -1,0 +1,74 @@
+<html>
+
+<head> 
+<title>CSCI 314: Algorithms</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> | 
+<A href="policies.html">Course Policies</a> |
+<A HREF="homeworks/">Homework</A> | 
+<A HREF="schedule/">Schedule & Lecture Notes</A> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 314: Algorithms <br> Fall 2013 </h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu 
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Monday 2-3pm, Thursday 9-10am, or by appointment
+
+</h3>
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p>Dec. 4:  Class this Friday (Dec. 6) is cancelled, as are office hours on Thrusday morning.  (Make-up office hours will be 8:30-10am on Friday morning.)  Our final class will be a review session next Monday.
+
+<li><p>Dec. 4: a href="homeworks/hw10.pdf">Homework 10</a> is available; it is optional, but for those who choose to do it, it will be due next Monday at the start of class.  If submitted, it will replace the 2nd lowest grade on your homework this semester (since the lowest score is dropped).  Note that you are responsible for this material on the final, no matter what!
+
+<li><p>Nov. 22: <a href="homeworks/hw9.pdf">Homework 9</a> is available; it will be due on Tuesday, Dec. 3.  Note that this one can be done orally or on paper (your choice).
+
+<li><p>Nov. 15: Class today is cancelled due to illness.  Please read section 7.1 from the <a href="http://www.cs.berkeley.edu/~vazirani/algorithms/all.pdf">textbook</a>, and be ready to answer questions about setting up and solving basic linear programs on Monday in class.
+
+<li><p>Nov. 12: <a href="homeworks/hw8.pdf">Homework 8</a> is available; it will be due next Wednesday, Nov. 20, at the start of class in written form.
+
+<li><p>Nov. 1: <a href="homeworks/hw7.pdf">Homework 7</a> is available; it will be graded orally on Monday, Nov. 11 and Tuesday, Nov. 12.
+
+<li><p>Oct. 25: <a href="homeworks/hw6.pdf">Homework 6</a> is available; it will be due (in written form) next Friday at the start of class.
+
+<li><p>Oct. 8: <a href="homeworks/hw5.pdf">Homework 5</a> is available; it will be due on Friday, Oct. 25, at the start of class (in written form).
+
+<li><p>Oct. 8: Remember that the midterm will be next Friday, Oct. 18, during class.  There will be a review in class on Wednesday the 16th.
+
+<li><p>Sept. 21:  <a href="homeworks/hw4.pdf">Homework 4</a> is available; it will be graded orally next Tuesday.  Expect a sign-up sheet this Wednesday in class, so come prepared to schedule a time as a group.
+
+<li><p>Sept. 21:  <a href="homeworks/hw3.pdf">Homework 3</a> is available; it will be due on Monday, Sept. 30 at the start of class.  (Note that you are welcome to work in groups; just be sure to record all names on the homework when submitted.)
+
+<li><p>Sept. 13: <a href="homeworks/hw2.pdf">Homework 2</a> is available; it will be graded orally next Thursday and Friday. Please come prepared on Monday to sign up for a time to meet with me one of those days.
+
+<li><p>Sept. 6: <a href="homeworks/hw1.pdf">Homework 1</a> is available; it will be a written homework, due at the start of class next Friday, Sept. 13.  
+
+<li><p>Aug. 28: For those who would like a review, <a 
+href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/99-recurrences.pdf">here</a> 
+is a good review of recurrences and how to solve them, and <a 
+href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/98-induction.pdf">here</a> 
+is another on induction.  You are also welcome to refer to any discrete math 
+textbooks, of course.
+
+<li><p>Aug. 26: <a href="homeworks/hw0.pdf">Homework 0</a> is available; it will be due next Wednesday, Sept. 4, at the start of class.
+
+<li> <p>Aug. 20: Welcome to Algorithms!  Please make sure to read the course policies  carefully, and remember to check this announcements section daily for new announcements or reminders.
+
+</ul>
+
+</body>
+</html>

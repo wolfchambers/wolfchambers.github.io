@@ -1,0 +1,215 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="programming/">Programming</A> |
+<A HREF="labs/">Labs</a> |
+<A HREF="schedule/schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 180: Data Structures <br> Fall 2010 <br> MWThF 10-10:50am in 121 RH</h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Wednesday 1-2pm, Thursday 9-10am, or by appointment
+
+</h3>
+
+</center>
+
+
+<h2>Lab 1: Compiling and runnning C++ programs</h2>
+
+<h3>Deadline</h3>
+Pre-lab:  10 am, Thursday, August 26<br>
+Lab:  11:59, Sunday, August 29<br>
+
+<h3>Pre-lab</h3>
+Read the lab and email Dr. Chambers that you have read it.
+
+<h3>Lab</h3>
+
+<ol>
+  <li>
+      <p>
+      Open up a console window and change to the working directory of
+      your choice. You may create a new directory with a command such
+      as <br>
+      <nobr><b><tt>mkdir cs180</tt></b></nobr><br>
+
+      and then change to that directory with the command<br>
+      <nobr><b><tt>cd cs180</tt></b></nobr><br>
+
+  </li>
+  <li>
+      <p>
+      We are providing a directory containing sample C++ source code named <tt>gcd.cpp</tt>.
+      Copy our directory into your working directory with the following
+      command (note well the final period)<br>
+
+      <nobr><b><tt>cp -R /Public/letscher/180/labs/lab1 .</tt></b></nobr><br>
+      and then change into your copy of the directory as<br>
+      <nobr><b><tt>cd lab1</tt></b></nobr><br>
+  </li>
+
+
+  <li>
+      <p>
+
+      That directory will contain the file <tt>gcd.cpp</tt>.
+      You should see it in the listing of your directory with the
+      command<br>
+      <nobr><b><tt>ls</tt></b></nobr><br>
+
+      <p>
+      View the source code by opening the file with a text editor.
+      A simple text editor on turing is called <tt>kate</tt>.  You may
+      either type <tt>kate gcd.cpp</tt> in the console to start the program
+      or look for it in the "Utilities" folder of the "K" menu at the
+      bottom-left corner of your workspace.  If you want a more advanced
+      text editor, my personal favorite is named <tt>emacs</tt>.
+  </li>
+
+  <li>
+      <p>
+      Our next goal is to compile the source code. We recommend doing
+      this with the command<br>
+      <nobr><b><tt>make gcd</tt></b></nobr><br>
+
+      <p>
+      <tt>make</tt> is not actually the C++ compiler, but a convenient
+      utility that assits when building applications.
+      When you execute that command, it invokes the actual compiler
+      with a command such as<br>
+
+      <nobr><b><tt>g++ gcd.cpp -o gcd</tt></b></nobr><br>
+
+      <p>
+      If you work on a system other than turing and you do not have
+      <tt>make</tt> installed, you can compile your code by directly
+      invoking <tt>g++</tt> as shown above.  Our reasons for prefer the
+      use of <tt>make</tt> are that it is a simpler syntax and that
+      <tt>make</tt> can better handle complex builds when we start to
+      use multiple source files.  Make is also clever in that it won't
+      recompile if the source code has not been modified since the
+      last build.  For example, type
+      <nobr><b><tt>make gcd</tt></b></nobr>
+
+      again and see  how it responds.
+  </li>
+
+  <li>
+      <p>
+      After a successful compilation,  the output of the compiler
+      will be an executable named <tt>gcd</tt>  (that file name was
+      dictated with the syntax <tt>-o gcd</tt> when g++ was invoked).
+      <p>
+
+      You should be able to see that file in the listing of your
+      directory with the command<br>
+      <nobr><b><tt>ls</tt></b></nobr><br>
+
+  </li>
+  <li>
+      <p>
+      The executable can be run from your working directory using the command<br>
+      <nobr><b><tt>./gcd</tt></b></nobr><br>
+
+      try the following interactions<br>
+<pre>
+First value: <b>30</b>
+Second value: <b>18</b>
+gcd: 6
+</pre>
+  </li>
+  <li>
+      <p>
+
+      Use the program to calculate the greatest commond divisor of
+      the values 9772444 and 3297294.  Record the result.
+  </li>
+</ol>
+
+<P>
+To complete this lab, create a text file named <tt>lab1.txt</tt> with
+the following format:
+<pre>
+Lab 1
+gcd_result_here
+</pre>
+then submit the file <tt>lab1.txt</tt> via email to Dr. Chambers.
+
+<hr>
+
+
+Extra time?  Open the source code again in a text editor and try the
+following.
+
+<ol start=9>
+  <li>
+      <p>
+      Go to line 7 and insert the characters <tt>//</tt> at the
+      beginning of the line (turing that line into a comment). Now
+      go back to the console and type<br>
+      <nobr><b><tt>make gcd</tt></b></nobr><br>
+
+      What is the compiler's complaint?
+      <p>
+      Uncomment line 7 to restore the original file.
+  </li>
+  <li>
+      <p>
+      Delete the first <tt>int</tt> that begins line 4 and try to
+      rebuild the program. What is the compiler's complaint?
+      <p>
+      Restore line 4 to its original form.
+  </li>
+
+  <li>
+      <p>
+      Go to line 19 and change the characters <tt>&gt;&gt;</tt> to
+      <tt>&lt;&lt;</tt>.  What is the compiler's complaint?
+      <p>
+      Restore line 19 to its original form.
+  </li>
+  <li>
+      <p>
+
+      Go to line 8 and remove the <tt>{</tt> character near the end of
+      the line and try again to make the project.  This time, the
+      compiler complains about line 13.  Why?
+      <p>
+      Restore the <tt>{</tt> at line 8 before continuing.
+  </li>
+  <li>
+      <p>
+      Comment out line 13 (by prefixing it with <tt>//</tt> and try to
+      rebuild.  This time, the make succeeds.  Rerun the resulting
+      executable and recalculate the gcd of 30 and 18.  What happened?
+
+      <p>
+
+      Restore line 13 to its original form.
+  </li>
+  <li>
+      <p>
+      Experiment with other changes to the source code and see what happens.
+  </li>
+</ol>
+
+</body>
+</html>
+

@@ -1,0 +1,104 @@
+#include "BinaryTree.h"
+
+template <typename ItemType>
+class BinarySearchTree : public BinaryTree<ItemType> {
+  
+  public:
+    
+    //Function to insert into the BST
+    void insert(const ItemType& element) {
+
+      //insert in an empty tree
+      if (BinaryTree<ItemType>::empty()) {
+	BinaryTree<ItemType>::_createRoot(element);
+      }
+      
+      else {  //need to find the correct spot
+	typename BinaryTree<ItemType>::Iterator current;
+	current = BinaryTree<ItemType>::root(); 
+	 
+	bool done = false;
+	
+	while (!done) {
+	  if (element <= *current) { //Need to go left in the tree
+	    if (current.hasLeftChild())
+	      current = current.left();
+	    else { //we have found the correct location
+	      BinaryTree<ItemType>::_insertAsLeftChild(current,element);
+	      done = true;
+	    }
+	  }
+	  else { //need to go to the right in the tree
+	    if (current.hasRightChild()) 
+	      current = current.right();
+	    else { //found the correct location
+	      BinaryTree<ItemType>::_insertAsRightChild(current, element);
+	      done = true;
+	    }
+	  }
+	}//end while
+      } //end else
+      
+    } //end insert
+    
+    //Function to find a value in the BST
+    //Returns an iterator to that value if it is found, or a null iterator otherwise
+    typename BinaryTree<ItemType>::Iterator find(const ItemType& value) {
+      
+      	typename BinaryTree<ItemType>::Iterator current;
+	current = BinaryTree<ItemType>::root(); 
+    
+	while (current != BinaryTree<ItemType>::end()) {
+	  if (*current == value)
+	    return current;
+	  if (*current < value)
+	    current = current.right();
+	  else
+	    current = current.left();
+	} 
+	return current;
+    }
+    
+    
+    
+    
+    void animatedInsert(const ItemType& value) { 
+      cout << endl; 
+      if (BinaryTree<ItemType>::size() == 0) { 
+	_createRoot(value); 
+	cout << "Empty tree inserting at root" << endl; 
+      } 
+      else { 
+	typename BinaryTree<ItemType>::Iterator current = BinaryTree<ItemType>::root(); 
+	bool done=false; 
+	while (!done) { 
+	  if (*current <= value) { 
+	    cout << "Right branch" << endl; 
+	    if (current.hasRightChild()) { 
+	      cout << "Descending" << endl; 
+	      current = current.right(); 
+	    } 
+	    else { 
+	      cout << "Inserting as child" << endl; 
+	      _insertAsRightChild(current, value); 
+	      done = true;
+	    } 
+	  } 
+	  else { 
+	    cout << "Left branch" << endl; 
+	    if (current.hasLeftChild()) { 
+	      cout << "Descending" << endl; 
+	      current = current.left(); 
+	    } 
+	    else { 
+	      cout << "Inserting as child" << endl; 
+	      _insertAsLeftChild(current, value); 
+	      done = true; 
+	    } 
+	  } 
+	  draw("foo", &current, true); 
+	} 
+      } 
+    }
+
+}; //end BinarySearchTree

@@ -1,0 +1,186 @@
+html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<A HREF="../homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="../programming/">Programming</A> |
+<b>Labs</b> |
+<A HREF="../schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+
+<p>
+<hr>
+
+
+<h1>Lab Assignment 6
+
+</h1>
+
+<table>
+  <tr>
+    <td>
+        <b>Topic:</b>
+    </td>
+    <td>
+        Doubles
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <b>Source Code:</b>
+    </td>
+    <td>
+        <tt>doubles.cpp</tt>
+    </td>
+  </tr>
+  <tr>
+    <td>
+
+       <b>Live Archive Ref#:</b>
+    </td>
+    <td>
+        <a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/problem.php?p=2787">2787</$
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <br>
+        <b>In-Class Day:</b>
+    </td>
+    <td>
+        <br>
+        Thursday, October 7, 2009
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <b>Submission Deadline:</b>
+    </td>
+    <td>
+        Sunday, October 10, 2009, 11:59pm
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <br>
+        <b>Techniques:</b>
+    </td>
+    <td>
+        <br>
+        Use of fixed-sized arrays
+    </td>
+  </tr>
+</table>
+      
+<p>
+Please review the
+<a href="../#general">general information about lab assignments</a>.
+        
+        
+<hr>
+  
+<h1>Doubles</h1>
+
+<p>
+As part of an arithmetic competency program, your students will be given
+randomly generated lists of from 2 to 15 unique positive integers and
+asked to determine how many items in each list are twice some other item
+in the same list.  You will need a program to help you with the grading.
+This program should be able to scan the lists and output the correct
+answer for each one. For example, given the list </p>
+<center><pre>1 4 3 2 9 7 18 22</pre></center>
+<p>
+your program should answer 3, as 2 is twice 1, 4 is twice 2, and 18 is
+twice 9. </p>
+        
+<p>
+The input file will consist of one or more lists of numbers. There will be
+one list of numbers per line.  Each list will contain from 2 to 15 unique
+positive integers.  No integer will be larger than 99.
+Each line will be terminated with the integer 0, which is not
+considered part of the list.
+A line with the single number -1 will
+mark the end of the file.  The example input below shows 3 separate lists.
+Some lists may not contain any doubles.</p>
+        
+<p>
+The output will consist of one line per input list, containing
+a count of the items that are double some other item.
+</p>
+      
+<table border=1 cellpadding=10>
+ <thead>
+ <tr>
+  <td><b>Example input:</b><td><b>Example output:</b></td>
+ </thead>
+ <tbody>
+ <tr>
+  <td> <tt>
+    1 4 3 2 9 7 18 22 0<br>
+    2 4 8 10 0<br>
+    7 5 11 13 1 3 0<br>
+    -1</tt>
+  </td>
+  <td valign="top"> <tt>
+    3<br>
+    2<br>
+    0</tt>
+  </td>
+ </tr>
+ </tbody>
+</table>
+
+<hr>
+
+<h1>Hints</h1>
+
+<p>
+This should be an easy one, but it requires a two-stage process for
+each group.  First, we suggest having an array of boolean values that
+can be used to "mark" which numbers are in the set.  After
+initializing the array to be "empty" you can read the input and mark
+each number in the set.    Once you have finished reading the group of
+numbers, a loop through the array can be used to count how many times
+a value and its double are in the set.
+
+<p>
+<b>Warnings:</b>
+There are two common pitfalls to avoid
+<ul>
+  <li>
+      Don't use illegal array indices.  Remember that C++ will not
+      stop you from doing so;  instead, it will blindly access a part
+      of memory that is not really the array.
+  </li>
+  <li>
+      Make sure to reset your array for each new group.
+      We do not want numbers from one trial to affect the next.
+  </li>
+</ul>
+     
+
+<h3>Pre-lab</h3>
+
+What would the output be if the following was entered:<br>
+<tt>
+    1 2 4 8 16 32 0<br>
+    2 4 6 8 10 0<br>
+    -1</tt>
+  
+ 
+  </body>
+</html>
+

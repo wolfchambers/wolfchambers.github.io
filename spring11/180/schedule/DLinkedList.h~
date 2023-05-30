@@ -1,0 +1,122 @@
+#include <stdexcept>
+using namespace std;
+
+/* Doubly Linked List Class */
+
+template <typename Object>
+class DLinkedList {
+  
+private:
+  
+  /* Node class for singly linked lists*/
+  struct DNode {
+  
+    Object _elem;
+    DNode * _next;
+    DNode * _prev;
+    
+  };
+  
+  //private variable lists
+  DNode * _head;
+  DNode * _tail;
+  
+  
+public:
+  
+  /**
+   * Constructor
+   **/
+  DLinkedList() {
+  _head = new DNode;
+  _tail = new DNode;
+  _head->_next = _tail;
+  _tail->_prev = _head;
+  }
+  
+  /** 
+   * Destructor
+   **/  
+  ~DLinkedList() {
+  while (!empty()) 
+    removeFront();
+  delete _head;
+  delete _tail;    
+  }
+  
+  /** 
+   * Function to test if the list is empty
+   * Return: boolean value true if it is empty
+   **/
+  bool empty() const {
+  return (_head->_next == _tail);    
+  }
+  
+  /** 
+   * Function to return the front of the lists
+   * Return: A constant reference to the front of the list
+   **/
+  const Object& front() const {
+      return (_head->_next->_elem);
+  }
+ 
+  
+  /**
+   * Function to remove the front of the list
+   **/
+  void removeFront(){
+  remove(_head->_next);
+}
+  
+  /**
+   * Function to add a node to the front of the list
+   * Input parameter: a variable of type Object to insert
+   **/
+  void addFront(const Object& e) {
+  add(_head->_next, e);
+}
+  
+  /** 
+   * Function to return the back of the lists
+   * Return: A constant reference to the back of the list
+   **/
+  const Object& back() const {
+  return (_tail->_prev->_elem);
+}
+  
+  /**
+   * Function to remove the back of the list
+   **/
+  void removeBack() {
+  remove(_tail->_prev);
+}
+  
+  /**
+   * Function to add a node to the back of the list
+   * Input parameter: a variable of type Object to insert
+   **/
+  void addBack(const Object& e) {
+  add(_tail, e);
+}
+
+protected:
+  
+  void add(DNode* v, const Object& e)  {
+ DNode* u = new DNode;
+ u->_elem = e;
+ u->_next = v;
+ u->_prev = v->_prev;
+ v->_prev->_next = v->_prev = u;
+}
+  
+  void remove(DNode* v) {
+  DNode* u = v->_prev;
+  DNode* w = v->_next;
+  u->_next = w;
+  w->prev = u;
+  delete v;
+}
+  
+};
+  
+  

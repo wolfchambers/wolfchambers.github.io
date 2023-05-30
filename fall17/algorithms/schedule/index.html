@@ -1,0 +1,489 @@
+<html>
+
+<head> 
+<title>CSCI 3100: Algorithms</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> | 
+<A href="../policies.html">Course Policies</a> |
+<A HREF="../homeworks/">Homework</A> | 
+<b>Schedule & Lecture Notes</b> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 3100: Algorithms <br> Fall 2017 </h1>
+
+</h3>
+</center>
+
+
+<hr> <blockquote>
+
+<p>Here is this semester's tentative schedule; I will update 
+it as the semester progresses.  The listed sections refer to the course 
+textbook; all notes come from <a 
+href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/">Jeff 
+Erickson's algorithms notes</a>. </p>
+
+<p> Please note that all lectures notes are provided as a resource, not a substitution for attending class!  In particular, my tablet will inevitably lose notes at least a few times this semester, and you should be prepared to do extra reading and/or meet with a friend to get notes that you missed if you are gone.
+
+<table align="center" border="0" rules="rows" cellspacing="0" cellpadding="2" width="80%">
+<tr valign="middle" height="30">
+<td align="center" width="18%"><b>Date</b></td>
+<td align="center" width="30%"><b>Topic</b></td>
+<td align="center" width="30%"><b>Reading</b></td>
+<td align="center" width="10%"><b>Lecture Notes</b></td>
+<td align="center" width="12%"><b>Problem session (if any)</b></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Aug. 28</td>
+<td>Syllabus, big-O review</td>
+<td height="45"><a href="http://www.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/00-intro.pdf">Intro to algorithms</a></td>
+<td align="center"><a href="lecture1.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Aug. 30</td>
+<td>Big-o and induction</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/98-induction.pdf">Induction</a>
+<br>
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/99-recurrences.pdf">Recurrences</a>
+<br>
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/01-recursion.pdf">Recursion</a>
+</td>
+<td align="center"><a href="lecture2.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Sept. 1</td>
+<td>Recurrences and Recursion</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/99-recurrences.pdf">Recurrences</a>
+<br>
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/01-recursion.pdf">Recursion</a>
+</td>
+<td align="center"><a href="lecture3.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Sept. 8</td>
+<td>Recursion</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/01-recursion.pdf">Recursion</a>
+<br>
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/03-backtracking.pdf">Backtracking</a>
+</td>
+<td align="center"><a href="Recursion2.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Sept. 11</td>
+<td>Recursion <br> Dynamic Programming
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/03-backtracking.pdf">Backtracking</a>
+<br>
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/05-dynprog.pdf">Dynamic Programming</a>
+</td>
+<td align="center"><a href="DynamicProgramming1.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Sept. 13</td>
+<td>Dynamic Programming
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/05-dynprog.pdf">Dynamic Programming</a>
+</td>
+<td align="center"><a href="DynamicProgramming2.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Sept. 15</td>
+<td>Dynamic Programming
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/05-dynprog.pdf">Dynamic Programming</a>
+</td>
+<td align="center"><a href="DynamicProgramming3.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+
+<tr valign="middle">
+<td align="center">Monday, Sept. 18</td>
+<td>Dynamic Programming problem session
+</td>
+<td height="45">
+</td>
+<td align="center"></td>
+<td align="center"><a href="hb-dynpro.pdf">Worksheet</a></td>
+</tr>
+
+
+<tr valign="middle">
+<td align="center">Wednesday, Sept. 20</td>
+<td>Greedy algorithms
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/07-greedy.pdf">Greedy Algorithms</a>
+</td>
+<td align="center"><a href="Greedy1.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Sept. 22</td>
+<td>Greedy algorithms
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/07-greedy.pdf">Greedy Algorithms</a>
+</td>
+<td align="center"><a href="Greedy2.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+
+<tr valign="middle">
+<td align="center">Monday, Sept. 25</td>
+<td>Greedy algorithms
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/07-greedy.pdf">Greedy Algorithms</a>
+</td>
+<td align="center"><a href="Greedy3.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Sept. 27</td>
+<td>Greedy problem session
+</td>
+<td height="45">
+</td>
+<td align="center"></td>
+<td align="center"><a href="hb-greedy.pdf">Worksheet</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Sept. 29</td>
+<td>Graph algorithms: BFS and DFS
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/18-graphs.pdf">Graph representations and traversals</a>
+</td>
+<td align="center"><a href="Graphs1.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Oct. 2</td>
+<td>Graph algorithms: BFS, MST
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/18-graphs.pdf">Graph representations and traversals</a>
+<br>
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/20-mst.pdf">Minimum Spanning Trees</a>
+</td>
+<td align="center"><a href="Graphs2.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Oct. 4</td>
+<td>Graph algorithms: MST, SPSS
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/20-mst.pdf">Minimum Spanning Trees</a>
+</td>
+<td align="center"><a href="Graphs3.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Oct. 6</td>
+<td>Graph algorithms: SPSS
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/21-sssp.pdf">Shortest path trees</a>
+</td>
+<td align="center"><a href="Graphs4.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+
+<tr valign="middle">
+<td align="center">Monday, Oct. 9</td>
+<td>Graphs problem session
+</td>
+<td height="45">
+</td>
+<td align="center"></td>
+<td align="center"><a href="hb-graphs.pdf">Worksheet</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Oct. 11</td>
+<td>Flows and cuts
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/23-maxflow.pdf">Max flow notes</a>
+</td>
+<td align="center"><a href="Flows1.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Oct. 13</td>
+<td>Computing max flows        
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/23-maxflow.pdf">Max flow notes</a>
+</td>
+<td align="center"><a href="Flows2.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Oct. 16</td>
+<td>Review for midterm        
+</td>
+<td height="45">
+</td>
+<td align="center"></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Oct. 18</td>
+<td>Midterm exam
+</td>
+<td height="45">
+</td>
+<td align="center"></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Oct. 20</td>
+<td>Applications of flows
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/24-maxflowapps.pdf">Flow applications</a>
+</td>
+<td align="center"><a href="Flows3.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Oct. 25</td>
+<td>Recap of midterm <br> More applications of flows
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/24-maxflowapps.pdf">Flow applications</a>
+</td>
+<td align="center">On board</td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Oct. 27</td>
+<td>Flows problem session
+</td>
+<td height="45">
+</td>
+<td align="center"></td>
+<td align="center"><a href="hb-flows.pdf">Worksheet</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Oct. 30</td>
+<td>Hardness and undecidability
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/30-nphard.pdf">Reading on NP-Hardness</a>
+<br>
+<a href="https://en.wikipedia.org/wiki/Halting_problem">The Halting Problem</a>
+<br>
+<a href="https://www.quora.com/How-can-the-Halting-Problem-be-explained-to-a-layman">Layman's explanation of the halting problem</a>
+<br>
+<a href="http://hewner.com/2010/01/04/the-llamas-of-computing/">A P versus NP fairytale: the llamas of compuiting</a>
+</td>
+<td align="center"><a href="Hardness1.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Nov. 1</td>
+<td>NP-Hardness
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/30-nphard.pdf">Reading on NP-Hardness</a>
+</td>
+<td align="center"><a href="Hardness2.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Nov. 3</td>
+<td>NP-Hardness: Graph problems                
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/30-nphard.pdf">Reading on NP-Hardness</a>
+</td>
+<td align="center"><a href="Hardness3.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Nov. 6</td>
+<td>NP-Hardness: Numeric problems
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/30-nphard.pdf">Reading on NP-Hardness</a>
+</td>
+<td align="center"><a href="Hardness4.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Nov. 8</td>
+<td>NP-Hardness: problem session
+</td>
+<td height="45">
+</td>
+<td align="center"></td>
+<td align="center"><a href="hb-nphard.pdf">Problems</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Nov. 10</td>
+<td>Intro to approxmiation
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/31-approx.pdf">Reading on approximation</a>
+</td>
+<td align="center"><a href="Approx1.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Nov. 13</td>
+<td>Approxmiation algorithms
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/31-approx.pdf">Reading on approximation</a>
+</td>
+<td align="center"><a href="Approx2.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Nov. 15</td>
+<td>More approximatrion
+</td>
+<td height="45">
+<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/31-approx.pdf">Reading on approximation</a>
+</td>
+<td align="center"><a href="Approx3.pdf">Lecture Notes</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Nov. 17</td>
+<td>Problem session day: approximation   
+</td>
+<td height="45">
+</td>
+<td align="center">
+</td>
+<td align="center"><a href="hb-approx.pdf">Problems</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Monday, Nov. 20</td>
+<td>Intro to Linear Programming
+</td>
+<td height="45"><a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/26-lp.pdf">Intro to LP section</a>
+</td>
+<td align="center"><a href="LP1.pdf">Lecture Notes</a>
+</td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Nov. 29</td>
+<td>Linear Programming
+</td>
+<td height="45"><a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/26-lp.pdf">Intro to LP</a>
+</td>
+<td align="center"><a href="LP2.pdf">Lecture Notes</a>
+</td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Dec. 1</td>
+<td>Linear Programming: Simplex
+</td>
+<td height="45"><a href="http://jeffe.cs.illinois.edu/teaching/algorithms/notes/27-simplex.pdf">Simplex algorithms</a>
+</td>
+<td align="center"><a href="LP3.pdf">Lecture Notes</a>
+</td>
+<td align="center"></td>
+</tr>
+
+
+<tr valign="middle">
+<td align="center">Monday, Dec. 4</td>
+<td>Cryptography: Intro and AES
+</td>
+<td height="45">
+</td>
+<td align="center"><a href="Crypto1.pdf">Lecture Notes</a>
+</td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Wednesday, Dec. 6</td>
+<td>Diffie Hellman key exchange
+</td>
+<td height="45">
+</td>
+<td align="center"><a href="Crypto2.pdf">Lecture Notes</a>
+</td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Friday, Dec. 8</td>
+<td>RSA and primality testing
+</td>
+<td height="45">
+<a href="http://www.mathaware.org/mam/06/Kaliski.pdf">Nice introduction</a>
+</td>
+<td align="center"><a href="Crypto3.pdf">Lecture Notes</a>
+</td>
+<td align="center"></td>
+</tr>
+
+</table>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+#include "BinaryTree.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  BinaryTree<int> mytree;
+  
+  mytree.createRoot(6);
+  
+  mytree.draw("binarytree", 0, true);
+  
+  BinaryTree<int>::Iterator it = mytree.root();
+  
+  mytree.insertAsLeftChild(10, it);
+  mytree.insertAsRightChild(5, it);
+  
+  it = it.left();
+  
+  mytree.draw("binarytree", &it, true);
+  
+  mytree.insertAsLeftChild(2,it);
+  mytree.insertAsRightChild(11,it);
+  
+   mytree.draw("binarydtree", &it, true);
+   
+  it = it.left();
+
+  mytree.insertAsLeftChild(8,it);
+  mytree.insertAsRightChild(9, it);
+
+  it = it.up();
+  it = it.up();
+  it = it.right();
+
+  mytree.insertAsLeftChild(24, it);
+
+  mytree.insertAsRightChild(21, it);
+   
+   mytree.draw("binarytree", &it, true);
+  
+
+  mytree.pivot(it);
+  
+     mytree.draw("binarytree", &it, true);
+  
+}

@@ -1,0 +1,486 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<a href="../homework/">Homework</a> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<b>Programming</b> |
+<A HREF="../labs/">Labs</a> |
+<A HREF="../schedule/schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+
+<hr>
+
+
+<center>
+<h2>Programming Assignment 2
+
+<br>
+Smart Stacks
+</h2>
+<h3>
+Due:
+Monday, March 7, 11:59pm
+
+
+</h3>
+</center>
+
+
+<P>
+Please see the <a href="../#general">general programming webpage</a> for details about
+the programming environment for this course,  guidelines for
+programming style, and details on electronic submission of assignments.
+</P>
+
+<P>
+The files you may need for this assignment can be
+<a href="p3/">downloaded here</a>.
+</P>
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+For this assignment, <b>you are allowed to work with one other
+student</b> if you wish (in fact, we suggest that you do so).
+If any student wishes to have a partner but
+has not been able to locate one, please let the instructor know so
+that we can match up partners.
+</p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+</p>
+
+
+<hr>
+
+
+<h3>Contents:</h3>
+<UL>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#refs">Maintaining Reference Counts</a>
+  </LI>
+  <LI>
+      <a href="#task">Your Task</a>
+  </LI>
+  <LI>
+      <a href="#example">A Detailed Example</a>
+  </LI>
+  <LI>
+      <a href="#debug">Debugging Your Program</a>
+  </LI>
+  <LI>
+      <a href="#files">Files We Are Providing</a>
+  </LI>
+  <LI>
+      <a href="#submit">Files to Submit</a>
+      <UL>
+	<LI>
+	    <a href="#code">Source Code</a>
+	</LI>
+	<LI>
+	    <a href="#readme">Readme File</a>
+	</LI>
+      </UL>
+  </LI>
+  <LI>
+      <a href="#grading">Grading Standards</a>
+  </LI>
+</UL>
+
+
+<hr>
+
+
+<H1><A NAME="overview">Overview</A></H1>
+
+<P>
+We have emphasized the importance of a class's "housekeeping"
+functions (the copy constructor, assignment operator, and destructor).
+At times we have differentiated between the
+default behaviors provided by C++ which perform what is known as a
+<em>shallow copy</em>, and our own implementation for providing what is
+known as a <em>deep copy</em>.
+</P>
+
+<P>
+As an example, 
+we gave a <a href="../../handouts/LinkedStack.pdf">linked-list
+implementation of a stack</a>
+in an earlier lecture.   If we do not explicitly provide non-trivial
+housekeeping functions, the default copy constructor produces a
+shallow copy as portrayed in the following figure.
+</p>
+<p>
+<img src="figures/2simple.gif">
+</p>
+<p>
+Such an image of a shallow copy should sound a warning for
+an experienced C++ programmer, as the two stacks do not seem to have
+independent state.   Interestingly, in the case of a stack, things are
+not quite as bad as they seem.
+For example, if we make a call to <tt>s.push('E')</tt> using the original
+implementation, we get the following internal configuration.
+</p>
+<p>
+<img src="figures/3simple.gif">
+</p>
+<p>
+Yet this is not necessarily a disaster.  From the perspective of
+<tt>s</tt> we seem to have a linked list of five elements, and from
+the perspective of <tt>t</tt> we seem to have a linked list of four
+elements.
+</p>
+<p>
+If we were to continue with a call to <tt>t.pop()</tt> from this
+point, we would set
+<nobr><tt>tp = tp-&gt;next</tt></nobr> and decrement
+<tt>sz</tt> leading to the following state.
+</p>
+<p>
+<img src="figures/4simple.gif">
+</p>
+
+<p>
+We do not yet have a disaster on our hands.   In fact, if we used the
+original <tt>LinkedStack</tt> class with the default housekeeping functions,
+there are only two potential flaws with the entangled states.
+<ul>
+  <li>
+      <p>
+      The original version offered both a const and a non-const
+      version of <tt>top()</tt>.  The non-const version is a problem
+      because it allows one to overwrite the data at the top of the
+      stack.  If we were to do <nobr><tt>t.top() = 'X'</tt></nobr> at
+      this point, that would not only change the state of
+      stack&nbsp;<tt>t</tt> but implicitly the state of stack&nbsp;<tt>s</tt>.
+      </p>
+      <p>
+      To remedy this problem, we have chosen to remove the non-const
+      version of <tt>top()</tt>.  See the extra credit challenge if
+      you would like to support this behavior. 
+      </p>
+  </li>
+  <li>
+      <p>
+      The <tt>pop</tt> method was originally implemented as follows.
+<tt>
+<pre>
+  void pop()  {
+    if (empty())
+      throw std::runtime_error("Access to empty stack");
+    Node* old = tp;                         // node to remove
+    tp = tp->next;
+    sz--;
+    delete old;
+  }
+</pre>      
+</tt>
+      The pitfall here is the deletion of <tt>old</tt>.  When a
+      stack is guaranteed to have its own independent linked list,
+      this step is important for avoiding a memory leak.  If that were
+      not done, the node known as <tt>old</tt> would be forever
+      lost yet not deallocated.  But if you look back at the previous
+      figures, such a call to <tt>t.pop()</tt> would inadvertently
+      free the node containing 'D', thereby invalidating the state of
+      stack&nbsp;<tt>s</tt>.
+      </p>
+      <p>
+      One remedy for this problem is simply to get rid of the command
+      <tt>delete old</tt>.   With that change, our public abstraction of
+      a stack is valid.  Even though we have used a shallow copy, we
+      can subsequently manipulate both stacks independently without
+      undesired side effects.  The problem with this remedy
+      is that our program has a huge memory leak, as nodes are created
+      but never destroyed.  In the next section, we describe a
+      strategy for avoiding the memory leak.
+      </p>
+  </li>
+</ul>
+
+<HR>
+
+
+<H1><A NAME="refs">Maintaining Reference Counts</A></H1>
+
+<P>
+The challenge we face is that sometimes when popping an item or
+deallocating a stack we need to delete a node, yet other times we need
+to leave such a node in memory because it is still part of a list for
+another stack.  Our solution is to explicitly maintain a <em>reference
+count</em> for each node in the system.  The reference count for a
+node is the number of live pointers that reference that node.
+Whenever a pointer is assigned to that node, the node's reference
+count should be incremented.  Whenever a pointer to the node is
+reassigned elsewhere or outright destroyed, we decrement the node's
+reference count.  When a node's reference count reaches zero it can
+safely be deleted as it is unreachable.
+</P>
+
+<HR>
+
+<H1><A NAME="task">Your Task</A></H1>
+
+<p>
+Your goal is to implement a stack class that creates shallow copies
+for the copy constructor and assignment operator, with the use of
+reference counting for deleting unused nodes.
+We will start you off with a working implementation of the stack class
+that creates deep copies. 
+</p>
+
+<p>
+For accounting purposes, the code we provide manages an additional
+variable <tt>SmartStack::total</tt> that counts the overall number of nodes in the
+system.  <em>Please do not confuse this variable with the above
+mentioned reference counting.</em>  The <tt>total</tt> variable is a
+single static variable, meaning that it is not part of an individual
+node's state but instead shared globally throughout the program.
+In order to keep an accurate count of the number of nodes,
+we execute <tt>total++</tt>
+inside the <tt>Node</tt> class constructor and <tt>total--</tt> within
+the <tt>Node</tt> class destructor.  Although you are welcome to make
+changes to those routines, please do not alter our management of the
+<tt>total</tt> variable.
+</p>
+
+
+<HR>
+
+
+<H1><A NAME="example">A Detailed Example</A></H1>
+
+<ul>
+  <li>
+<pre>
+stack&lt;char&gt; r;
+r.push('X');
+r.push('Y');
+r.push('Z');
+</pre>
+<P>
+<img src="figures/0.gif">
+</P>
+  </li>
+<hr>
+  <li>    
+<pre>
+stack&lt;char&gt; s;
+s.push('A');
+s.push('B');
+s.push('C');
+s.push('D');
+</pre>
+<P>
+<img src="figures/1.gif">
+</P>
+  </li>
+  <hr>    
+  <li>    
+<pre>
+stack&lt;char&gt; t(s);
+</pre>
+<P>
+<img src="figures/2.gif">
+</P>
+  </li>
+  <hr>    
+  <li>    
+<pre>
+s.push('E');      
+</pre>
+<P>
+<img src="figures/3.gif">
+</P>
+  </li>
+  <hr>    
+  <li>    
+<pre>
+t.pop();
+</pre>
+<P>
+<img src="figures/4.gif">
+</P>
+  </li>
+  <hr>    
+  <li>    
+<pre>
+s = r;
+</pre>
+<P>
+<img src="figures/5.gif">
+</P>
+  </li>
+  <hr>    
+  <li>    
+<pre>
+r.pop();
+</pre>
+<P>
+<img src="figures/6.gif">
+</P>
+  </li>
+  <hr>    
+  <li>    
+<pre>
+r.push('W');
+</pre>
+<P>
+<img src="figures/7.gif">
+</P>
+  </li>
+  <hr>    
+  <li>    
+<pre>
+s.push('V');
+</pre>
+<P>
+<img src="figures/8.gif">
+</P>
+  </li>
+  <hr>    
+  <li>    
+deallocate <tt>t</tt>
+<P>
+<img src="figures/9.gif">
+</P>
+  </li>
+  <hr>    
+  <li>    
+deallocate <tt>s</tt>
+<P>
+<img src="figures/10.gif">
+</P>
+  </li>
+</ul>
+
+<HR>
+
+
+<H1><A NAME="debug">Debugging Your Program</A></H1>
+
+<p>
+We offer the above example to demonstrate many of the complexities
+that arise for smart stacks.  However, succeeding on this one example
+does not guarantee that your code is valid for all scenarios.  You are
+responsible for thoroughly testing your own program, and we will
+certainly be running many additional tests when grading.
+
+<p>
+Also, please note that the <tt>dump</tt> method we have provided is
+used to print the element values in the underlying linked list.  We
+strongly recommend having you change that method to include output for
+the reference counts as well, to provide you a more detailed
+behind-the-scene glimpse at the state of your stacks.
+
+
+<HR>
+
+
+<H1><A NAME="files">Files We Are Providing</A></H1>
+
+<P>
+All such files can be <a href="p2/">downloaded here</a>.
+</P>
+
+<UL>
+  <LI>
+      <P>
+      <TT>smart_stack.h</TT>
+      <BR>
+      This is the implementation of the stack using traditional house
+      keeping functions that perform a deep copy.  It is based upon
+      the version that we examined in an earlier lecture.  However, we
+      have added a bit of debugging code to the <tt>Node</tt> class to
+      keep track of the total number of nodes that currently exist in
+      the system.
+      <p>
+      Note:  For the sake of simplicity, we did not bother to separate
+      out the function bodies for the class into a separate
+      "smart_stack.cpp" file.  All the function bodies are embeded
+      directly into the header.  You should make your changes directly
+      to the .h file as well.
+  </LI>
+  <LI>
+      <P>
+
+      <TT>test_smart_stack.cpp</TT>
+      <BR>
+      A sample program that walks through the detailed example
+      portrayed above. You are welcome to change
+      this file to perform additional tests.
+      </P>
+      <P>
+      <em>Note:  unlike some earlier assignments, we are not asking
+      your to formally submit your test cases.</em>
+      </P>
+  </LI>
+
+  <LI>
+      <P>
+      <TT>makefile</TT>
+      <BR>
+      This makefile should allow  you to rebuild your project by
+      simply typing 'make' rather than in invoking the compiler
+      directly.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code">Source Code</a>
+      <br>
+      Submit your revised <tt>smart_stack.h</tt> file.
+  </LI>
+  <LI>
+      <P>
+      <a name="readme">"readme" file</a>
+      <br>
+      Discuss the dynamics of your partnership, an overview of your
+      final product, and any further comments you
+      wish to make to the grader.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P>
+The assignment is worth <em>10</em> points. One point will be based on a checkpoint with the instructor on March 4, at which time you will be expected to have completed at least 20 lines of code for the assignment.  The remaining 9 points will be based on your implementation of smart stacks. 
+</P>
+
+<hr>
+
+
+  </body>
+</html>

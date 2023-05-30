@@ -1,0 +1,28 @@
+Homework 10 due 4/27
+
+All of this is based on the SplayTree.hs file discussed in class.  It can
+be found on the main course webpage.
+
+1.  Convert this to a module.
+
+2.  Add a occurs function to the module.  It's signature can be seen in the
+source code.  If the element is in the tree then it returns the pair
+(True, newTree) where newTree has the same contents of the original tree
+but has the element moved to the root.  And if it does not contain the element
+it returns (False, oldTree) where oldTree is an exact copy of the original tree.
+
+3.  Write a test main that tests all of the main functionality of the splay
+tree.  It should do the following:
+
+	1.  Import the splay tree module.
+	2.  Create a random list of integers with 10 elements and insert
+	    them into the tree.
+	3.  Ensure that the flattened tree is identical to the sorted list.
+	4.  Search for an element of the list and ensure that the flattened
+	    list is unchanged and the elemented searched for is at the root.
+	5.  Search for a different number that is not in the list and ensure
+	    that searching for the element returns False.
+
+4.  (Extra credit)  Write a delete function that removes an elemnt of the
+tree.  The other elements should not have the depths changed significantly.
+

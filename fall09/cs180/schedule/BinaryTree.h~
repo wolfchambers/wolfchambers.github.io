@@ -1,0 +1,149 @@
+#ifndef BINARY_TREE_H
+#define BINARY_TREE_H
+
+template <typename Object>
+class BinaryTree {
+
+private:
+
+	struct Node {
+		Object element;
+		Node* parent, left, right;
+
+		Node (const Object& e = Object(), Node* p = NULL, Node* l = NULL, Node* r = NULL) : element(e), parent(p), left(l), right(r) { }
+	} //end of Node struct
+
+	int size;
+	Node* root;
+
+	//utility functions for copy constructor, destructor, etc.
+	void clearRecurse(const Node* v) {
+		if (v->left != NULL) {
+			clearRecurse(v->left);
+			clearRecurse(v->right);
+		}
+		delete v;
+	}
+
+	Node* cloneRecurse(const Node* v) {
+		Node* n = new Node(v->element);
+		if (v->left != NULL) {
+			n->left = cloneRecurse(v->left);
+			n->right = cloneRecurse(v->right);
+			n->left->parent = n;
+			n->right->parent = n;
+		}
+		return n;
+	}
+
+public:
+
+	//Constructor
+	BinaryTree() : size(0), root(new Node) { }
+
+	//Position class
+	class Position {
+	
+	private:
+		friend class BinaryTree<Object>; //allows access
+		
+		Node* node; //data - a pointer to the node
+
+	public:
+		Position(Node* n = NULL) : node(n) {}
+
+		Object& element() const {
+			return node->element;
+		}
+
+		bool isNull() {
+			return node == NULL;
+		}
+
+		bool operator==(const Position& other) {
+			return this->node == other->node;
+		}
+
+		bool operator!=(const Position& other) {
+			return !(operator==(other));
+		}
+	}; //end of Position class
+
+	friend class Position;
+
+	//functions to query the tree
+
+	int size() const { return size; }
+
+	bool isRoot(const Position& p) const { 
+		return Position(root) == p;
+	}
+
+	bool isLeaf(const Position& p) const {
+		return (p.node->left == NULL);
+	} 
+
+	bool isInternal(const Position& p) const {
+		return (p.node-> != NULL);
+	}
+
+	//accessor function
+	Position root() {
+		return Position(root);
+	}
+
+	Position parent(const Position& p) {
+		return Position(p.node->parent);
+	}
+
+	Position leftChild(const Position& p) {
+		return Position(p.node->left);
+	}
+
+	Position rightChild(const Position& p) {
+		return Position(p.node->right);
+	}
+
+	//update methods
+	void replaceElement(const Position& p, const Object& newElement) {
+		p.node->element = newElement;
+	}
+
+	void swapElements(const Position& p1, const Position& p2) {
+		Object temp = p1.node->element;
+		p1.node->element = p2.node->element;
+		p2.node->element = temp;
+	}
+
+	//transform leaf to an internal node
+	void expandExternal(const Position& p) {
+		if isLeaf(p) {
+			p.node->left = new Node(Object(), p.node, NULL, NULL);
+			p.node->right = new Node(Object(), p.node, NULL, NULL);
+			size += 2;
+		}
+	}
+
+	//take a leaf of the tree, delete leaf and its parent and promotes the sibling to the parent's spot
+	Position removeAboveExternal(const Position& p) {
+		if (!isRoot(p)) {
+			Node* parent = p.node->parent;
+			if (p.node == parent->left)
+				Node* sibling = parent->right;
+			else
+				Node* sibling = parent->left;
+			swapElements(Position(parent), Position(sibling));
+			delete parent->left;
+			delete parent->right;
+		}
+	}
+
+	~BinaryTree() {
+		clearRecurse(root);
+	}
+
+	BinaryTree(const BinaryTree& original) {
+		size = original.size;
+		root = original.cloneRecurse(original.root);
+	}
+}; //end Binary Tree class

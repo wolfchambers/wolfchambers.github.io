@@ -1,0 +1,443 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<b>Homework</b> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="../programming/">Programming</A> |
+<A HREF="../labs/">Labs</a> |
+<A HREF="../schedule/schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 180: Data Structures <br> Fall 2010 <br> MWThF 10-10:50am in 121 RH</h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Wednesday 1-2pm, Thursday 9-10am, or by appointment
+
+</h3>
+
+</center>
+
+
+<HR>
+
+
+<center>
+<h2>Homework Assignment
+03
+
+</h2>
+<h3>C++ Object Models <br> Stacks and Queues</h3>
+</center>
+
+
+<h3>Contents:</h3>
+<UL>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#submit">Problems to be Submitted</a>
+  </LI>
+  <LI>
+      <a href="#extra">Extra Credit</a>
+  </LI>
+</UL>
+
+<hr>
+
+<a name="overview"><h3>Overview</h3></a>
+
+<P>
+Our goal of this homework is to review some of the subtleties of
+object-oriented programming in C++, as well as introduce stacks and queues.
+</P>
+
+<P>
+<b>Topic:</b>  Objects, stacks and queues
+<br>
+<b>Due:</b>
+Monday, September 20, 2010 by 10am
+<br>
+This may be submitted at the beginning of lecture, or may be emailed to the instructor.
+
+</P>
+
+<P>
+Note that you are expected to complete this homework <b>alone</b>.  Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a>.
+</P>
+
+<hr>
+
+<a name="submit"><h3>Problems to be Submitted (35 points)</h3></a>
+
+<ol type = "A"> 
+
+<li> (5 points)  Problem R-1.15 on page 58 of the text: 
+
+Write a short C++ function that takes a positive double value x and returns the number of times we can divide x by 2 before we get a number less than 2. 
+
+</li>
+</li>
+
+<LI> (8 points)
+
+<p>    
+Draw a diagram such as the one shown below, to portray the
+underlying memory configuration that might exist after the
+completion of the following series of commands (you may assume
+that one cell of memory is sufficient for storing a character or a
+pointer).
+
+    <pre>
+char a = 'X';
+char b = 'Y';
+char *c = &b;    
+char d(a);
+char &e(a);
+char *f = c;
+char *g = new char('Z');
+    </pre>
+
+    <br><img src="memory.gif">
+    <br>
+<p>
+Based upon your solution in the first diagram,
+give a second diagram that portrays    
+the updated configuration after the following
+additional commands.
+
+    <pre>
+*f = 'W';
+c = g;
+e = b;
+    </pre>
+    
+</LI>
+    
+
+
+</LI>
+
+  <LI> (5 points)
+      <P>
+      Assume that we have an initially empty stack, S, of integers.
+      Fill in the following table (we have completed the first two
+      rows), showing the output returned by each method call and the
+      internal state of the stack after that point in time.
+      
+    <DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+      <TR><TD ALIGN="CENTER"><TT><B>Operation</B> </TT></TD>
+        <TD ALIGN="CENTER"><TT><B>Output</B> </TT></TD>
+        <TD ALIGN="CENTER"><B><EM><EM>S</em><br><tt>(bottom, ..., top)</EM></B></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+
+        S.push(7) </TT></TD>
+        <TD ALIGN="CENTER"><TT> - </TT></TD>
+        <TD ALIGN="CENTER"><TT> (7) </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+
+        S.push(10) </TT></TD>
+        <TD ALIGN="CENTER"><TT> - </TT></TD>
+        <TD ALIGN="CENTER"><TT> (7, 10) </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.pop() </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.top() </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.push(3) </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.push(5) </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.pop() </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT> </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.empty() </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT> </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.size() </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT> </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.top() </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT> </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.push(8) </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT> </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.pop() </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT> </TT></TD>
+      </TR>
+      <TR><TD ALIGN="CENTER"><TT> 
+        S.pop() </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+        <TD ALIGN="CENTER"><TT>  </TT></TD>
+      </TR>
+</TABLE></DIV>
+</P>
+
+  </LI>
+
+  <LI> (5 points)
+
+      <P>
+      Assume that we have an initially empty queue, Q, of integers.
+      Fill in the following table (we have completed the first two
+      rows), showing the output returned by each method call and the
+      internal state of the queue after that point in time.
+
+      <DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+        <TR><TD ALIGN="CENTER"><TT><B>Operation</B><br>&nbsp;</TT></TD>
+          <TD ALIGN="CENTER"><TT><B>Output</B><br>&nbsp;</TT></TD>
+          <TD ALIGN="CENTER">
+          <b>
+          <EM>Q</em><br><tt>(front, ..., back)</tt>
+          </b>
+          </TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+
+          Q.push(10) </TT></TD>
+          <TD ALIGN="CENTER"><TT> - </TT></TD>
+          <TD ALIGN="CENTER"><TT> (10) </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.push(4) </TT></TD>
+          <TD ALIGN="CENTER"><TT> - </TT></TD>
+          <TD ALIGN="CENTER"><TT> (10, 4)</TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.size() </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.front() </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.push(6) </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.pop() </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.push(3) </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.pop() </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.front() </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.pop() </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.push(7) </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+        <TR><TD ALIGN="CENTER"><TT> 
+          Q.front() </TT></TD>
+          <TD ALIGN="CENTER"><TT>  </TT></TD>
+          <TD ALIGN="CENTER"><TT> </TT></TD>
+        </TR>
+  </TABLE></DIV>
+</P>
+
+  </LI>
+
+
+  <LI> (12 points)
+      <P>
+      Chapter&nbsp;4.5.3 of our book discusses the Adapter Design
+      Pattern, which is a technique by which an existing data
+      structure can be retooled to provide an implementation of
+      another abstraction. That example is based on using a
+      double-ended queue (we'll see this soon) to provide the simpler abstractions of a
+      stack and a queue.
+
+      <b>For this problem, we want you to show how to implement
+      a <tt>queue</tt> class using nothing other than <em>two</em>
+      stack instances.</b>
+
+      <p>
+      Rather than using our own version of the stack and queue, you
+      should assume that we are using the STL version of a stack.
+      This means that you can presume it has infinite capacity.
+      However, it also means that you cannot make any assumptions
+      about the private representation of the stacks (that is, you
+      cannot access the underlying array).  You must use the stacks as
+      tools based only on their public behaviors.
+
+      <P>
+      For concreteness, we ask that you model your answer to this
+      problem in C++ syntax, using the following framework as the basis.
+<PRE>
+#include &lt;stack&gt;      
+
+template &lt;typename Object&gt;
+class queue {
+private:
+
+  // Do not use any data members other than the following two stacks
+  std::stack&lt;Object&gt; S1;
+  std::stack&lt;Object&gt; S2;
+
+public:
+
+      
+  bool empty() const {
+
+  }
+
+  int size() const {
+
+  }
+      
+  void push(const Object& item) {
+
+  }
+
+  void pop() {
+
+  }
+      
+  Object& front() {
+
+  }
+
+  //  for simplicity, we'll ignore the const version of front()
+
+};  // end of class queue
+</PRE>
+      </P>
+
+      <P>
+      To give you a flavor of the style of code, a natural implementation
+      for the <tt>queue.empty()</tt> methiod in this setting might be:
+<PRE>
+  bool empty() const {
+     return (S1.empty() && S2.empty());
+   }
+</PRE>
+      since we presume that all elements of the queue must be stored,
+      and S1 and S2 are your only means of storage.
+
+
+      <P>
+      If you understand the goal, it is now time to think about how to solve
+      the problem. 
+      To be successfully, you will need to keep straight your role as
+      the implementor of a <tt>queue</tt>, yet also your role as a
+      client for the <tt>stack</tt>.  That is, your new structure
+      should behave with the first-in-first-out semantics of a queue.
+      Make sure your code works for any sequence of <TT>push()</TT>,
+      <TT>pop()</TT>, and <TT>front()</TT> operations.
+
+     <p>
+     <em>Note: if you prefer a hands-on experience, type up
+     your solution and compile and test it.  You could even write a
+     test program that executes the commands from problem&nbsp;B on
+     your queue.  But you need only to submit a hardcopy of your
+     solution.
+     </em>
+
+</LI>
+      
+</OL>
+
+<hr>
+
+<a name="extra"><h3>Extra Credit</h3></a>
+
+<OL type = "A" start=4> 
+
+<li>(5 points)
+    <p>
+    This problem explores variants in argument passing.
+
+    What (if anything) is different about the behavior of the
+    following three functions <tt>f()</tt>, <tt>g()</tt> and
+    <tt>h()</tt>?
+
+<PRE>
+  void f(int x) {
+    x = x + 1;
+    cout << x;
+  }
+  
+  void g(int& x) {
+    x = x + 1;
+    cout << x;
+  }
+  
+  void h(const int& x) {
+    x = x + 1;
+    cout << x;
+  }
+  
+</PRE>
+    
+
+    </p>
+   </LI>
+</OL>
+       
+
+
+
+  </body>
+</html>

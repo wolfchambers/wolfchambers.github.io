@@ -1,0 +1,100 @@
+<html>
+
+<head> 
+<title>CSCI 314: Algorithms</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> | 
+<A href="policies.html">Course Policies</a> |
+<A HREF="homeworks/">Homework</A> | 
+<A HREF="schedule/">Schedule & Lecture Notes</A> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 314: Algorithms <br> Spring 2010 </h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu 
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Monday 10-11:30am, Thursday 9-10am
+
+</h3>
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p>April 6: <a href="homeworks/hw9.pdf">Homework 9 </a> is available; it will be due (in written form) in class next Wednesday, April 21. 
+
+<li><p>April 6: <a href="homeworks/hw8.pdf">Homework 8 </a> is available; it will be due (in written form) in class next Wednesday, April 14. 
+
+<li><p>March 27: <a href="homeworks/hw7.pdf">Homework 7 </a> is available; 
+it will be graded orally on Tuesday, April 6.  Sign-up for times will be 
+done Monday and Wednesday in class.   
+
+<li><p>March 17: I am changing my Thursday office hours for the rest of the semester, since doctors appointments are getting more common now.  I'll keep them on the same day of the week, but instead of 1-2, I'm moving them to 9-10am every Thursday.  (Keep in mind that I'm often around later than that, but I will definitely be in 9-10.)
+
+<li><p>March 10: I am posting some old exams for you to practice with.  There are two midterms from last year: <a href="midterm1.pdf">midterm 1</a> (which is primarily over greedy algorithms, dynamic programming, and recursion) and <a href="midterm2.pdf">midterm 2</a>, which covers graph algorithms.  (Note that problems 2 and 3 on the second midterm are over material we haven't seen yet, so don't expect to solve them!)  Also, <a href="../../spring09/cs314/oldmt1.pdf">here</a> is an exam from a similar class that I helped teach at a previous school, if you would like some more practice problems.
+
+<li><p> March 4: Just a reminder that my office hours today will not be 
+from 1-2 due to a doctor's appointment.  I will be in 11-12 instead if you 
+would like to come by, or can arrange another time if you email me.  
+
+<li><p>Feb. 28: I will have to shorten my office hours tomorrow, since 
+my daughter is sick.  I will still be in 10-11, but will probably have 
+my daughter with me (just to warn you).
+
+<li><p>Feb. 26:  The midterm exam for this class will be the Friday after we 
+return from break, on March 19.  You will be allowed a "cheat sheet" - one 
+handwritten 8.5 by 11 inch paper.  The test will consist of 5 problems, and 
+your score will be the sum of the maximum 4  that you complete.  Look for a 
+practice midterm to be posted sometime over break, as well as some exercise 
+sheets that we will work on in class after break.   
+
+<li><p>Feb. 26: <a href="homeworks/hw6.pdf">Homework 6</a> is
+available;
+it will be due the Monday after spring break, on March 15, at the start 
+of class (in written form).  Please note that this homework is longer 
+due to the larger amount of time you have, so don't leave it entirely until 
+over break!    
+
+<li><p>Feb. 19: <a href="homeworks/hw5.pdf">Homework 5</a> is 
+available;
+it will be due next Friday, Feb. 26, at the start of class (in written
+form).
+
+<li>Feb. 15: Apologies for the late notice, but I'll be in late this 
+morning due to snow.  Please email me to make alternate office hour 
+arrangements if you need to stop by.    
+
+<li><p>Feb. 12: <a href="homeworks/hw4.pdf">Homework 4</a> is available; 
+it will be graded orally next Thursday.  Sign-ups for times will be done today (or Monday) in class. 
+
+<li><p>Feb. 4: <a href="homeworks/hw3.pdf">Homework 3</a> is available; 
+it will be due next Friday, Feb. 12, at the start of class (in written 
+form).
+
+<li><p>Jan. 29: <a href="homeworks/hw2.pdf">Homework 2</a> is available; 
+it will be graded orally next Thursday.  Sign-ups for times will be done today in class.  Please make sure to review the instructions for oral grading on the <a href="homeworks/">Homework instructions page</a> before next Thursday!
+
+<li><p> Jan. 22: <a href="homeworks/hw1.pdf">Homework 1</a> is available;
+it will be due at the start of class next Friday, Jan. 29.
+
+<li><p>Jan. 13: A few handy references: <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/99-recurrences.pdf">Lecture notes on recurrences</a>, a discrete math <a href="cheatsheet2.pdf">cheat sheet</a>, and a much more extensive <a href="cheat.pdf">theoretical science cheat sheet</a>.
+
+<li><p> Jan. 11: <a href="homeworks/hw0.pdf">Homework 0</a> is available; 
+it will be due at the start of class next Monday, Jan. 18.  
+
+<li> <p>Dec. 31: Welcome to Algorithms!  Please make sure to read the course policies  carefully, and remember to check this announcements section daily for new announcements or reminders.
+
+</ul>
+
+</body>
+</html>

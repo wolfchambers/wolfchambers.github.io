@@ -1,0 +1,205 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+<p>
+<hr>
+
+<h1>Lab Assignment 5
+
+</h1>
+
+<table>
+  <tr>
+    <td>
+	<b>Topic:</b>
+    </td>
+    <td>
+	Symmetric Order (again)
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Source Code:</b>
+    </td>
+    <td>
+	<tt>order.cpp</tt>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Live Archive Ref#:</b>
+    </td>
+    <td>
+	<a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/problem.php?p=3055">3055</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>In-Class Day:</b>
+    </td>
+    <td>
+	<br>
+	Tuesday, Feb. 16, 2016
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Submission Deadline:</b>
+    </td>
+    <td>
+	Friday, Feb. 19, 2016
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Techniques:</b>
+    </td>
+    <td>
+	<br>
+	Use of a vector.
+    </td>
+  </tr>
+</table>
+
+<p>
+Please review the
+<a href="../#general">general information about lab assignments</a>.
+
+
+<hr>
+
+<h1>Symmetric Order (again)</h1>
+
+
+<p>In your job at Albatross Circus Management (yes, it's run by a bunch of
+  clowns), you have just finished writing a program whose output is a list
+ of names in nondescending order by length (so that each name is at least
+as long as the one preceding it). However, your boss does not like the way
+the output looks, and instead wants the output to appear more symmetric, with
+the shorter strings at the top and bottom and the longer strings in the middle.
+His rule is that each pair of names belongs on opposite ends of the list,
+and the first name in the pair is always in the top part of the list. In
+the first example set below, Bo and Pat are the first pair, Jean and Kevin
+the second pair, etc. </p>
+
+<p><span style="font-weight: bold;">Input:</span> The input consists of one
+ or more sets of strings, followed by a final  line containing only the value
+ 0. Each set starts with a line containing an  integer, <i>n</i>, which is
+ the number of strings in the set, followed by  <i>n</i> strings, one per
+line, sorted in nondescending order by length. None of the strings contain
+spaces. There is at least one and no more than 15 strings per set.&nbsp;
+Each string is at most 25 characters long.&nbsp; </p>
+
+<p><span style="font-weight: bold;">Output:</span> For each input set print
+ "<span style="font-family: monospace;">SET</span> <span
+ style="font-style: italic;">n</span>"  on a line, where <span
+ style="font-style: italic;">n</span> starts at 1, followed by the output
+ set as shown in the  sample output. </p>
+
+<table border="1" cellpadding="10">
+      <thead>  <tr>
+       <td><b>Example input:</b></td>
+        <td><b>Example output:</b></td>
+      </tr>
+      </thead>  <tbody>
+      <tr>
+       <td style="font-family: monospace;">    7<br>
+    Bo<br>
+    Pat<br>
+    Jean<br>
+    Kevin<br>
+    Claude<br>
+    William<br>
+    Marybeth<br>
+    6<br>
+    Jim<br>
+    Ben<br>
+    Zoe<br>
+    Joey<br>
+    Frederick<br>
+    Annabelle<br>
+    5<br>
+    John<br>
+    Bill<br>
+    Fran<br>
+    Stan<br>
+    Cece<br>
+    0<br>
+          </td>
+       <td valign="top" style="font-family: monospace;"> SET 1<br>
+    Bo<br>
+    Jean<br>
+    Claude<br>
+    Marybeth<br>
+    William<br>
+    Kevin<br>
+    Pat<br>
+    SET 2<br>
+    Jim<br>
+    Zoe<br>
+    Frederick<br>
+    Annabelle<br>
+    Joey<br>
+    Ben<br>
+    SET 3<br>
+    John<br>
+    Fran<br>
+    Cece<br>
+    Stan<br>
+    Bill   </td>
+      </tr>
+
+  </tbody>
+</table>
+
+
+
+<hr>
+
+<h1>Hints</h1>
+
+<p>
+Look familiar?  Yes, we already solved this problem two weeks ago when
+using stacks.  At that time, I described a bizarre way that worked by
+printing one, pushing the next to a stack, printing the third, pushing
+the fourth and so on.  Although that approach worked, I can all but
+guarantee that not a single team would have bothered to solve it that
+way.
+
+<p>
+This problem can be solved quite easily with a vector.  Start by
+reading all the strings into a vector, using the given order.  Then,
+to get the output in the desired order, write one loop to print out
+all elements of the vector that have even index (i.e., v[0], v[2],
+v[4], ...).   Then write a second loop that starts at the end moving
+backward while printing all items that have an odd index (i.e., v[5],
+v[3], v[1]).   The only care needed is to ensure that your loops execute
+the correct number of iterations.
+
+
+<p>
+So for today's lab, please redo this problem, this time using the
+std::vector class of the 
+<tt>&lt;vector&gt;</tt> library.  If you need a reminder, you can find
+<a
+href="http://www.cplusplus.com/reference/stl/vector/vector.html">online
+documentation</a> regarding its usage.  But its essentially an array
+that resizes as you push things to the back.  Note, however, that the STL does use iterators with vectors, where our Vector.h class simply used integer indices, so you will need to be careful with a few of the differences. 
+
+<h3>Pre-lab</h3>
+
+No pre-lab this week, since it's the same as a previous lab.  
+
+
+  </body>
+</html>
+

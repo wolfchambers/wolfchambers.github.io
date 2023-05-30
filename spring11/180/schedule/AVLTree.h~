@@ -1,0 +1,142 @@
+#include "BinarySearchTree.h"
+#include <cmath>
+using namespace std;
+
+template <typename ItemType>
+class AVLTree : public BinarySearchTree<ItemType> {
+  
+protected:
+  
+  void _setHeight(typename BinaryTree<ItemType>::Iterator position) {
+    
+    int leftHeight, rightHeight;
+    
+    //get left child's height
+    if (position.hasLeftChild())
+      leftHeight = BinaryTree<ItemType>::getAuxiliary(position.left());
+    else
+      leftHeight = -1;
+    
+    //get right child's height
+    if (position.hasRightChild())
+      rightHeight = BinaryTree<ItemType>::getAuxiliary(position.right());
+    else
+      rightHeight = -1;
+    
+    //take the max and set _aux to be that value +1
+    if (rightHeight > leftHeight)
+      BinaryTree<ItemType>::setAuxiliary(position, rightHeight+1);
+    else
+      BinaryTree<ItemType>::setAuxiliary(position, leftHeight+1);
+    
+  }
+  
+  bool _isBalanced(typename BinaryTree<ItemType>::Iterator position) {
+   
+    float leftHeight, rightHeight, balanceFactor;
+    
+    //get left child's height
+    if (position.hasLeftChild())
+      leftHeight = BinaryTree<ItemType>::getAuxiliary(position.left());
+    else
+      leftHeight = -1;
+    
+    //get right child's height
+    if (position.hasRightChild())
+      rightHeight = BinaryTree<ItemType>::getAuxiliary(position.right());
+    else
+      rightHeight = -1;
+    
+    balanceFactor = abs(leftHeight - rightHeight);
+    
+    return (balanceFactor <= 1);
+    
+  }
+  
+  typename BinaryTree<ItemType>::Iterator _getHigherChild(typename BinaryTree<ItemType>::Iterator position) {
+   
+    //check if there is only 1 child
+    if (position.hasLeftChild() && !position.hasRightChild())
+      return position.left();
+    else 
+      if (!position.hasLeftChild())
+	return position.right();
+      else {
+	 
+	if (BinaryTree<ItemType>::getAuxiliary(position.right()) > BinaryTree<ItemType>::getAuxiliary(position.left()))
+	  return position.right();
+	else 
+	  return position.left();
+	  
+	}
+    
+    
+  }
+  
+public:
+  
+  void insert(const ItemType& value) {
+   
+    //check if this value should be the root
+    if (BinaryTree<ItemType>::empty()) {
+     BinaryTree<ItemType>::createRoot(value); 
+     _setHeight(BinaryTree<ItemType>::root());
+    }
+    
+    else {  //it's not the root
+
+      //inserted the new value and set an iterator to it
+      BinarySearchTree<ItemType>::insert(value);
+      typename BinaryTree<ItemType>::Iterator current = BinarySearchTree<ItemType>::find(value);
+      _setHeight(current);
+      
+      //find parent and update it
+      typename BinaryTree<ItemType>::Iterator parent, grandparent,x,y,z;
+      parent = current.up();
+      _setHeight(parent);
+
+      
+      //loop as long as you haven't hit the root
+      while (!parent.isRoot()) {
+	grandparent = parent.up();
+	_setHeight(grandparent);
+	
+	
+	//check to see if we need to rotate
+	if (!_isBalanced(grandparent)) {
+	  z = grandparent;
+	  
+	  //set y and x
+	  y = _getHigherChild(z);
+	  x = _getHigherChild(y);
+	  
+	  //performing pivots
+	  if ((y == z.left() && x == y.left()) || (y == z.right() && x == y.right())) {
+	    pivot(y);
+	    _setHeight(z);
+	    _setHeight(y);
+	  }
+	  else {
+	    pivot(x);
+	    pivot(x);
+	    _setHeight(y);
+	    _setHeight(z);
+	    _setHeight(x);
+	  }
+	  
+	  
+	} //end of if !_isBalanced
+	else
+	  z = parent;
+	
+	//update parent 
+	parent = z.up();
+	
+      
+      } //end while
+
+    } //end else
+    
+  } //end insert
+  
+}; //end AVLTree class

@@ -1,0 +1,238 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+
+<center>
+<h1>Lab Assignment 4
+
+</h2>
+</center>
+
+<table>
+  <tr>
+    <td>
+	<b>Topic:</b>
+    </td>
+    <td>
+	Tanning Salon
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Source Code:</b>
+    </td>
+    <td>
+	<tt>salon.cpp</tt>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Live Archive Ref#:</b>
+    </td>
+    <td>
+	<a href="http://livearchive.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=137&page=show_problem&problem=539">2538</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>In-Class Day:</b>
+    </td>
+    <td>
+	<br>
+	Thursday, Feb. 6
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Submission Deadline:</b>
+    </td>
+    <td>
+	Sunday, Feb. 9, by 11:59pm
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Techniques:</b>
+    </td>
+    <td>
+	<br>
+	Arrays, loops, and characters
+    </td>
+  </tr>
+</table>
+
+<p>
+Please review the
+<a href="index.html">general information about lab assignments</a>.
+
+
+<hr>
+
+<h2>Pre-Lab Requirement</h2>
+
+
+<p>
+Read the complete problem description and then determine what the
+expected output should be if given the following input:
+
+<table border="1" cellpadding="10">
+<thead>     
+<tr>
+    <td><b>Prelab input:</b></td>
+    <td><b>Prelab output:</b></td>
+</tr>
+</thead>   
+<tbody>
+    <tr>
+        <td style="font-family: monospace;">
+2 CBALLMMACZBDDZ<br>
+5 VWXYZWVXYZABCDEFFABCDE<br>
+0
+       </td>
+       <td valign="top" style="font-family: monospace;">
+       </td>
+    </tr>
+</tbody>
+</table>
+</p>
+
+
+<hr>
+
+<h1>Tanning Salon</h1>
+
+<p>
+Tan Your Hide, Inc., owns several coin-operated tanning salons. Research has
+shown that if a customer arrives and there are no beds available, the
+customer will turn around and leave, thus costing the
+company a sale. Your task is to write a program that tells
+the company how many customers left without tanning.
+</p>
+
+<p>The input consists of data for one or more salons, followed by a line
+containing the number 0 that signals the end of the input.  Data for each 
+salon is a single line containing a positive integer, representing the number
+of tanning beds in the salon, followed by
+a space, followed by a sequence of uppercase letters. Letters in the sequence
+occur in pairs. The first occurrence indicates the arrival of a customer, the 
+second indicates the departure of that same customer. No letter will occur in
+more than one pair. 
+
+Customers who leave without tanning always depart before customers who
+are currently tanning.
+
+There are at most 20 beds per salon.
+</p>
+
+<p>For each salon, output a sentence telling how many customers, if any,
+walked away. Use the exact format shown below.
+</p>
+
+<p>
+<table BORDER="1"  CELLPADDING="20" WIDTH="80%">
+<tr>
+<td VALIGN=TOP><b>Example input:</b>
+<PRE>2 ABBAJJKZKZ
+3 GACCBDDBAGEE
+3 GACCBGDDBAEE
+1 ABCBCA
+0
+</PRE>
+</td>
+
+<td VALIGN=TOP><b>Example output:</b>
+<PRE>All customers tanned successfully.
+1 customer(s) walked away.
+All customers tanned successfully.
+2 customer(s) walked away.
+</PRE>
+</td>
+</tr>
+</table>
+
+
+<hr>
+
+<h3>Hints and warnings</h3>
+
+<p>
+Don't forget to complete and submit this lab via the ZyBook interface; a
+blank template has been provided in the assignment there.
+
+<p>
+I'll admit that I picked this problem because, superficially, it
+seemed like the salon behaves sort of like a complex data structure.
+In reality, however, the easiest way to do this one is just to use 
+arrays and loops, along with a bit of character to integer conversion!
+</p>
+
+<p>
+My recommendation for data structures is the following:
+<ul>
+  <li>
+      <p>
+      <tt>bool tanning[26]</tt>
+      <br>
+      An array that notes who is currently in a bed, with tanning[0]
+      set to true if A is tanning, tanning[1] true if B is tanning,
+      and so on.
+      </p>
+      <p>
+      We will rely on the fact that people are represented by the
+      upper case letters from A to Z and that we can convert those
+      characters to indices from 0 to 25.  Given character value <tt>val</tt>
+      the appropriate index is computed as <nobr><tt>val - 'A'</tt></nobr>.
+      </p>
+  </li>
+  <li>
+      <p>
+      <tt>bool known[26]</tt>
+      <br>
+      Although not entirely necessary, it will be helpful to keep 
+      track of whether you have seen a particular alphabet
+      symbol in the input (to more easily distinguish between whether
+      a customer is arriving or departing). Such an array could be
+      used for this purpose, again using the mapping from characters A
+      to Z into indicies 0 to 25.
+      </p>
+  </li>
+  <li>
+      <p>
+      <tt>int numTanning</tt>
+      <br>
+      A count of how many people are currently tanning (i.e., how many
+      beds are full).  Admittedly, we could write a loop to count how
+      many values are set to true in the previous array, but why not
+      make it even easier.
+      </p>
+  </li>
+  <li>
+      <p>
+      <tt>int numMisses</tt>
+      <br>
+      Count how many times you see a customer at a time when all the
+      beds are full.  The only catch is that such a customer has two
+      characters in the input sequence, one for when they arrive and
+      one for when they leave.  For now, think of each independently,
+      thereby marking two misses per such a customer.  You can always
+      make the proper adjustment before outputting the real answer.
+      </p>
+  </li>
+</ul>
+
+All that's left is to loop through the input string and decide how to
+accurately update the simulation for each step.
+
+
+
+</body>
+</html>

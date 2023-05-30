@@ -1,0 +1,194 @@
+<html>
+
+<head>
+<title>CS 5090: Computer Science Colloquium</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<b>Schedule</b>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 5090: Computer Science Colloquium <br> Spring 2023 schedule </h1>
+</center>
+
+<hr> <blockquote>
+
+<p>Here is this semester's tentative schedule; I will update 
+it as the semester progresses.  All assignments will be due via the class Canvas, 
+in accordance with SLU's policies.
+
+<p> All presentations are planned for 3:10-4pm in ISE 211, 
+unless indicated otherwise in the table below.  
+(Occasional events may take place on zoom for virtual speakers, but these will be 
+announced if so.)
+
+<hr>
+
+<table border="1" cellspacing="2" cellpadding="6">
+<thead>
+<tr>
+<td width="150"><strong>Date</strong></td>
+<td width="150"><strong>Title</strong></td>
+<td width="120"><strong>Speaker</strong></td>
+<td width="300"><strong>Abstract</strong></td>
+<td width="300"><strong>Bio</strong></td>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>August 17 </td>
+<td>
+Introduction to the course
+</td>
+<td>
+Erin Chambers
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+
+<tr>
+<td>January 25 </td>
+<td>
+Towards Intelligent Next-Generation
+Wireless Networks
+</td>
+<td>
+Nan Cen
+</td>
+<td>
+
+Rapid growth in the number of connected wireless devices (e.g., mobile 
+phones, low-power IoT devices, connected vehicles, etc.) will expand the 
+scale of the next-generation wireless and mobile networks. Moreover, the 
+foreseen applications like digital twins, smart homes and cities, 
+connected autonomous vehicles, Industry 4.0, and agriculture precision 
+will require network intelligence and new spectrum technologies to 
+enable ultra-low latency and highly reliable communication in complex 5G 
+and beyond wireless networks. In this talk, we will discuss how to add 
+intelligence in next-generation wireless networks, including: (1) new 6G 
+spectrum technology, i.e., wireless visible light networking, to 
+complement well with current crowded RF networks; (2) learning-based 
+networking control algorithms design to optimize the system performance; 
+(3) software-defined intelligent network architecture design to enable 
+fast prototyping of NextG networking testbed.
+
+<td>
+
+Dr. Nan Cen is an Assistant Professor in the Department of Computer 
+Science at Missouri University of Science and Technology. She received 
+her Ph.D. in Electrical and Computer Engineering from Northeastern 
+University in 2019, under the supervision of Professor Tommaso Melodia. 
+She received her M.S. in Electrical Engineering from SUNY Buffalo in 
+2014. She had previously received her B.S. and M.S. in Information 
+Science and Engineering from Shandong University in 2008 and 2011. Dr. 
+Cen’s research is focused on modeling, control, and optimization for 
+next-generation intelligent wireless systems and networks, data-driven 
+networking control algorithms design, software defined radios based 
+testbed implementation, and Artificial Intelligent of Things. She has 
+chaired N2Women workshop on WoWMoM 2022 and served TPC member for EAI 
+WiCon 2022, IEEE INFOCOM Workshop WCNEE 2020 AND 2021, IEEE/ACM IWQoS 
+2020, etc. Dr. Cen is a member of IEEE and ACM.
+
+</td>
+</tr>
+
+<tr>
+<td>February 1 </td>
+<td>
+Lecture Video Analysis and Its Applications
+</td>
+<td>
+Kenny Mauricio Davila Castellanos
+</td>
+<td>
+
+The internet is full of educational videos. Many instructors record 
+themselves explaining complex topics, and then publish these videos with 
+the goal of helping students from different educational levels. Among 
+these, we find a large number of videos of math-oriented lectures and 
+tutorials covering topics that are better explained using handwritten 
+content on whiteboards or chalkboards. In this talk, I will discuss 
+methods for analyzing different aspects of such lecture videos including 
+the handwritten content, the speaker actions and the temporal segments 
+of the lecture. The information produced by these methods enables the 
+creation of tools for advanced applications such as video summarization, 
+navigation and search. In turn, these applications can help both 
+students and instructors find useful educational resources when they 
+need them.
+
+</td>
+
+<td>
+
+</td>
+</tr>
+
+
+<tr>
+<td>February 8 </td>
+<td>
+TBD
+</td>
+<td>
+Abby Stylianou (tentative)
+</td>
+<td>
+
+<td>
+
+</td>
+</tr>
+
+
+<tr>
+<td>February 15 </td>
+<td>
+TBD
+</td>
+<td>
+Abby Stylianou (tentative)
+</td>
+<td>
+
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>February  </td>
+<td>
+TBD
+</td>
+<td>
+David Letscher (tentative)
+</td>
+<td>
+
+<td>
+
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+
+
+
+
+</body>
+</html>
+

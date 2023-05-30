@@ -1,0 +1,46 @@
+<html>
+
+<head> 
+<title>CS 150: Introduction to Object Oriented Programming</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> | 
+<a href="policies.html">Course Policies</a> |
+<A HREF="programming/">Programming</A> | 
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> | 
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 150: Introduction to Object Oriented Programming <br> Spring 2012 </h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu 
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Monday 10-11am, Tuesday 10-11, and Wednesday 2-3
+
+</h3>
+
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p> Jan. 20: <a href="homework/program1.pdf">The first assignment</a> is not available; it will be due next Saturday, Jan. 28, via email by 11:59pm.  Note that you must complete this assignment individually.
+
+<li><p> Jan. 20: <a href="http://mathcs.slu.edu/computing-resources/remote-access">Here</a> are instructions on how to remote connect using ssh or NX client to turing.slu.edu.  Note that with the NX client, you will need to enter turing.slu.edu and port 22 in the connection settings the first time.
+
+<li> <p> Welcome to CS150!  Please make sure to read the course policies carefully, and remember to check this announcements section daily for new announcements or reminders.
+
+</ul>
+
+
+</body>
+</html>

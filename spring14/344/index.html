@@ -1,0 +1,105 @@
+<html>
+
+<head> 
+<title>CS 344: Programming Languages</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> | 
+<a href="policies.html">Course Policies</a> |
+<A HREF="homework/">Assignments</A> | 
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 344: Programming Languages<br> Spring 2014 </h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu 
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Tuesday 1-3pm, Wednesday 9-10am
+
+</h3>
+
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p>April 28: There was some confusion over problem 3 on homework 11.  I 
+will go ahead and make that one extra credit, so you are not required to do 
+the third problem on either homework 11 or homework 12.  
+
+<li><p>April 24: A <a href="homework/finalreview.pdf">review sheet</a> for the final is available, focusing on topics covered since the midterm.  (Please also check the <a href="homework/mtreview.pdf"</a>midterm review</a> also, since this exam is cumulative.)  The final is Thursday, May 8, at 8am.  You have until the end of this week to notify me of conflicts to this time, since I will need to figure out if and when I'm offering a conflict exam if anyone needs it.
+
+<li><p>April 24: <a href="homework/hw12.pdf">Homework 12</a> is available; it will be due the last day of classes, on Monday, May 5, by 11:59pm via email.
+
+<li><p>April 15:  <a href="homework/hw11.pdf">Homework 11</a> is posted; this will be due on Monday, April 28, by 11:59pm.  
+
+<li><p>April 14: <a href="homework/hw10.pdf">Homework 10</a> is posted; this is a short essay assignment due the Tuesday after Easter break at the start of class.  
+
+<li><p> April 8: I made a minor edit to the homework, since I forgot to mention that you need to import Data.List in order for some of the functions to work. To get your module started (and using my notation in the initial functions), you can use the following: <br>
+ 
+module Sets where <br>
+import qualified Data.List as L<br> 
+data Set a = Set [a] <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  deriving (Show, Eq, Ord) <br>
+-- rest of the functions
+
+<li><p> April 7: <a href="homework/hw9.pdf">Homework 9</a> is
+available; it will be due on Monday, April 14, by 11:59pm.
+
+<li><p>April 3: One more typo, and apologies because I apparently have 
+issues with basic geometry.  If you noticed that the distance calculation in 2a is 
+incorrect, you are not crazy - I mistyped the first example, and they are not exactly 3 apart.  
+
+<li><p>April 3: One typo on the homework - the extra credit signature is incorrect.  Apologies for any parse errors you can't fix!  The function squash needs to output a list of type b, so the function needs to be a -> a -> b.  The correct signature will be: <br>
+squash :: (a -> a -> b) -> [a] -> [b]
+
+<li><p> March 31: <a href="homework/hw8.pdf">Homework 8</a> is 
+available; it will be due on Monday, April 7, by 11:59pm.
+
+<li><p>March 27: I'm adding an extra credit problem to homework 7.  Code a function getFromList which takes a list and two integers and returns the list between those indices.  So, for example, "getFrom [1,2,..] 3 9" would return [3,4,5,6,7,8,9], and "getFrom ['E','r','i','n'] 2 3" will return ['r','i'].
+
+<li><p>March 20: <a href="homework/hw7.pdf">Homework 7</a> is available; it must be done individually, and is due next Saturday, March 29, by 11:59pm.  (Note: I am out of town as of next Friday afternoon, so please get any questions to me before 5pm on Friday!)
+
+<li><p>March 12: I am extending the due date for the essay (homework 6) until the Thursday after break, on March 20.  Please have it ready to hand in during class that day.  
+
+<li><p>March 3: <a href="homework/hw6.pdf">Homework 6</a> is available; 
+it will be due the Tuesday after spring break, on March 18.
+
+<li><p>Feb. 21: <a href="homework/hw5.pdf">Homework 5</a> is available; it will be due on Tuesday, March 4 at the start of class.  (Note that I won't accept this one late at all, since I plan to pass out solutions in the review session for study purposes.  So don't be late to class or turn it in later that day, since late submissions will not be granted for any reason.)
+
+<li><p>Feb. 21: The midterm will be in two weeks, on Thursday, March 6.  We will have a review during part of class on Tuesday, March 4.
+
+<li><p>Feb. 11: <a href="homework/hw4.pdf">Homework 4</a> is available; it will be due next Tuesday, Feb. 18, at the start of class.
+
+<li><p>Feb. 5: As announced yesterday in class, no office hours this morning since the university is still closed.  I'll be in my office this afternoon for make-up office hours from 2-4pm, if anyone wants to bring their questions then.
+
+<li><p>Jan. 28: Unfortunately, a bug cropped up on the homework.  For problem 1c, comments in Pascal are denoted by (* and *) or { and }; the brackets did not show up in the original pdf due to compiling issues. That has been fixed now, and a corrected pdf is now on this page.
+
+<li><p>Jan. 28: <a href="homework/homework3.html">Homework 3</a> is available; it will be due next Friday, Feb. 7, by 11:59pm (via email).
+
+<li><p>Jan. 22: <a href="homework/hw2.pdf">Homework 2</a> is available; it will be due next Thursday, Jan. 30, by the start of class. 
+
+<li><p> Jan. 21: Our class will meet in Ritter 30 for the rest of the semester.  (Sorry for not posting notice in advance - no one let me know before this morning that it had moved, so I was unaware myself!)
+
+<li><p> Jan. 14: <a href="homework/homework1.pdf">Essay 1</a> is available, and will be due at the start of class next Tuesday.
+
+<li><p> Jan. 14: There will be no class this Thursday, Jan. 16, since I will be out of town.
+
+<li> <p> Welcome to CS 344!  Please make sure to read the course 
+policies carefully, and remember to check this announcements section 
+daily for new announcements or reminders.
+
+</ul>
+
+
+</body>
+</html>

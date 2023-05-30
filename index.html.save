@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Erin Wolf Chamber's Home Page</title>
+</head>
+<body>
+<center><h1>Erin Moriarty Wolf Chambers</h1></center>
+
+<h4>About Me</h4>
+
+<img src ="Erin1.jpg" align=right alt="Me">
+
+I am an assistant professor in the <a 
+href="http://mathcs.slu.edu/>Department of Mathematics and 
+Computer Science</a> at <a href="http://www.slu.edu">Saint Louis 
+University</a>.  I teach computer science classes, and research problems in 
+computational topology and geometry as well as combinatorics and 
+combinatorial algorithms.  I am also interested in retention and 
+recruitment issues in computer science, particularly as they relate to 
+women and minorities.
+
+I did a bachelors in computer science, Masters in mathematics, and PhD in 
+computer science at  <a 
+href="http://www.uiuc.edu">University of Illinois at Urbana-Champaign</a>
+in the <a href="http://www.cs.uiuc.edu">Computer Science department</a>.  
+My PhD 
+advisor was <a href="http://compgeom.cs.uiuc.edu/~jeffe/"> Jeff
+Erickson</a>.
+
+<p>
+
+I'm married to <a href="turtle.jpg">Jeff Chambers</a>.  We have a little
+girl,
+<a href="http://www.flickr.com/photos/73942029@N00/">Grace</a>, and
+a guinea pig <a href="Jeff_pig.jpg">Boca</a>.
+In my spare time, I read a lot of books, watch various TV shows, and drink 
+<a href="http://www.uptontea.com">tea</a>.  
+
+<p>
+<hr>
+<p>
+
+<h4>Links</h4>
+
+<ul>
+
+<li><a href="cv.pdf">CV</a>
+<br>
+
+<li><a href="papers/index.html">Publications</a>
+<br>
+
+<li><a href="family.html">Family</a>
+<br>
+
+</ul>
+
+<hr>
+<p>
+
+<address>You can reach me at:
+</address>
+
+</body>
+</html>

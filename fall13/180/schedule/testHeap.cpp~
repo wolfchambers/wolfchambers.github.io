@@ -1,0 +1,22 @@
+#include "Heap.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  Heap<float> myheap;
+  
+  myheap.insert(11.2);
+  cout << "max priority is " << myheap.getMax() << endl;
+  
+  myheap.insert(13.6);
+  cout << "max priority is " << myheap.getMax() << endl;  
+ 
+  myheap.insert(9.9);
+  cout << "max priority is " << myheap.getMax() << endl;
+  
+  myheap.insert(17.1);
+  cout << "max priority is " << myheap.getMax() << endl;  
+  
+  myheap.removeMax();
+}

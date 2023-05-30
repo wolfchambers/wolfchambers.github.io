@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage{jeffe,handout}
+\def\rmdefault{bch} % Use Charter for main text font.
+
+\def\BOX#1{\fbox{\vbox to #1{\vss\hbox to #1{\hss}}}}
+\def\Bigbox{\BOX{0.25in}}
+\def\Bigbox{\raisebox{-0.5ex}[0.25in][0pt]{\BOX{0.25in}}}
+
+\hidesolutions
+
+% =========================================================
+\begin{document}
+
+\headers{CS 150}{Homework 1 (due February 2 by 11:59pm)}{Spring
+2009}
+
+\begin{center}
+\LARGE \textbf{CS 150: Intro to Object Oriented Programming, Spring
+2009}
+\\
+\textbf{Homework 1}
+\\[1ex]
+\Large Due \emph{via email} by 11:59pm on Monday, February 2\\
+
+\end{center}
+
+This homework covers the material from Chapter 2 of the text,
+particularly string and lists.  Please read and familiarize yourself
+with this material before working on the homework.  In particular,
+working through practice problems 2.2, 2.3, 2.15, 2.17, and 2.24
+might be helpful for the material on this homework.  You do NOT need
+to submit the practice problems for credit - they are merely for
+your own benefit.
+
+Please type all answers and email to the instructor at echambe5 - at - slu.edu by 11:59pm on the date due.
+
+\begin{problems}
+%----------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Exercises 2.6 and 2.7 from the text:
+\begin{enumerate}
+
+\item Give a series of statements that determine and print the string that
+comes second, in alphabetical order, from an initially unsorted
+list.
+
+\item Repeat part (a), ensuring that the original list remains unsorted.
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Exercise 2.9 from the text:
+
+What is the result of the command $\texttt{range}(13,40,5)$?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Exercise 2.11 from the text:
+
+Suppose that \texttt{numbers} is a list of values.  Give a command
+or sequence of commands that outputs the median (or middle) value of
+the list.
+
+Note: You may assume that the list has an odd number of values in
+it, so that the median is unique and well defined.
+
+%--------------------------------------------------
+\item Exercise 2.19 from the text:
+
+Write an expression that is {\bf True} precisely when
+\texttt{stringA} is a capitalized version of \texttt{stringB}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Exercise 2.22 from the text:
+
+Assume that \texttt{person} is a string in the form of `firstName
+middleName lastName'.  Give a command or series of commands that
+results in the creation of a corresponding string `firstName
+middleInitial lastName'.  For example, if $\texttt{person} =$ `Elmer
+Joseph Fudd', then the result should be `Elmer J. Fudd'.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Exercise 2.27, parts b, c, e, i, k, and n
+\end{problems}
+
+\end{document}

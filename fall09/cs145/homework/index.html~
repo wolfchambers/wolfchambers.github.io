@@ -1,0 +1,83 @@
+<html>
+
+<head>
+<title>CS 145: Scientific Programming</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> |
+<a href="syllabus.html">Course Policies</a> |
+<A HREF="homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="programming/">Programming</A> |
+<A HREF="schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 145: Scientific Programming <br> Fall 2009 </h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Wednesday 1-2pm, Thursday 9-10am, or by appointment
+
+</h3>
+
+</center>
+<p>
+<hr>
+<p>
+
+      <H2>HOMEWORK ASSIGNMENTS</H2>
+
+We expect to have 10-12 homework assignments during this course.
+Your 2 lowest scores will be dropped at the end of the
+course and your remaining scores will be averaged.
+<p>
+Please make sure you understand the policy towards <a href="../#integrity">Academic Integrity</a>.
+<p>
+Homework assignments are due via email to the instructor by the beginning of class on the 
+date specified.  Late
+assignments will be penalized in accordance with our <a
+href="../#late">Late Policy</a>.   
+<p>
+The table below gives the assignments, and associated dates.  All
+future dates/topics are tentative until such assignments are made available.
+
+<p>
+      <table cellpadding=3 border=1>
+
+	<tr>
+	  <th> Assignment</th>
+	  <th> Topic</th>
+	  <th> Due in Class</th>
+	  <th> Solutions</th>
+	</tr>
+
+	<tr>
+	<td><a href="hw1.pdf">hw1</a></td>
+	<td>Introduction to Matlab</td>
+	<td>9am, Monday, August 31, 2009</td>
+	<td>Coming soon</td>
+	</tr>
+
+
+	</table>
+
+
+
+
+<p>
+<hr>
+<ADDRESS>
+<a href="/~chambers">Erin Chambers</a>
+</ADDRESS>
+CS 150, Spring 2009
+<br>
+
+  </body>
+</html>

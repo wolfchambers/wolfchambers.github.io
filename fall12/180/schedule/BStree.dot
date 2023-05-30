@@ -1,0 +1,29 @@
+digraph {
+root [label="_root"];
+root -> node0xc10010;
+node0xc10010 [shape=record,label="{<parent> _parent | _data = 10 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0xc10040 [shape=record,label="{<parent> _parent | _data = 5 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0xc10070 [shape=record,label="{<parent> _parent | _data = 15 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0xc100a0 [shape=record,label="{<parent> _parent | _data = 21 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0xc100d0 [shape=record,label="{<parent> _parent | _data = 35 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0xc10100 [shape=record,label="{<parent> _parent | _data = 7 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0xc12390 [shape=record,label="{<parent> _parent | _data = 42 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0xc123c0 [shape=record,label="{<parent> _parent | _data = 11 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0xc12430 [shape=record,label="{<parent> _parent | _data = 29 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0xc10010:left:s -> node0xc10040;
+node0xc10010:right:s -> node0xc10070;
+node0xc10040:parent:n -> node0xc10010;
+node0xc10040:right:s -> node0xc10100;
+node0xc10070:parent:n -> node0xc10010;
+node0xc10070:left:s -> node0xc123c0;
+node0xc10070:right:s -> node0xc100a0;
+node0xc100a0:parent:n -> node0xc10070;
+node0xc100a0:right:s -> node0xc100d0;
+node0xc100d0:parent:n -> node0xc100a0;
+node0xc100d0:left:s -> node0xc12430;
+node0xc100d0:right:s -> node0xc12390;
+node0xc10100:parent:n -> node0xc10040;
+node0xc12390:parent:n -> node0xc100d0;
+node0xc123c0:parent:n -> node0xc10070;
+node0xc12430:parent:n -> node0xc100d0;
+}

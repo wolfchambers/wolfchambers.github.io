@@ -1,0 +1,57 @@
+<html>
+
+<head>
+<title>CS 493: Computer Security</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="assignments/">Assignments</A> |
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 493: Computer Security <br> Spring 2011 <br> TuTh 12:45-2pm in 121 RH</h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 011 Ritter Hall
+<br> Office Hours: TBA  
+
+</h3>
+
+</center>
+
+<p>
+      <table cellpadding=3 border=1>
+
+        <tr>
+          <th> Assignment</th>
+          <th> Topic</th>
+          <th> Due</th>
+          <th> Solutions</th>
+        </tr>
+
+        <tr>
+        <td>Paper Review 1</td>
+        <td><a href="../computersecurityintherealworld.pdf">Computer Security in the Real World</a></td>
+        <td>Tuesday, Feb. 1</td>
+        <td>None</td>
+        </tr>
+
+        <tr>
+        <td><a href="lab01.html">Lab 1</a></td>
+        <td>Introduction to DETER</td>
+        <td>Thursday, Feb. 10</td>
+        <td>In class</td>
+        </tr>
+        
+        </table>
+
+</body>
+</html>

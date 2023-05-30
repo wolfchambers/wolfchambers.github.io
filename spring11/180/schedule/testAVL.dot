@@ -1,0 +1,20 @@
+digraph {
+root [label="_root"];
+root -> node0x2565340;
+node0x2563010 [shape=record,label="{<parent> _parent | _data = 12 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x2563040 [shape=record,label="{<parent> _parent | _data = 15 | _aux = 1 | { <left> _left | <right> _right } }"];
+node0x2563070 [shape=record,label="{<parent> _parent | _data = 20 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x25630a0 [shape=record,label="{<parent> _parent | _data = 9 | _aux = 1 | { <left> _left | <right> _right } }"];
+node0x2565340 [shape=record,label="{<parent> _parent | _data = 11 | _aux = 2 | { <left> _left | <right> _right } }"];
+node0x25656a0 [shape=record,label="{<parent> _parent | _data = 5 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x2563010:parent:n -> node0x2563040;
+node0x2563040:parent:n -> node0x2565340;
+node0x2563040:left:s -> node0x2563010;
+node0x2563040:right:s -> node0x2563070;
+node0x2563070:parent:n -> node0x2563040;
+node0x25630a0:parent:n -> node0x2565340;
+node0x25630a0:left:s -> node0x25656a0;
+node0x2565340:left:s -> node0x25630a0;
+node0x2565340:right:s -> node0x2563040;
+node0x25656a0:parent:n -> node0x25630a0;
+}

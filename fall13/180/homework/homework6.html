@@ -1,0 +1,179 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+
+
+<center>
+<h2>Programming Assignment 6
+
+<br>
+The list class
+<br>
+Sorting
+</h2>
+<h3>
+Due:
+Wednesday, Oct. 23, 11:59pm
+
+
+</h3>
+</center>
+
+
+<P> The only file you will need for this assignment is the <a 
+href="../schedule/List.h">List.h</a> file that we wrote in class.  Our <a 
+href="../schedule/testList.cpp">testList.cpp</a> file might also be of use 
+as a starting point for your test file. </P>
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+For this assignment, <b>you must work indivicually on your program</b>.
+</p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+</p>
+
+
+<hr>
+
+
+<H1>Overview</H1>
+
+<P> Similar to our last program with vectors, we will add some functionality 
+to our list class written during lecture.  In addition, you will implement sorting algorithms for both the vector and the list classes.  </p>
+
+<hr>
+
+<H1>Part 1</H1>
+
+<p> Please write the following functions described below in our List class.  
+(Please download List.h from the course schedule webpage and insert 
+your functions into this class, then submit the entire List.h file via 
+email by the due date.) </P>
+
+<p> NOTE: For these functions, all iterators and references to elements remain valid.  Note that this means 
+you may NOT remove elements and readd them, since this will allocate new 
+nodes and invalidate the pointers/iterators which already exist.  You'll 
+have to get down and dirty with pointers for most of these.
+ 
+
+
+<H1>Functions to code</h1>
+
+<UL>
+  
+  <li> T& operator[](int index);
+  
+  <p>Returns the item in the list which is at position index.  
+  </li>
+
+  <li> void replace(T val1, T val2);
+  <p>Replace all instances of val1 in the current list with val2.
+   </li>
+   
+  <li> void swap(List& other);
+
+  <p> Exchanges the content of the current list by the content of other, 
+which is another list object containing elements of the same type. Sizes may 
+differ.
+
+<p>After the call to this member function, the elements in this container are 
+those which were in other before the call, and the elements of other are those 
+which were in this. All iterators, references and pointers remain valid for 
+the swapped objects.
+
+  </li>
+
+  <LI> void reverse();
+  
+  <p>Reverses the order of the elements in the list container.
+
+
+  </li>
+
+  <li> You are also required to write a test file, similar to our testList.cpp in class.  You our welcome to use our code from 
+class as a starting point, but your grade will be partially based on how well you test your code.  Remember to thoroughly test 
+all possible inputs before submitting.
+  </li>
+
+</ul>
+
+<hr>
+
+<h1>Part 2: Sorting</h1>
+
+<p> You will also be implementing a sorting algorithms for this 
+assignment in the list class.  Add your sorting function of choice to 
+the .h file as a member function also, and clearly indicate in the name and the 
+comments which algorithms you have chosen.  Note that I don't care which 
+algorithm you implement in particular.
+
+<p>You may wish to review these and try to take into account which sorting algorithms are easier to implement in lists!
+
+<hr>
+
+<h1>Extra Credit</h1>
+
+<p>For extra credit, you may also implement a second sorting algorithm in the Vector.h class, which will
+sort the vector when called.  
+
+<hr>
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code">Source Code for List</a>
+      <br>
+      Submit your revised <tt>List.h</tt> file (with the sorting algorithm added).
+  </LI>
+    <LI>
+      <P>
+      <a name="code">Test file</a>
+      <br>
+      Submit your revised <tt>testList.cpp</tt> file.
+  </LI>
+  <LI>
+      <P>
+      <a name="code">Source Code for Vector</a>
+      <br>
+      If you do the extra credit, also submit your revised <tt>Vector.h</tt> file.
+  </LI>
+
+  <LI>
+      <P>
+      <a name="readme">"readme" file</a>
+      <br>
+      An overview and run time analysis of the functions in your class,
+      including comments on how you tested your code, and any further comments you
+      wish to make to the grader.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P> The assignment is worth <em>10</em> points. 
+One point will be based on your testList.cpp file, and one will be based on your readme and runtime analysis.  The remaining 8 points will be based on the assigned functions (including commenting, indenting, and meaningful variable names). </P>
+
+<hr>
+
+
+  </body>
+</html>

@@ -1,0 +1,730 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Programming Assignment 6 and 7
+
+
+-
+CS 150, Spring 2012
+</title>
+</head>
+
+<body>
+
+<HR>
+
+<center>
+<h2>Programming Assignment 6 and 7
+
+
+</h2>
+<h2>Spellcheck</h2>
+<h3>
+Due:
+<br>
+Part I: 11:59pm, Friday, March 23
+
+<br>
+Part II: 11:59pm, Friday, March 30
+
+</h3>
+</center>
+
+<hr>
+
+
+<h3>Contents:</h3>
+<UL>
+  <li>
+      <a href="#overview">Overview</a>
+  </li>
+      <ul>
+	<li>
+	    <a href="#new">Key Techniques</a>
+	</li>
+      </ul>
+  </li>
+  <li>
+      <a href="#collaboration">Collaboration Policy</a>
+  </li>
+  <li>
+      <a href="#specs">Outward Behavior</a>
+  </li>
+  <li>
+      <a href="#example">Example</a>
+  </li>
+  <li>
+      <a href="#helper">Part I: A Language Helper</a>
+  </li>
+  <li>
+      <a href="#dialogue">Part II: User Dialogue</a>
+  </li>
+  <li>
+      <a href="#hints">Hints</a>
+  </li>
+  <li>
+      <a href="#files">Files You Will Need</a>
+  </li>
+  <li>
+      <a href="#grading">Grading Standards</a>
+  </li>
+  <li>
+      <a href="#extra">Extra Credit</a>
+  </li>
+</UL>
+
+
+<hr>
+
+<H1><A NAME="overview">Overview</A></H1>
+
+<p>
+In a two-part assignment, we will design and implement a
+fully-functional spell checking program.   The first part of the
+assignment will be designing a class to help manage a collection of
+all  "official" English words (we will provide a data file).   The
+second part will be to design a program that leads a user through a
+dialogue for spell checking a document of his or her choice.  The
+software will highlight apparent misspelled words, give the
+user a range of replacement options, and then write the corrected
+version of the document back out to a file.
+</p>
+
+<h4><a name="new">Key Techniques</a></h4>
+
+<p>
+<ul>
+  <li>
+      File input and output.
+  </li>
+  <li>
+      Classes
+  </li>
+</ul>
+</p>
+
+
+<hr>
+
+<H1><A NAME="collaboration">
+Collaboration Policy</A>
+</H1>
+
+<p>
+For this assignment, <b>you are allowed to work with one other
+student</b> if you wish (in fact, we suggest that you do so).
+If any student wishes to have a partner but
+has not been able to locate one, please let the instructor know so
+that we can match up partners.
+</p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+</p>
+
+
+<hr>
+
+<H1><A NAME="specs">
+Outward Behavior</A>
+</H1>
+
+<p>
+By the time all the pieces are in place, the completed program 
+should work as follows.  It begins by prompting the user for the name
+of a file which provides the complete list of words in the
+<em>language</em>, a file which is the <em>document</em> to be
+spell-checked, and the a filename to which the the corrected document
+should be written.
+</p>
+
+<p>
+At this point, the program should begin spell-checking the document
+line-by-line, word-by-word.   Furthermore, for each word that is not
+in the language, the program should alert the user and ask how to deal
+with the word.  The user should be given the option
+to ignore the warning, to enter a replacement, or to be able to
+select a replacement from one or more suggested options (more about
+this later).
+</p>
+
+
+<p>
+After the entire session, the corrected text should be saved to disk
+as a replacement for the original document (using the same filename).
+</p>
+
+
+<hr>
+
+<H1><A NAME="example">
+Example</A>
+</H1>
+
+<P>
+To give a more concrete view of the goal, we provide the following sample
+of a potential spell-checking session. Admittedly
+this example is a very polished one which demonstrates lots of
+intricate features of our working software.  This format can serve as
+a goal, though you do not have to precisely match it.   However you
+will have to implement the general functionality shown here.
+</p>
+
+
+<p>
+For this example we begin with an original document,
+<TT>demo.txt</TT>, with the following content, 
+<blockquote>
+<PRE>
+This is a tesk of the "best" spell-checking prograg
+in missouri --- if not in the entire USA.
+(Howevr, it is only a small tess.)
+
+Still, wild success wil require a hugh, all-out effort.
+How'd it go?
+</PRE>
+</blockquote>
+</P>
+
+
+
+<P>
+A run of our spell-checking program then looks like:
+
+<blockquote>
+<PRE>
+Enter the name of the language file: English.txt
+Enter the name of the document to spellcheck: demo.txt
+Enter the name for saving the corrected version: demoNew.txt
+
+The word: tesk on line 1 is not in the language.
+
+This is a tesk of the "best" spell-checking prograg
+          ====
+
+a) Accept
+r) Replace
+1) teschermacherite
+2) teskere
+
+Option: r
+Enter your replacement: test
+
+The word: spell-checking on line 1 is not in the language.
+
+This is a test of the "best" spell-checking prograg
+                             ==============
+
+a) Accept
+r) Replace
+1) spell-caught
+2) spell-free
+
+Option: a
+
+The word: prograg on line 1 is not in the language.
+
+This is a test of the "best" spell-checking prograg
+                                            =======
+
+a) Accept
+r) Replace
+1) prograde
+2) program
+
+Option: 2
+
+The word: missouri on line 2 is not in the language.
+
+in missouri --- if not in the entire USA.
+   ========
+
+a) Accept
+r) Replace
+1) missounds
+2) Missouri
+
+Option: 2
+
+The word: Howevr on line 3 is not in the language.
+
+(Howevr, it is only a small tess.)
+ ======
+
+a) Accept
+r) Replace
+1) However
+2) Howf
+
+Option: 1
+
+The word: tess on line 3 is not in the language.
+
+(However, it is only a small tess.)
+                             ====
+
+a) Accept
+r) Replace
+1) teslas
+2) Tess
+
+Option: r
+Enter your replacement: test
+
+The word: wil on line 5 is not in the language.
+
+Still, wild success wil require a hugh, all-out effort.
+                    ===
+
+a) Accept
+r) Replace
+1) Wikstroemia
+2) Wilberforce
+
+Option: r
+Enter your replacement: will
+
+The word: hugh on line 5 is not in the language.
+
+Still, wild success will require a hugh, all-out effort.
+                                   ====
+
+a) Accept
+r) Replace
+1) huggle
+2) Hugh
+
+Option: r
+Enter your replacement: huge
+
+The word: How'd on line 6 is not in the language.
+
+How'd it go?
+=====
+
+a) Accept
+r) Replace
+1) How
+2) How's
+
+Option: a
+Done spellchecking. File Saved
+</PRE>
+</blockquote>
+</P>
+
+<P>
+Upon completion of the program the file <TT>demoNew.txt</tt>, should have the following contents.
+<blockquote>
+<PRE>
+This is a test of the "best" spell-checking program
+in Missouri --- if not in the entire USA.
+(However, it is only a small test.)
+
+Still, wild success will require a huge, all-out effort.
+How'd it go?
+</PRE>
+</blockquote>
+</P>
+
+<hr>
+
+<H1><A NAME="helper">
+Part I:  A Language Helper</A>
+</H1>
+
+<p>
+The overall goal is a very complex task with many required features.  There is an
+ongoing dialogue with the user as well as many intricate issues
+involving the management of the terms in the language in comparison to
+words in the document. This makes
+it easy to get lost when trying to program it.  You will do much
+better if you organize your efforts into clearly defined subtasks.
+For this reason, we are <b>requiring</b> that you do the following.
+</p>
+
+<p>
+Many of the subtasks are related to comparing words presumably
+from the user's document to the larger set of words that are
+considered part of the language.  We will be providing a file, <tt><a
+href="English.txt">English.txt</a></tt>, which represents the
+"official" set of words which are considered part of the language.
+This file has one "word" per line and is already alphabetized by
+standard dictionary order.
+</p>
+
+
+<p>
+However the language file contains both capitalized and
+uncapitalized words. A word that is capitalized in the language file
+is only legitimate if capitalized in the document (i.e., 'Missouri' is
+okay but 'missouri' is not).  A word that is uncapitalized in the
+language file can be used in the document in either capitalized or
+uncapitalized form (i.e., 'This' and 'this' are both legitimate
+although 'this' is the only one literally in the language file).
+</p>
+
+
+<p>
+You should encapsulate these issues by developing a separate class,
+<tt>LanguageHelper</tt>. This class should minimally support the
+following three behaviors.
+<ul>
+  <li>
+      <p>
+      <b><tt>__init__(self, languagefile)</tt></b><br>
+      The initialization should take care of reading the raw file of
+      words and entering those words into an internal list that will
+      be used by the other behaviors.
+      </p>
+  </li>
+
+  <li>
+      <p>
+      <b><tt>__contains__(self, word)</tt></b><br>
+      The parameter is a verbatim word (presumably from a user's
+      document).  This method should determine whether or not that
+      word is considered a legitimate part of the language, returning
+      <tt>True</tt> if the word is contained in the language and
+      <tt>False</tt> otherwise.
+      </p>
+
+      <p>
+      This special method is used by Python to support the
+      <b><tt>in</tt></b> syntax, such as
+      <nobr><tt>'Missouri' in language</tt></nobr>, presuming that
+      <tt>language</tt> is an instance of our <tt>LanguageHelper</tt>
+      class.
+      </p>
+      
+      <p>
+      Note as well that the implementation of this method should rely
+      upon the aforementioned distinction between capitalized and
+      uncapitalized words.  So with our given <tt>English.txt</tt>
+      wordlist, it should be that <tt>this</tt>, <tt>This</tt> and
+      <tt>Missouri</tt> are contained in the language, yet
+      <tt>missouri</tt> and <tt>Missourri</tt> are not contained.
+      </p>
+  </li>
+  <li>
+      <p>
+      <b><tt>getSuggestions(self, word)</tt></b><br>
+      Given a word presumably typed by the user, but which was not
+      spelled correctly, this method should return a list of suggested
+      words for replacement. Doing a good job at offering suggestions
+      is actually the toughest part       of writing a good
+      spell-checker.   For this assignment, we are going       to
+      suggest the following simple rule (which admittedly is not
+      usually very helpful).   We will leave it as extra credit to
+      design a more intelligent rule.
+      </p>
+      <p>
+      The language file is written so that words are alphabetized in typical
+      dictionary order.   When you are processing a misspelled word, use a
+      loop to determine where the misspelled word would have been placed if
+      it had been a legitimate word.   Generally, this lets you determine
+      two real words of the dictionary which bracket the misspelled words.
+      You should offer those two words as suggestions (in the special case
+      where the misspelled words would be at the very beginning or end of
+      the language, you may offer just a single suggestions).
+      </p>
+
+      <p>
+      Furthermore, if the misspelled word begins with a capital letter
+      (e.g., <tt>Howevr</tt>), the reported suggestions should be
+      presented as capitalized, even if the nearest underlying words
+      from the language are uncapitalized.  In spirit, if the user
+      typed a capital letter when misspelling a word, they would be
+      likely to want the correctly spelled word to be capitalized as
+      well.
+      </p>
+
+  </li>
+</ul>
+</p>
+
+<h2>Testing Your Code</h2>
+
+<p> As a matter of principle, <b>you are required to test your <tt>LanguageHelper</tt> class</b>.  Write this class
+in its own file and then include code which tests your class at the bottom of the source
+code.
+</p>
+
+<p>
+Make sure that your test includes many interesting cases,
+demonstrating both the check of containment for words that are
+included and are not included, and a variety of calls to
+getSuggestions (see examples from the early sample of a complete
+spell-checker).
+
+<h2>Submitting Part I</h2>
+
+<p>
+You most officially submit your solution to Part I of the assignment
+by the first due date.   Please submit your sourcecode,
+<tt>LanguageHelper.py</tt>, which must include the LanguageHelper class as well as code which tests various words and demonstrates that your class works correctly.  If you worked as a pair, please make this clear in the email and
+briefly describe the contributions of each person in the effort.
+</p>
+
+
+<hr>
+
+<H1><A NAME="dialogue">
+Part II:  User Dialogue</A>
+</H1>
+
+<p>
+The final goal is to create a complete, working spell-checker which
+provides a user dialogue as shown in the earlier example, for
+spell-checking a given document.   This program should make use of the
+existing support of the <tt>LanguageHelper</tt> class.
+</p>
+
+
+<p>
+In addition to instantiating the helper based on the file of English
+words, the complete program should open the user's document and then
+proceed to analyze it on a line-by-line, word-by-word basis.   One of
+the first challenges will be in determining what constitutes a word.
+Though we typically use <tt>split()</tt> as a rough guide for
+breaking a line into words, that does not really work for typical
+English prose.  Many of the resulting pieces would involve leading or
+trailing punctuation which would throw-off our spell-checking when
+compared to the legitimate words of the language.   More so, even if we
+were able to strip away the punctuation, we would want to make sure
+that we keep it there when replacing a misspelled word.
+</p>
+
+<p>
+Rather than relying on <tt>split</tt>, we want you to determine the
+word-by-word breakdown as you go using the following rules.   Assuming
+some current index for starting the search for a word,
+<ul>
+  <li>
+      Find the index of the next <em>alphabetic</em> character (i.e.,
+      satisfies <tt>isalpha()</tt>).   Consider this index the start
+      of the next word.
+  </li>
+  <li>
+      From there, step forward until finding the next whitespace
+      character (i.e., satisfies <tt>isspace()</tt>) or until
+      reaching the end of the line.
+  </li>
+  <li>
+      Now step <em>backward</em> until encountering some alphabetic
+      character.  Consider this index the end of the word.
+  </li>
+</ul>
+By using these rules, unnecessary punctuation will be stripped away
+from the left and right ends of the words, while meaningful punctuation
+punctuation within the interior of the word remains, such as hyphens
+and apostrophes.
+</p>
+
+<p>
+Each word should be checked against the true language, and if it is
+not included there, the user should be prompted for directions.   Any
+changes specified by the user should be carefully tracked so that the
+corrected version of each line can be written to a new file.
+</p>
+
+<h2>Submitting Part II</h2>
+
+<p>
+You most officially submit your solution to Part II of the assignment
+as by the first due date.   Please submit your sourcecode,
+<tt>Spell.py</tt> and for continuity another copy of
+<tt>LanguageHelper.py</tt>.   The helper may be the identical code you
+had submitted for Part I.  Alternatively, it may be that you found
+problems with your original code while doing the second part.  In that
+case, you may resubmit your revised version here, although this will not change your grade for the first submission.
+</p>
+
+<p>
+You should submit an additional readme file at this stage detailing
+your continued efforts.
+</p>
+
+<p>
+Please see details regarding the <a href="../#submit">submission
+process</a> from the general programming web page, as well as a
+discussion of the <a href="../../index.html#late">late policy</a>.
+</p>
+
+
+<hr>
+
+<H1><A NAME="hints">
+Hints</A>
+</H1>
+
+<P>
+<UL>
+  <LI>
+      <P>
+      Watch out for effect of newlines, when read from the dictionary
+      or document.
+      </P>
+  </LI>
+  <LI>
+      <P>
+      Make sure to close your files when you're done with them.
+      </P>
+  </LI>
+  <LI>
+      <P>
+      Many of the methods of the Python string class which we have not
+      previously emphasized will be quite useful for this assignment.
+      Most notable are:  <TT>isalpha()</TT>, <TT>isdigit()</TT>, <TT>  islower()</TT>, <TT>isspace()</TT>, <TT>isupper()</TT>, <TT>rstrip()</TT>.
+      Type <TT>help(str)</TT> in a Python interpreter for more details.
+      </P>
+  </LI>
+
+</UL>
+</P>
+
+
+<hr>
+
+<H1><A NAME="files">
+Files You Will Need</A>
+</H1>
+
+<P>
+We will provide a file, <tt><a href="English.txt">English.txt</a></tt>
+which lists over 364,000 correctly spelled
+English words.  The words may involve a combination of uppercase and
+lowercase letters, as discussed above.
+%
+The file has one word per line and words are alphabetized as they
+might appear in a standard English dictionary.
+</p>
+
+<p>
+To ease your program development, you can make it appear as if this
+file is in your own directory by typing the following command.
+<PRE>
+ln -sf /export/mathcs/home/faculty/echambe5/Public/English.txt .
+</PRE>
+</P>
+
+<P>
+This doesn't really copy the file (given that it is very big, it seems
+unnecessary for everyone to have their own copy).   But it creates
+what is called a symbolic link to this file within your directory.
+</P>
+
+<hr>
+
+<H1><A NAME="grading">
+Grading Standards</A>
+</H1>
+
+<p>
+The two parts of the assignment will be graded separately.  I expect commenting and docstrings to be provided as part of your code.  Please include the names of both partners in a comment at the top of any files you submit.
+</p>
+
+
+<hr>
+
+<H1><A NAME="extra">
+Extra Credit</A>
+</H1>
+
+<P>
+The rule that we used for producing suggested corrections for a
+misspelled words was not actually a very good approach.  Rarely was
+the intended word right next to the mistake when alphabetized because
+the error may have occurred on an early letter.
+</P>
+
+<P>
+A much better rule is to try to find words that are really in the
+language that are "nearby" the mistaken word, measured by the number
+of changes that would have to be made to get from one word to the
+other.  This is typically called the <em>edit distance</em> between
+two words.
+</P>
+
+<P>
+More concretely, consider the following types of edits which might get
+from a misspelled word back to a legitimate word.
+<ul>
+  <li>
+      <p>
+      Change a single letter to some other letter
+      <br>
+      (e.g. converting <tt>flex<b>a</b>ble</tt> to <tt>flex<b>i</b>ble</tt>)
+      </p>
+  </li>
+  <li>
+      <p>
+      Delete one character from the word.
+      <br>
+      (e.g. converting <tt>unne<b>c</b>cessary</tt> to <tt>unnecessary</tt>)
+      </p>
+  </li>
+  <li>
+      <p>
+      Add one letter to the word.
+      <br>
+      (e.g., converting <tt>writen</tt> to <tt>writ<b>t</b>en</tt>)
+      </p>
+  </li>
+  <li>
+      <p>
+      Take two neighboring characters and invert them
+      <br>
+      (e.g., converting <tt>w<b>ie</b>rd</tt> to <tt>w<b>ei</b>rd</tt>)
+      </p>
+  </li>
+</ul>
+</P>
+
+<p>
+As extra credit, add a new method, <tt>get<b>Good</b>Suggestions</tt> to the
+<tt>LanguageHelper</tt> class which returns a list of all legitimate
+language words which are precisely <b>one edit</b> away from the
+mistaken word  (we want you to still implement the original
+<tt>getSuggestions</tt> method for the required assignment, so that a
+botched extra credit attempt does not jeopardize your main grade).
+</p>
+
+<p>
+The challenge will be in implementing this efficiently enough so that
+you can produce these suggestions without any significant delay for
+the user.   There are several possible approaches.   One is to write a
+method to check whether any two words are within one edit of each
+other.  Then you could iterate this test between the mistaken word and
+each of the 364,000 words in the language file.
+</p>
+
+<p>
+Another approach is to instead take the mistaken word, and
+generate all possible strings which are one edit away from it, and
+then for each of those strings see if it turns out to be contained as
+a legitimate word of the language.  Notice that for a typical 7-letter
+word, there are only 7 ways to delete a character, 6 ways to invert
+two neighboring characters, and 8*26 ways to insert a new character,
+because there are 8 possible slots, and 26 possible letters to put in
+each slot.  Okay, depending on how capitalization is managed, perhaps
+52 possible characters, or more if allowing hyphen or apostrophe.  But
+still, this seems like a far small number of things to check than
+trying to compare the mistaken word to each of the 364,000 other
+language words.  If using this approach, make sure to get rid of any
+apparent duplicate suggestions (as there may have been two different
+edits which result in the same word).
+</p>
+
+
+<p>
+<b>Even though this extra credit challenge involves the
+<tt>LanguageHelper</tt> class, you may feel free to attempt it by
+either deadline.</b>  Just make sure to point out in a readme file that
+you have done this and where it was submitted.  Also, show use of the
+new method in unit tests.
+</p>
+
+
+<hr>
+</body> </html>

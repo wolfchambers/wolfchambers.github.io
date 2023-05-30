@@ -1,0 +1,273 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="programming/">Programming</A> |
+<b>Labs</b> |
+<A HREF="schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+
+<p>
+<hr>
+
+
+<center>
+<h1>Lab Assignment 
+02
+
+</h2>
+</center>
+
+<table>
+  <tr>
+    <td>
+	<b>Topic:</b>
+    </td>
+    <td>
+	Speed Limit
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Source Code:</b>
+    </td>
+    <td>
+	<tt>speed.cpp</tt>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Live Archive Ref#:</b>
+    </td>
+    <td>
+	<a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/problem.php?p=3059">3059</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>In-Class Day:</b>
+    </td>
+    <td>
+	<br>
+	Thursday, September 10, 2009
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Submission Deadline:</b>
+    </td>
+    <td>
+	Sunday, September 13, 11:59pm
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Techniques:</b>
+    </td>
+    <td>
+	<br>
+	Loops, Arithmetic, tracking state information
+    </td>
+  </tr>
+</table>
+
+<p>
+Please review the
+<a href="index.html">general information about lab assignments</a>.
+
+
+<hr>
+
+<h1>Speed Limit</h1>
+
+
+<p>Bill and Ted are taking a road trip.  But the odometer in their car
+is broken, so they don't know how many miles they have
+driven. Fortunately, Bill has a working stopwatch, so they can record
+their speed and the total time they have driven. Unfortunately, their
+record keeping strategy is a little odd, so they need help computing
+the total distance driven. You are to write a program to do this
+computation. </p>
+
+<p>For example, if their log shows</p>
+
+<blockquote>
+<table cellpadding="2" cellspacing="2" border="1"
+ style="text-align: left;">
+      <tbody>
+        <tr>
+          <td valign="top" style="text-align: center;">Speed in miles per
+hour<br>
+          </td>
+          <td valign="top" style="text-align: center;">Total elapsed time
+in  hours<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" style="text-align: center;">20<br>
+          </td>
+          <td valign="top" style="text-align: center;">2<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" style="text-align: center;">30<br>
+          </td>
+          <td valign="top" style="text-align: center;">6<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" style="text-align: center;">10<br>
+          </td>
+          <td valign="top" style="text-align: center;">7<br>
+          </td>
+        </tr>
+
+  </tbody>
+</table>
+</blockquote>
+
+<p>this means they drove 2 hours at 20 miles per hour, then 6-2=4
+hours at 30 miles per hour, then 7-6=1 hour at 10 miles per hour. The
+distance driven is then (2)(20) + (4)(30) + (1)(10) = 40 + 120 + 10 =
+170 miles. Note that the total elapsed time is always since the
+beginning of the trip, not since the previous entry in their log. </p>
+
+<p><span style="font-weight: bold;">Input:</span> The input consists of one
+ or more data sets. Each set starts with a line  containing an
+ integer
+<i>n</i>,  1 &#8804; <span style="font-style: italic;">n</span>  &#8804; 10,&nbsp; followed
+by  <i>n</i> pairs of values, one pair per line. The  first value in a pair,
+<span style="font-style: italic;">s,</span> is the  speed in miles per hour
+and the second value, <span style="font-style: italic;">t</span>, is the
+total elapsed time. Both <span style="font-style: italic;">s</span> and <span
+ style="font-style: italic;">t</span> are integers, 1 &#8804;<span
+ style="font-style: italic;"> s</span> &#8804; 90 and 1 &#8804;<span
+ style="font-style: italic;"> t</span> &#8804; 12.&nbsp; The values for <span
+ style="font-style: italic;">t </span>are always in strictly increasing order.
+  A value of -1 for <span style="font-style: italic;">n</span> signals the
+ end of the input. </p>
+
+<p><span style="font-weight: bold;">Output:</span> For each input set, print
+ the distance driven, followed by a space, followed by the word "miles".&nbsp;
+ </p>
+
+<table border="1" cellpadding="10">
+          <thead>  <tr>
+           <td><b>Example input:</b></td>
+            <td><b>Example output:</b></td>
+          </tr>
+          </thead>  <tbody>
+          <tr>
+           <td style="font-family: monospace;">3<br>
+   20 2<br>
+   30 6<br>
+   10 7<br>
+   2<br>
+   60 1<br>
+   30 5<br>
+   4<br>
+   15 1<br>
+   25 2<br>
+   30 3<br>
+   10 5<br>
+   -1<br>
+              </td>
+           <td valign="top" style="font-family: monospace;">170 miles<br>
+   180 miles<br>
+   90 miles<br>
+         <br>
+            </td>
+          </tr>
+
+  </tbody>
+</table>
+
+
+<hr>
+
+<h1>Hints</h1>
+
+<p>
+This is a rather straightforward problem, as described. But let me
+explain why I chose the problem for this lab.  The key is to determine
+how much state information you need to be able to process the
+travelers' log, one line at a time.  Although the syntax of
+object-oriented programming might be overkill in the race against
+time, the thought process is important.
+If I were to define a class for use in this problem, it would have a
+basic structure as follows:
+<pre>
+class TravelLog {
+  public:
+    /** initialize a new (empty) log.  */
+    <b>TravelLog() { ... }</b>
+
+    /** Add a new entry to the log.
+     *  @param   speed      current speed in miles per hour
+     *  @param   clockTime  elapsed time since beginning of trip (in hours)
+     */
+    <b>void addEntry(int speed, int clockTime) { ... }</b>
+
+    /** Returns the total number of miles traveled.
+     *  @return number of miles
+     */
+    <b>int getTotalMiles() const { ... }</b>
+
+  private:
+    //  <b>??? state information ???</b>
+
+};
+</pre>
+There are three basic operations.  (1) initialize the internal state
+for a new trip, (2) process one additional log entry, and (3) 
+report the total number of miles traveled on the current log.
+
+The challenge for you is to determine what internal variables are
+needed to support these operations.
+<b>
+In particular, it is not necessary to store all of the raw log
+entries.  You can consolidate the relevant information into a few well chosen
+variables.
+</b>
+With a wise choice of variables, the rest of the problem is easy.
+
+<p>
+I will leave it up to you as to whether you actually want to use such
+a <tt>TravelLog</tt> class as part of your program, or to do
+similar calculations in a non-object-oriented way.
+In either case, you need to have a strategy for tracking the progress
+of a trip.
+
+
+<p>
+<b>Warning:</b>
+Keep in mind that your submitted program must be able to analyze
+multiple, independent trials.  A common mistake on programming
+contests is to forget to reinitialize all relevant variables with each
+new trial (so that the computation on one trial does not adversely
+affect the computation for the next trial).
+So if using such a <tt>TravelLog</tt> class, make sure to start with a
+new instance for each trip (or if doing this problem implicitly with your
+own variables, make sure to reinitialize them for each new trip).
+
+
+
+  </body>
+</html>
+

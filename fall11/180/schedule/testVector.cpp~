@@ -1,0 +1,14 @@
+#include "Vector.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  
+  Vector<int> myvector;
+  
+  myvector.push_back(4);
+  myvector.push_back(12);
+  
+  cout << myvector[0] << " " << myvector[1] << endl;
+  
+}

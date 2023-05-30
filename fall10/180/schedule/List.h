@@ -1,0 +1,409 @@
+#ifndef __LIST
+#define __LIST
+
+#include <stdexcept>
+#include <string>
+
+/**
+ *  Doubly-linked list class
+ */
+template <typename ItemType> 
+class List {
+  protected:
+    /**
+     *  Node struct
+     *  The node stores data and links to the previous and next nodes in the list.
+     */
+   struct Node {
+        ItemType _data;		//The data stored in this node
+	   
+        Node *_next;		//Pointer to the next node in the list.
+	   
+        Node *_prev;		//Pointer to the previous node in the list.
+
+        /**
+         *  Construct a new instance of a Node.
+         *
+         *  param data: the data to be stored in the node.
+         *  param next: pointer to the next node in the list.
+         *  param prev: pointer to the previous node in the list.
+         */
+        Node(const ItemType& data, Node *next, Node *prev) :
+          _data(data), _next(next), _prev(prev) { }
+   };
+
+  public:
+    /**
+     *  iterator class
+     */
+    class iterator {
+      private:
+
+        Node *_current;			//the current node the iterator is pointing at.
+
+      public:
+        /**
+         *  Construct an iterator not pointing to anything.
+         */
+        iterator() : _current(NULL) { }
+
+        /**
+         *  Copy an existing iterator.
+         *
+         *  param other: the iterator to duplciate.
+         */
+        iterator(const iterator& other) : _current(other._current) { }
+
+        /**
+         *  Construct an iterator pointing to a specified node.
+         *
+         *  Note that the Node class is a private inner class, so this
+         *  constructor can only be used from withing the List class.
+         *
+         *  param loc: the location in the list to have the iterator point to.
+         */
+        iterator(Node* loc) : _current(loc) { }
+
+        /**
+         *  Access the data stored at the location that the iterator points to. (read-write)
+         *
+         *  Returns a refence to the data stored on the list.
+         */
+        ItemType& operator*() {
+          return _current->_data;
+        }
+
+        /**
+         *  Access the data stored at the location that the iterator points to. (read-only)
+         *
+         *  Returns a refence to the data stored on the list.
+         */
+        const ItemType& operator*() const {
+          return _current->_data;
+        }
+
+        /**
+         *  Access a pointer to the data stored at the location that the iterator points to. (read-write)
+         *
+         *  Returns a pointer to the data stored on the list.
+         */
+        ItemType* operator->() {
+          return &(_current->_data);
+        }
+
+        /**
+         *  Access a pointer to the data stored at the location that the iterator points to. (read-only)
+         *
+         *  Returns a pointer to the data stored on the list.
+         */
+        const ItemType * const operator->() const {
+          return &(_current->_data);
+        }
+
+        /**
+         *  Increment the iterator (prefix)
+         *
+         *  Returns a reference to the state of the pointer after incrementing.
+         */
+        iterator& operator++() {
+          _current = _current->_next;
+          return *this;
+        }
+
+        /**
+         *  Increment the operator (postfix)
+         *
+         *  Returns a reference to the state of the pointer prior to incrementing.
+         */
+        iterator operator++(int dummy) {
+          iterator copy(*this);
+          _current = _current->_next;
+          return copy;
+        }
+
+        /**
+         *  Decrement the operator (prefix)
+         *
+         *  Returns a reference to the state of the pointer after decrementing.
+         */
+        iterator& operator--() {
+          _current = _current->_prev;
+          return *this;
+        }
+
+        /**
+         *  Decrement the operator (postfix)
+         *
+         *  Returns a reference to the state of the pointer prior to decrementing.
+         */
+        iterator operator--(int dummy) {
+          iterator copy(*this);
+          _current = _current->_prev;
+          return copy;
+        }
+
+        /**
+         *  Assignment operator
+         *
+         *  Parameter other: the iterator to set the current one equal to.
+         *  Returns a reference to the iterator
+         */
+        iterator& operator=(const iterator& other) {
+          _current = other._current;
+          return *this;
+        }
+
+        /**
+         *  Check if the current iterator is identical to another.
+         *
+         *  Parameter other: the iterator to compare the current one to.
+         *  Returns true if the iterators point to the same position in the list.
+         */
+        bool operator==(const iterator& other) const {
+          return _current == other._current;
+        }
+
+        /**
+         *  Check if the current iterator is diffent to another.
+         *
+         *  Parameter other: the iterator to compare the current one to.
+         *  Returns true if the iterators point to the different positions in the list.
+         */
+        bool operator!=(const iterator& other) const {
+          return _current != other._current;
+        }
+
+        friend class List;
+    }; //end of iterator class
+
+  private:
+
+    Node *_front;		//Pointer to the first node of the list.
+
+    Node *_back;		//Pointer to the last node of the list.
+
+    unsigned int _size;		//Current size of the list.
+
+  public:
+    /**
+     *  Construct an empty instance of a list.
+     */
+    List() : _front(NULL), _back(NULL), _size(0) { }
+
+    /**
+     *  Destructor
+     */
+    ~List() {
+//       while (!empty())
+//         pop_back();
+    }
+
+    /**
+     *  Return the number of elements in the list.
+     *
+     *  Return the size of the list.
+     */
+    unsigned int size() const {
+      return _size;
+    }
+
+    /**
+     *  Check if the list is empty.
+     *
+     *  Return true if the list is empty.
+     */
+    bool empty() const {
+      return  _size == 0;
+    }
+
+    /**
+     *  Put a new piece of data at the beginning of the list.
+     *
+     *  Parameter item: the data to place on the list.
+     */
+    void push_front(const ItemType item) {
+      _front = new Node(item, _front, NULL);
+      if (_size != 0)
+        _front->_next->_prev = _front;
+      else
+        _back = _front;
+      _size++;
+    }
+
+    /**
+     *  Put a new piece of data at the end of the list.
+     *
+     *  Parameter item: the data to place on the list.
+     */
+    void push_back(const ItemType item) {
+      _back =  new Node(item, NULL, _back);
+      if (_size != 0)
+        _back->_prev->_next = _back;
+      else
+        _front = _back;
+      _size++;
+    }
+
+    /**
+     *  Remove the first item from the list.
+     *
+     *  If the list is empty than an exception will be thrown.
+     */
+    void pop_front() {
+      Node *temp = _front;
+      _front = _front->_next;
+      if (_size > 1)
+        _front->_prev = NULL;
+      else
+        _back = NULL;
+      delete temp;
+      _size--;
+    }
+
+    /**
+     *  Remove the last item from the list.
+     *
+     *  If the list is empty than an exception will be thrown.
+     */
+    void pop_back() {
+      Node *temp = _back;
+      _back = _back->_prev;
+      if (_size > 1)
+        _back->_next = 0;
+      else
+        _front = 0;
+      delete temp;
+      _size--;
+    }
+
+    /**
+     * 	Function to return an iterator to the front
+     *
+     *  Returns an iterator to _front
+     */
+    iterator begin() const {
+      return iterator(_front);
+    }
+
+    /**
+     * 	Function to return an iterator to the back
+     *
+     *  Returns an iterator to _back
+     */
+    iterator end() const {
+      return iterator(NULL);
+    }
+
+    /**  
+     *
+     *	Function to insert before a specified location
+     *
+     *  Returns an iterator to the new node
+     *  Parameter position: iterator to insert before
+     *  Parameter value: data for the new node
+     *
+    **/
+    iterator insert(iterator position, const ItemType& value) {
+      
+     if (position._current == _front) {
+       push_front(value);
+       return iterator(_front);
+     }
+     if (position._current == _back) {
+	push_back(value);
+	return iterator(_back);
+     }
+      
+     Node* newnode = new Node(value, position._current, position._current->_prev);
+     position._current->_prev = newnode;
+     newnode->_prev->_next = newnode;
+     _size++;
+     return iterator(newnode);
+    }
+    
+    /**
+      *  Create a graphviz image of the current state of the tree.
+      *  Note that you don't need to mess with this one!
+      */
+    void draw(std::string name, iterator* iter=0, bool pause=false);
+};
+
+// The code after here is for drawing a representation of the list using GraphViz.  It
+// is not needed for use of the class.
+#include <fstream>
+#include <list>
+#include <set>
+#include <iostream>
+using namespace std;
+
+template<typename ItemType> void List<ItemType>::draw(string name, iterator* drawIter, bool pause) {
+  ofstream out((name + ".dot").c_str());
+  out << "digraph {" << endl;
+  out << "rankdir=LR;" << endl;
+
+  // Find all of the possible nodes to consider
+  set<Node *> nodes;
+  list<Node *> toExpand;
+  if (_front) {
+    nodes.insert(_front);
+    toExpand.push_back(_front);
+  }
+  if (_back) {
+    nodes.insert(_back);
+    toExpand.push_back(_back);
+  }
+  while (!toExpand.empty()) {
+    Node *next = toExpand.front();
+    toExpand.pop_front();
+    if (next->_next  && nodes.find(next->_next) == nodes.end()) {
+      nodes.insert(next->_next);
+      toExpand.push_back(next->_next);
+    }
+    if (next->_prev && nodes.find(next->_prev) == nodes.end()) {
+      nodes.insert(next->_prev);
+      toExpand.push_back(next->_prev);
+    }
+  }
+
+  // Draw nodes
+  out << "_front [shape=ellipse];" << endl;
+  out << "_back [shape=ellipse];" << endl;
+
+  for (typename set<Node *>::iterator iter = nodes.begin(); iter != nodes.end(); ++iter) {
+    out << "node" << (long) *iter << " [shape=record, label=\"" << (*iter)->_data;
+    out << " | { <prev> | <next> }\"];" << endl;
+  }
+
+  // Links
+  if (_front)
+    out << "_front -> node" << (long) _front << ":w;" << endl;
+  if (_back)
+    out << "node" << (long) _back << ":e -> _back [dir=back];" << endl;
+
+  for (typename set<Node *>::iterator iter = nodes.begin(); iter != nodes.end(); ++iter) {
+    if ((*iter)->_next)
+      out << "node" << (long) *iter << ":next:e -> node" << (long) (*iter)->_next << ":w;" << endl;
+    if ((*iter)->_prev)
+      out << "node" << (long) *iter << ":prev:w -> node" << (long) (*iter)->_prev << ":e [weight=0];" << endl;
+  }
+
+  // Draw iterators
+  if (drawIter) {
+    out << "iterator [shape=rectangle];" << endl;
+    if (drawIter->_current)
+      out << "iterator -> node" << (long) drawIter->_current << "[label=\"_current\"];" << endl;
+  }
+
+  out << "}" << endl;
+
+  string command = "dot " + name + ".dot -T ps -o " + name + ".ps";
+  popen(command.c_str(), "r");
+
+  if (pause) {
+    char c;
+    cout << "Hit any key to continue" << endl;
+    cin >> c;
+  }
+}
+
+#endif

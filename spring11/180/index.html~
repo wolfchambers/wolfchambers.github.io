@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="programming/">Programming</A> |
+<A HREF="labs/">Labs</a> |
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 180: Data Structures <br> Spring 2011 <br> MTuWF 10-10:50am in 121 RH</h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 011 Ritter Hall
+<br> Office Hours: TBA  
+
+</h3>
+
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p>April 14: I had to make slight modifications to BinarySearchTree.h and BinaryTree.h, because there was a bug in find.  Please redownload the code for your program.
+
+<li><p>April 11: <a href="programming/program4.html">Program 4</a> is available; it will be due next Monday, by 11:59pm.  In addition, there will be a checkpoint due on Friday, April 15.
+
+<li><p>April 10: I will need to shorten my office hours tomorrow, so I will only be available from 1:30 - 2:30.  Please contact me if you cannot make this time and want to set up another time to meet.
+
+<li><p>April 5:  I'm extending the due date for lab 8, by popular request.  It will be due Sunday night by 11:59pm (so it is after the midterm on Friday, if you would like to work more on it after the exam).
+
+<li><p>April 2: <a href="midterm2.pdf">Here</a> is a sample midterm from last semester, covering (roughly) the same content as this semester.  
+
+<li><p>March 30: <a href="homework/hw5.html">Homework 5</a> is available; it will be due next Wednesday, April 6, by the beginning of class, at 10am.
+
+<li><p>March 28: The second midterm will be next Friday, April 8, in class.  There will be a review session on Wednesday the 6th, and a practice midterm will be handed out in class before the review.
+
+<li><p>March 23: <a href="programming/program3.html">Program 3</a> is available; it will be due next Tuesday, March 29, by 11:59pm.  Please note that you must work individually on this assignment.
+
+<li><p>March 22: Please note there was one small bug remaining in Vector.h.  In the insert function, you need to add an equal sign to the line:<br>
+if (_size = _capacity)
+<br>
+so that it instead reads:
+<br>
+if (_size == _capacity)
+
+<li><p> March 21: There will be a lab tomorrow in class.  (See the labs page for the usual description.)  Note that there is no prelab this week - just the code due by Friday.
+
+<li><p>March 11: Here are links to some of our .h and .cpp files from class, in case they are difficult to track down: <a href="schedule/Vector.h">Vector.h</a>, <a href="schedule/List.h">List.h</a>, and <a href="schedule/testList.cpp">testList.cpp</a>.
+
+<li><p>March 10: <a href="homework/hw4.pdf">Homework 4</a> is available; it will be due on Wednesday, March 23.
+
+<li><p>Feb. 23: I have finished the doubly linked list class, <a href="schedule/DLinkedList.h">DLinkedList.h</a>, as well as a sample (incomplete) test file, <a href="schedule/testDLinkedList.cpp">testDLinkedList.cpp</a>.  In order to run these, download them to the same folder, then (in that folder) type: <br>
+g++ DLinkedList.h <br>
+g++ -o testDLinkedList testDLinkedList.cpp <br>
+and you can run the executable as normal.  This should let you implement and test your homework question - but be sure to verify that you make a deep copy!
+
+<li><p>Feb. 22: <a href="programming/program2.html">Program 2</a> is available; it will be due on Monday, March 7, by 11:59pm.
+
+<li><p>Feb. 21: We will have the first midterm in 1 week, on March 1, in class.  The review session will be in clas on Feb. 28.
+
+<li><p>Feb. 18: <a href="homework/hw3.pdf">Homework 3</a> is available; it will be due on Saturday, Feb. 26, by 11:59pm.
+
+<li><p> Feb. 14: Upon further consideration, I'm going to alter program 1.  You will only be required to implement LeakyStackA in this version; I think we'll hold off on LeakyStackB until we've finished some later topics.  So the program is due on Saturday, but you only need to submit LeakyStackA.  Note that to compile and test your LeakyStackA, you will need to download the files for LeakyStackB, but you do NOT need to alter or write any code for them.  
+
+<li><p>Feb. 14: No office hours today due to a sick child at home.  Please email me if you have questions or would like to set up an alternate meeting time this week. 
+
+<li><p>Feb. 10:  The text for the class is called Data Structures and Algorithms in C++, by Goodrich, Tamassia, and Mount.  It just came out a few days ago - ISBN-13 978-0-470-38327-8.
+
+<li><p>Feb. 9: <a href="programming/program1.html">Program 1</a> is available; it will be due next Thursday, Feb. 17, by 11:59pm.
+
+<li><p>Feb. 7:  Your lab this week will be on Wednesday, not Tuesday.  The prelab will be due by 10am on Wednesday morning.
+
+<li><p>Feb. 4: I'm giving a 1 day extention on both the lab and the homework, due to the delay from the snow days.  So the lab will be due Saturday at midnight, and the homework on Tuesday at midnight.
+
+<li><p>Jan 31: No classes tomorrow at SLU due to the storm.  Lab 2 is posted on the webpage, so please complete it on your own and submit by Friday.  We won't have an in-class lab day, but please 
+bring any questions on Wednesday to class so that we can discuss them at the beginning of the lecture.  Stay warm and safe tomorrow!
+
+<li><p>Jan. 30: <a href="homework/hw2.pdf">Homework 2</a> is available; it 
+will be due next Monday, Feb. 7, by midnight.
+
+<li><p>Jan. 24: I will be gone this afternoon due to a sick child.  Dr. Letscher has agreed to cover my office hours from 2-3:30, in his office (005 Ritter Hall).  Please see him or email me with any questions.
+
+<li><p>Jan. 19: <a href="cpp.pdf">Here</a> is a pdf copy of the transition guide, for your online reference.
+
+<li><p>Jan. 18: <a href="homework/hw1.pdf">Homework 1</a> is available; it 
+will be due next Wednesday, Jan. 26, by midnight.
+
+<li><p> Welcome to CS180!  Please be sure to read course policies carefully, and check this page 
+daily for updates or announcements.
+
+</ul>
+
+</body>
+</html>

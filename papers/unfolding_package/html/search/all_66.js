@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['facet',['Facet',['../class_poly_link_1_1_facet.html',1,'PolyLink']]],
+  ['facet',['Facet',['../class_poly_link_1_1_half_edge.html#ad84a9baf6045d81a0bda340abda198a6',1,'PolyLink.HalfEdge.Facet()'],['../class_poly_link_1_1_facet.html#a4096d506c577671c4d95bda21e9569e2',1,'PolyLink.Facet.Facet()']]],
+  ['facet_2ecs',['Facet.cs',['../_facet_8cs.html',1,'']]],
+  ['facetable',['Facetable',['../class_poly_link_1_1_half_edge.html#a823c50f790b48d5da7da77ee84a0b2ca',1,'PolyLink::HalfEdge']]],
+  ['facetarray',['FacetArray',['../class_poly_link_1_1_polyhedron.html#ad143ce9f9d9a6d00bae80883f707aacc',1,'PolyLink::Polyhedron']]],
+  ['facetclonewithoriginalopposites',['FacetCloneWithOriginalOpposites',['../class_poly_link_1_1_half_edge.html#a3486f07ea32dc0f6cbabaf33684cfc2e',1,'PolyLink::HalfEdge']]],
+  ['facetringclone',['FacetRingClone',['../class_poly_link_1_1_half_edge.html#afdb30490d30c87e605de725d7573e5a3',1,'PolyLink::HalfEdge']]],
+  ['facets',['Facets',['../class_poly_link_1_1_polyhedron.html#ab40e0d33f2937611b207cbad5f7bba2e',1,'PolyLink::Polyhedron']]],
+  ['failed',['Failed',['../struct_poly_link_1_1_cone_return.html#a4d2462e10a51a6d259501fc23ae4480b',1,'PolyLink::ConeReturn']]],
+  ['forcehalfedgestoreferencefacets',['ForceHalfEdgesToReferenceFacets',['../class_poly_link_1_1_polyhedron.html#ab3872c17382b913f71e59f8ecc33e9f2',1,'PolyLink::Polyhedron']]],
+  ['forcehalfedgestoreferencethis',['ForceHalfEdgesToReferenceThis',['../class_poly_link_1_1_facet.html#a4cd7c5864b74fa7a043841947b1fec2e',1,'PolyLink::Facet']]],
+  ['forcenewfacet',['ForceNewFacet',['../class_poly_link_1_1_half_edge.html#a9adcbfeba0f930869280a931b0b04f8c',1,'PolyLink::HalfEdge']]],
+  ['format',['Format',['../interface_poly_link_1_1_i_kernel_operation.html#af1164baf7e3a02ccc03fa2661d25c5d6',1,'PolyLink.IKernelOperation.Format()'],['../struct_poly_link_1_1_kernel_operation.html#a2f933a4cdedef5f83026fe93a4fa66e8',1,'PolyLink.KernelOperation.Format()']]],
+  ['frompoints',['FromPoints',['../struct_poly_link_1_1_vector.html#a4975e43c143273c46ba296ffc92d4c31',1,'PolyLink::Vector']]],
+  ['fullsimplify',['FullSimplify',['../interface_poly_link_1_1_i_kernel_operation.html#ad1c78da824b782ccdfe56cb61e2829d1',1,'PolyLink.IKernelOperation.FullSimplify()'],['../struct_poly_link_1_1_kernel_operation.html#a4af017441aa13369ff4beb059032010b',1,'PolyLink.KernelOperation.FullSimplify()']]],
+  ['fusepoints',['FusePoints',['../class_poly_link_1_1_polyhedron.html#a29b21748a1e5a13b811682581a4b27fa',1,'PolyLink::Polyhedron']]]
+];

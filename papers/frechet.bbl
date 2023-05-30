@@ -1,0 +1,178 @@
+\begin{thebibliography}{10}
+
+\bibitem{alt05semicomputability}
+Helmut Alt and Maike Buchin.
+\newblock Semi-computability of the {F}r\'echet distance between surfaces.
+\newblock In {\em Proc. 21st European Workshop on Computational Geometry},
+  pages 45--48, March 2005.
+
+\bibitem{alt95frechet}
+Helmut Alt and Michael Godau.
+\newblock Computing the {F}r\'echet distance between two polygonal curves.
+\newblock {\em Int. J. Comput. Geom. Appl./}, 5(1--2):75--91, 1995.
+
+\bibitem{ahkww-fdcr-06}
+Boris Aronov, Sariel Har-Peled, Christian Knauer, Yusu Wang, and Carola Wenk.
+\newblock Fr{\'e}chet distance for curves, revisited.
+\newblock In {\em Proc. 14th European Symp. Algorithms}, volume 4168 of {\em
+  Lect. Notes Comput. Sci.}, pages 52--63. Springer-Verlag, 2006.
+
+\bibitem{b-chspp-03}
+Sergei Bespamyatnikh.
+\newblock Computing homotopic shortest paths in the plane.
+\newblock In {\em Proc. 14th Annu. ACM-SIAM Sympos. Discrete Algorithms}, pages
+  609--617, 2003.
+
+\bibitem{b-ehpp-04}
+Sergei Bespamyatnikh.
+\newblock Encoding homotopy of paths in the plane.
+\newblock In {\em Proc. LATIN 2004: Theoretical Infomatics}, volume 2976 of
+  {\em Lect. Notes Comput. Sci.}, pages 329--338. Springer-Verlag, 2004.
+
+\bibitem{clms-thpp-04}
+Sergio Cabello, Yuanxin Liu, Andrea Mantler, and Jack Snoeyink.
+\newblock Testing homotopy for paths in the plane.
+\newblock {\em Discrete Comput. Geom.}, 31(1):61--81, 2004.
+
+\bibitem{erin-thesis}
+Erin~Wolf Chambers.
+\newblock {\em Finding Interesting Topological Features}.
+\newblock {Ph.D.} thesis, Dept. Comput. Sci., Univ. Illinois Urbana-Champaign,
+  July 2008.
+
+\bibitem{c-tpca-82}
+Bernard Chazelle.
+\newblock A theorem on polygon cutting with applications.
+\newblock In {\em Proc. 23rd Annu. IEEE Sympos. Found. Comput. Sci.}, pages
+  339--349, 1982.
+
+\bibitem{chew87constrained}
+L.~Paul Chew.
+\newblock Constrained {D}elaunay triangulations.
+\newblock {\em Algorithmica}, 4(1):97--108, 1989.
+
+\bibitem{cole87slowing}
+Richard Cole.
+\newblock Slowing down sorting networks to obtain faster sorting algorithms.
+\newblock {\em JACM}, 34(1):200--208, January 1987.
+
+\bibitem{cole88mergesort}
+Richard Cole.
+\newblock Parallel merge sort.
+\newblock {\em SIAM Journal on Computing}, 17(4):770--785, 1988.
+
+\bibitem{cook07geodesic}
+Atlas~F. {Cook IV} and Carola Wenk.
+\newblock Geodesic {F}r\'echet and {H}ausdorff distance inside a simple
+  polygon.
+\newblock Tech. Rep. CS-TR-2007-004, University of Texas at San Antonio, 2007.
+
+\bibitem{cook08geodesic}
+Atlas~F. {Cook IV} and Carola Wenk.
+\newblock Geodesic {F}r{\'e}chet distance inside a simple polygon.
+\newblock In {\em Proc. 25th Symp. Theoretical Aspects of Computer Science
+  (STACS)}, pages 193--204, 2008.
+
+\bibitem{cook08techrep}
+Atlas~F. {Cook IV} and Carola Wenk.
+\newblock Geodesic {F}r{\'e}chet distance with polygonal obstacles.
+\newblock Tech. Rep. CS-TR-2008-0010, University of Texas at San Antonio, 2008.
+
+\bibitem{eghmm-nsmpa-02}
+Alon Efrat, Leonidas~J. Guibas, Sariel Har-Peled, Joseph S.~B. Mitchell, and
+  T.~M. Murali.
+\newblock New similarity measures between polylines with applications to
+  morphing and polygon sweeping.
+\newblock {\em Discrete Comput. Geom.}, 28:535--569, 2002.
+
+\bibitem{ekl-chspe-06}
+Alon Efrat, Stephen~G. Kobourov, and Anna Lubiw.
+\newblock Computing homotopic shortest paths efficiently.
+\newblock {\em Comput. Geom. Theory Appl.}, 35(3):162--172, 2006.
+
+\bibitem{eiter94discretefrechet}
+Thomas Eiter and Heikki Mannila.
+\newblock Computing discrete {F}r\'echet distance.
+\newblock Technical Report CD-TR 94/64, Christian Doppler Laboratory for Expert
+  Systems, TU Vienna, Austria, 1994.
+
+\bibitem{gs-pasph-98}
+Dima Grigoriev and Anatol Slissenko.
+\newblock Polytime algorithm for the shortest path in a homotopy class amidst
+  semi-algebraic obstacles in the plane.
+\newblock In {\em Proc. Internat. Sympos. Symbolic and Algebraic Computation},
+  pages 17--24, 1998.
+
+\bibitem{gh-ospqs-89}
+Leonidas~J. Guibas and John Hershberger.
+\newblock Optimal shortest path queries in a simple polygon.
+\newblock {\em J. Comput. Syst. Sci.}, 39(2):126--152, 1989.
+
+\bibitem{h-ndssp-91}
+John Hershberger.
+\newblock A new data structure for shortest path queries in a simple polygon.
+\newblock {\em Inf. Proc. Letters}, 38(5):231--235, 1991.
+
+\bibitem{hershberger94computing}
+John Hershberger and Jack Snoeyink.
+\newblock Computing minimum length paths of a given homotopy class.
+\newblock {\em Computational Geometry: Theory and Applications}, 4:63--67,
+  1994.
+
+\bibitem{hershberger99optimal}
+John Hershberger and Subhash Suri.
+\newblock An optimal algorithm for euclidean shortest paths in the plane.
+\newblock {\em SIAM Journal on Computing}, 28(6):2215--2256, 1999.
+
+\bibitem{lee84shortestpaths}
+Der-Tsai Lee and Franco~P. Preparata.
+\newblock {E}uclidean shortest paths in the presence of rectilinear barriers.
+\newblock {\em Networks}, 14:393--410, 1984.
+
+\bibitem{maheshwari05computing}
+Anil Maheshwari and Jiehua Yi.
+\newblock On computing {Fr\'echet} distance of two paths on a convex
+  polyhedron.
+\newblock In {\em Proc. 21st European Workshop on Computational Geometry},
+  pages 41--44, 2005.
+
+\bibitem{megiddo83parametricsearch}
+Nimrod Megiddo.
+\newblock Applying parallel computation algorithms in the design of serial
+  algorithms.
+\newblock {\em J. ACM}, 30:852--866, 1983.
+
+\bibitem{munkres00topology}
+James Munkres.
+\newblock {\em Topology (2nd ed.)}.
+\newblock Prentice Hall, 2000.
+
+\bibitem{pocchiola95computing}
+Michel Pocchiola and Gert Vegter.
+\newblock Computing the visibility graph via pseudo-triangulations.
+\newblock In {\em Symposium on Computational Geometry}, pages 248--257, 1995.
+
+\bibitem{pocchiola96minimal}
+Michel Pocchiola and Gert Vegter.
+\newblock Minimal tangent visibility graphs.
+\newblock {\em Computational Geometry: Theory and Applications}, 6, 1996.
+
+\bibitem{seidel98nature}
+Raimund Seidel.
+\newblock The nature and meaning of perturbations in geometric computing.
+\newblock {\em Discrete Comput. Geom.}, 19:1--17, 1998.
+
+\bibitem{bb87502}
+E.~Sriraghavendra, Karthik K., and Chiranjib Bhattacharyya.
+\newblock {Fr\'echet} distance based approach for searching online handwritten
+  documents.
+\newblock In {\em Proc. 9th Int'l. Conf. Document Analysis and Recognition
+  (ICDAR)}, pages 461--465, 2007.
+
+\bibitem{oostrum04parametricsearch}
+Ren\'e van Oostrum and Remco~C. Veltkamp.
+\newblock Parametric search made practical.
+\newblock {\em Computational Geometry: Theory and Applications}, 28:75--88,
+  2004.
+
+\end{thebibliography}

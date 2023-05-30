@@ -1,0 +1,168 @@
+<html>
+
+<head>
+<title>CS 493: Computer Security</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../">Course Home</a> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="assignments/">Assignments</A> |
+<b>Schedule & Lecture Notes</b>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 493: Computer Security <br> Spring 2011 <br> TuTh 12:45-2pm in 121 RH</h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 011 Ritter Hall
+<br> Office Hours: TBA  
+
+</h3>
+</center>
+
+Here is this semester's tentative schedule; we will update it as the semester
+progresses.
+
+
+<p>
+<table align="center" border="0" rules="rows" cellspacing="0" cellpadding="2"$
+<tr valign="middle" height="30">
+<td align="center" width="18%"><b>Date</b></td>
+<td align="center" width="30%"><b>Topic</b></td>
+<td align="center" width="25%"><b>Reading</b></td>
+<td align="center" width="15%"><b>Lecture Notes</b></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Jan. 18</td>
+<td>Syllabus <br> What is security?</td>
+<td height="45"><a href="computersecurityintherealworld.pdf">Computer Security in the Real World</a></td>
+<td align="center"><a href="lecture1.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Thursday, Jan. 20</td>
+<td>Class canceled</td>
+<td height="45">Read chapter 3 of course textbook</td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Jan. 25</td>
+<td>Authentication</td>
+<td height="45">Chapter 3 of course textbook</td>
+<td align="center"><a href="lecture2.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Thursday, Jan. 27</td>
+<td>Access Control</td>
+<td height="45">Chapter 4, Chapter 10</td>
+<td align="center"><a href="lecture3.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 1</td>
+<td>No class - snow day</td>
+<td height="45"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Thursday, Feb. 3</td>
+<td>Lab 1</td>
+<td height="45"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 8</td>
+<td>Network Security</td>
+<td height="45">Chapter 9, 6</td>
+<td align="center"><a href="networksecurity.pdf">Lecture Notes</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Thursday, Feb. 10</td>
+<td>Cryptography</td>
+<td height="45">Chapter 2</td>
+<td align="center"><a href="cryptography.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 15</td>
+<td>Malware</td>
+<td height="45">Chapter 7, 11 of text</td>
+<td align="center"><a href="malware1.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Thursday, Feb. 17</td>
+<td>History of Computer Security</td>
+<td height="45">Various online references</td>
+<td align="center"><a href="history.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, Feb. 22</td>
+<td>Case Study</td>
+<td height="45"></td>
+<td align="center"><a href="casestudy.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Thursday, Feb. 24</td>
+<td>Networking</td>
+<td height="45">Various online references</td>
+<td align="center"><a href="networking1.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, March 1</td>
+<td>Networking</td>
+<td height="45">Various online references</td>
+<td align="center"><a href="networking2.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Thursday, March 3</td>
+<td>Midterm exam</td>
+<td height="45"></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, March 8</td>
+<td>Software Security</td>
+<td height="45">Chapter 11-12</td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Thursday, March 10</td>
+<td>Trusted Computing</td>
+<td height="45">Chapter 10</td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Tuesday, March 22</td>
+<td>Physical security</td>
+<td height="45">Chapter 13 (loosely)</td>
+<td align="center"><a href="SecuritySlides.pdf">Lecture Notes</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Thursday, March 24</td>
+<td>Database Security</td>
+<td height="45">Chapter 5</td>
+<td align="center"><a href="ch05.ppt">Slides (in powerpoint)</a></td>
+</tr>
+
+</table>

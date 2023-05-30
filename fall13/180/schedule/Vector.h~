@@ -1,0 +1,126 @@
+#include <stdexcept>
+using namespace std;
+
+/** The vector class
+ * based on implementation from chapter 6 of textbook
+ */
+template <typename Object>
+class Vector {
+  
+private:
+  
+
+
+  int _capacity;	//current maximum capacity
+  int _size;		//number of elements in vector currently
+  Object * _data;	//array to store the vector
+   
+public:
+
+  Vector(int cap=100) : _capacity(cap), _size(0), _data(new Object[_capacity]) {}
+  
+  ~Vector() {
+    delete[] _data;
+  }
+
+  /* function to insert and shift the rest of the list down
+  *  input: an int which is the index of where to insert
+            the data to insert into the vector */  
+  void insert(int index, const Object& element) {
+    
+    //test if out of bounds
+    if ((index > _size) || (index < 0))
+      throw runtime_error("index out of bounds");
+    
+    //what if size == capacity?  double the size of array
+    if (_size == _capacity) {
+     _capacity *= 2;
+     Object* newarray = new Object[_capacity];
+     
+     for (int i = 0; i < _size; i++)
+       newarray[i] = _data[i];
+     
+     delete[] _data;
+     _data = newarray;
+    }
+    
+    //we know there is room to add new element
+    for (int i=_size; i>index; i--)
+      _data[i] = _data[i-1];
+    
+    _data[index] = element;
+    _size++;
+
+  }
+
+  /*  function to return the current size of the vector */  
+  int size() const {
+   return _size; 
+  }
+  
+  /*  function to return true if the vector is empty (regardless of capacity) */
+  bool empty() const {
+    return _size == 0;
+  }
+  
+  /*  function to allow access to arbitrary elements in the vector
+   *  input: an index of an element in the array
+   *  output: a reference to that object  */
+  Object& operator[](int index) {
+    
+    if ((index < 0) || (index >= _size))
+      throw runtime_error("index out of bounds");
+    
+    return _data[index];
+  }
+  
+  /* function to delete an element of the vector, and shift the rest down
+   * input: a valid index of an element in the vector */
+  void erase(int index) {
+    if ((index < 0) || (index >= _size))
+      throw runtime_error("index out of bounds");
+    
+    for (int i = index; i<_size-1; i++)
+      _data[i] = _data[i+1];
+    
+    _size--;
+    
+    //what if mostly empty?  homework!
+  }
+  
+  //copy constructor
+  Vector(const Vector& other) {
+    _capacity = other._capacity;
+    _size = other._size;
+    
+    _data = new Object[_capacity];
+    for (int i=0; i<_size;i++)
+      _data[i] = other._data[i];
+  }
+  
+  //operator=
+  Vector& operator=(const Vector& other) {
+    if (this != &other) {
+     delete[] _data;
+     
+     //call copyFrom
+     _capacity = other._capacity;
+     _size = other._size;
+    
+     _data = new Object[_capacity];
+     for (int i=0; i<_size;i++)
+       _data[i] = other._data[i];    
+     
+    }
+    return *this;
+  }
+  
+  void push_back(Object e) {
+    insert(_size, e);
+  }
+  
+  void pop_back() {
+    erase(_size-1);
+  }  
+  
+};

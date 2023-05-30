@@ -1,0 +1,180 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+
+<hr>
+
+
+<center>
+<h2>Assignment 5
+
+<br>
+Vector class
+</h2>
+<h3>
+Due:
+Sunday, Oct. 14, 11:59pm
+
+
+</h3>
+</center>
+
+
+<P>
+Please see the <a href="../#general">general programming webpage</a> for details about
+the programming environment for this course,  guidelines for
+programming style, and details on electronic submission of assignments.
+</P>
+
+<P>
+The only file you will need for this assignment is the <a href="../schedule/Vector.h">Vector.h</a> file that we wrote in class.
+</P>
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+For this assignment, <b>you must work alone on your assignment</b>.
+</p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+</p>
+
+
+<hr>
+
+
+<H1>Overview</H1>
+
+<P> As you may have noticed, the vector class in C++ has much less 
+functionality than the list class in Python.  In addition, we did not even 
+complete all of the vector functionality that is included in the standard 
+template library.</p>
+
+<p> In as effort to ``upgrade" the vector class we wrote, you will write the 
+following functions described below in our Vector.h file.  (Please download 
+Vector.h from the course schedule webpage and insert your functions into 
+this class, then submit the entire Vector.h file via email by the due date.) 
+</P>
+
+<H1>Functions to code</h1>
+
+
+  
+  <li> void remove(Object val);
+  
+  <p>Removes the earlist occurance of val present in the vector.  Note that 
+this changes the size.
+  
+  </li>
+  
+  <li>
+  void reverse();
+  
+<p> Reverses the order of the vector's elements.
+
+  </li>
+  
+    <li>
+  bool operator<(const Vector<Object>& other);
+  
+  <p>Returns true if the contents of the current vector are lexicographically 
+less than the contents of other.  Note that this function ignores the capacity of the 
+vectors, and only compares the elements that are actually in the vector.
+
+  <p>Note: Be careful of exceeding the capcity of each vector!  You should 
+be careful not to run off the end of the array, and only compare the vectors 
+up to the smaller one's size.
+
+  </li>
+
+
+   <li>void replace(const Object& val1, const Object& val2);
+   
+   <p> Replace all instances of val1 in the vector with the value val2.  
+Note that this should not just find the first such position, but should 
+replace every instance. </p>
+   </li>
+
+</UL>
+
+<h1>Extra Credit</h1>
+
+
+<li>void resize ( int sz, Object c );
+
+<p>Resizes the vector to contain sz elements.
+
+<p>If sz is smaller than the current vector size, the content is reduced to its first sz elements, the rest being dropped.
+
+<p>If sz is greater than the current vector size, the content is expanded by inserting at the end as many copies of c as needed to reach a size of sz elements. This may cause a reallocation.
+
+<p>Notice that this function changes the actual content of the vector by inserting or erasing elements from the vector; it does not only change its storage capacity.
+</li>
+</ul>
+
+<hr>
+
+<h1>Testing</h1>
+
+You are also required to write a test file, similar to our testVector.cpp in class.  You our welcome to use our code from class as a starting point, but your grade will be partially based on how well you test your code.  Remember to thoroughly test all possible inputs before submitting.
+
+<hr>
+
+<h1>Analysis</h1>
+
+In addition, your readme file must include a worst case runtime analysis (with a big-O bound) for each function that you code. 
+
+<hr>
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code">Source Code</a>
+      <br>
+      Submit your revised <tt>Vector.h</tt> file.
+  </LI>
+    <LI>
+      <P>
+      <a name="code">Test file</a>
+      <br>
+      Submit your revised <tt>testVector.cpp</tt> file.
+  </LI>
+  <LI>
+      <P>
+      <a name="readme">"readme" file</a>
+      <br>
+      An overview of your
+      final product (including comments on how you tested your code), and the 
+      runtime analysis for each function you code.  
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P> The assignment is worth <em>10</em> points. One point will be based on 
+a checkpoint with the instructor on Thursday, October 11, at which time you will be 
+expected to have completed at least 20 lines of code for the assignment.  
+The remaining 9 points will be based on your implementation, test file, and readme. </P>
+
+<hr>
+
+
+  </body>
+</html>

@@ -1,0 +1,126 @@
+#include "SLinkedList.h"
+#include <iostream>
+#include <stdexcept>
+using namespace std;
+
+  /*
+   * Constructor
+   */
+  template <typename Object>
+  SLinkedList<Object>::SLinkedList() : _head(0){}
+  
+
+  /* 
+   * Function to test if the list is empty
+   * Return: boolean value true if it is empty
+   */
+  template <typename Object>
+  bool SLinkedList<Object>::empty() const {
+    return (_head == 0);
+  }
+  
+  /* 
+   * Function to return the front of the lists
+   * Return: A constant reference to the front of the list
+   */
+  template <typename Object>
+  const Object& SLinkedList<Object>::front() const {
+    
+    //double check not empty
+    if (_head == 0)
+      throw domain_error("The list is empty, so no front");
+    
+    //return first node's data
+    return _head->_elem;
+  }
+ 
+  
+  /*
+   * Function to remove the front of the list
+   */
+    template <typename Object>
+  void SLinkedList<Object>::removeFront() {
+    
+    //throw error if list is empty
+    if (_head == 0)
+      throw domain_error("Can't remove from empty list");
+    
+    //move head down the list and delete old head
+    SNode* temp = _head;
+    _head = _head->_next;
+    delete temp;
+    
+  }
+  
+  /*
+   * Function to add a node to the front of the list
+   * Input parameter: a variable of type Object to insert
+   */
+  
+  template <typename Object>
+  void SLinkedList<Object>::addFront(const Object& e) {
+    
+    //creating the new node
+    SNode* newnode = new SNode;
+    newnode->_elem = e;
+    newnode->_next = _head;
+
+    
+    //update _head
+    _head = newnode;
+
+  }
+
+    /* 
+   * Destructor
+   */  
+  template <typename Object>
+  SLinkedList<Object>::~SLinkedList() {
+    while (!empty()) 
+      removeFront();
+
+  }
+  
+  //operator=
+    template <typename Object>
+  SLinkedList<Object>& SLinkedList<Object>::operator=(const SLinkedList& other) {
+   if (this != &other) {
+     
+     
+   }
+   return *this;
+  }
+
+//copy constructor
+template <typename Object>
+SLinkedList<Object>::SLinkedList(const SLinkedList& other) {
+  SNode* current = other._head;
+  _head = 0;
+  SNode* myprevious = 0;
+  
+  while (current != 0) {
+    
+    //copy current into a new node
+    SNode* newnode = new SNode;
+    newnode->_elem = current->_elem;
+    
+    //fix the previous entry's _next pointer
+    if (_head ==0) {
+      //first time through, set head
+      _head = newnode;
+    }
+    else {
+     //not first time in while loop 
+     myprevious->_next = newnode;
+     
+    }
+    
+    //set up previous pointer for the next iteration
+    myprevious = newnode;
+    current = current->_next;
+    
+  }
+
+
+} //end of copy constructor 
+

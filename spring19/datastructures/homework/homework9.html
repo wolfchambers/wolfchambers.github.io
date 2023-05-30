@@ -1,0 +1,720 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+<hr>
+
+
+<center>
+<h2>Programming Assignment 9
+
+
+</h2>
+<h2>
+Decode
+</h2>
+<h3>
+Due: Thursday, April 24
+
+
+</h3>
+</center>
+
+<hr>
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+For this assignment, you may work with a partner to
+ design and implement your project.
+
+
+<hr>
+
+<P>
+The files you may need for this assignment can be
+<a href="p9/">downloaded here</a>.
+
+<hr>
+
+
+<h3>Contents:</h3>
+<UL>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#variablelength">Variable Length Codes</a>
+  </LI>
+  <LI>
+      <a href="#eom">End-of-Message Character</a>
+  </LI>
+  <LI>
+      <a href="#header">Transmitting the Tree</a>
+  </LI>
+  <LI>
+      <a href="#yourtask">Your Task</a>
+  </LI>
+  <LI>
+      <a href="#files">Supporting Files</a>
+  </LI>
+  <LI>
+      <a href="#larger">A Larger Example</a>
+  </LI>
+  <LI>
+      <a href="#submit">Files to Submit</a>
+      <UL>
+	<LI>
+	    <a href="#code">Source Code</a>
+	</LI>
+	<LI>
+	    <a href="#readme">Readme File</a>
+	</LI>
+      </UL>
+  </LI>
+  <LI>
+      <a href="#grading">Grading Standards</a>
+  </LI>
+</UL>
+
+
+<hr>
+
+
+<H1><A NAME="overview">Overview</A></H1>
+
+<P>
+On computer systems, all of the underlying data is represented
+digitally as a sequence of bits (conventionally denoted as 0's and
+1's).  This is true for numbers, texts, images, sound, executables,
+and any other data that can be stored or transmitted digitally.  Yet
+for a program to be able to utilize any such data, it must know how to
+interpret that sequence of bits.  We typically call this process
+<b><em>decoding</em></b>.
+
+<P> For motivation, we consider the case of representing text strings
+digitally (though the techniques we discuss here apply easily to
+other forms of data as well).  A traditionally way to represent text
+over a given alphabet is to have a distinct binary <b><em>code</em></b> for
+each character of the language.  In English, the most common method is
+based on the use of ASCII (American Standard Code for Information
+Interchange).  ASCII is an example of what is termed a
+<b><em>fixed-length code</em></b> in that the code for each character is the
+same number of bits; in particular, ASCII uses an 8-bit code.  For
+example the code for the character "A" is 01000001; the code for the
+character "a" is 01100001.  Obviously, it would be nice to use as few
+bits as possible to encode a long message, but the reason for ASCII
+using 8-bits per code is to ensure that there are enough different
+patterns for each character in the desired alphabet.  Notice that with
+8-bit codes, there are exactly 2<sup><small>8</small></sup> different
+possible patterns.  If we look at each 8-bit pattern as if it were a
+binary number, we get an integer value anywhere from 0 (i.e.,
+00000000) up to 255 (i.e., 11111111).  This provides enough codes for
+upper and lower cased versions of the 26 letters in the alphabet, as
+well as the ten numerals, various punctuations, spaces, newlines,
+tabs, and various other special characters.
+
+<P>
+The significance of ASCII is that it provides a standard we can
+rely upon. If I have a message that I am assured is encoded in
+ASCII, it is a very straight forward process to decode it.   Starting at the
+beginning, I get the first 8&nbsp;bits and then look up that pattern
+in the codebook to translated it to a character of text;  then I translate
+the next 8 bits and so on.    That said, there is nothing very special
+about the particular choice of which codes were assigned to which
+characters in ASCII;  what is important is that a sender and receiver
+use the same code.   If you were to make up your own code where "A"
+was assigned some other code, and "B" some other code, but you did not
+tell me what codes you used, I would have great difficulty in decoding
+your message.
+
+
+<P>
+That said, even for English text, there are two important reasons
+for considering other encodings.   The first is <b><em>encryption</em></b>.  We
+specifically uses ASCII as a standard so that others will be able to
+properly interpret our data.   If our goal was to disguise the message
+for others, yet still make it meaningful for a friend, we might choose
+to have an alternate encoding that our friend knows about but others
+do not.
+
+<P> The second reason for considering other encodings is for the sake
+of <b><em>compression</em></b>.  If possible, we would love to be able to represent
+the same information with fewer bits.  This means it would take less
+disk space to store as well as less effort for sending through a
+network.  Some compressions schemes save bits by losing quality
+(e.g. MP3 for audio); those are called lossy compression.   However it
+is also possible to compress data in a lossless way by choosing the
+right encoding.    This assignment explores a form of lossless
+compression.
+
+
+
+<hr>
+
+
+<H1><A NAME="variablelength">Variable Length Codes</A></H1>
+
+<p> As we mentioned above, ASCII is a fixed-length code (with 8 bits
+per character).  We might reduce the overall size of a message for two
+reasons.  First, the 8 bits are necessary in ASCII in order to have a
+pattern for 256 distinct characters.  In some messages, perhaps not
+all of those characters are used, thus perhaps we could use less
+bits.   But this is not going to help for larger messages with a rich
+use of characters.
+The key is to recognize that certain characters tend to occur much
+more often then others in a particular message.  We can develop a coding
+scheme based on a tradeoff where more frequently used letters get
+shorter codes and less frequently used letters get longer codes.  We
+call such a coding scheme <b><em>variable-length</em></b>.
+
+<p>
+We will represent our code as a proper binary tree, with a leaf node
+for each character of the alphabet.   The code for an individual character will
+be represented, from left-to-right, by tracing a path from the root to
+that leaf.  For each step the path takes to a left-child we take a '0'
+and for each step to a right child we take a '1'.   As an example,
+consider the following tree:
+<center>
+<img src=bananaTreeNew.gif>
+</center>
+
+<p>
+For technical reasons, our code include a special character EOM
+(end-of-message) to designate the end of an
+encoded message. We interpret the above tree as a code
+over the alphabet {a,b,n,EOM} with codes: <table border=1 cellpadding=5>
+  <tr><th>Character</th><th>Our Code</th></tr>
+  <tr><td>a</td><td>0</td></tr>
+  <tr><td>b</td><td>100</td></tr>
+  <tr><td>EOM</td><td>100</td></tr>
+  <tr><td>n</td><td>11</td></tr>
+</table>
+For example, the code for b is 100 because the path from the root to
+that leaf goes right-left-left.
+
+
+<p> In a later assignment, we will explore how we might design a
+tree which is optimized for the character frequency of a
+particular message.  For now, we consider things more from the
+perspective of the decoder.  To be able to read the message, someone
+will need to be informed of the specific codes being used.   With the
+tree representation, decoding a message is rather straightforward.
+The codes have a <em>prefix-free</em> property ensuring that one can
+decode the message from left to right by repeatedly walking from the
+root downward. Each
+time we reach a leaf, we can output the character associated with that
+leaf and then continue from the root.  For example, with a message
+1000110110101 in this example, we find:
+<big>
+<pre>
+<font color=green>100</font>0<font color=green>11</font>0<font color=green>11</font>0<font color=green>101</font>
+<font color=green>  b</font>a<font color=green> n</font>a<font color=green> n</font>a<font color=green>EOM</font> = banana
+</pre>
+</big>
+
+
+
+
+<hr>
+
+
+<H1><A NAME="eom">End-of-Message Character</A></H1>
+
+<p> The reader must have a way to know when the message ends.  One
+approach is to simply stop writing bits to the underlying file once
+the final character has been represented.  Unfortunately, it is not
+quite this easy.  Because of the architecture of a file system, file
+sizes must often be stored in larger blocks of bits, such as a byte.
+But a decoder cannot necessarily differentiate between final bits that
+are legitimate versus "junk".  Therefore, we assume there is a special
+character in the alphabet which we denote as EOM.  If we wanted to
+apend this character to ASCII, we would presumably want to give it a different
+code than all other characters.  Since ASCII characters are coded from
+0 to 255, a common choice for the EOM is to have it as 256.  We adopt
+this convention, and therefore EOM has a natural nine-bit binary value
+(though we may assign it a different pattern in our encoding).  We'll
+come back to this issue soon...  
+
+
+<hr>
+
+<H1><A NAME="header">Transmitting the Tree</A></H1>
+
+<p>
+As mentioned earlier, for an encoded file to be useful for a reader,
+that reader must have knowledge of the specific code which is being
+used.  A common approach for handling this issue is to simply place a
+representation of the tree itself as a header at the beginning of the
+message file;  in this way, a reader is sure to have the code.   Of
+course that tree representation must itself be represented at the
+lowest level as a sequence of zeros and ones.   Since the goal is to
+minimize the overall number of bits, it is worthwhile trying to store
+the tree in as condensed a form as possible, so long as the reader can
+adequately reconstruct it.
+
+<p>
+Here is the approach we will use.   If one were to perform a
+<em>preorder</em> traversal of a proper binary tree and furthermore
+were to output '0' when initially visiting each internal node, and '1'
+when initially visiting each external node, it turns out that this is
+sufficient information to be able to reconstruct the shape of the
+original tree.   For example, the shape of the tree in the earlier
+diagram of this assignment would produce the pattern '0100111' in such
+a pre-order traversal (try it!).
+
+<p>
+Of course, we must represent not only the shape of the coding tree but
+also the underlying characters at the leaves (there is not relevant
+data for the internal nodes).   Each leaf has a single character (or
+the special EOM character).  To convey the choice of characters here,
+we will revert to using the original ASCII codes for each character --
+however because the EOM requires a nine-bit code we will actually
+assume that we use an augmented nine-bit version of ASCII so that we
+can represent numbers from 0 to 256 (rather than 0 to 255).
+
+<p>
+Our precise file format is as follows.  We perform an <em>pre-order</em>
+traversal. For each internal node the file contains a '0'.   For each
+external node the file contains a '1' followed by an additional
+<u>nine bits</u> which specify the character associated with that
+leaf.  Looking again at the earlier example of a tree, we represent it
+as follows:
+
+<big>
+<pre>
+01<font color=red>001100001</font>001<font color=red>001100010</font>1<font color=red>100000000</font>1<font color=red>001101110</font>
+  ----a----   ----b---- ---EOF--- ----n----
+</pre>
+</big>
+
+<p>
+In the end, the complete file contains the tree representation
+followed by the encoded message, thus in this example:
+
+<big>
+<pre>
+01<font color=red>001100001</font>001<font color=red>001100010</font>1<font color=red>100000000</font>1<font color=red>001101110</font><font color=green>100</font>0<font color=green>11</font>0<font color=green>11</font>0<font color=green>101</font>
+  ----a----   ----b---- ---EOF--- ----n----<font color=green>  b</font>a<font color=green> n</font>a<font color=green> n</font>a<font color=green>EOM</font> = banana
+</pre>
+</big>
+Of course the color coding shown here is not really in the file.   The
+decode must infer the structure based upon the detailed conventions.
+
+
+
+<hr>
+
+
+<H1><A NAME="yourtask">Your Task</A></H1>
+
+<p>
+The end goal for this assignment is for you to write a decoder.  It
+should prompt the user for the name of a compressed file (i.e., the
+combined tree and message).   It should also prompt the user for the
+name of an output file in which the decoded message will be written.
+
+<p>
+You will clearly need to tackle the job in two stages:
+<ol>
+  <li>
+      <p>
+      <b>Reconstruct the Tree</b>
+      <br>
+      We will provide you with a fully-implemented Tree implementation
+      based upon our BinaryTree.h from class.   But you must
+      start with a default tree (which is a single leaf) and expand
+      it according to the prescribed shape.   Though you are not
+      required to use recursion, we strongly suggest that you view
+      recursion as a friend.
+      <p>
+      Think of the following.   Read the first bit of the (sub)tree
+      represenation.  If it is a '1' then it is a single leaf:  read
+      the next nine bits which is the (extended) ASCII representation
+      of the character.    If that first bit had been a '0' then the
+      current node should be internal.   Therefore, it should be
+      expanded, after which we recurse to build the left subtree and
+      then the right subtree.
+  </li>
+  <li>
+      <p>
+      <b>Decode the Message</b>
+      <br>
+      Once the tree constructed, all of the remaining bits in the file
+      comprise the actual message.  Read it bit-by-bit while
+      simulating walks from the root of the tree down to leaves,
+      outputing a character to the result each time you reach a leaf,
+      until you find the designated EOM character which ends the message.
+  </li>
+</ol>
+
+
+<HR>
+
+<H1><A NAME="files">Supporting Files</A></H1>
+
+<P>
+All such files can be <a href="p9/">downloaded here</a>.
+
+<P>
+For this assignment you must write your own top-level program;  all of
+your code should go in a single file, <tt>decode.cpp</tt>, with the
+main routine starting out the process.   Yet to aid your program, we
+are providing several exisiting classes for convenience.
+
+<UL>
+  <LI>
+      <P>
+      <b><TT>BinaryTree.h</TT></b>
+      <BR>
+      A definition and complete implementation of a BinaryTree class based 
+on our binary tree class from lecture.  The only major modification is to 
+move several of the protected functions to the public section, such as 
+insertAsRightChild, createRoot, and others, so that you will be able to 
+use these functions to build your tree.
+
+  </LI>
+      
+  <LI>
+      <P>
+      <b><TT>Bitstream.h</TT>, <tt>BitStreams.cpp</tt></b>
+      <BR>
+      The standard input and output streams allow you to read data
+      from a file or to write data to a file, however they typically
+      demand that data be processed a byte at a time, rather than bit
+      by bit.   For convenience, we provide corresponding stream
+      classes that support bitwise operations (for those interested,
+      our streams wrap the standard ones and buffer the byte-by-byte I/O).
+      <UL>
+	<LI>
+	    <P>
+	    <B><TT>InBitStream</TT></B>
+	    <br>
+	    Supports the following methods:
+	    <UL>
+	      <LI>
+		  <p>
+		  <tt>InBitStream()</tt>
+		  <br>
+		  New input stream object; though not usable yet until a file is opened.
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>bool open(filename)</tt>
+		  <br>
+		  Opens (or reopens) a file to be accessed via the
+		  stream.  Returns true if successful.
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>close()</tt>
+		  <br>
+		  Closes the underlying file.
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>int read()</tt>
+		  <br>
+		  Reads the next bit of the file.  Returns either 0 or 1.
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>int read(int n)</tt>
+		  <br>
+		  Reads the next n bits of the file.
+		  Returns those n bits as an integer value equivalent
+		  to the associated n-bit binary number.
+		  Should only be used when <em>n</em> is less than the
+		  number of bits used to represent an int.
+		  <p>
+		  Once you've got those bits, you may do with them
+		  what you want.  For example, if you've read 8 bits
+		  that you presume are an ASCII character you can cast
+		  using a syntax <tt>(char)&nbsp;i</tt>.
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>bool isOpen()</tt>
+		  <br>
+		  Returns true if stream is currently associated with an
+		  open file.
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>bool eof()</tt>
+		  <br>
+		  Has end of underlying file been reached?
+	      </LI>
+	    </UL>
+	</LI>
+	
+	<LI>
+	    <P>
+	    <B><TT>OutBitStream</TT></B>
+	    <br>
+	    Supports the following methods:
+	    <UL>
+	      <LI>
+		  <p>
+		  <tt>OutBitStream()</tt>
+		  <br>
+		  New output stream object; though not usable yet until a file is opened.
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>bool open(filename)</tt>
+		  <br>
+		  Opens (or reopens) a file to be accessed via the
+		  stream.  Returns true if successful.
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>close()</tt>
+		  <br>
+		  Closes the underlying file.
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>void write(int value)</tt>
+		  <br>
+		  Writes single bit to the file (assumes value is 0 or 1).
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>void write(int value, int n)</tt>
+		  <br>
+		  Writes n bits to the file.  Those bits are described
+		  by giving an integer value equivalent to the
+		  associated n-bit binary number.
+		  (it uses the least-significant n bits of the value,
+		  though outputed from most to least significant).
+	      </LI>
+	      <LI>
+		  <p>
+		  <tt>bool isOpen()</tt>
+		  <br>
+		  Returns true if stream is currently associated with an
+		  open file.
+
+	      </LI>
+	    </UL>
+	</LI>
+      </UL>
+  </LI>
+      
+  <LI>
+      <P>
+      <b><TT>VariousExceptions.h</TT></b>
+      <BR>
+      There are a variety of exception classes involved in this
+      assignment.  Rather than define each in its own file, we've
+      bundled them all together for convenience.
+
+  </LI>
+
+  <LI>
+      <P>
+      <b><TT>makefile</TT></b>
+      <BR>
+      This makefile should allow you to rebuild your project by
+      simply typing 'make' rather than in invoking the compiler
+      directly.
+
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="larger">A Larger Example</A></H1>
+
+<p>
+Consider an original message formatted as follows:
+<blockquote>
+<pre>
+This is a test.
+This is only a test.
+Testing, one, two three.
+</pre>
+</blockquote>
+The coding tree we will use for this message appears as follows.
+
+
+<center>
+<img src=testingTree.gif>
+</center>
+
+<p>
+A preorder traversal of this tree, tagged with '0' for internal and
+'1' for external appears as: 0000110110101001110010001101101101011.
+Taking into consideration the insertion of 9-bit patterns for the
+character at each leaf, the full coding tree is represented as:
+
+
+The structure of this tree would be represented in binary as:
+<pre>
+00001<font color=red>001010100</font>1<font color=red>000001010</font>01<font color=red>001101111</font>1<font color=red>001101000</font>01<font color=red>001110100</font>01<font color=red>001101110</font>001<font color=red>001111001</font>1<font color=red>001110010</font>1<font color=red>000101100</font>001<font color=red>001110011</font>0001<font color=red>001100111</font>1<font color=red>100000000</font>01<font color=red>001101100</font>1<font color=red>001110111</font>01<font color=red>001100001</font>1<font color=red>000101110</font>01<font color=red>000100000</font>01<font color=red>001101001</font>1<font color=red>001100101</font>
+     ----T---- ----\n---  ----o---- ----h----  ----t----  ----n----   ----y---- ----r---- ----,----   ----s----    ----g---- ---EOM---  ----l---- ----w----  ----a---- ----.----  ----\s---  ----i---- ----e----
+</pre>
+
+
+<p>
+With such a coding tree established, our original message is encoded beginning with,
+<big>
+<pre>
+<font color=green>0000</font>0011<font color=green>1110</font>100<font color=green>110</font>1110<font color=green>100</font>110<font color=green>10110</font>110<font color=green>010</font>1111<font color=green>100</font>010<font color=green>10111</font>
+   <font color=green>T</font>   h   <font color=green>i</font>  s <font color=green>\s</font>   i  <font color=green>s</font> \s    <font color=green>a</font> \s  <font color=green>t</font>   e  <font color=green>s</font>  t    <font color=green>.</font>
+</pre>
+</big>
+
+<br>
+<br>
+<br>
+<br>
+
+<p>
+We have created several other sample files for you to play with.
+They can either be <a href="p9/input/index.html">downloaded here</a> or
+accessed on hopper directly from the <tt>input</tt> subdirectory of
+the project distribution. Here is a quick
+synopsis.
+<table cellpadding=3 border=1>
+  <tr>
+    <th>filename</th>
+    <th>description</th>
+    <th>original size(bytes)</th>
+    <th>"compressed" size(bytes)</th>
+    <th>Compressed View</th>
+  </tr>
+  <tr>
+    <td>banana</td>
+    <td>the word 'banana'</td>
+    <td align=right>6</td>
+    <td align=right>7</td>
+    <td><a href="banana_view.txt">view</a></td>
+  </tr>
+  <tr>
+    <td>testing</td>
+    <td>the preceding example</td>
+    <td align=right>62</td>
+    <td align=right>57</td>
+    <td><a href="testing_view.txt">view</a></td>
+  </tr>
+  <tr>
+    <td>hwExample</td>
+    <td>the example from an old hw exercise</td>
+    <td align=right>28</td>
+    <td align=right>36</td>
+    <td><a href="hwExample_view.txt">view</a></td>
+  </tr>
+  <tr>
+    <td>index.shtml</td>
+    <td>SHTML source for this program specification</td>
+    <td align=right>25971</td>
+    <td align=right>15900</td>
+  </tr>
+  <tr>
+    <td>moby.txt</td>
+    <td>Moby Dick</td>
+    <td align=right>1221175</td>
+    <td align=right>696916</td>
+  </tr>
+</table>
+
+
+
+
+
+<HR>
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code"><B><tt>decode.cpp</tt></b></a>
+      <br>
+      For simplicity, please put all of your code in a single file.
+      (you may declare  whatever variables,
+      classes, function you wish within this single file).
+
+  </LI>
+  <LI>
+      <P>
+      <a name="readme"><B>Readme File</B></a>
+      <br>
+      A brief summary of your program, and any further comments you
+      wish to make to the grader.  If you do the extra credit, please
+      make this clear.
+
+  </LI>
+</UL>
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P> The assignment is worth <em>20</em> points;
+points will be given based on your code working on all given 
+examples, as well as proper commenting/indenting and the readme file.
+
+
+<HR>
+
+
+
+<HR>
+
+<H1><A NAME="extra">Extra Credit (2 points)</A></H1>
+
+<P>
+For the required part of the assignmnt, you were allows to assume that
+the input file which you are decoding was indeed legitimately
+formatted as per the conventions discussed for this assignment.   Of
+course, if you tried to run your decoder on some other type of file,
+there is a very good chance that your program will crash.
+
+
+<P>
+For extra credit, write your decoder so that it <em>gracefully</em>
+handles a case in which the input file does not match the expected
+format.  In particular, when faced with any of the following three
+scenarios, your program should print a single, identifying error
+message and then gracefully exit.
+<ul>
+  <li>
+      <p>
+      A case where the "header" is mal-formed, as recognized when
+      reaching the end of the file during the construction of the
+      presumed encoding tree.
+
+  </li>
+  <li>
+      <p>
+      A case where the "header" is mal-formed, as recognized because
+      the tree is too big (recall that we are assuming at most 256
+      distinct alphabet symbols at the leaves of the tree).
+
+  </li>
+  <li>
+      <p>
+      A case where the "message" is possibly truncated, as recognized
+      by reaching the end of the file without ever finding the
+      designated EOM character.
+      In this case, your program should still generate the output file
+      based upon the portion of the message which was decoded, yet
+      should also print a warning message to the user identifying the
+      concern.
+
+
+  </body>
+</html>
+

@@ -1,0 +1,17 @@
+digraph {
+root [label="_root"];
+root -> node0x80f010;
+node0x80f010 [shape=record,label="{<parent> _parent | _data = 10 | _aux = 2 | { <left> _left | <right> _right } }"];
+node0x80f040 [shape=record,label="{<parent> _parent | _data = 5 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x80f070 [shape=record,label="{<parent> _parent | _data = 15 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x80f0a0 [shape=record,label="{<parent> _parent | _data = 21 | _aux = 1 | { <left> _left | <right> _right } }"];
+node0x80f0d0 [shape=record,label="{<parent> _parent | _data = 35 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x80f010:left:s -> node0x80f040;
+node0x80f010:right:s -> node0x80f0a0;
+node0x80f040:parent:n -> node0x80f010;
+node0x80f070:parent:n -> node0x80f0a0;
+node0x80f0a0:parent:n -> node0x80f010;
+node0x80f0a0:left:s -> node0x80f070;
+node0x80f0a0:right:s -> node0x80f0d0;
+node0x80f0d0:parent:n -> node0x80f0a0;
+}

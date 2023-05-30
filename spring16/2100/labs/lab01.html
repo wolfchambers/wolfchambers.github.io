@@ -1,0 +1,176 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+
+<h1>Lab 1: Compiling and runnning C++ programs</h1>
+
+<p>
+
+<h2>Pre-lab:</h2>
+
+Email Dr. Chambers and tell her what programming or other computer 
+experience you have had before, why you are taking this class, and what you 
+hope to get out of the semester in class.  Also, to give a bit of 
+background, please give your major and your minor, and (if you have any 
+ideas) what type of job you are interested in having after you finish your 
+degree at SLU.
+
+<br>
+
+<h2>Lab 1, Jan. 12 at 10am</h2>
+
+<ol>
+  <li>
+      <p>
+      Open up a console window and change to the working directory of
+      your choice. You may create a new directory with a command such
+      as <br>
+      <nobr><b><tt>mkdir cs2100</tt></b></nobr><br>
+
+      and then change to that directory with the command<br>
+      <nobr><b><tt>cd cs2100</tt></b></nobr><br>
+
+  </li>
+  <li>
+      <p>
+      We are providing a directory containing sample C++ source code 
+named <tt>gcd.cpp</tt>.
+      Copy our directory into your working directory with the following
+      command (note well the final period)<br>
+
+      <nobr><b><tt>cp -R /export/mathcs/home/faculty/echambe5/Public/lab1 .</tt></b></nobr><br>
+      and then change into your copy of the directory as<br>
+      <nobr><b><tt>cd exercise1</tt></b></nobr><br>
+  </li>
+
+
+  <li>
+      <p>
+
+      That directory will contain the file <tt>gcd.cpp</tt>.
+      You should see it in the listing of your directory with the
+      command<br>
+      <nobr><b><tt>ls</tt></b></nobr><br>
+
+      <p>
+      View the source code by opening the file with a text editor.
+      A simple text editor on turing is called <tt>kate</tt>.  You may
+      either type <tt>kate gcd.cpp</tt> in the console to start the program
+      or look for it in the "Utilities" folder of the "K" menu at the
+      bottom-left corner of your workspace.  If you want a more advanced
+      text editor, my personal favorite is named <tt>emacs</tt>.
+  </li>
+
+  <li>
+      <p>
+      Our next goal is to compile the source code. We recommend doing
+      this with the command<br>
+      <nobr><b><tt>g++ gcd.cpp -o gcd</tt></b></nobr><br>
+
+	<p>Alternatively, you can also type "make gcd"; make is a program that compiles C++ programs for you which we will use throughout the semester.  
+      If you work on a system other than turing and you do not have
+      <tt>make</tt> installed, you can compile your code by directly
+      invoking <tt>g++</tt> as shown above.  Our reasons for prefer the
+      use of <tt>make</tt> are that it is a simpler syntax and that
+      <tt>make</tt> can better handle complex builds when we start to
+      use multiple source files.  Make is also clever in that it won't
+      recompile if the source code has not been modified since the
+      last build.  For example, type
+      <nobr><b><tt>make gcd</tt></b></nobr>
+
+      again and see  how it responds.
+  </li>
+
+  <li>
+      <p>
+      After a successful compilation,  the output of the compiler
+      will be an executable named <tt>gcd</tt>  (that file name was
+      dictated with the syntax <tt>-o gcd</tt> when g++ was invoked).
+      <p>
+
+      You should be able to see that file in the listing of your
+      directory with the command<br>
+      <nobr><b><tt>ls</tt></b></nobr><br>
+
+  </li>
+  <li>
+      <p>
+      The executable can be run from your working directory using the command<br>
+      <nobr><b><tt>./gcd</tt></b></nobr><br>
+
+      try the following interactions<br>
+<pre>
+First value: <b>30</b>
+Second value: <b>18</b>
+gcd: 6
+</pre>
+  </li>
+
+</ol>
+
+Now, open the source code again in a text editor and try the
+following.
+
+<ol start=7>
+  <li>
+      <p>
+      Go to line 7 and insert the characters <tt>//</tt> at the
+      beginning of the line (turing that line into a comment). Now
+      go back to the console and type<br>
+      <nobr><b><tt>make gcd</tt></b></nobr><br>
+
+      What is the compiler's complaint?
+      <p>
+      Uncomment line 7 to restore the original file.
+  </li>
+  <li>
+      <p>
+      Delete the first <tt>int</tt> that begins line 4 and try to
+      rebuild the program. What is the compiler's complaint?
+      <p>
+      Restore line 4 to its original form.
+  </li>
+
+  <li>
+      <p>
+      Go to line 19 and change the characters <tt>&gt;&gt;</tt> to
+      <tt>&lt;&lt;</tt>.  What is the compiler's complaint?
+      <p>
+      Restore line 19 to its original form.
+  </li>
+  <li>
+      <p>
+
+      Go to line 8 and remove the <tt>{</tt> character near the end of
+      the line and try again to make the project.  This time, the
+      compiler complains about line 13.  Why?
+      <p>
+      Restore the <tt>{</tt> at line 8 before continuing.
+  </li>
+  <li>
+      <p>
+      Comment out line 13 (by prefixing it with <tt>//</tt> and try to
+      rebuild.  This time, the make succeeds.  Rerun the resulting
+      executable and recalculate the gcd of 30 and 18.  What happened?
+
+      <p>
+
+      Restore line 13 to its original form.
+  </li>
+  <li>
+      <p>
+
+      Finally, recomplile and use the program to calculate the greatest commond divisor of
+      the values 109376842 and 5603859382.  Record the result and email it to
+      Dr. Chambers along with your answers to the previous questions.
+  </li>
+</ol>
+
+</body>
+</html>
+

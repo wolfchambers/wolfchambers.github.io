@@ -1,0 +1,32 @@
+#include "LinkedQueue.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+ 
+  LinkedQueue<int> myqueue;
+  cout << "created new queue" << endl;
+  
+  if (myqueue.empty())
+    cout << "queue is empty" << endl;
+  else 
+    cout << "empty doesn't work" << endl;
+  
+  myqueue.push(12);
+  myqueue.push(-2);
+  myqueue.push(56);
+  
+  cout << "should get 12" << endl;
+  cout << myqueue.top() << endl;
+  
+  cout << "testing pop" << endl;
+  myqueue.pop();
+  cout << "if pop worked, should get -2" << endl;
+  cout << myqueue.top() << endl;
+  
+  LinkedQueue<int> otherqueue(myqueue);
+  
+  otherqueue.pop();
+  cout << myqueue.top() << " should be different from " << otherqueue.top() << endl;
+  
+}

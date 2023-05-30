@@ -1,0 +1,106 @@
+<html>
+
+<head>
+<title>CS 4650: Computer Security</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="assignments/">Assignments</A> |
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 4650: Computer Security <br> Fall 2016 <br> TuTh 9:30-10:45am in 314 RH</h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 301 Ritter Hall
+<br> Office Hours: Monday 11am-12:30pm, Tuesday 1-3pm, or by arrangement
+
+</h3>
+
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p>Dec. 1: The <a href="finalreview.pdf">final review questions</a> are available; please keep in mind this isn't comprehensive, but is a good list of questions from lecture that will be useful for the final exam.  Please look over the <a href="midtermreview.pdf">midterm review</a> questions as well, as the final exam in this class is cumulative.
+
+<li><p> Nov. 18: The <a href="assignments/essay3.pdf">final essay</a> is posted; it will be due after Thanksgiving break, by the start of class on Tuesday, Nov. 29.  You may hand it in on paper at the start of class or email to the professor (in pdf format, please).
+
+<li><p> Nov. 14: I've caught a stomach flu, so am canceling office hours for today (Monday, 11/14).  Let me know via email if you have any questions, and I can re-schedule these office hours as needed for later in the week.
+
+<li><p>Nov. 3: The next lab, focusing on computer forensics, is now posted on the Deter page; it will be due Thursday, Nov. 17.  You may work with a partner on this lab if you would like.
+
+<li><p>Nov. 1: I'm going to extend the due date for this lab to Thursday; with the extra 3 day grace period, that means all submissions must be in by Sunday evening.  Note: I am traveling this weekend, and won't have reliable internet!  Please get questions to me by Friday if you'd like an answer, so this doesn't mean you can just start on Thursday and hope to get it done.
+
+<li><p> Oct. 7: For those that want to start early, I posted the next lab on Deter.  This lab covers software exploits; you are expected to complete only 2 out of the 3 parts, although submitting the third part is worth extra credit.  (If you do all 3, I'll take the two highest for your grade and give you partial extra credit on the lowest score of the 3.)  You may work with a partner on this one, and the due date will be Tuesday, Nov. 1.
+
+<li><p>Oct. 4: <a href="midtermreview.pdf">Here</a> is the set of review questions for the midterm.
+
+<li><p>Oct. 4: For the essay due by the start of class on Thursday, Oct. 20 (right after break),
+I'd like you to put yourself in
+the mindset of a security expert evaluating different systems or
+protocols.  To this end, select one paper from the following list: <a
+href="http://www.lasr.cs.ucla.edu/reiher/papers/defcom.pdf">collaborative
+DDoS defenses</a>, <a
+href="https://svn.torproject.org/svn/projects/design-paper/tor-design.pdf">Tor
+(the onion router mentioned in class)</a>, and <a
+href="http://www.lasr.cs.ucla.edu/classes/239_1.spring03/papers/JSAC_S-BGP_article.htm">
+Secure BGP</a>. Each of these dives more deeply into a protocol or
+system we discussed in class that is designed to secure some aspect of internet
+communication.  I'd like this essay to contain a brief summary of
+what it is protecting and how, along with your opinion on if it works
+(or will work if newer or not currently implemented).  Please be sure to
+summarize both relevant strenths and weaknesses, and feel free to gather data
+on how implementation has proceeded if it is an older protocol or solution.
+Note that it is likely you'll need to do a bit of extra research to find out about
+strengths, weaknesses, and current state of adoption of this technology, so please 
+include a bibliography of all cited work; I expect you'll need at least 2-3 beyond the
+initial paper provided.
+The format will be very similar to the last essay, so please refer to that handout, and
+the grading rubric will also be similar to our first essay.
+
+<li><p> Sept. 26: Deter claims that the issue with containerized versions of the labs should be fixed now.  My initial test looked ok, so feel free to use the following instructions instead of the normal image: to create the experiment, instead of doing it from the web, log into users.deterlab.net and type the following command: 
+<br>
+/share/containers/containerize.py CSCI443 your-expname /share/education/containerized/MITM_UCLA/mitm.ns 
+<br>
+where your-expname is your name for your version of the experiment.  After you swap in as usual through the webpage, you log in to Eve and do the lab as described in the normal version. Note that this won't change anything else - it just means you'll run on fewer hosts, so hopefully will have less trouble swapping in.  As always, let me know if you run into any issues!
+
+<li><p> Sept. 19: The next lab is posted on Deter.  This one is longer, so it is due on Oct. 4, with the usual 3 day grace period in case of technical issues.  You are also welcome to work with a partner on this one.  Note that students typically need two weeks for this lab, as it is considerably longer than your last two, so please don't wait until the week it is due to begin the lab, as you probably won't be able to finish it in time!
+
+<li><p>Sept. 17: A few people have complained of issues loading or using the containerized ns file for the firewall lab.  If you are having issues, load the following image on Deter instead: /share/education/PermissionsFirewalls_UCLA/permissions.ns 
+
+<li><p> Sept. 13: Here is one more useful <a href="http://docs.deterlab.net/core/core-guide/">link on Deter</a>, which talks a bit more on how to create and use experiments.  It goes a bit beyond what you'll need, since you won't create any ns files yourself, but is a nice overview of what is going on if you've been confused.  
+
+<li><p> Sept. 9: The next lab is posted on Deter; it will be due on Tuesday, Sept. 20; note that the standard automatic 3 extra days means the due date shows up on Friday the 23rd, but that submissions close with no expections at that time.  
+
+<li><p>Sept. 9: For an overview of using ssh on Deter (in case anyone is having any issues), please consult  <a href="http://docs.deterlab.net/core/DETERSSH/">this overview</a>.  In addition, they discuss port forwarding, which you will find useful in future labs.
+
+<li><p> Sept. 6: The first lab is available, covering an introduction to DETER, the testbed we will be using.  Please read the <a href="https://trac.deterlab.net/wiki/DETERIntro">Student Intro to DeterLab</a>.  Your login will arrive to your SLU email; don't forget to activate it and add name and contact info when you log in.  (The intro has instructions on how to access the first assignment, which should show up on your DETER homepage.)
+
+<li><p>Sept. 2: I made a few minor edits to Homework 2, so that the variables match the ones I used in lecture for each algorithm.  I also added one hint in problem 1 for computing the private and public keys in RSA.  There is no need to get a new copy if the first one made sense, but you may want to re-download the pdf if you did have questions.
+
+<li><p>Aug 31: <a href="assignments/cryptohw.pdf">Homework 2</a> is available; it will be due by the start of class next Tuesday, Sept. 6.
+
+<li><p> Aug 25: <a href="http://docs.deterlab.net/education/student-intro/">Here</a> is the student introduction to DETER, the lab system we will use for labs starting in a week.  You'll get a password for the system early next week, so feel free to read this over and let me know if you have questions.
+
+<li><p> Aug 25: Please note that the actual reading assignment for the essay is on the assignments page, so feel free to download it from there.
+
+<li><p> Aug 22: <a href="assignments/essay1.pdf">The first assignment</a> is available, and will be due next Tuesday, August 30, by the start of class. 
+
+<li><p> Welcome to CS4650!  Please be sure to read course policies carefully, and check this page 
+daily for updates or announcements.
+
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+digraph {
+root [label="_root"];
+root -> node0x15ed3f0;
+node0x15eb010 [shape=record,label="{<parent> _parent | _data = 10 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x15eb040 [shape=record,label="{<parent> _parent | _data = 5 | _aux = 1 | { <left> _left | <right> _right } }"];
+node0x15eb070 [shape=record,label="{<parent> _parent | _data = 15 | _aux = 2 | { <left> _left | <right> _right } }"];
+node0x15eb0a0 [shape=record,label="{<parent> _parent | _data = 21 | _aux = 2 | { <left> _left | <right> _right } }"];
+node0x15eb0d0 [shape=record,label="{<parent> _parent | _data = 35 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x15ed390 [shape=record,label="{<parent> _parent | _data = 42 | _aux = 1 | { <left> _left | <right> _right } }"];
+node0x15ed3c0 [shape=record,label="{<parent> _parent | _data = 20 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x15ed3f0 [shape=record,label="{<parent> _parent | _data = 18 | _aux = 3 | { <left> _left | <right> _right } }"];
+node0x15ed440 [shape=record,label="{<parent> _parent | _data = 3 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x15ed7b0 [shape=record,label="{<parent> _parent | _data = 44 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x15ed910 [shape=record,label="{<parent> _parent | _data = 17 | _aux = 1 | { <left> _left | <right> _right } }"];
+node0x15edb70 [shape=record,label="{<parent> _parent | _data = 16 | _aux = 0 | { <left> _left | <right> _right } }"];
+node0x15eb010:parent:n -> node0x15eb040;
+node0x15eb040:parent:n -> node0x15eb070;
+node0x15eb040:left:s -> node0x15ed440;
+node0x15eb040:right:s -> node0x15eb010;
+node0x15eb070:parent:n -> node0x15ed3f0;
+node0x15eb070:left:s -> node0x15eb040;
+node0x15eb070:right:s -> node0x15ed910;
+node0x15eb0a0:parent:n -> node0x15ed3f0;
+node0x15eb0a0:left:s -> node0x15ed3c0;
+node0x15eb0a0:right:s -> node0x15ed390;
+node0x15eb0d0:parent:n -> node0x15ed390;
+node0x15ed390:parent:n -> node0x15eb0a0;
+node0x15ed390:left:s -> node0x15eb0d0;
+node0x15ed390:right:s -> node0x15ed7b0;
+node0x15ed3c0:parent:n -> node0x15eb0a0;
+node0x15ed3f0:left:s -> node0x15eb070;
+node0x15ed3f0:right:s -> node0x15eb0a0;
+node0x15ed440:parent:n -> node0x15eb040;
+node0x15ed7b0:parent:n -> node0x15ed390;
+node0x15ed910:parent:n -> node0x15eb070;
+node0x15ed910:left:s -> node0x15edb70;
+node0x15edb70:parent:n -> node0x15ed910;
+}

@@ -1,0 +1,22 @@
+#include "LinkedStack.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  
+  LinkedStack<int> mystack;
+  cout << "created my stack" << endl;
+  
+  mystack.push(11);
+  cout << "pushed 11" << endl;
+  mystack.push(12);
+  cout << "pushed 12" << endl;
+  
+  cout << "checking top: should be 12" << endl;
+  cout << mystack.top() << endl;
+  mystack.pop();
+
+  cout << "should get 11 now" << endl;
+  cout << mystack.top() << endl;
+  
+}

@@ -1,0 +1,321 @@
+<html>
+
+<head>
+<title>CS 2100: Data Structures</title>
+</head>
+
+<body>
+
+<h1>Lab Assignment 
+08
+
+</h1>
+
+<table>
+  <tr>
+    <td>
+	<b>Topic:</b>
+    </td>
+    <td>
+	Anagrams by Stack
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Source Code:</b>
+    </td>
+    <td>
+	<tt>anagrams.cpp</tt>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Live Archive Ref#:</b>
+    </td>
+    <td>
+	variant of
+	<a href="http://livearchive.onlinejudge.org/external/23/2301.pdf">2301</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Pre-lab Due:</b>
+    </td>
+    <td>
+	<br>
+	Tuesday, March 20, by 9am (via email)
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Submission Deadline:</b>
+    </td>
+    <td>
+	Friday, March 23, 11:59pm (via git)
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Techniques:</b>
+    </td>
+    <td>
+	<br>
+	Recursion
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+The pre-lab requirement must be completed and submitted individually.
+</p>
+
+<p>
+The remainder of the lab activity should be completed <b>working in pairs</b>.
+One person should submit the result, making sure that both partners'
+names are clearly identified in that submission.
+</p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../../#integrity">academic integrity</a> in this regard.
+</p>
+
+<hr>
+
+<h2>Pre-Lab Requirement</h2>
+
+
+<p>
+Read the complete problem description and then determine what the
+expected output should be if given the following input:
+
+<table border="1" cellpadding="10">
+<thead>     
+<tr>
+    <td><b>Prelab input:</b></td>
+    <td><b>Prelab output:</b></td>
+</tr>
+</thead>   
+<tbody>
+    <tr>
+        <td style="font-family: monospace;">
+3<br>
+long nice<br>
+eric rice<br>
+mada adam
+       </td>
+       <td valign="top" style="font-family: monospace;">
+       </td>
+    </tr>
+</tbody>
+</table>
+</p>
+
+
+<hr>
+
+<h1>Anagrams by Stack</h1>
+
+<p>
+Consider the use of a stack for reordering a
+set of objects from one permutation (e.g.,&nbsp;<tt>abc</tt>) to
+another (e.g.,&nbsp;<tt>bac</tt>) using the following rules.  The
+characters are given with an initial order, and there is an
+intermediate stack that is initially empty.  At each step, you may
+either take the next character from the initial order (if any) and
+push it onto the stack, or you may pop an item from the stack (if any), and place
+it as the next character in the output string.
+
+<p>
+As an example, if you start with the sequence&nbsp;<tt>abc</tt>
+you can achieve the result&nbsp;<tt>bac</tt> by
+pushing&nbsp;<tt>a</tt>, pushing&nbsp;<tt>b</tt>,
+popping&nbsp;<tt>b</tt>,
+popping&nbsp;<tt>a</tt>,
+pushing&nbsp;<tt>c</tt>, and finally popping&nbsp;<tt>c</tt>.
+We can describe this sequence of maneuvers as <nobr><tt>++--+-</tt></nobr> where
+each <tt>+</tt> designates a push and each <tt>-</tt> designates a
+pop.
+
+
+<p>
+More generally, some inputs may not have any valid conversions while
+others may have more than one valid sequence.
+For example, it is impossible to go from <tt>abc</tt> to <tt>cab</tt>,
+intuitively because the only way to get <tt>c</tt> as the first output
+character would be to do three pushes followed by a pop; yet at that
+time, <tt>b</tt> is above <tt>a</tt> on the stack and must be
+retrieved next.
+Yet there are two ways to go from <tt>aab</tt> to <tt>aba</tt>, either
+as <nobr><tt>++-+--</tt></nobr> or <nobr><tt>+-++--</tt></nobr>.
+
+<p>
+You are to develop a program that computes all possible
+sequences for converting one string to another using such rules.
+
+<p><span style="font-weight: bold;">Input:</span>
+The first line will be a value&nbsp;<em>1 &le; n &le; 100</em> denoting the number of
+<em>pairs</em> to be considered. Following that will be <tt>n</tt>
+lines, each containing two strings.  The first string designates the
+starting sequence and the second the goal configuration.  The goal
+string will always be the same length as the starting string, and
+strings will have length at most 10.
+
+<p><span style="font-weight: bold;">Output:</span>
+For each case, an initial line should announce the initial and goal
+strings, formatted as demonstrated below.  Following that should be a line
+with the character&nbsp;<tt>[</tt>, followed by zero or more
+lines detailing the solutions, followed by a
+final line with the character&nbsp;<tt>]</tt>.
+When there are multipel solutions, they should be presented in
+lexicographically sorted order, with the
+character <tt>+</tt> ordered before <tt>-</tt>.
+
+
+<table border="1" cellpadding="10">
+      <thead>  <tr>
+       <td><b>Example input:</b></td>
+        <td><b>Example output:</b></td>
+      </tr>
+      </thead>  <tbody>
+      <tr>
+       <td valign="top" style="font-family: monospace;">
+4<br>
+abc bac<br>
+abc cab<br>
+aab aba<br>
+eeep epee
+          </td>
+       <td valign="top" style="font-family: monospace;">
+Output for abc bac<br>
+[<br>
+++--+-<br>
+]<br>
+Output for abc cab<br>
+[<br>
+]<br>
+Output for aab aba<br>
+[<br>
+++-+--<br>
++-++--<br>
+]<br>
+Output for eeep epee<br>
+[<br>
++++-+---<br>
+++-++---<br>
++-+++---<br>
+]
+      </tr>
+
+  </tbody>
+</table>
+
+
+<hr>
+
+<h1>Hints</h1>
+
+<p>
+Use recursion to explore possible solutions to the problem. At any
+intermediate stage, there are two possible continuations (if legal).
+Try them both.  We used the following signature:
+<pre>
+/** Outputs, in sorted order, all solutions derivable from the given configuration */
+void solve(string goal,      // the goal string
+           string I,         // unused portion of "initial" string
+           string S,         // current stack sequence
+           string O,         // (partial) output string
+           string moves      // '++-+-' style trace of moves thus far
+          ) {
+</pre>
+
+
+<p>
+We have intentionally chosen to use strings because they are
+conveninent to duplicate and manipulate (
+<a href="http://www.cplusplus.com/reference/string/string/">
+C++ string documentation</a>).  We have also intentionally tagged them
+all as <tt>const</tt> in the signature so that you do not change their
+state within a single recursive call (but you may create different
+strings when invoking a further recursion).
+
+<hr>
+
+<h1>Tracing a Recursion</h1>
+
+To better understand (and debug) recursive processes, it helps to
+generate a trace of a recursion.  As a simple example, for the case of
+converting input "abc" to output "bac", the recursive processing based
+on our parameterization should proceed as follows:
+<pre>
+solve(bca, abc, , , )
+   solve(bca, bc, a, , +)
+      solve(bca, c, ab, , ++)
+         solve(bca, , abc, , +++)
+            solve(bca, , ab, c, +++-)
+               solve(bca, , a, cb, +++--)
+                  solve(bca, , , cba, +++---)
+         solve(bca, c, a, b, ++-)
+            solve(bca, , ac, b, ++-+)
+               solve(bca, , a, bc, ++-+-)
+                  solve(bca, , , bca, ++-+--)
+            solve(bca, c, , ba, ++--)
+               solve(bca, , c, ba, ++--+)
+                  solve(bca, , , bac, ++--+-)
+      solve(bca, bc, , a, +-)
+         solve(bca, c, b, a, +-+)
+            solve(bca, , bc, a, +-++)
+               solve(bca, , b, ac, +-++-)
+                  solve(bca, , , acb, +-++--)
+            solve(bca, c, , ab, +-+-)
+               solve(bca, , c, ab, +-+-+)
+                  solve(bca, , , abc, +-+-+-)
+</pre>
+
+<p>
+For example, the initial call spawned another recursion based on
+pushing "a" from the input onto the stack, thus
+<nobr><tt>solve(bca, bc, a, , +)</tt></nobr>.
+From that state, you will find two separate brances of recursion
+develop, one for the action of pushing "b" onto the stack as the next
+move (hence moves="<tt>++</tt>"), or another independent branch if we were instead to pop "a" from
+the stack and place it on the output (hence moves="<tt>+-</tt>").
+</p>
+
+<p>
+If you would like to produce this style of trace for your own program,
+you may add the following debugging command just within the body of
+your solve function:
+
+<pre>
+cout &lt;&lt; string(3*moves.size(),' ') &lt;&lt; "solve(" &lt;&lt; goal &lt;&lt; ", " &lt;&lt; I &lt;&lt; ", " &lt;&lt; S &lt;&lt; ", " &lt;&lt; O &lt;&lt; ", " &lt;&lt; moves &lt;&lt; ")" &lt;&lt; endl;
+</pre>
+</p>
+
+
+
+<hr>
+<h2>Judge's Data</h2>
+<p>
+You can
+<a href="../#testing">run the automated judge's tests on turing</a>
+to test the correctness of your program (although you must still
+formally submit the source code via the course website). If you are
+working on your own machine (or if you just want to examine the
+judge's inputs and expected outputs),
+<a href="io.html">we provide them here</a>.
+</p>
+
+
+  </body>
+</html>

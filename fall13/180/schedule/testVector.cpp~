@@ -1,0 +1,70 @@
+#include "Vector.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  Vector<char> myvec;
+  
+  myvec.push_back('a');
+  myvec.push_back('b');
+  myvec.push_back('c');
+  myvec.push_back('d');
+  myvec.push_back('e');
+
+  //check vector
+  for (int i=0; i < myvec.size(); i++)
+   cout << myvec[i] << " ";
+  cout << endl;
+
+  
+  myvec[1] = 'z';
+
+  //check vector
+  for (int i=0; i < myvec.size(); i++)
+   cout << myvec[i] << " ";
+  cout << endl;
+
+
+  //test insert
+  cout << "testing insert at beginning" << endl;
+  myvec.insert(0,'m');
+  
+  //check vector
+  for (int i=0; i < myvec.size(); i++)
+   cout << myvec[i] << " ";
+  cout << endl;  
+
+  //test erase
+  cout << "testing erase on second element (position 1)" << endl;
+  myvec.erase(1);
+  //check vector
+  for (int i=0; i < myvec.size(); i++)
+   cout << myvec[i] << " ";
+  cout << endl;  
+
+  //check vector
+  for (int i=0; i < myvec.size(); i++)
+   cout << myvec[i] << " ";
+  cout << endl;
+
+  //make a copy and change it (check deep copy)
+  cout << "making a deep copy" << endl;
+  Vector<char> myvec2(myvec);
+  myvec2[2]='x';
+  myvec.push_back('f');
+
+  //check both vectors
+  cout << "first vector is: ";
+  //check vector
+  for (int i=0; i < myvec.size(); i++)
+   cout << myvec[i] << " ";
+  cout << endl;
+
+  cout << "second vector is: ";
+  for (int i=0; i < myvec2.size(); i++)
+   cout << myvec2[i] << " ";
+  cout << endl;
+
+
+
+}

@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+\usepackage{jeffe,handout}
+
+% =========================================================
+\begin{document}
+
+\headers{CS 150}{Programming Assignment 2 (due January 26 by
+11:59pm)}{Fall 2008}
+
+\begin{center}
+\LARGE \textbf{CS 150: Intro to OOP, Spring 2009}
+\\
+\textbf{Programming Assignment 1}
+\\[1ex]
+\Large Due \emph{via email} by 11:59pm on January 26, 2008\\
+
+\end{center}
+
+
+For this assignment, you must work individually in regard to the
+design and implementation of your project. Please note the
+distinction made in our academic integrity policy between general
+course material and work which is submitted for this course. We
+consider the use of the Python language syntax and the cs1graphics
+package in the category of general course material, which you may
+discuss freely. However, you must avoid any discussion of code which
+is specific to the design of your artwork, submitted for this
+assignment. You should not receive direct help from others, nor
+should you share your own source code with others.
+
+You will be producing a series of frames on a Canvas object. You may
+control the timing of the frames by using the sleep function from
+the time module, as described in class and in the textbook.
+
+The theme of the drawings should center around your choice of a
+favorite animal. Obviously, with the rather limited selection of
+shapes, we expect some of the artwork to be abstract.
+
+Please consider the following list as a mandatory checklist of tools
+and techniques you must use. Though we reserve the right to grade
+partly based on artistic merit, the majority of the credit for this
+assignment will be given based on your meeting the following
+criteria.
+
+\begin{itemize}
+\item Your animation must have four or more distinct frames.
+
+\item Your first frame should have the background scene which must
+include a tree.
+
+\item Another frame should include the addition of
+an animal of your choice.
+
+\item Later, a second animal should be included in the scene and that
+animal should partially obscure the tree.
+
+\item Eventually, the first animal should be removed from the scene
+and the second animal should move locations.
+
+\item Finally, a last frame should be drawn without either animal.
+
+\end{itemize}
+
+You may feel free to intersperse additional frames as you wish.
+Also, please make sure that somewhere in your animation, each of the
+following techniques are used:
+
+\begin{itemize}
+
+\item You should set the title of the Canvas as an appropriate title
+for your artwork (this might also help us discern the type of animal
+you chose, in case it is not quite obvious).
+
+\item You must use at least one instance from each of the following
+classes: Circle, Rectangle, Polygon, Segment and Text.
+
+\item You must vary the border thickness and colors of some shapes.
+
+\item You must vary the interior colors for some of your FillableShape
+objects, including at least one which has transparent interior.
+
+\item Your second animal should be implemented using the class Layer
+as outlined in the documentation for the cs1graphics module.
+
+\end{itemize}
+
+For a small amount of extra credit, you may also incorporate some
+form of event driven programming, using the wait() method described
+in the text. Some creativity is expected here - just turning the sun
+red will not get you much extra credit! Also, please be sure to let
+me know what the event expected is, particularly if I have to click
+on something or enter text.
+
+\end{document}

@@ -1,0 +1,16 @@
+#include "LinkedQueue.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  
+  LinkedQueue<int> numQueue;
+  
+  numQueue.push(5);
+  numQueue.push(10);
+  
+  cout << "front is: " << numQueue.front() << endl;
+  numQueue.pop();
+  cout << "front is: " << numQueue.front() << endl;
+
+}

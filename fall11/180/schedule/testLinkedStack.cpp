@@ -1,0 +1,21 @@
+#include "LinkedStack.h"
+#include "SLinkedList.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+ 
+  //create a stack
+  LinkedStack<int> mystack;
+  
+  //test the stack
+  mystack.push(1);
+  mystack.push(25);
+  
+  cout << mystack.top() << endl;
+  
+  mystack.pop();
+  
+  cout << mystack.top() << endl;
+  
+}

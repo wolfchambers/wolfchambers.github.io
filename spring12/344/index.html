@@ -1,0 +1,152 @@
+<html>
+
+<head> 
+<title>CS 344: Programming Languages</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> | 
+<a href="policies.html">Course Policies</a> |
+<A HREF="homework/">Assignments</A> | 
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 344: Programming Languages<br> Spring 2012 </h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu 
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Monday 10-11am, Tuesday 10-11, and Wednesday 2-3
+
+</h3>
+
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p>May 3: <a href="finalreview.pdf">Here</a> is the review sheet for the final review, focusing on the topics covered since the midterm.  Keep in mind programming problems (similar to the homework) are also going to appear on the exam. 
+
+<li><p>April 27: <a href="homework/hw11.pdf">Homework 11</a> is available; it will be due next Friday, May 4, by 11:59pm.
+
+<li><p>April 18: <a href="homework/hw10.pdf">Homework 10</a> is available; it will be due next Wednesday, April 25, by 11:59pm.
+
+<li><p>April 12: As announced in class, your next homework 
+assignment will be an essay over the article handed out in class, 
+<a href="http://www.cse.chalmers.se/~rjmh/Papers/whyfp.pdf">Why 
+Functional Programming Matters"</a>.  This will be a 1-2 page 
+opinion essay, where I would like you to comment on functional 
+programming in general, particularly as it relates to your 
+experience.  Has learning a functional language changed your 
+programming style or views?  Do you feel functional languages are 
+better or worse?  Even if you don't continue to use a functional language, is learning one a valuable experience in some way?
+<br>
+Please begin with a clearly stated thesis statement that concisely 
+describes your opinion, and then use examples or information to 
+back up your view.  For this paper, you aren't required to 
+use other sources, although it may be helpful to do so; in 
+particular, there is a lot of good commentary about this article 
+on various blogs and in various books.  You are welcome to 
+reference or quote any of these works, but please cite all 
+sources, as always.
+
+<li><p>Apirl 11: As a clarification of syntax, to start your module (or at least for mine), you can use the following:
+<br>
+module Sets where 
+<br>
+import qualified Data.List as L
+<br>
+data Set a = Set [a]
+<br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deriving (Show, Eq, Ord)
+<br>
+-- rest of the functions
+
+
+<li><p> April 11: Due to pleading requests, I'll grant on extension for 
+homework 8.  It will be due by the start of class on Friday, if you would 
+like to take an extra day to work on it.
+
+<li><p> April 10: Three minor corrections on the homework.  For the first 
+problem, the type of the input function needs to be (a -> a -> b) instead of 
+(a -> a -> a).  On the second, you need to import Data.List in order to get 
+nub and have list2set compile; I actually did: import qualified Data.List as L, and 
+that's why I call L.nub in the code.  Feel free to alter as you prefer, as 
+long as it imports those and compiles correctly (or you can remove those 
+functions if you don't need them anyway).  Also on the list2set function, the second line should have an =, not ::, since it is declaring the function.
+
+<li><p>April 4: <a href="homework/hw8.pdf">Homework 8</a> is now available; it will be due next Wednesday, April 11, by 11:59pm.
+
+<li><p>March 23: <a href="homework/hw7.pdf">Homework 7</a> is now available; it will be due next Friday, 3/30, by 11:59pm (via email).  Please submit the assignment as a single hs file will all the requested functions included, and remember to compile and test it!
+
+<li><p>March 22: The essay assignment is now due next Monday, 3/26, at the start of class.
+
+<li><p>March 9: Here is a <a 
+href=http://lukeplant.me.uk/blog/posts/why-learning-haskell-python-makes-you-a-worse-programmer/">humourous 
+note</a> about how learning python and haskell is depressing as a professional programming.  Thought you 
+all might appreciate it over the next few weeks of haskell!
+
+<li><p>March 7: <a href="homework/essay6.pdf">Assignment 6</a> is available; this will be a more in-depth essay to investigate a programming language of your choice.  This assignment is due the week after we return from break, on Friday, March 23.
+
+<li><p>March 6: <a href="reviewsolutions.pdf">Here</a> are solutions to review questions from the book, as requested.  
+
+<li><p>March 1: <a href="mt1review.pdf">Here</a> is a review sheet for the midterm.  While long, please don't panic - much of it is just recalling the definitions of the key terms, as well as understanding which languages choose those models.  Please remember to review the homework exercises over these topics as well.
+
+<li><p>Feb. 28: <a href="homework/hw5.pdf">Homework 5</a> is now available;
+it will be due next Monday, Feb. 5, at the beginning of class.  
+
+<li><p>Feb. 24: Apologies for the cancellation today; I was stuck at the ER 
+again (but with the other kid this time).  Please be sure to read chapter 
+7.1 in the textbook.  Look over the review questions at the end of that 
+section, since you can expect a quiz over the reading on Monday in class.
+
+<li><p>Feb. 22: There is a typo on the homework; problem 3b should ask for 
+the parse tree for abaa, not abab.
+
+<li><p>Feb. 16: <a href="homework/hw4.pdf">Homework 4</a> is now available; 
+it will be due next Friday, Feb. 24, at the beginning of class.
+
+<li><p>Feb. 1: <a 
+href="http://valis.cs.uiuc.edu/~sariel/teach/notes/373/book.pdf">Here</a> 
+is a link to some helpful extra notes on regular expressions and context 
+free grammars, if you'd like to see some extra examples.  The proofs are 
+beyond the scope of what our class does, but there may still be some 
+helpful discussion and examples, if you care to read beyond what the 
+book covers.  In particular, see section 2.3 for more DFA examples, 
+lecture 5 for NFA examples, lectures 11-12 for more on context free 
+grammars and Chomsky Normal form, and lecture 15 for the CYK parsing 
+algorithm.
+
+<li><p> Feb. 1: <a href="homework/assignment3.html">Homework 3</a> is 
+available; it will be due on Sunday, Feb. 12, by 11:59pm.
+
+<li><p>Jan. 31: I just posted a new pdf of homework 2, which includes 
+examples of valid and invalid numbers in C (for problem 1c).  Just click 
+on the link in the previous announcement (after reloading your page) in 
+order to see the new pdf.
+
+<li><p> Jan. 26: <a href="homework/hw2.pdf">Homework 2</a> is available; 
+it will be due next Friday, Feb. 3, at the start of class.  Please 
+either submit a paper copy of the entire assignment, or email a pdf of 
+it to my email address by the start of class.
+
+<li><p> Jan. 20: <a href="homework/essay1.pdf">The first essay 
+assignment</a> is available; it will be due at the start of class next 
+Friday, Jan. 27.
+
+<li> <p> Welcome to CS 344!  Please make sure to read the course 
+policies carefully, and remember to check this announcements section 
+daily for new announcements or reminders.
+
+</ul>
+
+
+</body>
+</html>

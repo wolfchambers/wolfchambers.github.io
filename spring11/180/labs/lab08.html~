@@ -1,0 +1,276 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<A HREF="../homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="../programming/">Programming</A> |
+<b>Labs</b> |
+<A HREF="../schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+
+
+<p>
+<hr>
+
+
+<h1>Lab Assignment 8
+</h1>
+
+<table>
+  <tr>
+    <td>
+	<b>Topic:</b>
+    </td>
+    <td>
+	Tree Grafting
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Source Code:</b>
+    </td>
+    <td>
+	<tt>graft.cpp</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+	<b>Live Archive Ref#:</b>
+    </td>
+    <td>
+	<a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/problem.php?p=3821">3821</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>In-Class Day 1:</b>
+    </td>
+    <td>
+	<br>
+	Tuesday, March 29, 2011
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<b>Submission Deadline:</b>
+    </td>
+    <td>
+	Wednesday, April 6, 11:59pm
+
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<br>
+	<b>Techniques:</b>
+    </td>
+    <td>
+	<br>
+	Recursion, Tree traversals
+    </td>
+  </tr>
+</table>
+
+<p>
+Please review the
+<a href="../#general">general information about lab assignments</a>.
+
+
+<hr>
+
+<h1>Tree Grafting</h1>
+
+
+<p>
+
+Trees have many applications in computer science. Perhaps the most commonly
+used trees are rooted binary trees, but there are other types of rooted
+trees that may be useful as well. One example is ordered trees, in
+which the subtrees for any given node are ordered. The number of
+children of each node is variable, and there is no limit on the number.
+Formally, an ordered tree consists of a finite set of nodes T such that
+
+<ul>
+<li> there is one node designated as the root, denoted root(T);<br></li>
+<li> the remaining nodes are partitioned into subsets T1, T2, ..., Tm, each of which is also a tree (subtrees).</li>
+</ul>
+
+Also, define root(T1), ..., root(Tm) to be the children of root(T), with
+root(Ti) being the i-th child. The nodes root(T1), ..., root(Tm) are
+siblings.
+
+<p>It is often more convenient to represent an ordered
+tree as a rooted binary tree, so that each node can be stored in the
+same amount of memory. The conversion is performed by the following
+steps:
+
+<ol>
+<li>remove all edges from each node to its children;</li>
+<li>for each node, add an edge to its first child in T (if any) as the left child;</li>
+<li>for each node, add an edge to its next sibling in T (if any) as the right child.</li>
+</ol>
+
+<p>This is illustrated by the following:
+<blockquote><pre>
+         0                             0
+       / | \                          /
+      1  2  3       ===&gt;             1
+        / \                           \
+       4   5                           2
+                                      / \
+                                     4   3
+                                      \
+                                       5
+</pre></blockquote>
+In most cases, the height of the tree (the number of edges in the longest
+root-to-leaf path) increases after the conversion. This is undesirable
+because the complexity of many algorithms on trees depends on its
+height.
+
+<p>You are asked to write a program that computes the height of the tree before and after the conversion.
+
+
+<table border="1" cellpadding="10">
+          <thead>  <tr>
+           <td><b>Example input:</b></td>
+            <td><b>Example output:</b></td>
+          </tr>
+          </thead>  <tbody>
+          <tr>
+           <td style="font-family: monospace;">
+dudduduudu<br>
+ddddduuuuu<br>
+dddduduuuu<br>
+dddduuduuu<br>
+#<br>
+              </td>
+           <td valign="top" style="font-family: monospace;">
+Tree 1: 2 =&gt; 4<br>
+Tree 2: 5 =&gt; 5<br>
+Tree 3: 4 =&gt; 5<br>
+Tree 4: 4 =&gt; 4<br>
+            </td>
+          </tr>
+
+  </tbody>
+</table>
+
+<h1>To do for this week</h1>
+
+This lab will be our first one split over 2 weeks.  In fact, for this part of the lab, I will only ask you to write a function that computes the height of the tree before conversion.  Next week, we'll finish off the first version.  For now, write a program that does the following:
+
+<table border="1" cellpadding="10">
+          <thead>  <tr>
+           <td><b>Example input:</b></td>
+            <td><b>Example output:</b></td>
+          </tr>
+          </thead>  <tbody>
+          <tr>
+           <td style="font-family: monospace;">
+dudduduudu<br>
+ddddduuuuu<br>
+dddduduuuu<br>
+dddduuduuu<br>
+#<br>
+              </td>
+           <td valign="top" style="font-family: monospace;">
+Tree 1: 2 <br>
+Tree 2: 5 <br>
+Tree 3: 4 <br>
+Tree 4: 4 <br>
+            </td>
+          </tr>
+
+  </tbody>
+</table>
+
+<hr>
+
+<h1>Hints</h1>
+
+<p>
+Upon first glance, this problem seems like it's going to require you
+to build a tree data structure and then implement the conversion from
+the general tree to the binary tree.   But as is the case with many of
+these contest problems, there's a much easier way.
+
+<p>
+It is possible to compute the resulting depths without ever building
+the trees.  We suggest a recursive approach.  In the end we want a
+function that can compute the depth of the entire tree;  we will
+design a recursion that computes the depth of any subtree.  Consider
+the following local view:
+<br>
+<img src="view.gif">
+<br>
+If you were told the traditional depths for each of the four children,
+can you compute the traditional depth of the larger subtree?   
+Consider the "converted" case.  If you were told the "converted" depth
+for each of the four children, can you determine the converted depth
+for the larger subtree?
+
+
+<p>
+Here is how we recommend setting up the recursion.  Remember that the
+original input is just a sequence of 'd' and 'u' designators to
+describe the shape of the tree.   We want to think about starting the
+recursion at the root.  Technically, there is no 'd'/'u' pair in the
+input for going down to the root up up from it, but for consistency
+sake, <em>we recommend that you alter the original input string by adding
+a preceding 'd' and a trailing 'u'.</em>   Then use a string iterator
+to implicitly traverse the tree as you do your computation.  Use the
+following signature.
+<pre>
+int depth(string::iterator& i, bool converted = false);
+</pre>
+Assume that the function is called at a time when the iterator is
+pointing to the initial 'd' that moves down to a node.   This call is
+supposed to compute the original (resp. converted) depth of the
+subtree at that node, and while doing so it should advance the
+iterator so that it is one spot past the final 'u' that designates
+moving back up from the given node (note that we pass the iterator as
+a non-const reference so that the caller will continue scanning after
+the characters that we've processed).
+
+<p>
+Finally, we've suggested a signature that computes the traditional
+depth by default, but can be changed to compute the "converted" depth
+by sending a second parameter.  Although we could have given two
+different functions for the two different depths, we are suggesting a
+single function because there is really only a one or two line
+difference between the two computations.   Still, we recommend that
+you start by implementing the traditional depth version.  Then you can
+go back and do the converted depth.  Note that you will make two
+separate calls from the main routine, and you will need to
+reinitialize the iterator to the beginning of the string for the
+second computation.
+
+<h1>Pre-lab</h1>
+
+Give the height of the output for the following inputs:
+<p>
+dddduuuduu
+<p>
+dududududu
+<p>
+dudddduuuu
+
+
+
+  </body>
+</html>

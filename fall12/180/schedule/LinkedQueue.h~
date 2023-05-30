@@ -1,0 +1,129 @@
+#ifndef LINKED_QUEUE_H
+#define LINKED_QUEUE_H
+
+#include <iostream>
+#include <stdexcept>
+using namespace std;
+
+/* 
+   Class to implement a queue with an underlying circurlarly linked list
+*/
+
+template <typename Object>
+class LinkedQueue {
+  
+private:
+  
+  /*
+    Struct to hold nodes
+  */
+  struct Node {
+    Object _elem; //data in the node
+    Node* _next;  //pointer to next node in the list
+
+    /* constructor for Node struct */
+    Node(const Object& e = Object(), Node* n = 0) : _elem(e), _next(n) {}
+  };  //end of Node struct
+
+
+  /** Variable declaration **/
+  Node* _cursor;	//pointer to our reference spot at end of list
+  int _size;		//number of elements in the queue
+
+  /* Private helper function to destroy elements */
+  void removeAll() {
+    while (!empty()) 
+      pop();
+  }
+
+  /* Private helper function to make a deep copy */
+  void copyFrom(const LinkedQueue& other) {
+    Node* walk = other._cursor->_next;
+    _size = 0;
+    _cursor = 0;
+    
+    for (int i = 0; i < other._size; i++) {
+      push(walk->_elem);
+      walk = walk->_next;
+    }
+  }
+
+public:
+  
+  /* Constructor */
+  LinkedQueue() : _cursor(0), _size(0) {}
+  
+  /* Function to return size */
+  int size() const {
+    return _size;
+  }
+  
+  /*  Function that returns true if queue is empty */
+  bool empty() const {
+   return (_size == 0); 
+  }
+  
+  /* Function that adds a new element to the end of the list */
+  void push(const Object& e) {
+
+    //create new node
+    Node* temp = new Node(e);
+
+    //splice it into the list
+    if (empty()) {
+      temp -> _next = temp;
+    }
+    else {
+      temp -> _next = _cursor -> _next;
+      _cursor->_next = temp;
+    }
+    _cursor = temp;
+
+    _size++;
+  }
+  
+  /*  Function to remove first element in queue  */
+  void pop() {
+    Node* temp = _cursor->_next
+    
+    _cursor->_next = temp->_next;
+    //_cursor -> _next = _cursor->_next->_next;
+    
+    delete temp;
+    
+    _size--;
+  }
+  
+  /* Function to return a const reference to the first element in the queue  */
+  const Object& top() {
+    //check if queue is empty
+    if (empty())
+      throw runtime_error("Can't access empty queue");
+
+    //remember, cursor is at end, so need to follow _next pointer to get to front
+    return _cursor->_next->_elem;  
+  }
+  
+  //Housekeeping!
+  
+  //destructor
+  ~LinkedQueue() {
+    removeAll();
+  }
+  
+  //write operator=
+  LinkedQueue& operator=(const LinkedQueue& other) {
+    if (this != &other) {
+      removeAll();
+      copyFrom(other);
+    }
+    return *this;
+  }
+  
+  //copy constructor
+  LinkedQueue(const LinkedQueue& other) {
+    copyFrom(other);
+  }
+  
+};
+#endif

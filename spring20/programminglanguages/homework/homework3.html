@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+  <HEAD>
+    <TITLE>Assignment #3:  Using the Lex/Flex Scanner Generators
+    </TITLE>
+  </HEAD>
+
+  <BODY>
+
+    <CENTER>
+      <H2>Assignment #3:  Using the Lex/Flex Scanner Generators</H2>
+      <br>
+      <b>Due:</b>  Monday, Feb. 10, by 11:59pm
+    </CENTER>
+
+
+<h3>Contents:</h3>
+<UL>
+  <LI>
+      <a href="#overview">Overview</a>
+  </LI>
+  <LI>
+      <a href="#submit">Problems to be Submitted</a>
+  </LI>
+</UL>
+
+<HR>
+
+<a name="overview"><h3>Overview</h3></a>
+
+<P>
+<b>Topic(s):</b>  Lexical Analysis, Lexical Analysis Generators, Lex/Flex
+<br>
+<dt><b>Related Reading:</b>  Section 2.1-2.2, and I'd recommend the following websites (as needed):</dt>
+<ul>
+<li><a href="http://web.mit.edu/gnu/doc/html/flex_1.html">Flex man pages</a> <i>(Note that there are multiple pages here, so click on the 'next' link at the top/bottom of each section to go to the next page)</i></li>
+<li><a href="http://dinosaur.compilertools.net/">The Lex & Yacc Page</a><li>
+<li><a href="http://tldp.org/HOWTO/Lex-YACC-HOWTO.html#toc3">Lex and YACC primer/HOWTO</a> by Bert Hubert</li>
+<li><a href="http://www.ibm.com/developerworks/library/l-lexyac.html">Build code with lex and yacc</a> by IBM</li>
+<li><a href="http://epaperpress.com/lexandyacc/download/lexyacc.pdf">A Compact Guild to Lex & Yacc</a> by Tom Niemann</li>
+</ul>
+<P>
+
+<hr>
+
+<a name="submit"><h3>Problems to be Submitted (30 points possible)</h3></a>
+
+
+<p> Please submit your solution via email to the instructor by midnight on the due date.
+
+<OL type=A>  
+  <LI> (10 points)
+    <P>
+      The Swedish Chef is a character from Jim Henson's "The Muppet 
+Show" that is well known for his comically-extreme Swedish accent.  In a 
+similar comical vein, in 1993 John Hagerman wrote a Lex program that 
+transforms regular English text into an equivalent version of the text 
+as it would be pronounced by the Swedish Chef.  The Lex code for this 
+program is <a href="./chef.l">chef.l</a>.
+    </P>
+    <P>
+      The Swedish Chef text converter (along with a few similar 
+"linguistic" converters) has also been rendered into an applet by John 
+Chambers, which can be found via the following <a 
+href="http://www.cs.utexas.edu/users/jbc/home/chef.html">link</a>.
+    </P>
+    <P>
+      <b>Your task in this problem</b> is to figure out how this Lex 
+program works, and provide comments for each of the rules in the 
+translation rules section, describing what English text it converts, and 
+what it converts it to.  Be sure to pay attention to the INW and NIW 
+start conditions, as these impact when and/or how the subsequent text is 
+converted.
+    </P>
+    <P>
+      When you are uncertain how a particular rule works, you can 
+experiment with the Swedish Chef converter program to gain better 
+understanding as to how/when particular English strings are converted to 
+Swedish Chef-isms.  You can do this via the applet, or by compiling the 
+chef.l program into an executable via the following Linux commands:
+    </P>
+    <P>
+      <dd><tt>flex chef.l</tt></dd>
+      <dd><tt>gcc -o chef lex.yy.c -lfl</tt></dd>
+    </P>
+  </LI>
+
+  <LI> (10 points)
+    <P>
+
+<p>Leet (or "1337"), also known as eleet or leetspeak, is a system of modified spellings used primarily on the Internet. 
+It often uses character replacements in ways that play on the similarity of their glyphs via reflection or other 
+resemblance. Additionally, it modifies certain words based on a system of suffixes and alternate meanings. There are 
+many dialects or linguistic varieties in different online communities.
+</p>
+
+<p>
+Leet originated within bulletin board systems (BBS) in the 1980s, where having "elite" status on a BBS allowed a 
+user access to file folders, games, and special chat rooms. The Cult of the Dead Cow hacker collective has been 
+credited with the original coining of the term, in their text-files of that era. One theory is that it was 
+developed to defeat text filters created by BBS or Internet Relay Chat system operators for message boards to 
+discourage the discussion of forbidden topics, like cracking and hacking. Creative misspellings and 
+ASCII-art-derived words were also a way to attempt to indicate one was knowledgeable about the culture of computer 
+users.
+</p>
+
+<p>
+Once the reserve of hackers, crackers, and script kiddies, leet has since entered the mainstream. It is now also 
+used to mock newbies, also known colloquially as noobs, or newcomers, on web sites, or in gaming communities. Some 
+consider emoticons and ASCII art, like smiley faces, to be leet, while others maintain that leet consists of only 
+symbolic word encryption. More obscure forms of leet, involving the use of symbol combinations and almost no letters 
+or numbers, continue to be used for its original purpose of encrypted communication. It is also sometimes used as a 
+script language. Variants of leet have been also used for censorship purposes for many years.
+</p>
+
+(Source: <a href="https://en.wikipedia.org/wiki/Leet">Wikipedia</a>
+
+
+
+      <b>Your task for this problem</b> is first to create a simple Lex program that translates some common <i>1337</i> 
+shorthands (either <a href="https://simple.wikipedia.org/wiki/Leet#Intentional_misspelling*">intentional misspellings</a>
+or <a href="https://simple.wikipedia.org/wiki/Leet#Leet_vocabulary">unique vocabulary works<a/>)
+to their full English equivalents.  Please have your program convert at least 20 shorthands to their 
+regular English equivalent.  Note: Please avoid building in offensive or inappropriate term transalations (i.e.  
+any profanity).  
+    </P>
+
+  <LI> (10 points)
+    <P>
+      <b>Your task for this problem</b> is to extend the <i>texting</i> 
+converter that you created in Problem #2 to properly perform 
+capitalization at the beginning of a sentence.  For example, if the 
+ shorthand "leet" appears at the beginning of a sentence, 
+it should be converted to "Elite", whereas if it appears in the middle 
+of a sentence, it will be converted to "elite".
+    </P>
+    <P>
+      <i>Note:</i> Be careful here!  I want the start of EVERY sentence capitalized - not just at the beginning of a 
+line. Yes, the first character counts, and there are many forms of punctuation!  My best hint is that you need to have 
+a full understanding of how the Swedish Chef converter in Problem #1 works in order to accomplish this task (since 
+states are very helpful for this part).
+    </P>
+
+
+  </LI>
+
+</OL>
+
+<hr>
+
+  </body>
+</html>
+

@@ -1,0 +1,23 @@
+#include "ArrayStack.h"
+
+  /** Standard constructor creates an empty stack with given capacity. */
+  ArrayStack<Object>::ArrayStack(int cap = 1000) {
+    _capacity = cap;
+    _t = 0;
+    _S = new Object[_capacity];
+  }
+  
+    /** Returns a live reference to the top object in the stack. 
+   * Return: reference to top element 
+   */ 
+  Object& ArrayStack<Object>::top() {
+    return _S[_t-1];
+  }
+  
+    /** Inserts an object at the top of the stack. 
+   *  Input: the new element 
+   */ 
+  void ArrayStack<Object>::push(const Object& elem) {
+    _S[_t] = elem;
+    _t++;
+  }

@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<title>CSCI 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="programming/">Programming</A> |
+<A HREF="labs/">Labs</a> |
+<A HREF="schedule/index.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 180: Data Structures <br> Fall 2012 <br> MWThF 10-10:50am in 121 RH</h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Monday 1-2pm, Thursday 1-2pm, and Friday 9-10am (or by appointment)
+
+</h3>
+
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p>Nov. 15: <a href="homework/homework9.html">Homework 9</a> is up; it will be due on Sunday, Dec. 2.  Note that you will have a checkpoint on Tuesday, Nov. 27, and that you are welcome to work with a partner again on this one.
+
+<li><p>Nov. 11: <a href="BinarySearchTree.h">Here</a> is a solution to homework 8, for those who think it would be helpful in working on homework 9.  (Note that the insert is a slight variant on ours, since it is from a previous semester, but the code for remove should work if you paste it into your own copy of BinarySearchTree.h.)
+
+<li><p>Nov. 11: <a href="homework/makefile9">Here</a> is a makefile for homework 9 (on AVL trees).  Note that you will have to download and rename this - I have it as makefile9 currently, and it needs to be called simply makefile (and be the only such file in the directory you are working in).
+
+<li><p>Nov. 7: <a href="homework/homework9.html">Homework 9</a> is up; the checkpoint has been changed to Monday, Nov. 12, and the final due date is now Saturday, Nov. 17.
+
+<li><p>Nov. 1: Two announcements on the homework.  First, I had to make some minor modifications to BinaryTree.h which catch boundary cases causing seg faults if you are near the root or a leaf.  Please make sure to download a new copy (and you shouldn't have to change anything in your BinarySearchTree file, so keep any work you have done).  Second, as announced in class, homework 8 is now due on Monday by midnight (and not Saturday).
+
+<li><p>Nov. 1: As announced in class, the next midterm will be on Friday, Nov. 9, during class.  There will be a review session the day before in class.  
+
+<li><p>Oct. 26: <a href="homework/homework8.html">Homework 8</a> is available; it will be due on Saturday, Nov. 3, by midnight.
+
+<li><p>Oct. 24: No lab tomorrow - we'll continue with binary search trees and AVL trees in a normal lecture.
+
+<li><p> Oct. 21: I had to make a slight change to the code for List.h regarding operator= and the copy constructor, so if those functions are relevant for you test, than you may wish to redownload a new copy (and just paste in whatever functions you have already written there.)  The change is altering the const_iterator for loop to contain push_back(*guide);, since the compiler does not like allowing a live pointer into the const list.
+
+<li><p>Oct. 18: <a href="homework/hw7.pdf">Homework 7</a> is available; it will be due Monday, Oct. 29, at the start of class.
+
+<li><p>Oct. : <a href="homework/homework6.html">Homework 6</a> is available; it will be due Tuesday, Oct. 23 by 11:59pm.
+
+<li><p>Oct. 11: As announced yesterday in class, no lab will meet today.  The lab is due on Sunday as usual, and please see me with any questions.  I'll still be in for office hours from 1-2pm today.
+
+<li><p>Oct. 5: <a href="homework/homework5.html">Homework 5</a> is available; there is a checkpoint due on Thursday, Oct. 11, and the final submission is due on Sunday, Oct. 14.
+
+<li><p>Sept. 22: <a href="homework/homework4.html">Homework 4</a> is available; it will be due Tuesday, Oct. 2.  Please note that you are encouraged to work with a partner on this assignment, and that there will be a checkpoint the Friday before it is due, at which point you will need to show me at least 20 lines of code and explain your overall strategy on the assignment.
+
+<li><p>Sept. 19: I have created a <a href="schedule/makefile">makefile</a> for the first homework assignment; if you save it in the same directory as the assignment, you should be able to simply type "make" to compile.  It will output an executable called testSLL.
+
+<li><p>Sept. 17: <a href="homework/hw3.pdf">Homework 3</a> is available; it will be due next Sunday, Sept. 23 by 11:59pm.  Sorry for the delay!
+
+<li><p> Sept. 7: <a href="homework/hw2.pdf">Homework 2</a> is available; it will be due next Friday, Sept. 14, at 11:59pm via email.  Note, however, that you are welcome to submit page 1 on paper during class that day.
+
+<li><p>Sept. 6: Please make sure to name your lab this week copier.cpp, since that name is required for the testing software to work.  (I'll make sure to include the required name for the file on all future labs.)
+
+<li><p>Aug. 29: <a href="http://cs.slu.edu/~goldwasser/publications/python2cpp.pdf">Here</a> is the transition guide; our lectures will be largely based on this for the first few weeks.
+
+<li><p>Aug. 28: <a href="homework/hw1.pdf">Homework 1</a> is available; it will be due next Saturday, Sept. 8, by 11:59pm via email.
+
+<li><p> August 22: Welcome to CS180!  Please be sure to read course policies
+carefully, and check this page daily for updates or announcements.
+
+</ul>
+
+</body>
+</html>
+
+

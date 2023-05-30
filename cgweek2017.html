@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="eng">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>Algorithms for the Medial Axis</title>
+
+<style type="text/css">
+table, td, th {
+  text-align: left;
+  border-spacing: 0;
+  padding: 0;
+}
+table td, table th {
+  border-left: solid 10px transparent;
+}
+table td:first-child, table th:first-child {
+  border-left: 0;
+}
+</style>
+
+</head>
+<body>
+
+<p style="font-size: large; font-weight: bold; line-height: 1.5em; text-align: center">
+Algorithms for the Medial Axis<br />
+CG Week Workshop, Brisbane, July 7, 2017
+</p>
+
+<p>
+<b>Organizers:</b> 
+<a href="http://cs.slu.edu/~chambers/">Erin Chambers</a>,
+<a href="http://www.cs.wustl.edu/~taoju/">Tao Ju</a>, and 
+David Letscher
+</p>
+
+<p style="text-align: justify">
+
+<b>Description:</b> Skeletons are a fundamental construct in many areas 
+which seek to model shapes. In particular, the medial axis has seen 
+broad success as a shape descriptor in a variety of settings including 
+graphics, image detection, and biomedical imaging, including many new 
+results and growing interest in tools. There has also historically been 
+considerable work on algo- rithms and theoretical results for the medial 
+axis and related skeletons in the computational geometry community. Our 
+aim with this workshop is to bring together a group of people, both in 
+the computational geometry community and in related areas such as 
+graphics and computer vision, to present and discuss current issues and 
+trends in this area.
+
+<p style="text-align: justify"> 
+The workshop is part of CG Week 2017. It takes place on Friday, July 
+7, from 14:30 - 17:30 in the afternoon (with a break for coffee in the middle). 
+See the <a href="http://socg2017.smp.uq.edu.au/">CG 
+Week 2017 main page</a> for information about the venue and about other 
+CG Week events. 
+</p>
+<hr />
+
+<p style="font-size: large; font-weight: bold; line-height: 1.5em; text-align: center">
+Tentative Program
+</p>
+
+<p style="font-weight: bold">
+Session I: 14:30&ndash;16:00
+</p>
+
+<p>
+<b>14:30&ndash;15:15</b><br />
+<a href="http://web.cse.ohio-state.edu/~dey.8/">Tamal Dey</a>, <i>Computing medial axis and curve skeleton with Voronoi diagrams</i>
+</p>
+
+<!--
+<p>
+<a href="">Slides</a>
+</p>
+--!>
+
+<p style="text-align: justify">
+Voronoi diagrams of a set of points in 3D can be thought of as the singularity of the distance function defined with respect to the points.  When a sufficiently dense set of points is sampled from a smoothly embedded surface in 3D, this distance function approximates the distance with respect to the surface that is sampled. Consequently, a subcomplex of the  Voronoi diagram approximates the medial axis of the surface which is the singularity of this surface distance function. The curve skeleton, a cousin of the medial axis, is intended to capture the `middle' of the shape with only  one (curves) and zero (vertices) dimensional elements. We gave a definition of the curve skeleton as the singularity of a distance function called medial geodesic function (MGF) defined on the medial axis. We also showed how one can compute an approximation of this singularity using Voronoi diagrams. In this talk we go over these developments that we proposed more than a decade back.
+</p>
+
+<p>
+<b>15:15&ndash;16:00</b><br />
+<a href="https://www-sop.inria.fr/members/Mathijs.Wintraecken/">Mathijs Wintraecken</a>, <i>Manifolds with positive reach: metric distortion, tangent space variation and geodesic convexity</i>
+</p>
+
+
+<p style="text-align: justify">
+
+We discuss three results, for two different classes of embedded manifolds: The first 
+class of manifolds consists of closed $C^2$ manifolds $\M$ embedded in $\mathbb{R}^d$. 
+For these we first provide a tight bound on difference between the Euclidean distance 
+and geodesic distance between two points $p$ and $q$ on $\M$. Secondly, we give tight 
+bounds on the angles between the tangent spaces of two points on the $C^2$ manifold 
+$\M$. In both cases we assume that $p$ and $q$ are not too far from each other, where 
+far can be quantified in terms of the reach of the manifold. Thirdly we give a proof 
+that the intersection of a ball in the ambient space $\mathbb{R}^n$ of radius smaller 
+than the reach with the manifold is geodesically convex, in particular it is a 
+topological ball.
+
+Our first exposition of the first two results is based on differential geometry and is a consequence of combining (and sometimes simplifying) the work of Niyogi, Smale, and Weinberger, and the two dimensional analysis of Attali, Edelsbrunner, and Mileyko with the work of Federer. The result on convexity is new, and generalizes the pseudo-ball property of Boissonnat and Oudot. 
+
+We then give elementary proofs of slightly weaker versions of the previous results, with the exception of convexity (we can prove a weaker result, namely that the intersection is a topological ball). The proofs are elementary in the sense that no differential geometry is required, although some topology is used. Our elementary approach goes through with some modification for $C^{1,1}$ manifolds.
+
+</p>
+
+<p style="font-weight: bold">
+Session II: 16:30&ndash;18:00
+</p>
+
+<p>
+<b>16:30&ndash;17:15</b><br />
+David Letcher, <i>On the Stability of the Medial Axis of a Union of Balls in the Plane</i>
+</p>
+
+<p style="text-align: justify">
+We examine the stability of a the medial axis for a union of disks
+in the plane as the centers and radii of the disks vary continuously. If extra
+restrictions are place on the disks then the medial axis is stable.  Without
+these conditions we show that if the medial axis is pruned by one of four 
+significance measures (circumradius, erosion thickness, object angle or
+potential residue) then it is stable under motions of the disks.  We will
+briefly discuss conjectures about the stability of the  pruned medial axis 
+in a 3-dimensional union of balls.
+</p>
+
+<p>
+<b>17:15&ndash;18:00</b><br />
+<a href="http://www.cs.wustl.edu/~taoju/">Tao Ju</a>, <i>Erosion Thickness on the Medial Axes of 3D Shapes</i>
+</p>
+
+
+<p style="text-align: justify">
+In this talk, I will present our recent work on creating
+robust and descriptive skeleton descriptors of 3D shapes. Our work
+extends the Erosion Thickness (ET), a classical significance measure
+on the medial axes of 2D shapes, to 3D. On the theoretical side, we
+introduce a consistent definition of ET in both 2D and 3D, from which
+we are able to formalize lower-dimensional medial forms (e.g., medial
+points of 2D shapes, medial curves and medial points of 3D shapes). On
+the algorithmic side, we present robust and efficient algorithms to
+compute these functions and structures on triangulated medial axis of
+3D shapes.
+</p>
+
+
+
+
+
+</body>
+</html>

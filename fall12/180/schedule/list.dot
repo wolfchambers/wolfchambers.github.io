@@ -1,0 +1,19 @@
+digraph {
+rankdir=LR;
+_front [shape=ellipse];
+_back [shape=ellipse];
+node17334288 [shape=record, label="0 | { <prev> | <next> }"];
+node17334320 [shape=record, label="12.2 | { <prev> | <next> }"];
+node17334352 [shape=record, label="58.7 | { <prev> | <next> }"];
+node17334384 [shape=record, label="3.14 | { <prev> | <next> }"];
+_front -> node17334288:w;
+node17334288:e -> _back [dir=back];
+node17334288:next:e -> node17334352:w;
+node17334288:prev:w -> node17334384:e [weight=0];
+node17334320:next:e -> node17334384:w;
+node17334320:prev:w -> node17334352:e [weight=0];
+node17334352:next:e -> node17334320:w;
+node17334352:prev:w -> node17334288:e [weight=0];
+node17334384:next:e -> node17334288:w;
+node17334384:prev:w -> node17334320:e [weight=0];
+}

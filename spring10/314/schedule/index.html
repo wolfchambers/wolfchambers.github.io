@@ -1,0 +1,392 @@
+<html>
+
+<head> 
+<title>CSCI 314: Algorithms</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> | 
+<A href="policies.html">Course Policies</a> |
+<A HREF="homeworks/">Homework</A> | 
+<A HREF="schedule/">Schedule & Lecture Notes</A> 
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 314: Algorithms <br> Spring 2010 </h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu 
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Monday 10-11:30am, Thursday 1-2pm
+
+</h3>
+</center>
+
+
+<hr>
+<blockquote>
+Here is this semester's tentative schedule; we will update it as the semester progresses.  The listed sections refer to the course textbook by Kleinberg and Tardos; all notes come from <a href=""http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/">Jeff Erickson's algorithms notes</a>.
+<p>
+<table align="center" border="0" rules="rows" cellspacing="0" cellpadding="2" width="80%">
+<tr valign="middle" height="30">
+<td align="center" width="18%"><b>Date</b></td>
+<td align="center" width="30%"><b>Topic</b></td>
+<td align="center" width="30%"><b>Reading</b></td>
+<td align="center" width="10%"><b>Lecture Notes</b></td>
+<td align="center" width="12%"><b>Problem session (if any)</b></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Jan 11</td>
+<td>Syllabus, big-O review</td>
+<td height="45">Any discrete math book</td>
+<td align="center"><a href="lecture1.pdf">Lecture 1</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Jan 13</td>
+<td>Induction</td>
+<td height="45">Any discrete math book</td>
+<td align="center"><a href="lecture2.pdf">Lecture 2</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Jan 15</td>
+<td>Recurrences</td>
+<td height="45"><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/99-recurrences.pdf">Recurrences</a></td>
+<td align="center"><a href="lecture3.pdf">Lecture 3</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Jan 18</td>
+<td>No class - MLK day</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Jan 20</td>
+<td>Heaps (and pseudocode)</td>
+<td height="45">Section 2.5</td>
+<td align="center"><a href="heaps.pdf">Lecture 4</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Jan 22</td>
+<td>Intro to graphs</td>
+<td height="45">Chapter 3.1 <br> 
+<a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/11-graphs.pdf">Graph notes</a> </td>
+<td align="center"><a href="Graphs.pdf">Lecture 5</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Jan 25</td>
+<td>Breadth First Search</td>
+<td height="45">Chapter 3.2 <br> 
+<a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/11-graphs.pdf">Graph 
+notes</a> </td>
+<td align="center"><a href="BFS.pdf">Lecture 6</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+   
+<tr valign="middle">
+<td align="center">Jan 27</td>
+<td>Depth First Search</td>
+<td height="45">Chapter 3.3, 3.4 <br> <a 
+href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/11-graphs.pdf">Graph
+notes</a> </td>
+<td align="center"><a href="DFS.pdf">Lecture 7</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Jan 29</td>
+<td>Divide and Conquer: <br>Subset Sum</td>
+<td height="45"><a 
+href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/02-backtracking.pdf">Divide and Conquer Notes, Sec. 2.2</a> </td>
+<td align="center"><a href="subsetsum.pdf">Lecture 8</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 1</td>
+<td>Divide and Conquer: <br>Counting inversions</td>
+<td height="45">Chapter 5.2-5.3 of book</td>
+<td align="center"><a href="inversions.pdf">Lecture 9</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 3</td>
+<td>Divide and Conquer: <br>Closest Pair of Points</td>
+<td height="45">Chapter 5.4 of book</td>
+<td align="center"><a href="closestpoints.pdf">Lecture 10</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 5</td>
+<td>Divide and Conquer: <br>Multiplication</td>
+<td height="45"><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/01-recursion.pdf">Lecture Notes on Recursion</a>, Sections 1.7 and 1.8</td>
+<td align="center"><a href="multiplication.pdf">Lecture 11</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 8</td>
+<td>Greedy Algorithms: <br>Interval Scheduling</td>
+<td height="45">Chapter 4.1 of book <br>
+<a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/04-greedy.pdf">Lecture Notes on Greedy Algorithms</a>, Section 4.2</td>
+<td align="center"><a href="intervalscheduling.pdf">Lecture 12</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 10</td>
+<td>Greedy Algorithms: <br>Processor Scheduling</td>
+<td height="45">Chapter 4.2 of book</td>
+<td align="center"><a href="schedulinglateness.pdf">Lecture 13</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 12</td>
+<td>Greedy Algorithms: <br>Huffman codes</td>
+<td height="45"><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/04-greedy.pdf">Lecture Notes on Greedy Algorithms</a>, Section 4.4</td>
+<td align="center"><a href="huffman.pdf">Lecture 14</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 15</td>
+<td>Greedy Algorithms: <br>Huffman codes <br> Shortest Paths</td>
+<td height="45"><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/04-greedy.pdf">Lecture Notes on Greedy Algorithms</a>, Section 4.4</td>
+<td align="center"><a href="huffman2.pdf">Lecture 15</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 17</td>
+<td>Greedy Algorithms: <br> Shortest Paths</td>
+<td height="45">Chapter 4.4 of book</td>
+<td align="center"><a href="Shortestpaths.pdf">Lecture 16</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 19</td>
+<td>Greedy Algorithms: <br> Minimum Spanning Trees</td>
+<td height="45">Chapter 4.5 of book</td>
+<td align="center"><a href="MST.pdf">Lecture 17</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 22</td>
+<td>Union-Find</td>
+<td height="45"><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/10-unionfind.pdf">Union Find notes</a><br>Chapter 4.6 of text</td>
+<td align="center"><a href="Unionfind.pdf">Lecture 18</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 24</td>
+<td>Dynamic Programming: Intro</td>
+<td height="45">Chapter 6.1 of book<br><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/03-dynprog.pdf">Dynamic Programming Notes</a>, Sec. 3.1-3.4 </td>
+<td align="center"><a href="DP1.pdf">Lecture 19</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">Feb 26</td>
+<td>Dynamic Programming: <br> Edit Distance</td>
+<td height="45">Sec. 3.5 of <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/03-dynprog.pdf">Dynamic Programming Notes</a></td>
+<td align="center"><a href="editdist.pdf">Lecture 20</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 1</td>
+<td>DP: Longest Increasing Subsequence</td>
+<td height="45">Sec. 3.9.2 of <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/03-dynprog.pdf">Dynamic Programming Notes</a></td>
+<td align="center"><a href="LIS.pdf">Lecture 21</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 3</td>
+<td>DP: Independent Set</td>
+<td height="45">Sec. 3.7 of <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/03-dynprog.pdf">Dynamic Programming Notes</a></td>
+<td align="center"><a href="DPindset.pdf">Lecture 22</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 5</td>
+<td>DP: Subset Sum<br> The Halting Problem</td>
+<td height="45">Sec. 3.9.1 of <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/03-dynprog.pdf">Dynamic Programming Notes</a></td>
+<td align="center"><a href="dpsubsetsum.pdf">Lecture 23</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 15</td>
+<td>Problem Session Day</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center"><a href="reviewproblems.pdf">Worksheet</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 17</td>
+<td>Review Session in class</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 19</td>
+<td>Midterm</td>
+<td height="45"></td>
+<td align="center"></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 22</td>
+<td>Recap of midterm <br> P versus NP</td>
+<td height="45"> <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/21-nphard.pdf">NP-Hardness Notes, Sec. 1-3</a><br>Chapter 8 of book</td>
+<td align="center"><a href="PvsNP.pdf">Lecture 24</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 24</td>
+<td>Satisfiability and Reductions</td>
+<td height="45"><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/21-nphard.pdf">NP-Hardness Notes, Sec. 4-5</a><br>Chpater 8 of book</td>
+<td align="center"><a href="reductions.pdf">Lecture 25</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 26</td>
+<td>More reductions</td>
+<td height="45"><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/21-nphard.pdf">NP-Hardness Notes</a><br>Chpater 8 of book</td>
+<td align="center"><a href="morereductions.pdf">Lecture 26</a></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 29</td>
+<td>Graph reductions</td>
+<td height="45"> <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/21-nphard.pdf">NP-Hardness Notes</a><br>Chapter 8 of book</td>
+<td align="center"><a href="graphreductions.pdf">Lecture 27</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">March 31</td>
+<td>Work day on reductions</td>
+<td height="45"><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/21-nphard.pdf">NP-Hardness Notes</a><br>Chpater 8 of book</td>
+<td align="center"></td>
+<td align="center"><a href="hb-nphard.pdf">Worksheet</a></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 2</td>
+<td>No class</td>
+<td height="45">Off for Good Friday</td>
+<td align="center"></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 5</td>
+<td>No class</td>
+<td height="45">Off for Easter Monday</td>
+<td align="center"></td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 7</td>
+<td>Approximation: Minimizing makespan</td>
+<td height="45"> <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/21k-approx.pdf">Approximation Notes</a><br>Chapter 11.1 of book</td>
+<td align="center"><a href="loadbalance.pdf">Lecture 28</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 9</td>
+<td>Approximation: Vertex Cover</td>
+<td height="45"> <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/21k-approx.pdf">Approximation Notes</a></td>
+<td align="center"><a href="approxVC.pdf">Lecture 29</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 12</td>
+<td>Approximation: TSP</td>
+<td height="45"> <a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/21k-approx.pdf">Approximation Notes</a></td>
+<td align="center"><a href="TSPApproximation.pdf">Lecture 30</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 14</td>
+<td>Network Flow: Part 1</td>
+<td height="45"> Chapter 7 of text<br><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/15-maxflow.pdf">Max Flow Notes</a></td>
+<td align="center"><a href="NF1.pdf">Lecture 31</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 16</td>
+<td>Network Flow: Part 2</td>
+<td height="45"> Chapter 7 of text<br><a href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/algorithms/notes/16-maxflowalgs.pdf">Max Flow Algorithms</a></td>
+<td align="center"><a href="NF2.pdf">Lecture 32</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 19</td>
+<td>Network Flow Applications</td>
+<td height="45"> Chapter 7 of text</td>
+<td align="center"><a href="NF3.pdf">Lecture 33</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 21</td>
+<td>Circulations</td>
+<td height="45"> Chapter 7 of text</td>
+<td align="center"><a href="NF4.pdf">Lecture 34</a></td>
+<td align="center"></td>
+</tr>
+
+<tr valign="middle">
+<td align="center">April 23</td>
+<td>More Network Flow applications</td>
+<td height="45"> Chapter 7 of text</td>
+<td align="center"><a href="NF5.pdf">Lecture 35</a></td>
+<td align="center"></td>
+</tr>
+
+
+</table>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+#ifndef ARRAY_QUEUE_H
+#define ARRAY_QUEUE_H
+
+#include <iostream>
+#include <stdexcept>
+using namespace std;
+
+/* 
+   Class to implement a queue with an underlying array
+*/
+
+template <typename Object>
+class ArrayQueue {
+  
+private:
+  
+  /** Variable declaration **/
+  int _capacity;	//maximum capacity of the array
+  int _front;		//position of front element
+  int _back;		//position one past the last element
+  int _size;		//total number of elements
+  Object* _Q;		//pointer to the array
+  
+public:
+  
+  /* Constructor */
+  ArrayQueue(int cap=100) : _capacity(cap), _front(0), _back(0), _size(0), _Q(new Object[_capacity]) {}
+  
+  /* Function to return size */
+  int size() const {
+    return _size;
+  }
+  
+  /*  Function that returns true if queue is empty */
+  bool empty() const {
+   return (_size == 0); 
+  }
+  
+  /* Function that adds a new element to the end of the list */
+  void push(const Object& elem) {
+    if (_size == _capacity)
+      throw runtime_error("Queue is full");
+    
+    _Q[_back] = elem;
+    _back = (_back+1)%_capacity;
+    
+    _size++;
+  }
+  
+  /*  Function to remove first element in queue  */
+  void pop() {
+    if (empty())
+      throw runtime_error("Queue is empty");
+    
+    _front=(_front+1)%_capacity;
+    _size--;
+  }
+  
+  /* Function to return a const reference to the first element in the queue  */
+  const Object& front() {
+    if (empty())
+      throw runtime_error("Queue is empty");
+    
+    return _Q[_front];
+  }
+  
+  //Housekeeping!
+  
+  //destructor
+  ~ArrayQueue() {
+    delete[] _Q;
+  }
+  
+  //write operator=
+  ArrayQueue& operator=(const ArrayQueue& other) {
+    if (this != &other) {
+
+      delete[] _Q;
+
+    _capacity = other._capacity;
+    _front = other._front;
+    _back = other._back;
+    _size = other._size;
+    
+    //make a deep copy!
+    _Q = new Object[_capacity];
+    
+    if (_front < _back)
+      for (int i = _front; i < _back; i++)
+	_Q[i] = other._Q[i];
+    else {
+      for (int i = _front; i < _capacity; i++)
+	_Q[i] = other._Q[i];
+      for (int i = 0; i < _back; i++)
+	_Q[i] = other._Q[i];
+    }
+      
+    }
+    return *this;
+  }
+
+  
+  //copy constructor
+  ArrayQueue(const ArrayQueue& other) {
+    _capacity = other._capacity;
+    _front = other._front;
+    _back = other._back;
+    _size = other._size;
+    _Q = new Object[_capacity];
+    
+    //copy relevant part of other's array
+    if (_front < _back)
+      for (int i = _front; i < _back; i++)
+	_Q[i] = other._Q[i];
+    else {
+      for (int i = _front; i < _capacity; i++)
+	_Q[i] = other._Q[i];
+      for (int i = 0; i < _back; i++)
+	_Q[i] = other._Q[i];
+    }
+
+  }
+  
+};
+#endif

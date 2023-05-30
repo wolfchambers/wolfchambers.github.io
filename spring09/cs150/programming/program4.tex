@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\usepackage{jeffe,handout}
+
+% =========================================================
+\begin{document}
+
+\headers{CS 150}{Programming Assignment 4 (due March 18,
+2009)}{Sprint 2009}
+
+\begin{center}
+\LARGE \textbf{CS 150: Intro to OOP, Fall 2008}
+\\
+\textbf{Programming Assignment 4}
+\\[1ex]
+\Large Due \emph{via email} by 11:59pm on Wednesday, March 18, 2009\\
+
+\end{center}
+
+For this assignment, you must work individually.  As usual, you are
+welcome to discuss {\em general} python syntax, but your design and
+coding should all be done individually.  Please refer to the class
+syllabus or consult the instructor if you have any questions.
+
+\begin{problems}
+%----------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Exercises 6.15 and 6.16
+
+Please submit both class definitions (one called Set for 6.15 and one called SortedSet for
+6.16) in a file called myset.py.  
+
+Some things to keep in mind:
+
+\begin{itemize}
+
+\item I expect your sets to be able to support any string or numeric value being added.
+
+\item Make sure to use comments and meaningful variable names throughout the classes.
+
+\item It might be helpful to write a \_\_str\_\_ method for your Set class, also, so that you can test that your code is working.
+
+\item Remember to test your code!  Import your classes in python, create several sets and sorted sets, and add/remove numbers and strings to them to see if everything is added correctly and with no duplicates.  
+
+\end{itemize}
+
+\item Extra Credit: Write the following methods for either your Set or your SortedSet class:
+
+\begin{enumerate}
+\item Implement an \_\_add\_\_ function (overloading $+$) which takes two sets and returns
+the union of them in a new set.
+
+\item Implement an \_\_eq\_\_ function (overloading $==$) which take two sets and returns
+True if the sets are the same.
+
+\item Implement an xor(self, other) function, which will be called by
+set1.xor(set2).  The function should return  all elements which are
+either in set1 or in set2 (but NOT in both).
+\end{enumerate}
+
+\end{problems}
+\end{document}

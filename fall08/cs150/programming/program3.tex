@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage{jeffe,handout}
+
+% =========================================================
+\begin{document}
+
+\headers{CS 150}{Programming Assignment 3 (due October 13,
+2008}{Fall 2008}
+
+\begin{center}
+\LARGE \textbf{CS 150: Intro to OOP, Fall 2008}
+\\
+\textbf{Programming Assignment 2}
+\\[1ex]
+\Large Due \emph{via email} by 11:59pm on October 13, 2008\\
+
+\end{center}
+
+For this assignment, you must work individually.  As usual, you are
+welcome to discuss {\em general} python syntax, but your design and
+coding should all be done individually.  Please refer to the class
+syllabus or consult the instructor if you have any questions.
+
+\begin{problems}
+%----------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item (15 points each) Exercises 6.15 and 6.16
+
+Please include both class definitions (one for 6.15 and one for
+6.16) in the same .py file.  Make sure to use comments and
+meaningful variable names.  Also, remember to test your
+implementation before submitting the file!
+
+\item (2 points per part) Extra credit: Create a new class ExtendedSortedSet which
+contains the functionality of 6.16 but also has the following
+functionality:
+
+\begin{enumerate}
+\item Implement an \_\_add\_\_ function (overloading $+$) which takes two sets and returns
+the union of them in a new set.
+
+\item Implement an \_\_eq\_\_ function (overloading $==$) which take two sets and returns
+True if the sets are the same.
+
+\item Implement an xor(self, other) function, which will be called by
+set1.xor(set2).  The function should return  all elements which are
+either in set1 or in set2 (but NOT in both).
+\end{enumerate}
+
+\end{problems}
+\end{document}

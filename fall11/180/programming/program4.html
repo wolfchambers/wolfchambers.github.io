@@ -1,0 +1,169 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<a href="../index.html">Course Home</a> |
+<a href="../policies.html">Course Policies</a> |
+<a href="../homework/">Homework</a> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<b>Programming</b> |
+<A HREF="../labs/">Labs</a> |
+<A HREF="../schedule/schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+
+<hr>
+
+
+<center>
+<h2>Programming Assignment 4
+
+<br>
+Vector class
+</h2>
+<h3>
+Due:
+Thursday, Oct. 27, 11:59pm
+
+
+</h3>
+</center>
+
+
+<P>
+Please see the <a href="../#general">general programming webpage</a> for details about
+the programming environment for this course,  guidelines for
+programming style, and details on electronic submission of assignments.
+</P>
+
+<P>
+The only file you will need for this assignment is the <a href="../schedule/Vector.h">Vector.h</a> file that we wrote in class.
+</P>
+
+
+<H3>
+Collaboration Policy
+</H3>
+
+<p>
+For this assignment, <b>you must work alone on your assignment</b>.
+</p>
+
+<p>
+Please make sure you adhere to the policies on
+<a href="../../#integrity">academic integrity</a> in this regard.
+</p>
+
+
+<hr>
+
+
+<H1>Overview</H1>
+
+<P>
+As you may have noticed, the vector class in C++ has much less functionality than the list class in Python.  In addition, we did not complete all of the vector functionality that is included in the standard template library.</p>
+
+<p>
+In as effort to ``upgrade" the vector class we wrote, you will write the following  functions described below in our Vector.h file.  (Please download Vector.h from the course schedule webpage and insert your functions into this class, then submit the entire Vector.h file via email by the due date.)
+</P>
+
+<H1>Functions to code</h1>
+
+<UL>
+  <LI>
+void resize ( int sz, Object c );
+
+<p>Resizes the vector to contain sz elements.
+
+<p>If sz is smaller than the current vector size, the content is reduced to its first sz elements, the rest being dropped.
+
+<p>If sz is greater than the current vector size, the content is expanded by inserting at the end as many copies of c as needed to reach a size of sz elements. This may cause a reallocation.
+
+<p>Notice that this function changes the actual content of the vector by inserting or erasing elements from the vector; it does not only change its storage capacity. 
+  </LI>
+  
+  <li> void remove(Object val);
+  
+  <p>Removes the earlist occurance of val present in the vector.  Note that this changes the size.
+  
+  </li>
+  
+  <li>
+  void erase(int index);
+  
+  <p>This is actually the same as our current erase function, expect for one difference.   You will rewrite the function erase from our implementation of vectors so that if the number 
+of elements gets below capacity/4, you shrink the array size by half. 
+If this happens, all the elements copied into a new array 
+of the appropriate size. 
+
+  </li>
+  
+    <li>
+  bool operator==(const Vector<Object>& other);
+  
+  <p>Returns true if the contents of the vector are pairwise identical, and false otherwise.  Note that this function ignores the capacity of the vectors, and only compares the elements that are actually in the vector.
+  </li>
+</ul>
+
+<h1>Extra Credit</h1>
+
+<ul>
+   <li>void replace(const Object& val1, const Object& val2);
+   
+   <p> Replace all instances of val1 in the vector with the value val2.  Note that this should not just find the first such position, but should replace every instance.
+</li></ul>
+
+<h1>Testing</h1>
+
+You are also required to write a test file, similar to our testVector.cpp in class.  You our welcome to use our code from class as a starting point, but your grade will be partially based on how well you test your code.  Remember to thoroughly test all possible inputs before submitting.
+
+<H1><A NAME="submit">Files to Submit</A></H1>
+
+
+<UL>
+  <LI>
+      <P>
+      <a name="code">Source Code</a>
+      <br>
+      Submit your revised <tt>Vector.h</tt> file.
+  </LI>
+    <LI>
+      <P>
+      <a name="code">Test file</a>
+      <br>
+      Submit your revised <tt>testVector.cpp</tt> file.
+  </LI>
+  <LI>
+      <P>
+      <a name="readme">"readme" file</a>
+      <br>
+      An overview of your
+      final product (including comments on how you tested your code), and any further comments you
+      wish to make to the grader.
+      </P>
+  </LI>
+</UL>
+
+
+<HR>
+
+<H1><A NAME="grading">Grading Standards</A></H1>
+
+<P> The assignment is worth <em>10</em> points. One point will be based on 
+a checkpoint with the instructor on October 17, at which time you will be 
+expected to have completed at least 20 lines of code for the assignment.  
+The remaining 9 points will be based on your implementation of smart 
+stacks. </P>
+
+<hr>
+
+
+  </body>
+</html>

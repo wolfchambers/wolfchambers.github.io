@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<title>CS 180: Data Structures</title>
+</head>
+
+<body>
+
+<!-- begin table of contents -->
+<center>
+<b>Course Home</b> |
+<a href="policies.html">Course Policies</a> |
+<A HREF="homework/">Homework</A> |
+<A HREF="http://mathcs.slu.edu/undergrad-cs/lab-hours">Lab Open Hours</A> |
+<A HREF="programming/">Programming</A> |
+<A HREF="labs/">Labs</a> |
+<A HREF="schedule/schedule.html">Schedule & Lecture Notes</A>
+</center>
+<!--  end table of contents  -->
+
+<center>
+<h1>CS 180: Data Structures <br> Fall 2010 <br> MWThF 10-10:50am in 121 RH</h1>
+
+<h3><a href="http://mathcs.slu.edu/~chambers">Erin Chambers</a>
+<br> Contact Info: echambe5 - at - slu.edu
+<br> Office: 011 Ritter Hall
+<br> Office Hours: Wednesday 1-2pm, Thursday 9-10am, or by appointment  
+
+</h3>
+
+</center>
+
+<hr>
+<blockquote>
+<h3> Announcements: </h3>
+<ul>
+
+<li><p>Nov. 18: As promised, here is a link to my <a href="schedule/testAVLTree.cpp">testAVLTree.cpp</a> code, for those that want to use it as a starting point.
+
+<li><p>Nov. 18: I made a minor change to the BinaryTree.h code, so please redownload or refresh your copy of it.  (We needed the postfix operator++, which I had forgotten to add after class.)
+
+<li><p>Nov. 15: I've written a short sample test program for our BST class, so 
+that you can use it as a model for your remove functions for program 5.  Please see <a href="schedule/testBST.cpp">here</a>.  Note that this uses the draw function to visualize the tree, and saves that draw function as testBST.ps.
+
+<li><p>Nov. 11: <a href="programming/program5.html">Program 5</a> is available.  It will be due on Nov. 23, and there will be a check point on Thursday, Nov. 18.  You are welcome to work with a partner on this assignment (and I recommend you consider doing so, since it is larger than the last few programs). One thing to note: AVLTree.h has not been coded in class yet, so you will have to wait until after tomorrow's class to begin work on that remove function.
+
+<li><p>Oct. 31: Looks like I will have to cancel class tomorrow due to illness.  Please consider it an extra lab day, since I think many people had trouble on the tree grafting lab; continue to work on that (since part 2 will be this week) as well as the homework.
+
+<li><p>Oct. 30: <a href="homework/hw4.html">Homework 4</a> is available;
+it will be due Monday, Nov. 8, by the start of class. 
+
+<li><p>Oct. 27: I have updated MergeTest.cpp.  The problem was simply that one of the libraries used to import limits, and no longer does.  The only change to the code is to add the line: #include < limits >.  You can redownload the file from the program page to update it, or add that line at the top yourself.  Sorry for the confusion!
+
+<li><p>Oct. 27: There is a bug in MergeTest.cpp.  I'll extend the due date until Friday night, and fix the bug and post new code today.
+
+<li><p>Oct. 21: <a href="programming/program4.html">Program 4</a> is available; it will be due next Thursday, Oct. 28, by midnight.
+
+<li><p> Oct. 19: There have been some network outages the last day or two on turing.  Because of htis, I'm going to extend the due date for homework 3 until Thursday, Oct. 21, at midnight.  Hopefully everything is taken care of now, and this will let everyone have plenty of time to finish.
+
+<li><p>Oct. 8: <a href="homework/hw3.pdf">Homework 3</a> is available; 
+it will be due Wednesday, Oct. 20, by midnight.  Please note that I 
+would like an email submission, with full working cpp files, so that I 
+can test the functions.
+
+<li><p>Oct. 8: My apologies for the late cancellation of class today; there was 
+an accident on the bridge that made me over an hour late getting to campus.  
+We'll pick up on Monday where we left off.
+
+<li><p>Sept. 29: <a href="programming/program3.html">Program 3</a> is available; it will be due on Tuesday, Oct. 12 by 11:59pm.  This program can be done in pairs.
+
+<li><p>Sept. 29: As announced in class, program 2 will be due on Sunday, Oct. 3 (and not on Saturday, Oct. 2).
+
+
+<li><p>Sept. 21: <a href="programming/program2.html">Program 2</a> is 
+available.  It will be due on Saturday, Oct. 2, by 11:59pm.  Note that this 
+program will be done individually.
+
+<li><p>Sept. 16: The first exam for this course will be held next week, on Friday, Sept. 24.  There will be an in-class review session on Thursday, Sept. 23.  (I will also hand out an old midterm from this course for practice, probably in class either on Friday or Monday.)
+
+<li><p>Sept. 9: <a href="homework/hw2.html">Homework 2</a> is available; 
+it will be due on Monday, Sept. 20, by the start of class.
+
+<li><p>Sept. 7: There was a bug in the test file provided for program 1.  Nothing that would cause an error, but the comments about what should be happening were inconsistant with a few of the commands in the code.  Please redownload the test file from the website for a corrected version.
+
+<li><p>Sept. 2: <a href="makefile">Here</a> is a version of the makefile provided with program 1 that has comments, if you want to know more about how these are constructed.
+
+<li><p>Aug. 30: There will be a small schedule change this week.  Our in class lab will be on Friday at 10am (instead of the usual Thursday lab).  Normal Thursday labs will resume next week.
+
+<li><p>Aug. 28: Slight update on homework and program.  If you want to copy the file for the homework, run the command "cp -R /Public/chambers/180/Television .", and for the programming assignment, use "cp -R /Public/chambers/180/credit ."
+
+<li><p>Aug. 27: <a href="programming/program1.html">Program 1</a> is available; it will be due by 11:59pm on September 10.  Note that you may work on this with a partner, and there will be a checkpoint due on Tuesday, September 7.
+
+<li><p> Aug. 26: The public directories on the linux machines are working again, so lab 1 should work as written.
+
+<li><p> Aug. 24: <a href="homework/hw1.html">Homework 1</a> is available; 
+it will be due next Wednesday at the start of class.
+
+<li><p> Welcome to CS180!  Please be sure to read course policies carefully, and check this page 
+daily for updates or announcements.
+
+</ul>
+
+</body>
+</html>
